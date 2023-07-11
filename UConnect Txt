@@ -1,0 +1,52 @@
+
+
+
+
+.footer {
+	width: 100%;
+	background-color: transparent;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 4px;
+}
+.footnote {
+	border-bottom: #6787B7 0px solid;
+	background-color: #6787B7;
+	width: 100%;
+	font-family: "Proxima Nova Regular", sans-serif !important;
+	font-family: "proxima-nova", sans-serif !important;
+}
+
+.footer_row3 {
+	color: #FFF; 
+	width: 90%;
+	margin-left: 40px;
+	padding: 18px 18px 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+}
+
+.footer_cr {
+	margin-left: 30px;
+	font-size: 14px;
+	font-family: "Proxima Nova Regular", sans-serif !important;
+	font-family: "proxima-nova", sans-serif !important;
+	text-align: left;
+	line-height: 1.2rem;
+}
+
+.footer_cr a {
+	color:#FFF;
+}
+
+.req_fld {
+	color: red;
+}
+
+/*.responsive_tabs div.off:hover a {
+	color: #FFFFFF !important;
+}
+.responsive_tabs div.on a {
+	color: #145047 !important;
+}*/
