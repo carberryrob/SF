@@ -1,4 +1,6 @@
 # Updated 7/05/2023 Rob Carberry
+# Updated 7/12/2023 Rob Carberry
+
 
 if Physician_List == '-None':
 	COND('You must first select a Physician from the Physician List to continue.')
@@ -7,6 +9,7 @@ else:
 	addused = []
 	dash = Physician_List.rfind(": ")+2 ### Address name starts 2 char after the colon.
 	addused.append(Physician_List[dash:]) ### Add 1st address to the list that test for unique addresses.
+	wwwBlock = None
 
 	### add remaining addresses to the list and test that the address doesn't exist twice.
 	for address in (card2_address, card3_address):
@@ -91,7 +94,8 @@ else:
 	if (height > 126):
 		### If the text block's height is taller then 1.75" then redraw the url to below the logo for room.
 		wwwInline=False
-		wwwBlock = DWIMBLOCK([CENTER, F5, wwwurl, NEWLINE], (0.93953*72, 144), (CENTER, TOP), (1.4*72,0), layer=0)
+		wwwBlock = DWIMBLOCK([CENTER, F5, wwwurl, NEWLINE], (0.93953*72, 0), (CENTER, BOTTOM), (1.4*72,0), layer=0)
+		#COND(wwwBlock.height)
 	
 	### Loop throught all the blocks reducing the font size by 0.1 points until
 	### the blocks are 1.75" or smaller and stop 0.125" from the right.
@@ -170,8 +174,9 @@ else:
 	if (wwwInline):
 		wwwBlock.move( 0, moveby )
 	else:
-		moveby = -135
-		wwwHeight = wwwBlock._get_top()-wwwBlock._get_bottom()
-		wwwBlock.move( 0, (moveby + wwwHeight) )
+		wwwHeight = wwwBlock.height
+		logoheight = 0.66629*72
+		moveby = (logoheight-5)
+		wwwBlock.move( 0, (moveby) )
 
 	#TestBlock = DWIMBLOCK([LEFT, F8, 'vspc: ' + str(vspc), NEWLINE, 'wwwInline: ' + str(wwwInline), NEWLINE, 'H: ' + str(h), NEWLINE, 'R: ' + str(r), NEWLINE, NEWLINE], (0, 0), (LEFT, BOTTOM), (3.5*72,0), layer=0)
