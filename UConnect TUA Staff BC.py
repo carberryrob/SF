@@ -1,12 +1,6 @@
 # Updated 7/05/2023 Rob Carberry
-# Updated 7/13/2023 Rob Carberry
 
-wwwurl = 'unitedurology.com' ### Make url a variable to make it easier to copy code to other locations
-card_street1 = '25 Crossroads Drive'
-card_street2 = 'Ste 306'
-card_city = 'Owings Mills'
-card_state = 'MD'
-card_zip = '21117'
+wwwurl = 'tnurology.com' ### Make url a variable to make it easier to copy code to other locations
 
 if (card_phone):
     Phone1Word = card_phone
@@ -60,7 +54,7 @@ wwwInline=True # Start with wwwurl inline on the right
 if (height > 126):
     ### If the text block's height is taller then 1.75" then redraw the url to below the logo for room.
     wwwInline=False
-    wwwBlock = DWIMBLOCK([CENTER, F5, wwwurl, NEWLINE], (1.00874*72, 0), (CENTER, BOTTOM), (1.4*72,0), layer=0)
+    wwwBlock = DWIMBLOCK([CENTER, F5, wwwurl, NEWLINE], (0.96275*72, 0), (CENTER, BOTTOM), (1.4*72,0), layer=0)
 
 ### Loop throught all the blocks reducing the font size by 0.1 points until
 ### the blocks are 1.75" or smaller and stop 0.125" from the right.
@@ -129,7 +123,7 @@ if (Phone1Word or Phone2Word or Phone3Word or card_email):
 if (wwwInline):
     wwwBlock.move( 0, moveby )
 else:
-    logoheight = 0.60819*72
+    logoheight = 0.41479*72
     moveby = (72-(logoheight/2)-5)
     wwwBlock.move( 0, (moveby) )
 

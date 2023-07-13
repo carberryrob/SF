@@ -1,6 +1,6 @@
 # Updated 7/05/2023 Rob Carberry
 
-wwwurl = 'arizonaurologyspecialists.com' ### Make url a variable to make it easier to copy code to other locations
+wwwurl = 'chesapeakeurology.com' ### Make url a variable to make it easier to copy code to other locations
 
 if (card_phone):
     Phone1Word = card_phone
@@ -54,7 +54,7 @@ wwwInline=True # Start with wwwurl inline on the right
 if (height > 126):
     ### If the text block's height is taller then 1.75" then redraw the url to below the logo for room.
     wwwInline=False
-    wwwBlock = DWIMBLOCK([CENTER, F5, wwwurl, NEWLINE], (0.97515*72, 144), (CENTER, TOP), (1.4*72,0), layer=0)
+    wwwBlock = DWIMBLOCK([CENTER, F5, wwwurl, NEWLINE], (1.0025*72, 0), (CENTER, BOTTOM), (1.4*72,0), layer=0)
 
 ### Loop throught all the blocks reducing the font size by 0.1 points until
 ### the blocks are 1.75" or smaller and stop 0.125" from the right.
@@ -123,8 +123,8 @@ if (Phone1Word or Phone2Word or Phone3Word or card_email):
 if (wwwInline):
     wwwBlock.move( 0, moveby )
 else:
-    moveby = -135
-    wwwHeight = wwwBlock._get_top()-wwwBlock._get_bottom()
-    wwwBlock.move( 0, (moveby + wwwHeight) )
+    logoheight = 0.4042*72
+    moveby = (72-(logoheight/2)-5)
+    wwwBlock.move( 0, (moveby) )
 
 #TestBlock = DWIMBLOCK([LEFT, F8, 'vspc: ' + str(vspc), NEWLINE, 'wwwInline: ' + str(wwwInline), NEWLINE, 'H: ' + str(h), NEWLINE, 'R: ' + str(r), NEWLINE, NEWLINE], (0, 0), (LEFT, BOTTOM), (3.5*72,0), layer=0)

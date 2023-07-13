@@ -21,7 +21,7 @@ else:
 				COND('The address for ' + address.upper() + ' is already selected.  Only unique addresses can be added to the envelope.')
 	address = None
 
-	wwwurl = 'arizonaurologyspecialists.com' ### Make url a variable to make it easier to copy code to other locations
+	wwwurl = 'chesapeakeurology.com' ### Make url a variable to make it easier to copy code to other locations
 
 	if (ph1):
 		Phone1Word = ph1
@@ -94,7 +94,7 @@ else:
 	if (height > 126):
 		### If the text block's height is taller then 1.75" then redraw the url to below the logo for room.
 		wwwInline=False
-		wwwBlock = DWIMBLOCK([CENTER, F5, wwwurl, NEWLINE], (0.93953*72, 0), (CENTER, BOTTOM), (1.4*72,0), layer=0)
+		wwwBlock = DWIMBLOCK([CENTER, F5, wwwurl, NEWLINE], (1.0025*72, 0), (CENTER, BOTTOM), (1.4*72,0), layer=0)
 		#COND(wwwBlock.height)
 	
 	### Loop throught all the blocks reducing the font size by 0.1 points until
@@ -174,9 +174,8 @@ else:
 	if (wwwInline):
 		wwwBlock.move( 0, moveby )
 	else:
-		wwwHeight = wwwBlock.height
-		logoheight = 0.66629*72
-		moveby = (logoheight-5)
+		logoheight = 0.4042*72
+		moveby = (72-(logoheight/2)-5)
 		wwwBlock.move( 0, (moveby) )
 
 	#TestBlock = DWIMBLOCK([LEFT, F8, 'vspc: ' + str(vspc), NEWLINE, 'wwwInline: ' + str(wwwInline), NEWLINE, 'H: ' + str(h), NEWLINE, 'R: ' + str(r), NEWLINE, NEWLINE], (0, 0), (LEFT, BOTTOM), (3.5*72,0), layer=0)
