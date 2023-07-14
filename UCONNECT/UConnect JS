@@ -10,7 +10,7 @@
 </div>
 <script>
 
-/*function singleItemCenter() {
+{/* function singleItemCenter() {
 	if( $('.stretchy_cols').length < 2) {
 		$('.stretchy_cols').css({
 			'min-width': 'unset !important',
@@ -18,7 +18,7 @@
 			'width': 'unset !important'
 		});
 	}
-}*/
+} */}
 
 $(window).load(function () {
 
@@ -49,12 +49,13 @@ $(window).load(function () {
 		$(".image-container img").not("img.catalog-tiny-thumbnail").unwrap(); //If not a word template then make it so the image links don't work
 	}
 
-	/****** Search Box ********/
-	$("input#searchfield_input").wrap('<div class="input-wrapper">')
-	$( '<label for="searchfield_input" class="fa fa fa-search"></label>' ).insertAfter("input#searchfield_input");
-	/**************************/
 
 	if($(window).width() >= 1025) {
+
+		/****** Search Box ********/
+		$("input#searchfield_input").wrap('<div class="input-wrapper">')
+		$( '<label for="searchfield_input" class="fa fa fa-search"></label>' ).insertAfter("input#searchfield_input");
+		/**************************/
 
 		/************* My Account Menu *************/
 		
