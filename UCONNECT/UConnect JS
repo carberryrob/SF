@@ -137,6 +137,9 @@ $(window).load(function () {
 
 		if ( $( "input[name='tab']" ).val() ) {
 			$("#copy5 span").text( $( "input[name='tab']" ).val().replace(/\|\|/g, ' - ') ); /** Set the catalog top left description **/
+			if ( $( "input[name='tab']" ).val().includes("Reputation Management Cards") ) {
+				$(".rmc").show();
+			}
 		}
 
 
