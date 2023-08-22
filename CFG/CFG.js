@@ -61,10 +61,12 @@ $(window).load(function () {
 
 		/************* TopTabs *************/
 		
-		////$("div.responsive_tabs-shell").show();  /*** Only for testing; Show the old Tabs ***/
-		//$(".tab_html_wrapper").show();  /*** Only for testing; Show the old Tabs ***/
-		//$(".responsive_tabs-shell .before").show();  /*** Only for testing; Show the old Tabs ***/
-		//$("div#basket-list-title").show();  /*** Only for testing; Show the old Tabs ***/
+		// $("div.responsive_tabs-shell").show();  /*** Only for testing; Show the old Tabs ***/
+		// $(".tab_html_wrapper").show();  /*** Only for testing; Show the old Tabs ***/
+		// $(".responsive_tabs-shell .before").show();  /*** Only for testing; Show the old Tabs ***/
+		// $("div#basket-list-title").show();  /*** Only for testing; Show the old Tabs ***/
+
+
 
 		$( "#header-wrapper" ).after('<div id="TabsDiv"><nav id="TabsNav"><ul id="TabsMenu">'); /** Create the top nav place holder **/
 		var tabid = '';
