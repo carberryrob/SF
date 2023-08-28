@@ -1,1 +1,0 @@
-[i for i in order.items if i.corp_filter in ('merch-comm', 'merch') and i.is_inventory_item()]
