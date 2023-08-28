@@ -242,7 +242,7 @@ $(document).ready(function () {
 	if ($("select[name='bill_code10']").val() == "No") {
 		$("button#submit_send_order").prop('disabled', 'disabled');
 	}
-	console.log($("select[name='bill_code10']").val());
+	// console.log($("select[name='bill_code10']").val());
 	$('form[action="accept_bill.cgi"]').change(function() {
 		if ($("select[name='bill_code10']").val() == "No") {$("button#submit_send_order").prop('disabled', 'disabled');}
 		if ($("select[name='bill_code10']").val() == "Yes") {$("button#submit_send_order").prop('disabled', false);}
