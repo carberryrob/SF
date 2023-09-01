@@ -166,28 +166,28 @@ $(document).ready(function () {
 		$("button#submit_cancel").hide();
 	}
     
-	// Show Banner only during a predetermined date and time.
-    var localStartDate = new Date('2023-08-31T00:00:00'); // Replace with your desired start date and time in your local time zone
-    var localEndDate = new Date('2023-08-31T23:59:59');   // Replace with your desired end date and time in your local time zone
-	if (shouldExecute(localStartDate,localEndDate)) {
-		console.log("Start - " + localStartDate.toString());
-		console.log("End - " + localEndDate.toString());
-		var dnow = new Date();
-		console.log("Now - " + dnow.toString());
-		console.log("Show Banner");
-		$("#salebanner").show();
-	} else {
-		console.log("Hide Banner");
-		$("#salebanner").hide();
-	}
+	// // Show Banner only during a predetermined date and time.
+    // var localStartDate = new Date('2023-08-31T00:00:00'); // Replace with your desired start date and time in your local time zone
+    // var localEndDate = new Date('2023-08-31T23:59:59');   // Replace with your desired end date and time in your local time zone
+	// if (shouldExecute(localStartDate,localEndDate)) {
+	// 	console.log("Start - " + localStartDate.toString());
+	// 	console.log("End - " + localEndDate.toString());
+	// 	var dnow = new Date();
+	// 	console.log("Now - " + dnow.toString());
+	// 	console.log("Show Banner");
+	// 	$("#salebanner").show();
+	// } else {
+	// 	console.log("Hide Banner");
+	// 	$("#salebanner").hide();
+	// }
 
-    if ($("#salebanner").length > 0) {
-        var classstr = $("#salebanner").parents("div").attr("class");
-        if (~classstr.indexOf("no_mobile")) {
-            $("#salebanner").parents("div").removeClass("no_mobile");
-        }    
-    }
-	//End Banner ************************************************************
+    // if ($("#salebanner").length > 0) {
+    //     var classstr = $("#salebanner").parents("div").attr("class");
+    //     if (~classstr.indexOf("no_mobile")) {
+    //         $("#salebanner").parents("div").removeClass("no_mobile");
+    //     }    
+    // }
+	// //End Banner ************************************************************
 });
 function windowSize() {
 	windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
