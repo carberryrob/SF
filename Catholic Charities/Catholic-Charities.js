@@ -18,7 +18,6 @@ $(window).load(function () {
 	
 	$( ".header-links" ).find( "a" ).removeAttr( "style" );
 	$( "#header_logo img.no_mobile" ).wrap( '<td id="desklogo"><div class="logolinkdiv"><a style="display: inline-block;" href="index.cgi">' );
-	
 	$( "#header_logo img.no_desktop" ).wrap( '<a style="display: inline-block;" href="index.cgi">' );
 
 	$(".note:contains('Non-taxable items marked with *')").hide();
@@ -48,7 +47,7 @@ $(window).load(function () {
 		/************* My Account Menu *************/
 		
 		$( ".header-links a" ).wrapAll( '<div id="dropdown-contentdiv" class="dropdown-content"></div>  ' );
-		$( ".dropdown-content" ).wrapAll( '<div id="dropdowndiv" class="dropdown"><span id="dropicon">My Account</span>' );
+		$( ".dropdown-content" ).wrapAll( '<div id="dropdowndiv" class="dropdown"><span id="dropicon">My Account</span><span class="button_arrow_down"> </span></span>' );
 		$( ".dropdown-content" ).insertAfter( '#dropicon' );
 		$( "a[href='basket_view.cgi'].no_mobile" ).insertBefore( "#dropdowndiv" );
 		$( ".image-container img").css("max-height","max-content");
@@ -62,12 +61,10 @@ $(window).load(function () {
 
 		/************* TopTabs *************/
 		
-		// $("div.responsive_tabs-shell").show();  /*** Only for testing; Show the old Tabs ***/
-		// $(".tab_html_wrapper").show();  /*** Only for testing; Show the old Tabs ***/
-		// $(".responsive_tabs-shell .before").show();  /*** Only for testing; Show the old Tabs ***/
-		// $("div#basket-list-title").show();  /*** Only for testing; Show the old Tabs ***/
-
-
+		////$("div.responsive_tabs-shell").show();  /*** Only for testing; Show the old Tabs ***/
+		//$(".tab_html_wrapper").show();  /*** Only for testing; Show the old Tabs ***/
+		//$(".responsive_tabs-shell .before").show();  /*** Only for testing; Show the old Tabs ***/
+		//$("div#basket-list-title").show();  /*** Only for testing; Show the old Tabs ***/
 
 		$( "#header-wrapper" ).after('<div id="TabsDiv"><nav id="TabsNav"><ul id="TabsMenu">'); /** Create the top nav place holder **/
 		var tabid = '';
@@ -182,9 +179,7 @@ $(window).load(function () {
 				$(this).prepend(menuknob);
 				cnt = cnt + 1;
 			});
-			// $('.cart_item').parents('table').css('text-align', 'center');
-			$('.cart_item').parents('table').css({'text-align': 'center','overflow': 'scroll','display': 'block','width': '100%'});
-			
+			$('.cart_item').parents('table').css('text-align', 'center');
 		}
 
 		$(".basket-list-item").html(function() {
@@ -210,11 +205,9 @@ $(window).load(function () {
 	$('.header-links').attr('style', 'display: revert !important');
 
 	/********* Hide FAQ Holders & Place Holders **********/
-	// $('div.height-adjuster').has('div.responsive-longname:contains("FAQ-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
-	// $('div.height-adjuster').has('div.responsive-longname:contains("PLACE-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
-	$('div.stretchy_cols').has('div.responsive-longname:contains("FAQ-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
-	$('div.stretchy_cols').has('div.responsive-longname:contains("PLACE-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
-    
+	$('div.height-adjuster').has('div.responsive-longname:contains("FAQ-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
+	$('div.height-adjuster').has('div.responsive-longname:contains("PLACE-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
+
 });
 
 $(document).ready(function () {
@@ -245,7 +238,7 @@ $(document).ready(function () {
 	if ($("select[name='bill_code10']").val() == "No") {
 		$("button#submit_send_order").prop('disabled', 'disabled');
 	}
-	// console.log($("select[name='bill_code10']").val());
+	console.log($("select[name='bill_code10']").val());
 	$('form[action="accept_bill.cgi"]').change(function() {
 		if ($("select[name='bill_code10']").val() == "No") {$("button#submit_send_order").prop('disabled', 'disabled');}
 		if ($("select[name='bill_code10']").val() == "Yes") {$("button#submit_send_order").prop('disabled', false);}

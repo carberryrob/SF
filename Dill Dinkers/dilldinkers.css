@@ -564,10 +564,10 @@ input#searchfield_input:after {
 .centerimp {
 	text-align: center !important;
 }
-td.cart_item {
+/* td.cart_item {
 	display: table-cell;
 	vertical-align: top;
-}
+} */
 .main.catalog--container {
 	min-height: 600px;
 }
@@ -1311,9 +1311,9 @@ span.onhand_lbl {
 	#header_logo > img.no_mobile {
 		position: absolute;
 		top: 50px;
-		left: 45px;
+		left: 50%;
+		margin-left: -126px !important;
 		max-width: 350px;
-		/*max-height: 120px;*/
 	}
 
 	#header-links-container {
