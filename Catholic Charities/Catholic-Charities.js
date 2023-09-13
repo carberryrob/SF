@@ -10,6 +10,31 @@
 </div>
 <script>
 
+jQuery.expr.filters.offscreen = function(el) {
+	console.log(el);
+	var rect = el.getBoundingClientRect();
+	return (
+		rect.left < 0 || rect.top < 0 || rect.bottom > (window.innerHeight || document.documentElement.clientHeight) || rect.right > (window.innerWidth || document.documentElement.clientWidth)
+	);
+};
+
+function outofView(el){
+
+	var rect = el.getBoundingClientRect();
+	// Check if it's out of the viewport on each side
+	var out = {};
+	out.top = rect.top < 0;
+	out.left = rect.left < 0;
+	out.bottom = rect.bottom > (window.innerHeight || document.documentElement.clientHeight);
+	out.right = rect.right > (window.innerWidth || document.documentElement.clientWidth);
+	out.any = out.top || out.left || out.bottom || out.right;
+	out.all = out.top && out.left && out.bottom && out.right;
+
+	return out;
+
+};
+
+
 $(window).load(function () {
 
 	$('head').append('<link rel="icon" type="image/x-icon" href="con/favicon.ico">');
@@ -78,7 +103,7 @@ $(window).load(function () {
 			if ($(this).find("dfn").length == 1) {
 				$("#" + appendid).append( '<li class="onlyli" id="TMli_' + tabid + '">' + $(this).find("dfn").first().html() + '</li>' ); /**** Top most menu link with no sub items ****/
 			}else{
-				$("#" + appendid).append( '<li class="topli" id="TMli_' + tabid + '">' + $(this).find("dfn").first().text() + '<ul id="TMul_' + tabid + '"></ul></li>' ); /*Top most menu with sub items*/
+				$("#" + appendid).append( '<li class="topli" id="TMli_' + tabid + '">' + $(this).find("dfn").first().text() + '<ul class="menuUL" id="TMul_' + tabid + '"></ul></li>' ); /*Top most menu with sub items*/
 			}
 			/**** Sub tabs menu items ****/
 			$(this).children().find('dfn').each(function () {
@@ -92,7 +117,7 @@ $(window).load(function () {
 					tabid = $(this).parents('div [id^="tab_"]').first().attr("id");
 					if (tabid == 'tab_responsive_tabs') {tabid = 'TabsMenu';}
 					appendid = 'TMul_' + $(this).parents('div [id^="tab_"]').parents('div [id^="tab_"]').attr("id");
-					$("#" + appendid).append( '<li class="subtopli" id="MMli_' + tabid + '">' + $(this).text() + '<ul id="TMul_' + tabid + '"></ul></li>' ); /**** Middle menu with sub items ****/
+					$("#" + appendid).append( '<li class="subtopli" id="MMli_' + tabid + '">' + $(this).text() + '<ul class="menuUL" id="TMul_' + tabid + '"></ul></li>' ); /**** Middle menu with sub items ****/
 				}
 			});
 		});
@@ -208,6 +233,37 @@ $(window).load(function () {
 	$('div.height-adjuster').has('div.responsive-longname:contains("FAQ-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
 	$('div.height-adjuster').has('div.responsive-longname:contains("PLACE-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
 
+
+	/********** Keep menu visible **********/ 
+	$( "li.subtopli" ).on( "mouseenter", function() {
+		$( "ul.menuUL" ).each(function() {
+			if (outofView(this).any) {
+				if (outofView(this).right) {
+					var left = 0;
+					while (outofView(this).right) {
+						$(this).closest('.topli').find('ul').first().css('left', (left-1) + 'px');
+						left = $(this).closest('.topli').find('ul').first().css('left').replace('px','');
+					}
+					$(this).closest('.topli').find('ul').first().css('left', (left-19) + 'px');
+				}
+				if (outofView(this).bottom) {
+					var t = 0;
+					while (outofView(this).bottom) {
+						$(this).css('top', (t-1) + 'px');
+						t = $(this).css('top').replace('px','');
+					}
+				}
+
+			}
+		});
+	})
+	$( ".topli" ).on( "mouseleave", function() {
+		$( "ul.menuUL" ).each(function() {
+			$(this).css('left', '');
+			$(this).css('top', '');
+		});
+	})
+	/******************************************/ 
 });
 
 $(document).ready(function () {
@@ -224,11 +280,13 @@ $(document).ready(function () {
 	/********** Only show Cancel Order button when items are in the cart ***********/
 	if( $(".item_count").text() > 0) {
 		$("button#submit_cancel").has("span:contains('Cancel Order')").show();
-	} else{
+	}else{
 		$("button#submit_cancel").has("span:contains('Cancel Order')").hide();
 	}
-	
-	
+	// $('.menuUL').on( "mouseover", function() {
+	// 	console.log('menuUL Change');
+	// 	console.log($(this).width());
+	// });
 });
 
 </script>
@@ -238,7 +296,7 @@ $(document).ready(function () {
 	if ($("select[name='bill_code10']").val() == "No") {
 		$("button#submit_send_order").prop('disabled', 'disabled');
 	}
-	console.log($("select[name='bill_code10']").val());
+	// console.log($("select[name='bill_code10']").val());
 	$('form[action="accept_bill.cgi"]').change(function() {
 		if ($("select[name='bill_code10']").val() == "No") {$("button#submit_send_order").prop('disabled', 'disabled');}
 		if ($("select[name='bill_code10']").val() == "Yes") {$("button#submit_send_order").prop('disabled', false);}
