@@ -45,6 +45,13 @@ $(window).load(function () {
 		});
 	});
 
+	$(".responsive-choose-info").find("iframe").each(function() {
+		// console.log($(this).closest("div").siblings(".image-container").attr('class'))
+		$(this).attr('width', '315');
+		$(this).attr('height', '280');
+		$(this).closest("div").siblings(".image-container").hide();
+	});
+
 	if ( $( "input[name='tab']" ).val().toLowerCase().indexOf("ms word templates") < 0 ) {
 		$(".image-container img").not("img.catalog-tiny-thumbnail").unwrap(); //If not a word template then make it so the image links don't work
 	}
