@@ -136,6 +136,13 @@ $(window).load(function () {
 		$("table.items-table.true-table").find("th:nth-child(3)").removeClass("right").addClass("center");
 		$("table.items-table.true-table").find("td:nth-child(2)").removeClass("right").addClass("center");
 		$("table.items-table.true-table").find("td:nth-child(3)").removeClass("right").addClass("center");
+		
+		// $("table.items-table.true-table").find("tr:contains('Same as above')").each(function () {
+		// 	$(this).hide();
+		// 	var cartcount = $("span.cart_num_items.no_mobile").html().replace("(","").replace(")","").trim();
+		// 	cartcount -= 1;
+		// 	$("span.cart_num_items.no_mobile").html(cartcount);
+		// });
 		/***********************************/
 
 		/*********Shipping Table************/
@@ -147,6 +154,13 @@ $(window).load(function () {
 		$("table#shipping-pricetable").find("td:nth-child(3)").removeClass("left").addClass("centerimp");
 		$("table#shipping-pricetable").find("td:nth-child(4)").removeClass("left").addClass("centerimp");
 		$("table#shipping-pricetable").find("td:nth-child(5)").removeClass("left").addClass("centerimp");
+
+		// $("table#shipping-pricetable").find("tr:contains('Same as above')").each(function () {
+		// 	$(this).hide();
+		// 	var cartcount = $("span.cart_num_items.no_mobile").html().replace("(","").replace(")","").trim();
+		// 	cartcount -= 1;
+		// 	$("span.cart_num_items.no_mobile").html(cartcount);
+		// });
 		/***********************************/
 		
 		/*********Billing Table************/
@@ -157,7 +171,14 @@ $(window).load(function () {
 		//$("table#billing-pricetable").find("td.input.right.totalinpcol").removeClass("right").addClass("left");
 		$("table#billing-pricetable").find("th:nth-child(1)").removeClass("left").addClass("center");
 		//$("table#billing-pricetable").find("td:nth-child(1)").removeClass("left").addClass("center");
-		$('td:contains("UUG Paid")').attr('style', 'text-align: right !important; font-weight: bold;');
+		// $('td:contains("UUG Paid")').attr('style', 'text-align: right !important; font-weight: bold;');
+
+		// $("table#billing-pricetable").find("tr:contains('Spot UV (Included)')").each(function () {
+		// 	$(this).hide();
+		// 	var cartcount = $("span.cart_num_items.no_mobile").html().replace("(","").replace(")","").trim();
+		// 	cartcount -= 1;
+		// 	$("span.cart_num_items.no_mobile").html(cartcount);
+		// });
 		/***********************************/
 
 		if($('.pagetitle').text().toUpperCase() === 'IN YOUR CART') {
@@ -240,7 +261,7 @@ $(document).ready(function () {
 	if ($("select[name='bill_code10']").val() == "No") {
 		$("button#submit_send_order").prop('disabled', 'disabled');
 	}
-	console.log($("select[name='bill_code10']").val());
+	// console.log($("select[name='bill_code10']").val());
 	$('form[action="accept_bill.cgi"]').change(function() {
 		if ($("select[name='bill_code10']").val() == "No") {$("button#submit_send_order").prop('disabled', 'disabled');}
 		if ($("select[name='bill_code10']").val() == "Yes") {$("button#submit_send_order").prop('disabled', false);}
