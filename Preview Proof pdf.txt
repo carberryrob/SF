@@ -1,0 +1,296 @@
+S1 Preview
+{
+  'html': '''\
+      <table>\r
+      <tr><td align=center>\r
+      <button type="submit" class="button" onclick="window.open(\'%(p.pdf_pdf)s\', \'_blank\'); return false;" value="1"><span class="ic-msg">View PDF Proof</span></button></td></tr>\r
+      <tr><td align=center>\r
+      <B>Product Preview:</B><BR>\r
+      <img src="%(p.normal_src)s"></td></tr>\r
+      </table>\r
+      ''',
+  'normal': {'use_magick': 1},
+  'pdf': {
+    'PDF': 1,
+    'use_magick': 1,
+  },
+}
+
+
+-----------------------------------------------
+S1 Post
+# Updated 7/05/2023 Rob Carberry
+
+### If the url is placed below the logo then move the logo up 0.125"
+if not wwwInline:
+	PreviewBlock.move(0, 9)
+
+
+
+-----------------------------------------------
+S2 Preview
+{
+  'normal': {'use_magick': 1},
+}
+
+
+-----------------------------------------------
+S2 Pre
+# Updated 7/3/2023 Rob Carberry
+
+if include_back == '1S':
+	COND(COND_EMPTY)
+else:
+	BackBlock = DWIMBLOCK([EPSWORD('./con/197498_C1AUSPhysicianBusinessCard_Back.pdf', xscale=1, yscale=1)], (1.75*72, 1*72), (CENTER, MIDDLE), layer=0)
+
+
+
+-----------------------------------------------
+{
+  'html': '''\
+      <table>\r
+      <tr><td align=center>\r
+      <button type="submit" class="button" onclick="window.open(\'%(p.pdf_pdf)s\', \'_blank\'); return false;" value="1"><span class="ic-msg">View PDF Proof</span></button></td></tr>\r
+      <tr><td align=center>\r
+      <B>Product Preview:</B><BR>\r
+      <img src="%(p.normal_src)s"></td></tr>\r
+      </table>\r
+      ''',
+  'normal': {
+    'scale': 0.65,
+    'use_magick': 1,
+  },
+  'pdf': {
+    'PDF': 1,
+    'use_magick': 1,
+  },
+}
+
+
+
+{
+  'html': '''\
+      <table>\r
+      <tr><td align=center>\r
+      <button type="submit" class="button" onclick="window.open(\'%(p.pdf_pdf)s\', \'_blank\'); return false;" value="1"><span class="ic-msg">View PDF Proof</span></button></td></tr>\r
+      <tr><td align=center>\r
+      <B>Product Preview:</B><BR>\r
+      <img src="%(p.normal_src)s"></td></tr>\r
+      </table>\r
+      ''',
+  'normal': {
+    'combine_scale': 1.5,
+    'use_magick': 1,
+  },
+  'pdf': {
+    'PDF': 1,
+    'use_magick': 1,
+  },
+}
+
+
+
+
+{
+  'html': '''\
+      <table>\r
+      <tr><td align=center>\r
+      <button type="submit" class="button" onclick="window.open(\'%(p.pdf_pdf)s\', \'_blank\'); return false;" value="1"><span class="ic-msg">View PDF Proof</span></button></td></tr>\r
+      <tr><td align=center>\r
+      <B>Product Preview:</B><BR>\r
+      <img src="%(p.normal_src)s"></td></tr>\r
+      </table>\r
+      ''',
+  'normal': {
+    'scale': 0.6,
+    'use_magick': 1,
+  },
+  'pdf': {
+    'PDF': 1,
+    'use_magick': 1,
+  },
+}
+
+
+
+{
+  'html': '''\
+      <table>\r
+      <tr><td align=center>\r
+      <button type="submit" class="button" onclick="window.open(\'%(p.pdf_pdf)s\', \'_blank\'); return false;" value="1"><span class="ic-msg">View PDF Proof</span></button></td></tr>\r
+      <tr><td align=center>\r
+      <B>Product Preview:</B><BR>\r
+      <img src="%(p.normal_src)s"></td></tr>\r
+      </table>\r
+      ''',
+  'normal': {
+    'scale': 0.813771517997,
+    'use_magick': 1,
+  },
+  'pdf': {
+    'PDF': 1,
+    'use_magick': 1,
+  },
+}
+
+
+{
+  'normal': {
+    'scale': 2.0,
+    'use_magick': 1,
+  },
+}
+
+
+
+
+{
+  'html': '''\
+      <table>\r
+      <tr><td align=center>\r
+      <button type="submit" class="button" onclick="window.open(\'%(p.pdf_pdf)s\', \'_blank\'); return false;" value="1"><span class="ic-msg">View PDF Proof</span></button></td></tr>\r
+      <tr><td align=center>\r
+      <B>Product Preview:</B><BR>\r
+      <img src="%(p.normal_src)s"></td></tr>\r
+      </table>\r
+      ''',
+  'normal': {
+    'dims': (269.9375, 283.64832, 684.0, 297.0),
+    'scale': 0.5,
+    'use_magick': 1,
+  },
+  'pdf': {
+    'PDF': 1,
+    'use_magick': 1,
+  },
+}
+
+
+
+{
+  'html': '''\
+      <table>\r
+      <tr><td align=center>\r
+      <button type="submit" class="button" onclick="window.open(\'%(p.pdf_pdf)s\', \'_blank\'); return false;" value="1"><span class="ic-msg">View PDF Proof</span></button></td></tr>\r
+      <tr><td align=center>\r
+      <B>Product Preview:</B><BR>\r
+      <img src="%(p.normal_src)s"></td></tr>\r
+      </table>\r
+      ''',
+  'normal': {
+    'dims': (269.9375, 283.64832, 684.0, 297.0),
+    'scale': 0.5,
+    'use_magick': 1,
+  },
+  'pdf': {
+    'PDF': 1,
+    'dims': (269.9375, 283.64832, 684.0, 297.0),
+    'use_magick': 1,
+  },
+}
+
+
+
+
+{
+  'html': '''\
+      <table>\r
+      <tr><td align=center>\r
+      <button type="submit" class="button" onclick="window.open(\'%(p.pdf_pdf)s\', \'_blank\'); return false;" value="1"><span class="ic-msg">View PDF Proof</span></button></td></tr>\r
+      <tr><td align=center>\r
+      <B>Product Preview:</B><BR>\r
+      <img src="%(p.normal_src)s"></td></tr>\r
+      </table>\r
+      ''',
+  'normal': {
+    'dims': (269.9375, 283.64832, 684.0, 297.0),
+    'scale': 0.5,
+    'use_magick': 1,
+  },
+  'pdf': {
+    'PDF': 1,
+    'dims': (269.9375, 283.64832, 684.0, 297.0),
+    'use_magick': 1,
+  },
+}
+
+
+
+{
+  'html': '''\
+ <table>\r
+  <tr>\r
+   <td align=left>\r
+    <div style="background-color: #0c4e90;color: #FFFFFF;border-radius: 7px;line-height:2;margin: 10px;padding: 2px 10px;font-style: italic;">Click the image below to view an enlarged proof in new window</div>\r
+    <a href="%(p.zoom1_src)s" target="_blank"><img src="%(p.normal_src)s" border=0></a>\r
+   </td>\r
+  </tr>\r
+ </table>\r
+''',
+  'normal': {
+    'dims': (0.0, 0.0, 684.0, 297.0),
+    'scale': 0.75,
+    'use_magick': 1,
+  },
+  'pdf': {
+    'PDF': 1,
+    'use_magick': 1,
+  },
+  'zoom1': {
+    'dims': (0.0, 0.0, 684.0, 297.0),
+    'scale': 2.0,
+    'title': 'Proof Preview',
+    'use_magick': 1,
+  },
+}
+
+
+
+
+
+{
+  'html': '''\
+ <table>\r
+  <tr>\r
+   <td align=left>\r
+    <div style="background-color: #0c4e90;color: #FFFFFF;border-radius: 7px;line-height:2;margin: 10px;padding: 2px 10px;font-style: italic;">Click the image below to view an enlarged proof in new window</div>\r
+    <a href="%(p.zoom1_src)s" target="_blank"><img src="%(p.normal_src)s" border=0></a>\r
+   </td>\r
+  </tr>\r
+ </table>\r
+''',
+  'normal': {
+    'dims': (0.0, 0.0, 684.0, 297.0),
+    'scale': 0.75,
+    'use_magick': 1,
+  },
+  'zoom1': {
+    'dims': (0.0, 0.0, 684.0, 297.0),
+    'scale': 2.0,
+    'title': 'Proof Preview',
+    'use_magick': 1,
+  },
+}
+
+
+{
+  'html': '''\
+ <table>\r
+  <tr>\r
+   <td align=left>\r
+    <div style="background-color: #0c4e90;color: #FFFFFF;border-radius: 7px;line-height:2;margin: 10px;padding: 2px 10px;font-style: italic;">Click the image below to view an enlarged proof in new window</div>\r
+    <a href="%(p.zoom1_src)s" target="_blank"><img src="%(p.normal_src)s" border=0></a>\r
+   </td>\r
+  </tr>\r
+ </table>\r
+''',
+  'normal': {
+    'scale': 0.6,
+    'use_magick': 1,
+  },
+  'zoom1': {
+    'scale': 1.0,
+    'title': 'Proof Preview',
+    'use_magick': 1,
+  },
+}
