@@ -1185,9 +1185,9 @@ span.onhand_lbl {
 		display: none;
 	}
 	
-	div.responsive_tabs-shell {
+	/* div.responsive_tabs-shell {
 		display: none;
-	}
+	} */
 
 	.responsive_tabs-shell {
 		width: unset !important;
