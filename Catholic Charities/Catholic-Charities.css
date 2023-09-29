@@ -651,7 +651,7 @@ span.onhand_lbl {
 		padding: 5px;
 		text-align: center;
 	}
-	button#button_file_upload_remove, button {
+	button#button_file_upload_remove, button, .sublogo-grouper input.sbs_update_field {
 		cursor: pointer;
 		text-align: center !important;
 		font-size: 1em !important;
@@ -666,10 +666,11 @@ span.onhand_lbl {
 		vertical-align: middle;
 		text-decoration: none;
 		border: 2px solid #1d75cf;
+		background-color: #1d75cf;
 		position: relative;
 	}
 
-	button#button_file_upload_remove:hover, button:hover, button#submit_catalog_search:hover {
+	button#button_file_upload_remove:hover, button:hover, button#submit_catalog_search:hover, .sublogo-grouper input.sbs_update_field:hover {
 		background-color: #FFFFFF !important;
 		color: #1d75cf !important;
 		-webkit-transition: background-color 0.5s ease-in-out;
@@ -679,7 +680,7 @@ span.onhand_lbl {
 	}
 
 	/*button#button_file_upload_remove:before, button:not(#submit_catalog_search):before {*/
-	button#button_file_upload_remove:before, button:before {
+	button#button_file_upload_remove:before, button:before, .sublogo-grouper input.sbs_update_field:before {
 		content: " ";
 		background: #1d75cf;
 		/* background: linear-gradient(180deg,#1d75cf 40%,#1d75cf); */
@@ -1469,6 +1470,29 @@ span.onhand_lbl {
 		max-width: 200px;
 	}
 
+	.sublogo-grouper img {
+		margin: 5px;
+		border: 1px solid #999999;
+		padding: 20px;
+		border-radius: 20px;
+	}
+
+	div.field-container {
+		border-bottom: 1px solid transparent !important;
+	}
+
+	.sublogo-popup-wrapper table td {
+		padding: 15px !important;
+		border: 1px solid #999999;
+		border-radius: 20px;
+	}
+
+	tr.gallery-row td {
+		min-height: 115px;
+		display: inline-flex;
+		align-items: center;
+	}
+	
 /*********************************************************************************************************/
 }
 

@@ -595,7 +595,7 @@ span.onhand_lbl {
 		padding: 5px;
 		text-align: center;
 	}
-	button#button_file_upload_remove, button {
+	button#button_file_upload_remove, button, .sublogo-grouper input.sbs_update_field {
 		cursor: pointer;
 		text-align: center !important;
 		text-transform: uppercase;
@@ -618,7 +618,7 @@ span.onhand_lbl {
         min-width: max-content;
 	}
 
-	button#button_file_upload_remove:hover, button:hover, button#submit_catalog_search:hover {
+	button#button_file_upload_remove:hover, button:hover, button#submit_catalog_search:hover, .sublogo-grouper input.sbs_update_field:hover {
 		background-color: #111111 !important;
 		color: #FFFFFF !important;
 		border-radius: 50px/50px !important;
@@ -626,7 +626,7 @@ span.onhand_lbl {
 	}
 
 	/*button#button_file_upload_remove:before, button:not(#submit_catalog_search):before {*/
-	button#button_file_upload_remove:before, button:before {
+	button#button_file_upload_remove:before, button:before, .sublogo-grouper input.sbs_update_field:before {
 		content: " ";
 		background: transparent;
 		/* background: linear-gradient(180deg,#36837d 40%,#235652); */
@@ -1481,6 +1481,23 @@ span.onhand_lbl {
     #jquery-lightbox {
         z-index: 100001 !important;
     }
+
+	.sublogo-grouper img {
+		margin: 5px;
+		border: 1px solid #999999;
+		padding: 20px;
+		border-radius: 20px;
+	}
+
+	div.field-container {
+		border-bottom: 1px solid transparent !important;
+	}
+
+	.sublogo-popup-wrapper table td {
+		padding: 15px !important;
+		border: 1px solid #999999;
+		border-radius: 20px;
+	}
 
 /*********************************************************************************************************/
 }

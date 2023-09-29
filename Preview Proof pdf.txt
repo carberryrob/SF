@@ -124,7 +124,7 @@ else:
       </table>\r
       ''',
   'normal': {
-    'scale': 0.813771517997,
+    'scale': 1.5,
     'use_magick': 1,
   },
   'pdf': {
