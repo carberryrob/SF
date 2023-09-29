@@ -1492,6 +1492,10 @@ span.onhand_lbl {
 		display: inline-flex;
 		align-items: center;
 	}
+
+	div#jquery-lightbox {
+		z-index: 100001 !important;
+	}
 	
 /*********************************************************************************************************/
 }
