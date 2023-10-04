@@ -330,7 +330,7 @@ $(document).ready(function () {
 <script>
 {/* So we can customize the pdna itemWidthAdjuster function we add the code from responsive_catalog.js so we can alter the function */}
 $(document).ready(function(){
-	// return;
+	return;
 	// bugfix var for iOS
 	var loadedWidth = $(window).width();
 

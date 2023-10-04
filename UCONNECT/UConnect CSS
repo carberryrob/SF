@@ -134,9 +134,9 @@ table.bottom-button-container {
 	margin-left: 10px !important;
 }
 
-.select-items .image-container img {
+/* .select-items .image-container img {
 	margin: 10px 0;
-}
+} */
 
 .select-items .longname *, .select-items .longname * {
 	font-size: 16px;
@@ -571,7 +571,8 @@ td.cart_item {
 	vertical-align: top;
 }
 .main.catalog--container {
-	min-height: 740px;
+	/* min-height: 740px; */
+	min-height: 650px;
 }
 span.onhand_lbl {
 	font-size: 14px !important;
@@ -741,15 +742,6 @@ span.onhand_lbl {
 		min-width: 155px;
 	}
 	/************************************/
-
-
-/****************************/
-
-
-	.image-container img {
-		max-width: 300px !important;
-		max-height: 280px !important;
-	}
 
 /************* Tabs Nav Menu ******************/
 
@@ -1034,7 +1026,7 @@ span.onhand_lbl {
 		min-width: 140px;
 		box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
 		text-align: left;
-		z-index: 1;
+		z-index: 2;
 	}
 
 	.dropdown-content a {
@@ -1080,8 +1072,9 @@ span.onhand_lbl {
 	}*/
 	
 	div#all_items_view {
-		width: 99% !important;
+		/* width: 100% !important; */
 		/* float: none !important; */
+		float: right !important;
 		margin: 0 auto !important;
 	}
 
@@ -1119,7 +1112,11 @@ span.onhand_lbl {
 	/*div.responsive_tabs-shell {
 		display: none;
 	}*/
-	/*****************************/	
+	/*****************************/
+	
+	/* .responsive_tabs-shell {
+		height: -webkit-fill-available;
+	} */
 	
 	td.space {
 		min-width: 45px;
@@ -1431,11 +1428,9 @@ span.onhand_lbl {
 	.stretchy_cols {
 		width: 100% !important;
 		max-width: 375px !important;
-		/*min-width: 328px !important;
-		min-height: 200px !important;*/
 		box-sizing: border-box !important;
-		margin: 20px 3px 0px 0px !important;
-		padding: 5px !important;
+		margin: 30px 0px 0px 0px !important;
+		padding: 2px !important;
 		overflow: hidden !important;
 	}
 
@@ -1458,8 +1453,27 @@ span.onhand_lbl {
 	}
 
 	.image-container {
-		min-height: 262px;
+		/* min-height: 385px; */
+		padding: 10px;
 	}
+
+	.image-container img {
+		max-width: 300px !important;
+		max-height: 300px !important;
+		margin-bottom: 15px !important;
+	}
+
+	.multi_preview {
+		/* min-height: 60px; */
+		padding: 0 !important;
+	}
+
+	form {
+		height: -webkit-fill-available !important;
+	}
+	/* .imgwrap {
+		min-height: 320px;
+	} */
 
 	/*div#header-wrapper {
 		display: none !important;
