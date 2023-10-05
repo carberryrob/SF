@@ -10,6 +10,33 @@
 </div>
 <script>
 
+{/* Rob Carberry 2023 */}
+{/* Since we are wrapping the item images, we need to customize the pdna set_preview_image function */}
+function set_preview_image(elem, thumburl, largeurl) {
+	// console.log('set_preview_image');
+	var img = $(elem).parents('.image-row,.item-thumbnail').find('.image-container .imgwrap > a > img, .image-container .imgwrap > img');
+	var a = $(elem).parents('.image-row,.item-thumbnail').find('.image-container .imgwrap > a');
+	var imgbtn = $(elem).parents('.image-row').find('input[type="image"][src!="img/catalog_add.gif"]');
+	var mobile_img = $(elem).parents('.detail_image_wrapper').find('#d_preview_image > img');
+	if (img.length) {
+		img.attr('src', thumburl);
+	}
+	else if (imgbtn.length) {
+		imgbtn.attr('src', thumburl);
+	}
+	else if (mobile_img.length) {
+		mobile_img.attr('src', thumburl);
+	}
+	if (a.length) {
+		if (largeurl.startswith('img/')) {
+			a.attr('href', largeurl);
+		}
+		else {
+			a.attr('onclick', unescape(largeurl));
+		}
+	}
+}
+
 $(window).load(function () {
 
 	$('head').append('<link rel="icon" type="image/x-icon" href="con/favicon.ico">');
@@ -220,6 +247,28 @@ $(window).load(function () {
 			
 		});
 		$("span.cart_num_items.no_mobile").parent("a").wrap('<div class="carticon">');
+
+		// Wrap item imgs and thumbnails for sizing
+		$('div.image-container:not(:has(>div.multi_preview)').append('<div class="multi_preview"></div>');
+		$("div.image-container").find('img:first').wrap('<div class="imgwrap">')
+
+		// Set height of img wraps based on tallest img so items can be top aligned 
+		var maxH = 0
+		$('div.imgwrap').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		maxH = maxH + "px";
+		$('div.imgwrap').css('min-height', maxH); /* set all the wrapped heights to the tallest img height */
+		
+		// If multi-page img thumbs exist set that area height the same for all items
+		maxH = 0
+		$('div.multi_preview').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		maxH = maxH + "px";
+		$('div.multi_preview').css('min-height', maxH);
+
+
 	}
 	
 	if( $('.stretchy_cols').length == 1) {$('.stretchy_cols').addClass("singleItemCenter");}
