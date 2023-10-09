@@ -1440,7 +1440,7 @@ span.onhand_lbl {
 		text-align: left;
 		line-height: 1.5em;
 		font-size: 16px;
-		width: 80% !important;
+		width: 65% !important;
 		margin-top: 0 !important;
 	}
 
@@ -1526,10 +1526,14 @@ span.onhand_lbl {
 		margin-right: 10%;
 	}
 	
-	button#submit_catalog_search {
+	/* button#submit_catalog_search {
 		top: -6px;
+	} */
+	button#submit_catalog_search {
+		padding: 5px 2px 4px 8px !important;
+		margin: 0px !important;
 	}
-	
+
 	label.fa.fa.fa-search {
 		display: none;
 	}
@@ -1565,3 +1569,44 @@ span.onhand_lbl {
 	}
 }
 
+
+@media (min-width: 320px) {
+    .preview-wrapper {
+        zoom:40%;
+        -moz-transform: scale(.4)!important;
+        -moz-transform-origin: 8vw 0 0!important
+    }
+}
+
+@media (min-width: 375px) {
+    .preview-wrapper {
+        zoom:50%;
+        -moz-transform: scale(.5)!important;
+        -moz-transform-origin: 20vw 0 0!important
+    }
+}
+
+@media (min-width: 481px) {
+    .preview-wrapper {
+        zoom:60%;
+        -moz-transform: scale(.6)!important;
+        -moz-transform-origin: 0 0!important
+    }
+}
+
+@media (min-width: 641px) {
+    .preview-wrapper {
+        zoom:70%;
+		-moz-transform:scale(.7)!important;
+        -moz-transform-origin: 0 0!important
+    }
+}
+
+@media (min-width: 645px) {
+	.preview-wrapper {
+		zoom:100%;
+		-moz-transform:scale(1)!important;
+		-moz-transform-origin: 0 0!important
+	}
+}
+	

@@ -177,21 +177,38 @@ $(window).load(function () {
 		//$( "td#header_logo" ).css("display", "table-cell");
 
 		/*********Cart/Basket table*********/
-		$("table.items-table.true-table").find("th:nth-child(2)").removeClass("right").addClass("center");
-		$("table.items-table.true-table").find("th:nth-child(3)").removeClass("right").addClass("center");
-		$("table.items-table.true-table").find("td:nth-child(2)").removeClass("right").addClass("center");
-		$("table.items-table.true-table").find("td:nth-child(3)").removeClass("right").addClass("center");
+		with ($("table.items-table.true-table")) {
+			find("th:nth-child(1)").css('width','40%')
+			find("th:nth-child(2)").css('width','20%')
+			find("th:nth-child(3)").css('width','20%')
+			find("th:nth-child(4)").css('width','10%')
+			find("th:nth-child(5)").css('width','10%')
+
+			find("th:nth-child(2)").removeClass("left").removeClass("right").addClass("center");
+			find("th:nth-child(3)").removeClass("left").removeClass("right").addClass("center");
+			find("td:nth-child(2)").removeClass("left").removeClass("right").addClass("center");
+			find("td:nth-child(3)").removeClass("left").removeClass("right").addClass("center");
+		}
 		/***********************************/
 
 		/*********Shipping Table************/
-		$("table#shipping-pricetable").find("th:nth-child(2)").removeClass("left").addClass("center");
-		$("table#shipping-pricetable").find("th:nth-child(3)").removeClass("left").addClass("center");
-		$("table#shipping-pricetable").find("th:nth-child(4)").removeClass("left").addClass("center");
-		$("table#shipping-pricetable").find("th:nth-child(5)").removeClass("left").addClass("center");
-		$("table#shipping-pricetable").find("td:nth-child(2)").removeClass("left").addClass("centerimp");
-		$("table#shipping-pricetable").find("td:nth-child(3)").removeClass("left").addClass("centerimp");
-		$("table#shipping-pricetable").find("td:nth-child(4)").removeClass("left").addClass("centerimp");
-		$("table#shipping-pricetable").find("td:nth-child(5)").removeClass("left").addClass("centerimp");
+		with ($("table#shipping-pricetable")) {
+			find("th:nth-child(1)").css('width','50%')
+			find("th:nth-child(2)").css('width','20%')
+			find("th:nth-child(3)").css('width','20%')
+			find("th:nth-child(4)").css('width','10%')
+			// find("th:nth-child(5)").css('width','10%')
+
+			find("th:nth-child(2)").removeClass("left").addClass("center");
+			find("th:nth-child(3)").removeClass("left").addClass("center");
+			find("th:nth-child(4)").removeClass("left").addClass("center");
+			// find("th:nth-child(5)").removeClass("left").addClass("center");
+
+			find("td:nth-child(2)").removeClass("left").addClass("centerimp");
+			find("td:nth-child(3)").removeClass("left").addClass("centerimp").css('white-space', 'nowrap');
+			find("td:nth-child(4)").removeClass("left").addClass("centerimp");
+			// find("td:nth-child(5)").removeClass("left").addClass("centerimp");
+		}
 		/***********************************/
 		
 		/*********Billing Table************/
