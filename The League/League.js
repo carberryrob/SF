@@ -41,6 +41,8 @@ $(window).load(function () {
 	if($('input[name="corp_tag"]').val() == 'Internal') {
 		$("#saleblurb").hide();
 	}
+	$(".error:contains('Choose a shipping method')").hide();
+
 	if($(window).width() >= 1025) {
 		$( "#desklogo" ).insertBefore(".header-links");
 		$('table.items-table.true-table').children().find("th").each(function() {
@@ -178,11 +180,17 @@ $(document).ready(function () {
 $(document).ready(function () {
 	if ($("select[name='bill_code10']").val() == "No") {
 		$("button#submit_send_order").prop('disabled', 'disabled');
+		$("button#submit_review_order").prop('disabled', 'disabled');
 	}
 	//console.log($("select[name='bill_code10']").val());
 	$('form[action="accept_bill.cgi"]').change(function() {
 		if ($("select[name='bill_code10']").val() == "No") {$("button#submit_send_order").prop('disabled', 'disabled');}
 		if ($("select[name='bill_code10']").val() == "Yes") {$("button#submit_send_order").prop('disabled', false);}
+		//console.log($("select[name='bill_code10']").val());
+	});
+	$('form[action="review_bill.cgi"]').change(function() {
+		if ($("select[name='bill_code10']").val() == "No") {$("button#submit_review_order").prop('disabled', 'disabled');}
+		if ($("select[name='bill_code10']").val() == "Yes") {$("button#submit_review_order").prop('disabled', false);}
 		//console.log($("select[name='bill_code10']").val());
 	});
 
