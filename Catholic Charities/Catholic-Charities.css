@@ -63,6 +63,10 @@ body {
 	font-family: "Gilroy",-apple-system,system-ui,blinkmacsystemfont,"Segoe UI",helvetica,arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !important;
 }
 
+.main.new-account.catalog--container ul {
+    list-style: none;
+}
+
 /*************** header css for final approve order ***********************/
 td.label:has(>span#bill\.billcode10label) {
     white-space: nowrap;
