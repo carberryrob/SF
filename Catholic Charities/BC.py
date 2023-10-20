@@ -1,6 +1,17 @@
 # Enable logic before blocks section
 
 card_www = 'cc-md.org'
+name_first = name_first.strip()
+name_last = name_last.strip()
+card_title1 = card_title1.strip()
+credentials = credentials.strip()
+card_street1 = card_street1.strip()
+card_street2 = card_street2.strip()
+card_city = card_city.strip()
+card_state = card_state.strip()
+card_zip = card_zip.strip()
+card_email = card_email.strip()
+
 
 VS = 11.85
 
