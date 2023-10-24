@@ -756,7 +756,8 @@ span.onhand_lbl {
 		top: 104px;
 		text-align: left;
 		left: 2%;
-		z-index: 1001;
+		/* z-index: 1001; */
+		z-index: 80;
 	}
 
 	nav {
@@ -1546,6 +1547,12 @@ span.onhand_lbl {
 		min-height: 82px;
 		display: block;
 	}
+
+	.note.responsive-pricing {
+		font-weight: bold;
+		font-size: 15px;
+	}
+	
 	/*********************************************************************************************************/
 }
 

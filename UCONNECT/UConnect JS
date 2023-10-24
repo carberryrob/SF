@@ -12,11 +12,15 @@
 {/* Rob Carberry 2023 */}
 {/* Since we are wrapping the item images, we need to customize the pdna set_preview_image function */}
 function set_preview_image(elem, thumburl, largeurl) {
-	// console.log('set_preview_image');
+	// console.log( $(elem).parent().find('a').index($(elem)) );
+	var idx = $(elem).parent().find('a').index($(elem));
 	var img = $(elem).parents('.image-row,.item-thumbnail').find('.image-container .imgwrap > a > img, .image-container .imgwrap > img');
 	var a = $(elem).parents('.image-row,.item-thumbnail').find('.image-container .imgwrap > a');
 	var imgbtn = $(elem).parents('.image-row').find('input[type="image"][src!="img/catalog_add.gif"]');
 	var mobile_img = $(elem).parents('.detail_image_wrapper').find('#d_preview_image > img');
+
+	// console.log("largeurl " + largeurl + " |thumburl " + thumburl);
+
 	if (img.length) {
 		img.attr('src', thumburl);
 	}
@@ -29,10 +33,16 @@ function set_preview_image(elem, thumburl, largeurl) {
 	if (a.length) {
 		if (largeurl.startswith('img/')) {
 			a.attr('href', largeurl);
+			// console.log( a.attr('href') );
 		}
 		else {
 			a.attr('onclick', unescape(largeurl));
 		}
+	}
+	var colorselect = $(elem).closest('.stretchy_cols.responsive-item.image-row').find('.colorselect');
+	if ($(colorselect).length > 0) {
+		$(colorselect).prop('selectedIndex', idx);
+		// console.log('set_preview_image select index: ' + idx)
 	}
 }
 
@@ -256,9 +266,9 @@ $(window).load(function () {
 		});
 
 
-		//If not a word template then make it so the image links don't work per Suzanne at UUG (Said it's confusing)
+		// If not a word template then make it so the image links don't work per Suzanne at UUG (Said it's confusing)
 		$( "input[name='tab']" ).each(function() {
-			if ( $( "input[name='tab']" ).val().toLowerCase().indexOf("ms word templates") < 0 ) {
+			if ( $( "input[name='tab']" ).val().toLowerCase().indexOf("ms word templates") < 0  && $( "input[name='tab']" ).val().toLowerCase().indexOf("rewards") < 0 ) {
 				$(".image-container img").not("img.catalog-tiny-thumbnail").each(function() {
 					if ($(this).parent().prop('nodeName') == 'A') {  
 						$(this).unwrap();
@@ -279,7 +289,15 @@ $(window).load(function () {
 		
 		// Wrap item imgs and thumbnails for sizing
 		$('div.image-container:not(:has(>div.multi_preview)').append('<div class="multi_preview"></div>');
-		$("div.image-container").find('img:first').wrap('<div class="imgwrap">')
+		
+		$("div.image-container").find('img:first').each(function() {
+			if ($(this).parent('a').length > 0) {
+				$(this).parent('a').wrap('<div class="imgwrap">')
+			}else{
+				$(this).wrap('<div class="imgwrap">')
+			}
+			
+		});
 
 		// Set height of img wraps based on tallest img so items can be top aligned 
 		var maxH = 0
@@ -309,7 +327,6 @@ $(window).load(function () {
 		// console.log('2: ' + maxH);
 		maxH = maxH + "px";
 		$('div.note.responsive-onhand').css('min-height', maxH);
-		
 
 	}
 	
@@ -353,25 +370,41 @@ $(document).ready(function () {
 
 </script>
 <script>
-/********** Enable/Disable "Submit Order" button based on approval *****************************************************/
 $(document).ready(function () {
+
+	if ($(window).width() >= 1025) {
+		// Give color dropdowns a class to call later.
+		$('.the_actual_qty_select').find('select:first').each(function() {
+			$(this).addClass('colorselect');
+		});
+		
+		// When changing a color from a dropdown make the large image that color.
+		if ( $('.colorselect').length > 0 ) {
+			$('.colorselect').change(function() {
+				var idx = $(this).prop('selectedIndex');
+				var prnt = $(this).closest('.stretchy_cols.responsive-item.image-row');
+				$(prnt).find('.multi_preview a').eq(idx).trigger( "click" );
+			});
+		}
+	}
+	
+	// ********** Enable/Disable "Submit Order" button based on approval *****************************************************
 	if ($("select[name='bill_code10']").val() == "No") {
 		$("button#submit_send_order").prop('disabled', 'disabled');
 	}
-	//console.log($("select[name='bill_code10']").val());
+
 	$('form[action="accept_bill.cgi"]').change(function() {
 		if ($("select[name='bill_code10']").val() == "No") {$("button#submit_send_order").prop('disabled', 'disabled');}
 		if ($("select[name='bill_code10']").val() == "Yes") {$("button#submit_send_order").prop('disabled', false);}
-		//console.log($("select[name='bill_code10']").val());
-		//if ( $('select#ship_office').val() == '1 - Will Call at Strategic Factory in Owings Mills') {$("span#willcalltxt").show();}
 	});
 
-	//********** Move approval yes/no to just above "Submit Order"*******************
+	{/* ********** Move approval yes/no to just above Submit Order ******************* */}
 	$("tr:contains('I have verified and approve this order:')").appendTo($("p.approve_order").parents("tr").parent());
-	//*******************************************************************************
+	{/* ******************************************************************************* */}
 });
-/***********************************************************************************************************************/
+
 </script>
+
 <script>
 {/* So we can customize the pdna itemWidthAdjuster function we add the code from responsive_catalog.js so we can alter the function */}
 $(document).ready(function(){
