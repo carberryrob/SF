@@ -136,7 +136,7 @@ else:
 
 {
   'normal': {
-    'scale': 2.0,
+    'scale': 1.5,
     'use_magick': 1,
   },
 }

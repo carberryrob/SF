@@ -283,6 +283,12 @@ $(window).load(function () {
 					}
 				});
 			}
+			console.log($(this).val().toLowerCase().indexOf("rewards"));
+			if ( $(this).val().toLowerCase().indexOf("rewards") >= 0 ) {
+				$(".image-container img").not("img.catalog-tiny-thumbnail").each(function() {
+					$(this).css('border', 'none');
+				});
+			}
 		});
 
 		$("span.cart_num_items.no_mobile").parent("a").wrap('<div class="carticon">');
