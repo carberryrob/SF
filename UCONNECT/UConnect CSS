@@ -1552,7 +1552,19 @@ span.onhand_lbl {
 		font-weight: bold;
 		font-size: 15px;
 	}
+
+	.link_itm {
+		margin: 0 auto;
+		width: 250px;
+	}
 	
+	.link_itm > button {
+		width: 100%;
+	}
+
+	.merch_link {
+		text-align: center;
+	}
 	/*********************************************************************************************************/
 }
 
