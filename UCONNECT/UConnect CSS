@@ -44,6 +44,15 @@ p.approve_order_text {
 }
 /*****************************************************************************/
 
+span.custom_title {
+	/* color: #6787B7 !important; */
+    font-style: italic;
+    display: block;
+	background-color: #FFB81C;
+	width: fit-content;
+    padding: 0 10px;
+}
+
 .main.billing.catalog--container {
 	max-width: 675px !important;
 	margin: 20px auto 0 !important;
@@ -296,7 +305,6 @@ tr.dpt--headerRow, tr.dpt--headerRow span, tr.dpt--headerRow *, tr.item_row * {
 #i-dropship {
 	position: relative;
 	font-size: 16px;
-	/*color: #00000A;*/
 	font-family: "Proxima Nova Regular", sans-serif !important;
 	font-family: "proxima-nova", sans-serif !important;
 	text-align: center;
@@ -305,9 +313,7 @@ tr.dpt--headerRow, tr.dpt--headerRow span, tr.dpt--headerRow *, tr.item_row * {
 	font-weight: normal;
 	padding: 4px 10px 4px 10px;
 	border: 1px solid #CCCCCC;
-	/*-moz-border-radius: 0em;*/
-	/*-webkit-border-radius: 0em;*/
-	/*border-radius: 0em;*/
+	position: relative;
 	background: #FFFFFF;
 	background: linear-gradient(#FFFFFF, #CCCCCC);
 	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#CCCCCC));
@@ -315,7 +321,6 @@ tr.dpt--headerRow, tr.dpt--headerRow span, tr.dpt--headerRow *, tr.item_row * {
 	background: -ms-linear-gradient(#FFFFFF, #CCCCCC);
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFFFFF', endColorstr='#CCCCCC');
 	-pie-background: linear-gradient(#FFFFFF, #CCCCCC);
-	position: relative;
 	behavior: url(../hub/css/PIE.htc);
 }
 
@@ -343,7 +348,6 @@ tr.dpt--finalizeRow td.dpt--status {
 #see_shipping_methods{
 	position: relative;
 	font-size: 16px;
-	/*color: #00000A;*/
 	font-family: "Proxima Nova Regular", sans-serif !important;
 	font-family: "proxima-nova", sans-serif !important;
 	text-align: center;
@@ -355,6 +359,7 @@ tr.dpt--finalizeRow td.dpt--status {
 	/*-moz-border-radius: 0em;*/
 	/*-webkit-border-radius: 0em;*/
 	/*border-radius: 0em;*/
+	position: relative;
 	background: #FFFFFF;
 	background: linear-gradient(#FFFFFF, #CCCCCC);
 	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#CCCCCC));
@@ -362,7 +367,6 @@ tr.dpt--finalizeRow td.dpt--status {
 	background: -ms-linear-gradient(#FFFFFF, #CCCCCC);
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFFFFF', endColorstr='#CCCCCC');
 	-pie-background: linear-gradient(#FFFFFF, #CCCCCC);
-	position: relative;
 	behavior: url(../hub/css/PIE.htc);
 	max-width: 150px;
 	text-shadow: none !important;
@@ -574,22 +578,21 @@ td.cart_item {
 	vertical-align: top;
 }
 .main.catalog--container {
-	/* min-height: 740px; */
 	min-height: 650px;
 }
 span.onhand_lbl {
 	font-size: 14px !important;
 }
 
-	input#searchfield_input {
-		padding-left: 15px;
-		width: 120px;
-		/*border-radius: 15px / 15px;*/
-	}
+input#searchfield_input {
+	padding-left: 15px;
+	width: 120px;
+	/*border-radius: 15px / 15px;*/
+}
 
-	.fa-shopping-basket:before {
-		content: "\f07a" !important;
-	}
+.fa-shopping-basket:before {
+	content: "\f07a" !important;
+}
 
 
 /*****************************************************************************/
@@ -746,7 +749,7 @@ span.onhand_lbl {
 	}
 	/************************************/
 
-/************* Tabs Nav Menu ******************/
+	/************* Tabs Nav Menu ******************/
 
 	div#TabsDiv {
 		width: max-content;
@@ -976,7 +979,6 @@ span.onhand_lbl {
 	.responsive-longname {
 		min-height: 50px;
 		display: inline-flex;
-		align-content: center;
 		flex-wrap: wrap;
 	}
 
@@ -1101,7 +1103,7 @@ span.onhand_lbl {
 	}
 
 	
-/****************************************************/
+	/****************************************************/
 	
 	/****** Hide old Tabs ********/
 	.tab_html_wrapper {
@@ -1131,7 +1133,7 @@ span.onhand_lbl {
 	}
 
 
-/*** Header ***/
+	/*** Header ***/
 
 	img.no_mobile {
 		height: 60px;
@@ -1142,18 +1144,11 @@ span.onhand_lbl {
 		/*max-height: 75px;*/
 		width: auto;
 	}
-	/*.header {
-		padding: 0px;
-		border: 0px;
-		width: 90%;
-		margin: 0 auto;
-	}*/
 
 	table:not(.items-table){
 		width: auto;
 		margin: 10px auto;
 	}
-
 
 	.header-links a:hover {
 		color: #FFFFFF;
@@ -1297,119 +1292,7 @@ span.onhand_lbl {
 		letter-spacing: initial;
 	}
 
-/*****************************************************/
-
-	/* .stretchy_cols.responsive-item.image-row {
-		max-height: 1000px !important;
-	}
-	.responsive_tabs-shell .after {
-		margin-top: 20px !important;
-	}
-	.responsive_tabs a {
-		text-decoration: none;
-		text-transform: uppercase;
-		padding: 16px 15px 14px 20px;
-		display: block;
-		font-weight: bold !important;
-		box-shadow: 3px 6px 16px rgb(0 48 87 / 40%);
-		position: relative;
-		overflow: hidden;
-		display: block;
-		white-space: nowrap;
-	}
-	.responsive_tabs div.off, .responsive_tabs div.on {
-		padding-left: 1px !important;
-		padding-top: 1px !important;
-		padding-bottom: 1px !important;
-		width: 102% !important;
-	}
-	.responsive_tabs div.on, .responsive_tabs div.on a, .responsive_tabs div.off {
-		background-color: transparent !important;
-	}
-	.responsive_tabs div.on {
-		display: block;
-		background-color: transparent !important;
-	}
-	.responsive_tabs div.off a:hover {
-		//background-color: #2E9EE2 !important;
-		//color: #FFFFFF !important;
-	}
-	.responsive_tabs .opened:before, .responsive_tabs .closed:before {
-		float: right;
-		position: absolute;
-		left: 200px;
-		margin-top: 6px;
-	}
-	.responsive_tabs .closed:before {
-		content: "\f0d9" !important;
-	}
-	.responsive_tabs .opened a, .responsive_tabs .closed a, .responsive_tabs div.off a, .responsive_tabs .opened:before, .responsive_tabs .closed:before {
-		display: block;
-	}
-	
-	.responsive_tabs-shell {
-		width: unset !important;
-		border-collapse: collapse !important;
-		border: 0px !important;
-		font-family: inherit !important;
-		padding: 0 0 0 7px !important;
-		margin: 0px !important;
-		max-width: 220px !important;
-		background-color: transparent !important;
-		vertical-align: top !important;
-		float: left !important;
-		height: -webkit-fill-available;
-	}
-
-	.responsive_tabs-shell .after {
-		display: none;
-		padding: 4px !important;;
-		margin: 0px !important;;
-		//-webkit-box-shadow: 1px 1px 6px rgb(255 255 255 / 20%), 1px 2px 6px 0px rgb(0 0 0 / 70%);
-		//-moz-box-shadow: 1px 1px 6px rgba(255,255,255,0.2), 1px 2px 6px 0px rgba(0,0,0,0.070);
-		//box-shadow: 1px 1px 6px rgb(255 255 255 / 20%), 1px 2px 6px 0px rgb(0 0 0 / 70%);
-	}
-	.responsive_tabs div.off:hover, .responsive_tabs div.on:hover{
-		//background-color: #2E9EE2 !important;
-		color: #FFFFFF !important;
-	}
-	.responsive_tabs div.off:hover a, .responsive_tabs div.on:hover a {
-		color: #FFFFFF !important;
-		background: #6787B7;
-		background: linear-gradient(90deg,#003366 0,#6787B7);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#003366",endColorstr="#6787B7",GradientType=1);
-	}
-	.responsive_tabs div.off:hover a:after, .responsive_tabs div.on:hover a:after {
-		content: " ";
-		background: #6787B7;
-		background: linear-gradient(90deg,#003366 0,#6787B7);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#003366",endColorstr="#6787B7",GradientType=1);
-		height: 4px;
-		width: 100%;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		transition-duration: .5s;
-	}
-	.responsive_tabs div.on a:after {
-		content: " ";
-		background: #6787B7;
-		background: linear-gradient(90deg,#003366 0,#6787B7);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#003366",endColorstr="#6787B7",GradientType=1);
-		height: 7px;
-		width: 100%;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		transition-duration: .5s;
-	}
-	.responsive_tabs div.off:hover a {
-		color: #FFFFFF !important;
-	} */
-	
-/**********************************************/
-
-/*************************************** Align Stretchy_cols **********************************************/
+	/*************************************** Align Stretchy_cols **********************************************/
 	.stretchy_cols.responsive-item.image-row {
 		vertical-align: top !important;
 		display: inline-table;
@@ -1477,18 +1360,6 @@ span.onhand_lbl {
 	form {
 		height: -webkit-fill-available !important;
 	}
-	/* .imgwrap {
-		min-height: 320px;
-	} */
-
-	/*div#header-wrapper {
-		display: none !important;
-	}*/
-
-	/*td.header-links {
-		display: none !important;
-	}*/
-
 	.catalog-tab-blurb {
 		text-align: left;
 		line-height: 1.5em;
@@ -1562,7 +1433,7 @@ span.onhand_lbl {
 		width: 100%;
 	}
 
-	.merch_link {
+	.merch_link, .merch-print {
 		text-align: center;
 	}
 	/*********************************************************************************************************/

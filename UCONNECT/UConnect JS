@@ -19,8 +19,6 @@ function set_preview_image(elem, thumburl, largeurl) {
 	var imgbtn = $(elem).parents('.image-row').find('input[type="image"][src!="img/catalog_add.gif"]');
 	var mobile_img = $(elem).parents('.detail_image_wrapper').find('#d_preview_image > img');
 
-	// console.log("largeurl " + largeurl + " |thumburl " + thumburl);
-
 	if (img.length) {
 		img.attr('src', thumburl);
 	}
@@ -33,7 +31,6 @@ function set_preview_image(elem, thumburl, largeurl) {
 	if (a.length) {
 		if (largeurl.startswith('img/')) {
 			a.attr('href', largeurl);
-			// console.log( a.attr('href') );
 		}
 		else {
 			a.attr('onclick', unescape(largeurl));
@@ -42,7 +39,6 @@ function set_preview_image(elem, thumburl, largeurl) {
 	var colorselect = $(elem).closest('.stretchy_cols.responsive-item.image-row').find('.colorselect');
 	if ($(colorselect).length > 0) {
 		$(colorselect).prop('selectedIndex', idx);
-		//// console.log('set_preview_image select index: ' + idx)
 	}
 }
 
@@ -50,9 +46,7 @@ $(window).load(function () {
 
 	$('head').append('<link rel="icon" type="image/x-icon" href="con/favicon.ico">');
 	$( "link[href^='css/header.css']" ).removeAttr( "media" );
-	// $( "script[src^='responsive_catalog.js']" ).remove();
 	$('body').find("script[src^='responsive_catalog.js']").remove();
-	// /hub/js-qa/storefrontPages/responsive_catalog.js
 	
 	$( ".header-links" ).find( "a" ).removeAttr( "style" );
 	$( "#header_logo img.no_mobile" ).wrap( '<td id="desklogo"><div class="logolinkdiv"><a style="display: inline-block;" href="index.cgi">' );
@@ -76,7 +70,6 @@ $(window).load(function () {
 
 	// Hide image and show youtube video 
 	$(".responsive-choose-info").find("iframe").each(function() {
-		// console.log($(this).closest("div").siblings(".image-container").attr('class'))
 		$(this).attr('width', '315');
 		$(this).attr('height', '280');
 		$(this).closest("div").siblings(".image-container").hide();
@@ -121,7 +114,6 @@ $(window).load(function () {
 		$('#tab_responsive_tabs [id^="tab_"]').each(function() {
 			/**** Top most tabs menu item ****/
 			if ($("#TMul_" + $(this).attr("id")).length > 0 ) {return true;} /*** if it has already been created then skip to next ***/
-			//console.log( "TOP - " + $(this).find("dfn").first().text() + " : " + $(this).attr("id") + " | " + $(this).find("dfn").length );
 			appendid = 'TabsMenu';
 			tabid = $(this).attr("id");
 			if ($(this).find("dfn").length == 1) {
@@ -131,7 +123,6 @@ $(window).load(function () {
 			}
 			/**** Sub tabs menu items ****/
 			$(this).children().find('dfn').each(function () {
-				//console.log( "---- " + $(this).text() + " == " + $(this).parents('div [id^="tab_"]').parents('div [id^="tab_"]').attr("id") + " /// " + $(this).parents('div [id^="tab_"]').first().attr("id") + " || " + $(this).is(":last-child") );
 				if ($(this).is(":last-child")) {
 					appendid = 'TMul_' + $(this).parents('div [id^="tab_"]').first().attr("id");
 					tabid = $(this).parents('div [id^="tab_"]').parents('div [id^="tab_"]').attr("id");
@@ -153,7 +144,6 @@ $(window).load(function () {
 		if ( $("a[href='basket_view.cgi'].no_mobile").length > 0 ) {
 			$(".input-wrapper:has(#searchfield_input)").first().clone(true,true).insertAfter("a[href='basket_view.cgi'].no_mobile").attr("id", "Srch");
 			$( "div#Srch input" ).keyup(function(event) {
-				//console.log(event.which);
 				$('.item-search-block input').val( $(this).val() );
 				if (event.which == 13) {
 					$("#submit_catalog_search").trigger("click");
@@ -162,7 +152,6 @@ $(window).load(function () {
 		}else{
 			$(".input-wrapper:has(#searchfield_input)").first().clone(true,true).insertAfter( "#pageurl" ).attr("id", "Srch");
 			$( "div#Srch input" ).keyup(function(event) {
-				//console.log(event.which);
 				$('.item-search-block input').val( $(this).val() );
 				if (event.which == 13) {
 					$("#submit_catalog_search").trigger("click");
@@ -177,8 +166,6 @@ $(window).load(function () {
 				$(".rmc").show();
 			}
 		}
-
-		//$( "td#header_logo" ).css("display", "table-cell");
 
 		/*********Cart/Basket table*********/
 		with ($("table.items-table.true-table")) {
@@ -252,7 +239,6 @@ $(window).load(function () {
 
 		$(".basket-list-item").html(function() {
 			var txt = '<div class="basket-text">' + this.innerText.trim() + '</div>';
-			// console.log("|" + txt + "|");
 			var butt = $(this).html();
 			var buttend = butt.search(/<\/button>/);
 			butt = '<div class="basket-butt">' + butt.substring(1, buttend) + '</button>' + '</div>';
@@ -275,7 +261,6 @@ $(window).load(function () {
 						// if its a link then just unwrap the img to remove the link
 					}else{
 						// if it's a kit then create a new image and add it to the DOM, and remove the original so it doesn't use ng-click.
-						// $(this).removeAttr('ng-click').removeAttr('ng-keydown'); This doesn't work.  The handler still exist.
 						var source = $(this).attr('src'); //get img source for new img
 						var alt = $(this).attr('alt'); //get img alt text for new img
 						$(this).parent().prepend('<img alt="' + alt + '" src = "' + source + '">'); // add img to DOM at .img-container
@@ -287,14 +272,9 @@ $(window).load(function () {
 			if ( $(this).val().toLowerCase().indexOf("merchandise") >= 0 ) {
 				if ( $('.merch_link').length > 0 ) {
 					// create the merch button on the Home Page
-					$("li.topli:contains('Company Merchandise')").find('.subtab:gt(0)').each(function() {
-						// <button type="button" class="button"></button>
+					$("li.topli:contains('Branded Merchandise')").find('.subtab:gt(0)').each(function() {
 						var oc = $(this).find('a').attr('onclick');
-						// console.log(oc);
 						var link_itm = '<div class="link_itm"><button type="button" class="button" onclick="' + oc + '">' + $(this).find('a').text() + '</button></div>';
-						// var link_itm = '<div class="link_itm">' + $(this).find('a').clone().prop('outerHTML') + '</div>';
-						// console.log(link_itm);
-						// $('.merch_link').append( $(this).find('a').clone().wrap('<div class="link_itm"></div>') );
 						$('.merch_link').append( link_itm );
 					});
 				}
@@ -305,20 +285,23 @@ $(window).load(function () {
 			}
 		});
 
+		// Hide "Home" tab
 		$( "li.subtab > a:contains('Home')" ).css( "display", "none" );
 
+		// Wrap the cart icon
 		$("span.cart_num_items.no_mobile").parent("a").wrap('<div class="carticon">');
+		
+		
+		// ************ Size stretchy column items so all are top aligned and buttons are uniform *************
 		
 		// Wrap item imgs and thumbnails for sizing
 		$('div.image-container:not(:has(>div.multi_preview)').append('<div class="multi_preview"></div>');
-		
 		$("div.image-container").find('img:first').each(function() {
 			if ($(this).parent('a').length > 0) {
 				$(this).parent('a').wrap('<div class="imgwrap">')
 			}else{
 				$(this).wrap('<div class="imgwrap">')
 			}
-			
 		});
 
 		// Set height of img wraps based on tallest img so items can be top aligned 
@@ -339,6 +322,33 @@ $(window).load(function () {
 		maxH = maxH + "px";
 		$('div.multi_preview').css('min-height', maxH);
 
+		// If Responsive Longname exist set that area height the same for all items
+		maxH = 0
+		$('div.responsive-longname').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.responsive-longname').css('min-height', maxH);
+
+		// If .responsive-choose-info exist set that area height the same for all items
+		maxH = 0
+		$('div.responsive-choose-info').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.responsive-choose-info').css('min-height', maxH);
+
+		// If .note.responsive-pricing exist set that area height the same for all items
+		maxH = 0
+		$('div.note.responsive-pricing').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.note.responsive-pricing').css('min-height', maxH);
+
 		// If onhand exist set that area height the same for all items
 		maxH = 0
 		$('div.note.responsive-onhand').each(function() {
@@ -349,6 +359,8 @@ $(window).load(function () {
 		// console.log('2: ' + maxH);
 		maxH = maxH + "px";
 		$('div.note.responsive-onhand').css('min-height', maxH);
+
+		// *****************************************************************************************
 
 	}
 	
@@ -364,6 +376,11 @@ $(window).load(function () {
 	/********* Hide FAQ Holders & Place Holders **********/
 	$('div.height-adjuster').has('div.responsive-longname:contains("FAQ-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
 	$('div.height-adjuster').has('div.responsive-longname:contains("PLACE-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
+
+	// Hide the text "THESE ITEMS CAN'T BE ORDERED WITH PRINT ITEMS!" if the user is only in Merchandise Division
+	if( $( "input[name='corp_tag']" ).val().toLowerCase() === "merchandise" ) {
+		$('span.not-print').hide();
+	}
 
 	$(window).trigger('resize');
 
@@ -428,7 +445,7 @@ $(document).ready(function () {
 </script>
 
 <script>
-{/* So we can customize the pdna itemWidthAdjuster function we add the code from responsive_catalog.js so we can alter the function */}
+{/* Rob Carberry - So we can customize the pdna itemWidthAdjuster function we add the code from responsive_catalog.js so we can alter the function */}
 $(document).ready(function(){
 	// return;
 	// bugfix var for iOS
