@@ -53,6 +53,8 @@ span.custom_title {
     padding: 0 10px;
 }
 
+.true-table {display: none;}
+
 .main.billing.catalog--container {
 	max-width: 675px !important;
 	margin: 20px auto 0 !important;
@@ -283,6 +285,12 @@ form[name='clientlist'] div:last-child {
 
 .basket-view td.previewcell {
 	background-color: transparent!important;
+	text-align: center;
+}
+
+.basket-view td.previewcell img {
+    border: 1px solid #dddddd !important;
+    max-width: 300px !important;
 }
 
 .basket-view .buttonsbar button {

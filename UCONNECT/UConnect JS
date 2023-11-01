@@ -58,6 +58,9 @@ $(window).load(function () {
 		var errtxt = $(this).text().replace("Incompatible Mail List or Delivery methods.", "");
 		$(this).text(errtxt);
 	});
+
+	$("table.items-table:contains('Configuration -')").hide();
+
 	
 	$("table#billing-pricetable").find("td , th").each(function() {
 		//$(this).css("text-align", "right");
@@ -74,9 +77,6 @@ $(window).load(function () {
 		$(this).attr('height', '280');
 		$(this).closest("div").siblings(".image-container").hide();
 	});
-
-	$("td.qty_select_cell:contains('Same as above')").text('Included');
-
 
 	if($(window).width() >= 1025) {
 
@@ -244,13 +244,41 @@ $(window).load(function () {
 			butt = '<div class="basket-butt">' + butt.substring(1, buttend) + '</button>' + '</div>';
 			return butt + txt;
 		});
+
+		// $("td.qty_select_cell:contains('Same as above')").text('Included');
+		// Hide bundle items
+		$('td.qty_select_cell:contains("Included")').closest("tr").hide();
+		$('td.numcol.pricecol:contains("$0.00")').closest("tr").hide();
+		// console.log($('span.cart_num_items.no_mobile').text()
+
+		// Wrap the cart icon
+		$("span.cart_num_items.no_mobile").parent("a").wrap('<div class="carticon">');
+
+		// Hide cart icon if the Top Tabs don't show
+		console.log($('ul#TabsMenu li').length);
+		if ($('ul#TabsMenu li').length <= 0) {$("div.carticon").hide();}
+
+		
 		$('span.cart_num_items.no_mobile').each(function() {
 			var cartcnt = $(this).text();
 			cartcnt = cartcnt.replace("(", "").replace(")", "").trim();
+			// adjust the cart icon for the hidden bundle items
+			var cnt = 0
+			if ($('td.qty_select_cell:contains("Included")').length > 0) {
+				cnt = $('td.qty_select_cell:contains("Included")').length
+			}else if ($('td.numcol.pricecol:contains("$0.00")').length > 0) {
+				cnt = $('td.numcol.pricecol:contains("$0.00")').length
+			}
+			if (cnt == 0) {
+				$('div.basket-text').each(function() {
+					if ($(this).text().indexOf("$0.00") > 0) {cnt += 1;}
+				});
+			}
+			if (cnt > 0) {$("div.carticon").show();}
+			cartcnt -= cnt;
 			$(this).text(cartcnt);
 			
 		});
-
 
 		// If not a word template then make it so the image links don't work per Suzanne at UUG (Said it's confusing)
 		$( "input[name='tab']" ).each(function() {
@@ -288,8 +316,7 @@ $(window).load(function () {
 		// Hide "Home" tab
 		$( "li.subtab > a:contains('Home')" ).css( "display", "none" );
 
-		// Wrap the cart icon
-		$("span.cart_num_items.no_mobile").parent("a").wrap('<div class="carticon">');
+
 		
 		
 		// ************ Size stretchy column items so all are top aligned and buttons are uniform *************
@@ -364,13 +391,15 @@ $(window).load(function () {
 
 	}
 	
-	// Show left hand cart if items are in the cart
+	// Show/hide</div> left hand cart if items are in the cart
 	if( $('.stretchy_cols').length == 1) {$('.stretchy_cols').addClass("singleItemCenter");}
 	if( $('.basket-list-item').length >= 1) {
-		$('#basket-list-title').show();
-		$('.responsive_tabs-shell .after').show();
+		// $('#basket-list-title').show();
+		// $('.responsive_tabs-shell .after').show();
+		$('.responsive_tabs-shell > .after').hide();
 	}
 	
+
 	$('.header-links').attr('style', 'display: revert !important');
 
 	/********* Hide FAQ Holders & Place Holders **********/
@@ -378,11 +407,16 @@ $(window).load(function () {
 	$('div.height-adjuster').has('div.responsive-longname:contains("PLACE-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
 
 	// Hide the text "THESE ITEMS CAN'T BE ORDERED WITH PRINT ITEMS!" if the user is only in Merchandise Division
-	if( $( "input[name='corp_tag']" ).val().toLowerCase() === "merchandise" ) {
-		$('span.not-print').hide();
-	}
+	$( "input[name='corp_tag']" ).each(function() {
+		if ( $(this).val().toLowerCase() === "merchandise" ) {
+			$('span.not-print').hide();
+		}
+	});
 
 	$(window).trigger('resize');
+
+	// $(".true-table").delay(1000).show();
+	$(".true-table").show();
 
 });
 
@@ -403,7 +437,6 @@ $(document).ready(function () {
 	} else{
 		$("button#submit_cancel").has("span:contains('Cancel Order')").hide();
 	}
-	
 	
 });
 
