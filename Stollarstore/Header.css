@@ -1,0 +1,1396 @@
+/*https://cdn.jsdelivr.net/gh/digitalsf/custom-page-dna@main/style.css*/
+
+/*https://cdn.jsdelivr.net/gh/carberryrob/SF@main/Stollarstore/style.css*/
+
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/*======================================
+*            style resets              *
+======================================*/
+body {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+div.menu-knob-bar span.menu-knob a {
+    /*left floating admin bar at top of screen when logged in*/
+    height: auto !important;
+}
+
+.container {
+    min-width: 0;
+}
+
+body>.container {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.index-container {
+    padding-top: 0 !important;
+}
+
+#maincopy-wrapper {
+    margin: 0 !important;
+}
+
+.pagetitle, .reorder .form-body th {
+    background-color: transparent;
+    color: #00a8d5;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.375rem;
+    font-weight: 400;
+    letter-spacing: .08rem;
+    line-height: 1.2;
+    margin-bottom: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.catalog--container:not(.welcome) {
+    min-width: 0;
+    margin: auto;
+}
+
+@media (min-width: 576px) {
+    .catalog--container:not(.welcome) {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .catalog--container:not(.welcome) {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .catalog--container:not(.welcome) {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .catalog--container:not(.welcome) {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .catalog--container:not(.welcome) {
+        max-width: 1320px;
+    }
+}
+
+
+#lightbox-container-image-data-box {
+    box-sizing: unset;
+}
+
+
+/*======================================
+*                colors                *
+======================================*/
+.text-primary {
+    color: #00A8d5 !important;
+}
+
+.text-secondary {
+    color: #fa8a3c !important;
+}
+
+.text-tertiary {
+    color: #003650;
+}
+
+.text-grey {
+    color: #4f4f4f;
+}
+
+.bg-primary {
+    background-color: #00A8d5;
+}
+
+.bg-secondary {
+    background-color: #fa8a3c;
+}
+
+.bg-tertiary {
+    background-color: #003650;
+}
+
+.bg-grey {
+    background-color: #4f4f4f;
+}
+
+.bg-pale {
+    background-color: #f5f6f9;
+}
+
+/*======================================
+*               global                 *
+======================================*/
+body {
+    color: #333;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.main, .main td {
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #333;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+h1 {
+    color: white;
+    font-size: 3.5rem;
+}
+
+h2 {
+    margin-bottom: .5rem;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-transform: none;
+}
+
+.h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.375rem;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 991px) {
+    .page-header {
+        min-height: 636px;
+    }
+}
+
+.bg-image {
+    background-position: bottom !important;
+    background-size: cover !important;
+    position: relative;
+}
+
+.overlay {
+    background-color: #00a8d5;
+    display: block;
+    height: 100%;
+    width: 100%;
+    opacity: .58;
+    position: absolute;
+    top: 0;
+}
+
+.bg-image .container {
+    position: relative;
+}
+
+.subtitle {
+    font-style: italic;
+    font-weight: bold;
+    color: #00a8d5;
+}
+
+/*buttons*/
+.btn, .button {
+    border: 0;
+    border-radius: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.625rem;
+    line-height: 1.5;
+    padding: .25rem 2rem .05rem;
+    text-transform: uppercase;
+    color: white !important;
+    background-color: #00A8d5;
+    border-color: #00A8d5;
+}
+
+.btn-secondary, #submit_lookup_orders, #submit_start_shopping, #submit_review_order, #submit_send_order {
+    background-color: #fa8a3c;
+    border-color: #fa8a3c;
+}
+
+.btn-tertiary {
+    background-color: #003650;
+    border-color: #003650;
+}
+
+.btn:hover, button:hover {
+    background-color: #fa8a3c;
+    border-color: #fa8a3c;
+}
+
+.btn-secondary:hover {
+    background-color: #003650;
+    border-color: #003650;
+}
+
+.btn-tertiary:hover, #submit_lookup_orders:hover, #submit_start_shopping:hover, #submit_review_order:hover, #submit_send_order:hover {
+    background-color: #00A8d5;
+    border-color: #00a8d5;
+}
+
+.error {
+    color: #fa8a3c !important;
+    font-weight: bold;
+}
+
+
+
+/*=========table styles==============*/
+
+/*Make tables striped*/
+.true-table tr:nth-child(odd) td {
+    background-color: #e5f6fb;
+}
+
+/*Table cells with system messages (like shipping totals, etc) get a class added via custom jquery. These cells need a white background.*/
+.white-bg td {
+    background-color: white !important;
+}
+
+.items-table {
+    width: 100% !important;
+}
+
+/*Override table fontsize*/
+.true-table th, .true-table td, .items-table th, .items-table td {
+    font-size: 1.25rem !important;
+}
+
+/*Header row padding is different than cell padding*/
+.true-table th, .items-table th {
+    background-color: #003650;
+    color: #fff;
+    font-weight: bold;
+    padding: 2px 0 2px 30px;
+}
+
+.true-table th:last-child, .items-table th:last-child {
+    padding-right: 30px;
+}
+
+/*Add extra padding to the left side of the first cell in each row*/
+.true-table tr td:first-child, .items-table tr td:first-child {
+    padding-left: 20px;
+}
+
+.form-body {
+    width: 100%;
+}
+
+
+.form-body td.label {
+    text-align: left;
+    width: 150px;
+    min-width: 0;
+    font-size: 1.25rem;
+    font-weight: normal;
+}
+
+.form-body td.input {
+    vertical-align: top;
+}
+
+.form-body td.input input {
+    border-radius: 0 !important;
+    height: 2.5rem;
+    min-width: 300px;
+    padding-left: 10px;
+}
+
+.form-body select#service_code {
+    border-radius: 0;
+    padding: 10px;
+}
+
+.items-table td.label, .true-table td.label {
+    width: 180px;
+}
+
+
+
+/*======================================
+*          header styles               *
+======================================*/
+
+#header-wrapper {
+    background-color: #003650;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+#header_logo {
+    padding: 20px 0;
+}
+
+#header_logo>img.no_mobile {
+    position: absolute;
+    top: 32px;
+    left: 25px;
+    max-width: 350px;
+    height: auto;
+}
+
+#header-links-container {
+    position: absolute;
+    top: 40px;
+    right: 10%;
+    text-transform: uppercase;
+    width: auto !important;
+}
+
+.header {
+    width: auto;
+}
+
+.header-links a, #logout_userid {
+    border-bottom: 2px solid transparent;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 1.5rem .75rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: .25rem 0;
+}
+
+#logout_userid {
+    margin-right: 0;
+}
+
+.header-links a:hover {
+    border-bottom-color: #fa8a3c;
+}
+
+#logout_userid {
+    padding-left: 15px
+}
+
+.header-links a.no_mobile {
+    position: relative;
+}
+
+.cart_num_items {
+    background: #00a8d5;
+    border-radius: 50%;
+    position: absolute;
+    top: -20px;
+    left: 52%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+}
+
+/*======================================
+*                cards                 *
+======================================*/
+.card {
+    border: 0;
+}
+
+/*======================================
+*       index start order box          *
+======================================*/
+
+.start-order-box {
+    background-color: #003650;
+    color: white;
+    text-align: center;
+    padding: 3rem;
+}
+
+.start-order-box div {
+    background-color: #003650 !important;
+    max-width: 620px;
+    margin: auto;
+}
+
+.start-order-box h2 {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.875rem;
+    margin-bottom: 1rem;
+}
+
+.start-order-box .center {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.start-order-box .center a {
+    color: white;
+}
+
+.start-order-box .center form {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.start-order-box button {
+    border-radius: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.625rem;
+    line-height: 1.5;
+    padding: .25rem 2rem;
+    text-transform: uppercase;
+    color: white !important;
+}
+
+.start-order-box button .button_arrow_right_text, .start-order-box button .button_arrow_right {
+    display: none;
+}
+
+.start-order-box #submit_start_order {
+    background-color: #fa8a3c;
+    border-color: #fa8a3c;
+    margin-right: 2rem !important;
+}
+
+.start-order-box #submit_start_order:hover {
+    background-color: #00a8d5;
+    border-color: #00a8d5;
+}
+
+.start-order-box #submit_re_order {
+    background-color: #00a8d5;
+    border-color: #00a8d5;
+
+}
+
+.start-order-box #submit_re_order:hover {
+    background-color: #fa8a3c;
+    border-color: #fa8a3c;
+}
+
+#newscopy-wrapper {
+    margin: 1em auto !important;
+}
+
+/*======================================
+*          index logo box              *
+======================================*/
+.logo-box {
+    background-color: #f5f6f9;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0 2rem 2rem;
+}
+
+.logo-box>span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo-box .img-fluid {
+    padding-right: 2rem;
+}
+
+@media screen and (max-width:1400px) {
+    .logo-box>span {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .logo-box div {
+        width: 50%;
+        text-align: center;
+        padding-right: 20px;
+        padding: 20px;
+    }
+}
+
+/*=============================================
+*     New Order Page - Division Screen        *
+=============================================*/
+
+/*Main Content Area*/
+.catalog--container:not(.welcome) {
+    padding: 3rem 0;
+}
+
+/*Page Title*/
+.corp-header-text.pagetitle {
+    color: #00a8d5;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.375rem;
+    font-weight: 400;
+    letter-spacing: .08rem;
+    line-height: 1.2;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+/*Intro Text*/
+.corp-abovedivs {
+    padding-bottom: 2rem;
+}
+
+/*Divisions List*/
+.corp-list {
+    column-count: 4;
+    column-gap: 20px;
+    max-width: 1320px;
+    margin: 0 auto 2rem;
+}
+
+@media screen and (max-width: 1439px) {
+    .corp-list {
+        column-count: 3;
+    }
+}
+
+.corp_divisions li {
+    color: #003650;
+    font-size: 1.55rem;
+    line-height: 1.5;
+    padding: .5rem 0;
+    text-align: left;
+}
+
+.corp_divisions li b {
+    font-weight: normal;
+}
+
+.corp-bottom-button {
+    margin-bottom: 2rem;
+    padding-top: 1.5rem;
+}
+
+
+/*======================================
+*      reorder/track order pages       *
+======================================*/
+@media screen and (min-width: 1140px) {
+    .reorder-introtext, .shiptrack .pageinstructions {
+        margin: auto;
+        max-width: 1000px;
+        text-align: center;
+    }
+}
+
+.ship-track .form-body {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.reorder .form-body, .shiptrack .form-body {
+
+    border-collapse: collapse;
+    border-top: 2px solid #b5b5b5;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 1.5rem;
+    max-width: 1320px;
+    padding: 0px;
+    text-align: left;
+    width: 100%;
+}
+
+.reorder .form-body th, .shiptrack .form-body th {
+    text-align: left;
+    font-size: 2.375rem;
+}
+
+.reorder .form-body .form-subheader, .shiptrack .form-body .form-subheader {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+.reorder .form-body tr:not(:last-child) td, .shiptrack .form-body tr:not(:last-child) td {
+    padding-bottom: 2rem;
+}
+
+.reorder .form-body td.label, .shiptrack .form-body td.label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: normal;
+    padding-right: 15px;
+    text-align: right;
+    vertical-align: top;
+    width: 250px !important;
+}
+
+.reorder .form-body td.input input, .shiptrack .form-body td.input input {
+    min-width: 350px;
+}
+
+.reorder .form-body td .button, .shiptrack .form-body td .button {
+    margin: 0 .5rem 1.5rem;
+}
+
+.reorder .error, .shiptrack .error {
+    font-size: 1.5rem !important;
+    text-transform: uppercase;
+}
+
+/*======================================
+*           My Profile page            *
+======================================*/
+
+#submit_new_person, #submit_edit_profile, #submit_track_order {
+    /*change from button to link appearance*/
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #00A8D5;
+    color: #333 !important;
+    display: inline;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    text-transform: none;
+}
+
+#submit_new_person {
+    font-weight: bold;
+}
+
+#submit_new_person:hover {
+    color: #fa8a3c;
+    border-bottom-color: #fa8a3c;
+}
+
+.profile-selection {
+    margin-bottom: 2rem;
+}
+
+.profile-selection label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: normal;
+    margin-right: 15px;
+    width: 240px;
+}
+
+.profile-userlist-label {
+    text-align: right;
+}
+
+select#changeto, input#search {
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: 0;
+    padding: 6px;
+}
+
+#submit_profile_search {
+    padding: 10px;
+    margin-left: -5px;
+    vertical-align: top;
+}
+
+.add-new-person #changeto, .add-new-person .profile-userlist-label {
+    display: none !important;
+}
+
+.add-new-person form {
+    display: inline !important;
+}
+
+.profile .error {
+    text-align: left !important;
+}
+
+.profile-selection button {
+    display: none !important;
+}
+
+.profile-container {
+    display: none;
+}
+
+.profile-container.profile-fields {
+    display: block;
+    background-color: #e5f6fb;
+}
+
+.profile .top-button-container {
+    max-width: 50%;
+}
+
+.profile-container.profile-fields, .bottom-button-container {
+    width: 50% !important;
+    margin: 0;
+    float: left;
+}
+
+.profile-container.profile-fields>tbody>tr>td {
+    background-color: #e5f6fb;
+    padding: 20px;
+}
+
+.form-body.profile-form td {
+    background-color: #e5f6fb;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: normal !important;
+    padding-top: 8px;
+}
+
+.form-body.profile-form td.label {
+    text-align: left;
+    width: 165px;
+}
+
+.moved-profile-button {
+    text-align: right;
+}
+
+.profile-comment {
+    clear: both;
+}
+
+/*edit my profile - phone number boxes*/
+.profile .form-body td.input input[name^="ph"] {
+    min-width: unset;
+    margin-right: 5px;
+}
+
+/*======================================
+*            catalog pages             *
+======================================*/
+
+.catalog-tab-blurb {
+    color: #777777;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: lowercase;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #eeeeee;
+    padding: 0 0 16px 0 !important;
+    margin-left: 20px !important;
+}
+
+.catalog-tab-blurb br {
+    display: none;
+}
+
+.catalog-tab-blurb span {
+    margin-right: 4px;
+}
+
+#catalog-search-terms {
+    display: inline-block;
+    flex-grow: 1;
+    width: 40%;
+    text-transform: lowercase;
+    margin-left: 4px;
+}
+
+#catalog-search-terms:before {
+    content: 'for ';
+}
+
+#submit_catalog_search_cancel {
+    padding: .5rem !important;
+    line-height: 1 !important;
+    height: 36px !important;
+    margin-left: 20px;
+}
+
+.catalog-search-terms {
+    display: inline-block;
+}
+
+.item-search-block {
+    margin-left: -10px !important;
+    display: flex;
+}
+
+#searchfield_input {
+    height: 2.25rem;
+    width: 130px;
+    border-radius: 0;
+    border: 1px solid grey;
+}
+
+#submit_catalog_search {
+    padding: .5rem;
+    font-size: 1.25rem;
+}
+
+.responsive_tabs-shell {
+    width: 180px !important;
+}
+
+.responsive_tabs {
+    font-size: 14px !important;
+}
+
+.responsive_tabs .opened:before, .responsive_tabs .closed:before {
+    color: #00A8D5 !important;
+    font-size: 1.25rem !important;
+    margin-left: -20px !important;
+}
+
+.tab_html_wrapper {
+    margin-bottom: 3rem;
+}
+
+/*Grey Order Summary "Your Order" Box below the categories in sidebar*/
+.responsive_tabs-shell .after {
+    background-color: #e3f5fa;
+    padding: 1rem !important;
+    margin-left: -2rem !important;
+}
+
+.responsive_tabs-shell #basket-list-title {
+    color: #333;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-size: 1.625rem;
+}
+
+.basket-list-item {
+    margin-bottom: 1.5rem;
+}
+
+.basket-list-item button {
+    font-size: 14px;
+    font-weight: normal;
+    border-radius: 50%;
+    padding: 6px 2px 6px 6px;
+    /*to compensate for the space that the system requires in the font awesome tag*/
+}
+
+.basket-list-item b {
+    font-weight: normal !important;
+}
+
+#basket_button_container #submit_continue {
+    display: block;
+    padding: .25rem 1rem;
+    width: 100%;
+}
+
+/*Catalog Items - discontinued and sale are originals from Jess, but colors are updated*/
+
+.stretchy_cols {
+    max-height: unset !important;
+}
+
+.stretchy_cols .image-container {
+    min-height: 252px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detail_image_wrapper img, .image-container img {
+    border: 0 !important;
+    margin-bottom: 1rem;
+}
+
+.image-container a {
+    display: block;
+}
+
+.multi_preview {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.multi_preview a {
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.multi_preview a:first-child img {
+    /*Was hoping to identify "active" preview image, but will need to tap into onclick function (if possible)
+    /*border: 2px solid #00A8D5!important;*/
+}
+
+.multi_preview img {
+    max-width: 100%;
+}
+
+.responsive-longname {
+    font-size: 1.25rem;
+    margin-bottom: .5rem;
+}
+
+.discontinued {
+    color: #00a8d5;
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.discontinued::before {
+    content: "DISCONTINUED";
+    color: #00a8d5;
+    font-weight: bold;
+}
+
+.sale {
+    /*color: #f7921e;
+    display:block;*/
+}
+
+.sale::after {
+    content: " (ON SALE) ";
+    color: #fa8a3c;
+}
+
+.the_actual_qty_select {
+    margin-top: .5rem;
+}
+
+.the_actual_qty_select select, .add-to-basket-qty-select select {
+    min-width: 164px;
+    margin-top: .5rem;
+}
+
+#submit_catalog_add {
+    margin-top: 1rem;
+}
+
+
+/*======================================
+*             checkout                 *
+======================================*/
+
+.basket-view #submit_continue {
+    background-color: #fa8a3c;
+}
+
+.basket-view #submit_continue:hover {
+    background-color: #003650;
+}
+
+.buttonsbar button+button {
+    margin-left: 1rem;
+}
+
+
+/*========= product preview thumbnails on various checkout pages ==============*/
+
+.order-preview-table {
+    width: 100%;
+}
+
+.order-preview-table>tbody {
+    border-top: 2px solid #b5b5b5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-top: 3rem;
+}
+
+.order-preview-table .previewcell {
+    margin-right: 2rem;
+    margin-bottom: 3rem;
+    width: 20%;
+}
+
+.previewcell table {
+    margin: auto;
+}
+
+
+.previewcell img {
+    max-height: 200px;
+    /*controls height of image in preview on checkout pages*/
+    border: 0 !important;
+    margin-bottom: .5rem;
+}
+
+div.previewcell .previewrow th {
+    text-align: center !important;
+}
+
+/*======================================
+*              shipping                *
+======================================*/
+
+.shipping .requestor-info .pagetitle {
+    text-align: left;
+}
+
+
+.shipping #qtysel-buttonsbar {
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #b5b5b5;
+}
+
+.shipping #requestor-info {
+    margin-top: 3rem;
+    width: auto;
+    margin-bottom: 2rem;
+}
+
+.shipping #shipaddr-info {
+    width: auto;
+}
+
+.shipping .requestor-info .form-body td.label {
+    width: 250px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+
+
+.shipping #shipaddr-info td.label {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.shipping .form-body td.input input#ship_city {
+    min-width: 240px;
+}
+
+.shipping .form-body td.input input#ship_state {
+    min-width: 0;
+}
+
+.shipping #final-buttonsbar {
+    clear: both;
+    padding-top: 2rem;
+}
+
+@media screen and (min-width:1201px) {
+    .shipping .requestor-info {
+        display: inline-block;
+        float: left;
+        padding-right: 3rem;
+        min-height: 450px;
+    }
+
+    .shipping #misc-comment-table, .shipping #shipaddr-info {
+        display: inline-block;
+        float: right;
+        width: auto;
+    }
+
+    .shipping #requestor-info {
+        margin-bottom: 0;
+    }
+}
+
+
+
+/*======================================
+*              billing                 *
+======================================*/
+
+.billing .form-body {
+    width: 100% !important;
+}
+
+#billing-pricetable {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    max-width: 100%;
+    width: 100% !important;
+    border-bottom: 2px solid #b5b5b5;
+}
+
+#billing-pricetable .updatetotalcol, #billing-pricetable .totalinpcol, .numcol.totalcol {
+    background-color: white !important;
+}
+
+td.shipping-cell {
+    padding-top: 2rem !important;
+}
+
+#service_code {
+    margin-top: 1rem;
+}
+
+#billing-pricetable .updatetotalcol #submit_update_price {
+    margin-bottom: 2rem;
+}
+
+#billing-pricetable .totalinpcol {
+    vertical-align: bottom !important;
+}
+
+#billing-pricetable .totalinpcol b {
+    display: inline-block;
+    margin-right: 1rem !important;
+}
+
+.billing .form-body td.label {
+    text-align: left;
+    width: 150px;
+    min-width: 0;
+    font-size: 1.25rem;
+    font-weight: normal;
+}
+
+#bill-sect td.label, #ship-sect td.label {
+    text-align: left;
+}
+
+#ship-sect td {
+    padding-top: 5px;
+    padding-bottom: 0;
+}
+
+#ship-sect td.label {
+    width: 130px;
+}
+
+
+/*======================================
+*           lookup order               *
+======================================
+
+.shiptrack .form-body {
+    width: auto;
+}
+
+.shiptrack .form-body label {
+    width: 250px;
+}
+
+.shiptrack .form-body #submit_lookup_orders {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}*/
+
+
+/*======================================
+*         customer service             *
+======================================*/
+.customer-service .message-block {
+    text-align: center;
+}
+
+/*======================================
+*               footer                 *
+======================================*/
+
+.site-footer {
+    background: #003650;
+    color: #fff;
+    font-size: 14px;
+}
+
+.fa-ul>li {
+    margin-bottom: 1rem;
+}
+
+.site-footer .fa {
+    color: white;
+}
+
+.site-footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 991px) {
+    .site-footer #company-info img {
+        max-width: 280px;
+    }
+}
+
+.account-links li {
+    margin-bottom: 1rem;
+}
+
+.font-headings {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.website-link {
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: .04em;
+}
+
+#social-links ul .list-inline-item {
+    margin-right: 1rem;
+}
+
+#social-links .fa-stack {
+    font-size: 1.5em;
+}
+
+#social-links .fa-stack-1x {
+    color: white;
+}
+
+#social-links .fa-stack-1x {
+    color: #003650;
+}
+
+#social-links a:hover .fa-stack-2x {
+    color: #fa8a3c;
+}
+
+#social-links a:hover .fa-stack-1x {
+    color: #fff;
+}
+
+@media screen and (max-width: 1400px) {
+    .website-link {
+        font-size: 1.5rem;
+    }
+
+    #social-links ul .list-inline-item {
+        margin-right: 0;
+    }
+
+    #company-info img.img-fluid {
+        max-width: 200px !important;
+    }
+
+    #social-links .fa-stack {
+        font-size: 1.25em;
+    }
+}
+
+.responsive-choose-info {
+    display: block !important;
+    max-height: 100rem !important;
+}
+
+
+/* BUNDLE */
+
+.image-container img[ng-click]:hover {
+    cursor: pointer;
+}
+
+#item_details_view div[class^="detail_"] {
+    height: auto !important;
+}
+
+.detail_text_wrapper {
+    width: 29% !important;
+}
+
+
+.detail_tagcheck_wrapper {
+    width: 40% !important;
+    margin-top: 0px !important;
+}
+
+.bundle-qty-selection {
+    position: inherit !important;
+}
+
+.bundle-qty-selection .add-to-basket-qty-select {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.multi_preview a {
+    margin-right: 5px;
+}
+
+.multi_preview a img {
+    margin-bottom: 5px;
+}
+
+.bundle_subitem tr:empty {
+    height: 20px;
+}
+
+.bundle_subitem td {
+    display: table-cell !important;
+}
+
+.bundle_subitem td div {
+    vertical-align: middle !important;
+    display: inline-block;
+}
+
+.bundle_subitem_preview img {
+    max-width: 80px;
+}
+
+.bundle_subitem_longname {
+    display: inline-block;
+    margin-bottom: 6px !important;
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 25px !important;
+}
+
+#d_tag_check input[type="text"] {
+    border-radius: 5px !important;
+    text-align: center;
+    padding: 5px;
+    border-style: groove;
+    font-weight: bold;
+    width: 100px !important;
+}
+
+.bundle_subitem_input {
+    position: relative;
+    top: -4px;
+    float: left;
+}
+
+td.bundle_subitem_subgroupname {
+    background: #003650 !important;
+    color: #fff !important;
+    padding: 5px 10px;
+    border-top: 80px solid white;
+    border-bottom: 40px solid white;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    font-size: 16px;
+}
+
+.bundle_subitem tr td:not(.bundle_subitem_subgroupname) {
+    padding-bottom: 20px;
+}
+
+#d_tag_check .bundle_subitem td div {
+    vertical-align: middle !important;
+}
+
+#d_tag_check .bundle_subitem_longname {
+    word-wrap: break-word !important;
+}
+
+/*Hide Multi-size item On-hand table*/
+.multisize-table {
+    display: none;
+}
+
+.responsive-onhand:has(> table.multisize-table) {
+    display: none;
+}
+
+#confirm_overlay {
+    left: 0 !important;
+    top: 0 !important;
+    margin: 0 !important;
+}

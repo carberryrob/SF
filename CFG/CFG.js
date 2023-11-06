@@ -125,7 +125,15 @@ $(window).load(function () {
 				}
 			});
 		});
-		
+
+		// Division
+		$( "input[name='corp_tag']" ).each(function() {
+			console.log('Division:  ' + $(this).val());
+			if ( $(this).val().toLowerCase() != "marketing" ) {
+				$('li.topli:contains("Marketing Materials")').hide();
+			}
+		});
+
 		$( ".toptabs:contains('undefined')" ).hide();  /** if on a page that tabs are not exposed, hide the place holders. **/
 		/********** End TopTabs ***********/
 
@@ -248,15 +256,25 @@ $(window).load(function () {
 		});
 		$("span.cart_num_items.no_mobile").parent("a").wrap('<div class="carticon">');
 
+
+		// ************ Size stretchy column items so all are top aligned and buttons are uniform *************
+		
 		// Wrap item imgs and thumbnails for sizing
 		$('div.image-container:not(:has(>div.multi_preview)').append('<div class="multi_preview"></div>');
-		$("div.image-container").find('img:first').wrap('<div class="imgwrap">')
+		$("div.image-container").find('img:first').each(function() {
+			if ($(this).parent('a').length > 0) {
+				$(this).parent('a').wrap('<div class="imgwrap">')
+			}else{
+				$(this).wrap('<div class="imgwrap">')
+			}
+		});
 
 		// Set height of img wraps based on tallest img so items can be top aligned 
 		var maxH = 0
 		$('div.imgwrap').each(function() {
 			if ($(this).height() > maxH) {maxH = $(this).height();}
 		});
+		if (maxH > 0) {maxH += 1;}
 		maxH = maxH + "px";
 		$('div.imgwrap').css('min-height', maxH); /* set all the wrapped heights to the tallest img height */
 		
@@ -265,8 +283,92 @@ $(window).load(function () {
 		$('div.multi_preview').each(function() {
 			if ($(this).height() > maxH) {maxH = $(this).height();}
 		});
+		if (maxH > 0) {maxH += 1;}
 		maxH = maxH + "px";
 		$('div.multi_preview').css('min-height', maxH);
+
+		// If Responsive Longname exist set that area height the same for all items
+		maxH = 0
+		$('div.responsive-longname').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.responsive-longname').css('min-height', maxH);
+
+		// If .responsive-choose-info exist set that area height the same for all items
+		maxH = 0
+		$('div.responsive-choose-info').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.responsive-choose-info').css('min-height', maxH);
+
+		// If .note.responsive-pricing exist set that area height the same for all items
+		maxH = 0
+		$('div.note.responsive-pricing').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.note.responsive-pricing').css('min-height', maxH);
+
+		// If onhand exist set that area height the same for all items
+		maxH = 0
+		$('div.note.responsive-onhand').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		// console.log('1: ' + maxH);
+		if (maxH > 0) {maxH += 1;}
+		// console.log('2: ' + maxH);
+		maxH = maxH + "px";
+		$('div.note.responsive-onhand').css('min-height', maxH);
+		
+		// If responsive-tagcheck.tagcheck-bottom exist set that area height the same for all items
+		maxH = 0
+		$('span.responsive-tagcheck.tagcheck-bottom').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		// console.log('1: ' + maxH);
+		if (maxH > 0) {maxH += 1;}
+		// console.log('2: ' + maxH);
+		maxH = maxH + "px";
+		$('span.responsive-tagcheck.tagcheck-bottom').css('min-height', maxH);
+	
+		// If div.image-container exist set that area height the same for all items
+		maxH = 0
+		$("div.image-container").each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		// console.log('1: ' + maxH);
+		if (maxH > 0) {maxH += 1;}
+		// console.log('2: ' + maxH);
+		maxH = maxH + "px";
+		$("div.image-container").css('min-height', maxH);
+	
+		// *****************************************************************************************
+
+
+		// // Wrap item imgs and thumbnails for sizing
+		// $('div.image-container:not(:has(>div.multi_preview)').append('<div class="multi_preview"></div>');
+		// $("div.image-container").find('img:first').wrap('<div class="imgwrap">')
+
+		// // Set height of img wraps based on tallest img so items can be top aligned 
+		// var maxH = 0
+		// $('div.imgwrap').each(function() {
+		// 	if ($(this).height() > maxH) {maxH = $(this).height();}
+		// });
+		// maxH = maxH + "px";
+		// $('div.imgwrap').css('min-height', maxH); /* set all the wrapped heights to the tallest img height */
+		
+		// // If multi-page img thumbs exist set that area height the same for all items
+		// maxH = 0
+		// $('div.multi_preview').each(function() {
+		// 	if ($(this).height() > maxH) {maxH = $(this).height();}
+		// });
+		// maxH = maxH + "px";
+		// $('div.multi_preview').css('min-height', maxH);
 
 
 	}

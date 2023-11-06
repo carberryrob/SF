@@ -36,6 +36,7 @@ function set_preview_image(elem, thumburl, largeurl) {
 			a.attr('onclick', unescape(largeurl));
 		}
 	}
+	// When clicking/changing Thumbnail images on Apparel, change the dropdown as well.
 	var colorselect = $(elem).closest('.stretchy_cols.responsive-item.image-row').find('.colorselect');
 	if ($(colorselect).length > 0) {
 		$(colorselect).prop('selectedIndex', idx);
@@ -54,11 +55,13 @@ $(window).load(function () {
 
 	$(".note:contains('Non-taxable items marked with *')").hide();
 	$(".pagetitle:contains('Mailing List')").hide();
-	$("div.error:contains('Incompatible Mail List or Delivery methods.')").each(function() {
-		var errtxt = $(this).text().replace("Incompatible Mail List or Delivery methods.", "");
-		$(this).text(errtxt);
-	});
 
+	// $("div.error:contains('Incompatible Mail List or Delivery methods.')").each(function() {
+	// 	var errtxt = $(this).text().replace("Incompatible Mail List or Delivery methods.", "");
+	// 	$(this).text(errtxt);
+	// });
+
+	// Hide eronious lines on the Accept page
 	$("table.items-table:contains('Configuration -')").hide();
 
 	
@@ -245,37 +248,37 @@ $(window).load(function () {
 			return butt + txt;
 		});
 
-		// $("td.qty_select_cell:contains('Same as above')").text('Included');
+
 		// Hide bundle items
-		$('td.qty_select_cell:contains("Included")').closest("tr").hide();
-		$('td.numcol.pricecol:contains("$0.00")').closest("tr").hide();
+		// $('td.qty_select_cell:contains("Included")').closest("tr").hide();
+		// $('td.numcol.pricecol:contains("$0.00")').closest("tr").hide();
 		// console.log($('span.cart_num_items.no_mobile').text()
 
 		// Wrap the cart icon
 		$("span.cart_num_items.no_mobile").parent("a").wrap('<div class="carticon">');
 
 		// Hide cart icon if the Top Tabs don't show
-		console.log($('ul#TabsMenu li').length);
-		if ($('ul#TabsMenu li').length <= 0) {$("div.carticon").hide();}
+		// console.log($('ul#TabsMenu li').length);
+		// if ($('ul#TabsMenu li').length <= 0) {$("div.carticon").hide();}
 
 		
 		$('span.cart_num_items.no_mobile').each(function() {
 			var cartcnt = $(this).text();
 			cartcnt = cartcnt.replace("(", "").replace(")", "").trim();
-			// adjust the cart icon for the hidden bundle items
-			var cnt = 0
-			if ($('td.qty_select_cell:contains("Included")').length > 0) {
-				cnt = $('td.qty_select_cell:contains("Included")').length
-			}else if ($('td.numcol.pricecol:contains("$0.00")').length > 0) {
-				cnt = $('td.numcol.pricecol:contains("$0.00")').length
-			}
-			if (cnt == 0) {
-				$('div.basket-text').each(function() {
-					if ($(this).text().indexOf("$0.00") > 0) {cnt += 1;}
-				});
-			}
-			if (cnt > 0) {$("div.carticon").show();}
-			cartcnt -= cnt;
+			// // adjust the cart icon for the hidden bundle items
+			// var cnt = 0
+			// if ($('td.qty_select_cell:contains("Included")').length > 0) {
+			// 	cnt = $('td.qty_select_cell:contains("Included")').length
+			// }else if ($('td.numcol.pricecol:contains("$0.00")').length > 0) {
+			// 	cnt = $('td.numcol.pricecol:contains("$0.00")').length
+			// }
+			// if (cnt == 0) {
+			// 	$('div.basket-text').each(function() {
+			// 		if ($(this).text().indexOf("$0.00") > 0) {cnt += 1;}
+			// 	});
+			// }
+			// if (cnt > 0) {$("div.carticon").show();}
+			// cartcnt -= cnt;
 			$(this).text(cartcnt);
 			
 		});
@@ -296,8 +299,9 @@ $(window).load(function () {
 					}
 				});
 			}
-			
+			// Create Merch Home page Buttons
 			if ( $(this).val().toLowerCase().indexOf("merchandise") >= 0 ) {
+				$('div.height-adjuster').addClass('no-back');  //removed back color for merch pages.
 				if ( $('.merch_link').length > 0 ) {
 					// create the merch button on the Home Page
 					$("li.topli:contains('Branded Merchandise')").find('.subtab:gt(0)').each(function() {
@@ -382,11 +386,33 @@ $(window).load(function () {
 			if ($(this).height() > maxH) {maxH = $(this).height();}
 		});
 		// console.log('1: ' + maxH);
-		if (maxH > 0) {maxH += 3;}
+		if (maxH > 0) {maxH += 1;}
 		// console.log('2: ' + maxH);
 		maxH = maxH + "px";
 		$('div.note.responsive-onhand').css('min-height', maxH);
-
+		
+		// If responsive-tagcheck.tagcheck-bottom exist set that area height the same for all items
+		maxH = 0
+		$('span.responsive-tagcheck.tagcheck-bottom').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		// console.log('1: ' + maxH);
+		if (maxH > 0) {maxH += 1;}
+		// console.log('2: ' + maxH);
+		maxH = maxH + "px";
+		$('span.responsive-tagcheck.tagcheck-bottom').css('min-height', maxH);
+	
+		// If div.image-container exist set that area height the same for all items
+		maxH = 0
+		$("div.image-container").each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		// console.log('1: ' + maxH);
+		if (maxH > 0) {maxH += 1;}
+		// console.log('2: ' + maxH);
+		maxH = maxH + "px";
+		$("div.image-container").css('min-height', maxH);
+	
 		// *****************************************************************************************
 
 	}
@@ -394,9 +420,9 @@ $(window).load(function () {
 	// Show/hide</div> left hand cart if items are in the cart
 	if( $('.stretchy_cols').length == 1) {$('.stretchy_cols').addClass("singleItemCenter");}
 	if( $('.basket-list-item').length >= 1) {
-		// $('#basket-list-title').show();
-		// $('.responsive_tabs-shell .after').show();
-		$('.responsive_tabs-shell > .after').hide();
+		$('#basket-list-title').show();
+		$('.responsive_tabs-shell .after').show();
+		// $('.responsive_tabs-shell > .after').hide();
 	}
 	
 
@@ -437,7 +463,6 @@ $(document).ready(function () {
 	} else{
 		$("button#submit_cancel").has("span:contains('Cancel Order')").hide();
 	}
-	
 });
 
 </script>
@@ -450,7 +475,7 @@ $(document).ready(function () {
 			$(this).addClass('colorselect');
 		});
 		
-		// When changing a color from a dropdown make the large image that color.
+		// Apparel- When changing a color from a dropdown make the large image that color by code clicking the corresponding thumbnail.
 		if ( $('.colorselect').length > 0 ) {
 			$('.colorselect').change(function() {
 				var idx = $(this).prop('selectedIndex');
