@@ -1,5 +1,5 @@
 <div class="footer_row3">
-<div><img style="opacity: 50%;" src="con/260-2e2e2e-PoweredBySF.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
+<div><img style="opacity: 50%;" src="con/260-wide-PoweredBySF-2023-2e2e2e.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
 	<p class="footer_cr">
 		Strategic Factory<br>
 		11195 Dolfield Boulevard<br>
@@ -75,6 +75,14 @@ $(window).load(function () {
 		});
 	});
 
+	if($('form[action="bill.cgi"]').length >= 1) {
+		// $("table#misc-comment-table").insertAfter("table#requestor-info");
+		$("table#misc-comment-table").insertAfter("table#shipaddr-info");
+		$("table#misc-comment-table tr").eq(0).hide();
+		// var phn = $("table#misc-comment-table tr").eq(1);
+		// phn.addClass("ship-address");
+		// // $("table#shipaddr-info").append( $(phn) );
+	}
 
 	//$( '<div class="top_blurb"><span>FREE SHIPPING ON ORDERS OVER $100</span></div>').prependTo("#header-wrapper")
 	

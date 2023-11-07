@@ -80,7 +80,7 @@ body {
 	color: #555555;
 }
 
-#shipaddr-info td.label {
+/* #shipaddr-info td.label {
 	width: unset;
 	min-width: unset;
 }
@@ -88,7 +88,7 @@ body {
 #misc-comment-table td.label {
 	width: unset;
 	min-width: unset;
-}
+} */
 
 /* links */
 /*a {
