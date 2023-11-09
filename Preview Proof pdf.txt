@@ -102,7 +102,7 @@ else:
       </table>\r
       ''',
   'normal': {
-    'scale': 0.45,
+    'scale': 0.5,
     'use_magick': 1,
   },
   'pdf': {
