@@ -44,6 +44,10 @@ p.approve_order_text {
 }
 /*****************************************************************************/
 
+ol > li {
+    text-align: left !important;
+}
+
 span.custom_title {
 	/* color: #6787B7 !important; */
     font-style: italic;
@@ -1456,6 +1460,21 @@ input#searchfield_input {
 	.merch_link, .merch-print {
 		text-align: center;
 	}
+
+	.kititem {
+		font-size: 12px !important;
+		color: #6787B7 !important;
+		font-style: italic !important;
+	}
+
+	/* td.numcol.kititem {
+		display: none;
+	} */
+
+	td.kititem:nth-of-type(n+2) {
+		display: none;
+	}
+
 	/*********************************************************************************************************/
 }
 

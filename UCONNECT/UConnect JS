@@ -248,17 +248,21 @@ $(window).load(function () {
 			return butt + txt;
 		});
 
-		// $('table.true-table .qty_select_cell > select').each(function() {
+		// Make Kit Qty read only
 		$("table.true-table .qty_select_cell > select[name*='Kit_']").each(function() {
-			console.log( $(this).val() );
+			// console.log( $(this).val() );
 			$(this).closest('td').prepend($(this).val());
 			$(this).hide();
 		});
 
-		// Hide bundle items
-		// $('td.qty_select_cell:contains("Included")').closest("tr").hide();
-		// $('td.numcol.pricecol:contains("$0.00")').closest("tr").hide();
-		// console.log($('span.cart_num_items.no_mobile').text()
+		// Special styling of bundle items in Cart page, and shipping page.
+		$('td.qty_select_cell:contains("Included")').closest("tr").children("td").addClass("kititem");
+		$('td.qty_select_cell:contains("Included")').siblings("td:first-of-type").css("padding-left", "20px");
+
+		// Special styling of bundle items in Billing page.
+		$("td.numcol.pricecol[data-price-choosetag*='For_Kit_']:contains('$0.00')").closest("tr").children("td").addClass("kititem");
+		$("td.numcol.pricecol[data-price-choosetag*='For_Kit_']:contains('$0.00')").siblings("td:first-of-type").css("padding-left", "20px");
+
 
 		// Wrap the cart icon
 		$("span.cart_num_items.no_mobile").parent("a").wrap('<div class="carticon">');
@@ -291,7 +295,7 @@ $(window).load(function () {
 
 		// If not a word template then make it so the image links don't work per Suzanne at UUG (Said it's confusing)
 		$( "input[name='tab']" ).each(function() {
-			if ( $( "input[name='tab']" ).val().toLowerCase().indexOf("ms word templates") < 0  && $( "input[name='tab']" ).val().toLowerCase().indexOf("merchandise") < 0 ) {
+			if ( $( "input[name='tab']" ).val().toLowerCase().indexOf("ms word templates") < 0  && $( "input[name='tab']" ).val().toLowerCase().indexOf("merchandise") < 0  && $( "input[name='tab']" ).val().toLowerCase().indexOf("envelopes") < 0 ) {
 				$(".image-container img").not("img.catalog-tiny-thumbnail").each(function() {
 					if ($(this).parent().prop('nodeName') == 'A') {  
 						$(this).unwrap();
@@ -426,8 +430,9 @@ $(window).load(function () {
 	// Show/hide</div> left hand cart if items are in the cart
 	if( $('.stretchy_cols').length == 1) {$('.stretchy_cols').addClass("singleItemCenter");}
 	if( $('.basket-list-item').length >= 1) {
-		$('#basket-list-title').show();
-		$('.responsive_tabs-shell .after').show();
+		// $('#basket-list-title').show();
+		// $('.responsive_tabs-shell .after').show();
+		$('.responsive_tabs-shell').hide();
 		// $('.responsive_tabs-shell > .after').hide();
 	}
 	
@@ -445,10 +450,11 @@ $(window).load(function () {
 		}
 	});
 
-	$(window).trigger('resize');
-
 	// $(".true-table").delay(1000).show();
 	$(".true-table").show();
+
+	$(window).trigger('resize').delay(1000);
+
 
 });
 

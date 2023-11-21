@@ -1506,6 +1506,10 @@ button#submit_cancel {
 	div#jquery-lightbox {
 		z-index: 100001 !important;
 	}
+
+	form {
+		height: -webkit-fill-available !important;
+	}
 	
 /*********************************************************************************************************/
 }
