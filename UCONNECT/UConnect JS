@@ -295,20 +295,20 @@ $(window).load(function () {
 
 		// If not a word template then make it so the image links don't work per Suzanne at UUG (Said it's confusing)
 		$( "input[name='tab']" ).each(function() {
-			if ( $( "input[name='tab']" ).val().toLowerCase().indexOf("ms word templates") < 0  && $( "input[name='tab']" ).val().toLowerCase().indexOf("merchandise") < 0  && $( "input[name='tab']" ).val().toLowerCase().indexOf("envelopes") < 0 ) {
-				$(".image-container img").not("img.catalog-tiny-thumbnail").each(function() {
-					if ($(this).parent().prop('nodeName') == 'A') {  
-						$(this).unwrap();
-						// if its a link then just unwrap the img to remove the link
-					}else{
-						// if it's a kit then create a new image and add it to the DOM, and remove the original so it doesn't use ng-click.
-						var source = $(this).attr('src'); //get img source for new img
-						var alt = $(this).attr('alt'); //get img alt text for new img
-						$(this).parent().prepend('<img alt="' + alt + '" src = "' + source + '">'); // add img to DOM at .img-container
-						$(this).remove(); // remove orginal img that was using ng-click.
-					}
-				});
-			}
+			// if ( $( "input[name='tab']" ).val().toLowerCase().indexOf("ms word templates") < 0  && $( "input[name='tab']" ).val().toLowerCase().indexOf("merchandise") < 0  && $( "input[name='tab']" ).val().toLowerCase().indexOf("envelopes") < 0 ) {
+			// 	$(".image-container img").not("img.catalog-tiny-thumbnail").each(function() {
+			// 		if ($(this).parent().prop('nodeName') == 'A') {  
+			// 			$(this).unwrap();
+			// 			// if its a link then just unwrap the img to remove the link
+			// 		}else{
+			// 			// if it's a kit then create a new image and add it to the DOM, and remove the original so it doesn't use ng-click.
+			// 			var source = $(this).attr('src'); //get img source for new img
+			// 			var alt = $(this).attr('alt'); //get img alt text for new img
+			// 			$(this).parent().prepend('<img alt="' + alt + '" src = "' + source + '">'); // add img to DOM at .img-container
+			// 			$(this).remove(); // remove orginal img that was using ng-click.
+			// 		}
+			// 	});
+			// }
 			// Create Merch Home page Buttons
 			if ( $(this).val().toLowerCase().indexOf("merchandise") >= 0 ) {
 				$('div.height-adjuster').addClass('no-back');  //removed back color for merch pages.
@@ -466,6 +466,9 @@ $(document).ready(function () {
 	
 	/** -None are blank addresses to make sure it clears the fields.  Hide it from the shipping page **/
 	if($('#ship_office').find('option[value="-None"]').length > 0) {$('#ship_office').find('option[value="-None"]').remove();} 
+	
+	/** Sun City AZ is not allowed to ship to.  Hide it from the shipping page **/
+	if($('#ship_office').find('option[value="Sun City"]').length > 0) {$('#ship_office').find('option[value="Sun City"]').remove();} 
 	
 	$('div.note:contains("(optional)")').hide();  /** remove (optional) blurb **/
 
