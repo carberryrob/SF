@@ -1499,12 +1499,18 @@ input#searchfield_input {
 	@keyframes cssAnimation {
 		0%   {opacity: 1;}
 		90%  {opacity: 1;}
-		100% {opacity: 0;}
+		100% {
+			opacity: 0;
+			display: none;
+		}
 	}
 	@-webkit-keyframes cssAnimation {
 		0%   {opacity: 1;}
 		90%  {opacity: 1;}
-		100% {opacity: 0;}
+		100% {
+			opacity: 0;
+			display: none;
+		}
 	}
 
 
