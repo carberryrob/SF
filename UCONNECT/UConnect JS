@@ -427,8 +427,10 @@ $(window).load(function () {
 
 	}
 	
-	// Show/hide</div> left hand cart if items are in the cart
+	// adjust stretchy_cols if only 1 item exist
 	if( $('.stretchy_cols').length == 1) {$('.stretchy_cols').addClass("singleItemCenter");}
+
+	// Show/hide left hand cart if items are in the cart
 	// if( $('.basket-list-item').length >= 1) {
 	// 	// $('#basket-list-title').show();
 	// 	// $('.responsive_tabs-shell .after').show();
