@@ -1,5 +1,5 @@
 <div class="footer_row3">
-<div><img src="con/powered-by-SF.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
+<div><img src="con/White-PoweredBySF-2023-260.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
 	<p class="footer_cr">
 		Strategic Factory<br>
 		11195 Dolfield Boulevard<br>
@@ -72,7 +72,7 @@ function shouldExecute(localStartDate,localEndDate) {
 
 
 $(window).load(function () {
-	$('head').append('<link href="https://resilience.com/wp-content/uploads/2022/04/cropped-Resilience-Icon-Transparent-32x32.png" rel="shortcut icon" type="image/x-icon" />');
+	$('head').append('<link rel="icon" type="image/x-icon" href="con/favicon.ico">');
 	$( "link[href^='css/header.css']" ).removeAttr( "media" );
 	$( ".header-links" ).find( "a" ).removeAttr( "style" )
 	$( "#header_logo img.no_mobile" ).wrap( '<td id="desklogo"><div style="margin-left: 62px;margin-bottom: -8px;padding-top: 8px;"><a href="index.cgi">' );
@@ -166,28 +166,28 @@ $(document).ready(function () {
 		$("button#submit_cancel").hide();
 	}
     
-	// // Show Banner only during a predetermined date and time.
-    // var localStartDate = new Date('2023-08-31T00:00:00'); // Replace with your desired start date and time in your local time zone
-    // var localEndDate = new Date('2023-08-31T23:59:59');   // Replace with your desired end date and time in your local time zone
-	// if (shouldExecute(localStartDate,localEndDate)) {
-	// 	console.log("Start - " + localStartDate.toString());
-	// 	console.log("End - " + localEndDate.toString());
-	// 	var dnow = new Date();
-	// 	console.log("Now - " + dnow.toString());
-	// 	console.log("Show Banner");
-	// 	$("#salebanner").show();
-	// } else {
-	// 	console.log("Hide Banner");
-	// 	$("#salebanner").hide();
-	// }
+	// Show Banner only during a predetermined date and time.
+    var localStartDate = new Date('2023-11-24T00:00:01'); // Replace with your desired start date and time in your local time zone
+    var localEndDate = new Date('2023-11-27T23:59:59');   // Replace with your desired end date and time in your local time zone
+	if (shouldExecute(localStartDate,localEndDate)) {
+		console.log("Start - " + localStartDate.toString());
+		console.log("End - " + localEndDate.toString());
+		var dnow = new Date();
+		console.log("Now - " + dnow.toString());
+		console.log("Show Banner");
+		$("#salebanner").show();
+	} else {
+		console.log("Hide Banner");
+		$("#salebanner").hide();
+	}
 
-    // if ($("#salebanner").length > 0) {
-    //     var classstr = $("#salebanner").parents("div").attr("class");
-    //     if (~classstr.indexOf("no_mobile")) {
-    //         $("#salebanner").parents("div").removeClass("no_mobile");
-    //     }    
-    // }
-	// //End Banner ************************************************************
+    if ($("#salebanner").length > 0) {
+        var classstr = $("#salebanner").parents("div").attr("class");
+        if (~classstr.indexOf("no_mobile")) {
+            $("#salebanner").parents("div").removeClass("no_mobile");
+        }    
+    }
+	//End Banner ************************************************************
 });
 function windowSize() {
 	windowHeight = window.innerHeight ? window.innerHeight : $(window).height();

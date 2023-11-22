@@ -429,14 +429,14 @@ $(window).load(function () {
 	
 	// Show/hide</div> left hand cart if items are in the cart
 	if( $('.stretchy_cols').length == 1) {$('.stretchy_cols').addClass("singleItemCenter");}
-	if( $('.basket-list-item').length >= 1) {
-		// $('#basket-list-title').show();
-		// $('.responsive_tabs-shell .after').show();
-		$('.responsive_tabs-shell').hide();
-		// $('.responsive_tabs-shell > .after').hide();
-	}
+	// if( $('.basket-list-item').length >= 1) {
+	// 	// $('#basket-list-title').show();
+	// 	// $('.responsive_tabs-shell .after').show();
+	// 	$('.responsive_tabs-shell').hide();
+	// 	// $('.responsive_tabs-shell > .after').hide();
+	// }
 	
-
+	
 	$('.header-links').attr('style', 'display: revert !important');
 
 	/********* Hide FAQ Holders & Place Holders **********/
@@ -478,6 +478,8 @@ $(document).ready(function () {
 	} else{
 		$("button#submit_cancel").has("span:contains('Cancel Order')").hide();
 	}
+
+	$(".item-search-block").hide();
 });
 
 </script>
@@ -485,6 +487,10 @@ $(document).ready(function () {
 $(document).ready(function () {
 
 	if ($(window).width() >= 1025) {
+		$('.responsive_tabs-shell').hide();
+		$('.responsive_tabs-shell > .after').hide();
+	
+
 		// Give color dropdowns a class to call later.
 		$('.the_actual_qty_select').find('select:first').each(function() {
 			$(this).addClass('colorselect');

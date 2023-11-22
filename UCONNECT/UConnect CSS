@@ -1475,6 +1475,39 @@ input#searchfield_input {
 		display: none;
 	}
 
+	.select-items .pageinstructions, .error {
+		text-align: center;
+		background: #f1f1f1;
+		width: 50%;
+		margin: 0 auto;
+		padding: 10px 0px;
+	}
+
+	.imprint .error {
+		background: #f1f1f1;
+		width: 100%;
+		padding: 10px 0px;
+		position: relative;
+		left: 0;
+		margin-top: 20px;
+	}
+
+	.select-items .pageinstructions {
+		-webkit-animation: cssAnimation 8s forwards; 
+		animation: cssAnimation 8s forwards;
+	}
+	@keyframes cssAnimation {
+		0%   {opacity: 1;}
+		90%  {opacity: 1;}
+		100% {opacity: 0;}
+	}
+	@-webkit-keyframes cssAnimation {
+		0%   {opacity: 1;}
+		90%  {opacity: 1;}
+		100% {opacity: 0;}
+	}
+
+
 	/*********************************************************************************************************/
 }
 

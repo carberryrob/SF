@@ -26,37 +26,30 @@
 @import url('https://fonts.googleapis.com/css?family=Krub&display=swap');
 
 
-@font-face {
-	font-family: 'Everett';
-	font-style: normal;
-	font-weight: 400;
-	font-display: auto;
-	src: url('https://resbiostage.wpengine.com/wp-content/uploads/2021/11/TWKEverett-Regular-web.woff2') format('woff2');
-}
-@font-face {
-	font-family: 'Everett';
-	font-style: normal;
-	font-weight: 500;
-	font-display: auto;
-	src: url('https://resbiostage.wpengine.com/wp-content/uploads/2021/11/TWKEverett-Medium-web.woff2') format('woff2');
-}
-@font-face {
-	font-family: 'Everett';
-	font-style: normal;
-	font-weight: 600;
-	font-display: auto;
-	src: url('https://resbiostage.wpengine.com/wp-content/uploads/2021/11/TWKEverett-Bold-web.woff2') format('woff2');
-}
-/* End Custom Fonts CSS */
 /* Start Custom Fonts CSS */
-@font-face {
-	font-family: 'Everett Mono';
-	font-style: normal;
+
+@font-face { 
+	font-family: 'Everett';  
+	src: url('https://resilience.com/hubfs/resilience-custom-fonts/TWKEverett-Regular-web.woff2') format('woff2');
+	font-weight: 400;
+}
+@font-face { 
+	font-family: 'Everett';  
+	src: url('https://resilience.com/hubfs/resilience-custom-fonts/TWKEverett-Medium-web.woff2') format('woff2');
+	font-weight: 500;
+}
+@font-face { 
+	font-family: 'Everett';  
+	src: url('https://resilience.com/hubfs/resilience-custom-fonts/TWKEverett-Bold-web.woff2') format('woff2');
+	font-weight: 600;
+}
+@font-face { 
+	font-family: 'Everett Mono';  
+	src: url('https://resilience.com/hubfs/resilience-custom-fonts/TWKEverettMono-Bold-web.woff2') format('woff2');
 	font-weight: 700;
-	font-display: auto;
-	src: url('https://resbiostage.wpengine.com/wp-content/uploads/2021/11/TWKEverettMono-Bold-web.woff2') format('woff2');
 }
 /* End Custom Fonts CSS */
+
 
 body {
 	font-family: "Everett", Sans-serif !important;
@@ -1299,6 +1292,15 @@ a.button:hover {
 		font-size: 11px !important;
 		min-height: 250px !important;
 	}*/
+
+	form {
+		height: -webkit-fill-available !important;
+	}
+
+	.main.catalog--container {
+		min-height: 600px;
+	}
+
 }
 
 @media only screen and (max-width: 1024px) {
