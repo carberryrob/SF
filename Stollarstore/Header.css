@@ -291,16 +291,24 @@ h3 {
 }
 
 .form-body {
-    width: 100%;
+    width: fit-content;
+    margin: 0 auto;
 }
 
+.form-body select {
+    height: 2.5rem;
+}
+
+td.drop_cell {
+    text-align: center !important;
+}
 
 .form-body td.label {
     text-align: left;
-    width: 150px;
     min-width: 0;
     font-size: 1.25rem;
     font-weight: normal;
+    text-wrap: nowrap;
 }
 
 .form-body td.input {
@@ -310,7 +318,7 @@ h3 {
 .form-body td.input input {
     border-radius: 0 !important;
     height: 2.5rem;
-    min-width: 300px;
+    min-width: auto;
     padding-left: 10px;
 }
 
