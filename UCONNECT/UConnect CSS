@@ -43,6 +43,32 @@ p.approve_order_text {
 	text-shadow: 0 1px 0 rgb(0 0 0 / 5%);
 }
 /*****************************************************************************/
+.mrf_outdated, .mrf_outofstock {
+    text-align: left !important;
+    width: 75.5%;
+    word-break: break-word;
+    font-weight: 500;
+    padding: 5px 0 10px;
+}
+
+.mrf_outdated {
+	text-align: left;
+}
+
+.mrf_outofstock {
+	text-align: left;
+}
+
+.proof > button {
+    font-size: 12px !important;
+    line-height: 1.25;
+    background-color: #6787B7;
+    text-transform: none;
+    padding: 6px 10px;
+}
+div.responsive-choose-info > span {
+	display: block;
+}
 
 ol > li {
     text-align: left !important;
@@ -57,7 +83,7 @@ span.custom_title {
     padding: 0 10px;
 }
 
-.true-table {display: none;}
+/* .true-table {display: none;} */
 
 .main.billing.catalog--container {
 	max-width: 675px !important;
@@ -1284,9 +1310,9 @@ input#searchfield_input {
 		margin-bottom: 0px;
 	}
 
-	span.fa.fa-times.detail_closer.ng-scope {
+	/* span.fa.fa-times.detail_closer.ng-scope {
 		display: none;
-	}
+	} */
 
 	div.blurb {
 		/*margin-right: 90%;
@@ -1314,6 +1340,7 @@ input#searchfield_input {
 
 	.add-to-basket-qty-select {
 		margin: 0 !important;
+		padding: 0 25%;
 	}
 
 	.stretchy_cols.responsive-item.image-row {
@@ -1373,7 +1400,34 @@ input#searchfield_input {
 	.image-container img:not(.catalog-tiny-thumbnail) {
 		max-width: 300px !important;
 		max-height: 300px !important;
+		/* z-index: auto; */
 		/* margin-bottom: 15px !important; */
+	}
+
+	/* .image-container img:not(.catalog-tiny-thumbnail):hover {
+		transform: scale(2);
+    	transform-origin: 0 0;
+	} */
+
+	/* .imgwrap:hover {
+		overflow: auto;
+	} */
+
+	.imgwrap > label > img {
+		/* transition: transform 0.25s ; */
+		transition: transform 0.25s;
+		cursor: zoom-in;
+	}
+
+	input[type=checkbox].zoomCheck {
+		display: none;
+	} 
+	input[type=checkbox].zoomCheck:checked ~ label > img {
+		cursor: zoom-out;
+		position: absolute;
+		transform-origin: 100% 100%;
+		transform: scale(2);
+		z-index: 200;
 	}
 
 	.multi_preview {
@@ -1513,6 +1567,23 @@ input#searchfield_input {
 		}
 	}
 
+	.multi_preview img {
+		border: solid 1px #5B6770 !important;
+	}
+	.multi_preview a {
+		padding: 0 1px;
+	}
+
+	/* #item_details_view {
+		position: relative;
+		height: -webkit-fill-available !important;
+		margin: 50px auto 0 !important;
+		width: 100% !important;
+		vertical-align: top !important;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	} */
 
 	/*********************************************************************************************************/
 }

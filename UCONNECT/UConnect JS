@@ -14,15 +14,19 @@
 function set_preview_image(elem, thumburl, largeurl) {
 	// console.log( $(elem).parent().find('a').index($(elem)) );
 	var idx = $(elem).parent().find('a').index($(elem));
-	var img = $(elem).parents('.image-row,.item-thumbnail').find('.image-container .imgwrap > a > img, .image-container .imgwrap > img');
+	var img = $(elem).parents('.image-row,.item-thumbnail').find('.image-container .imgwrap > a > img, .image-container .imgwrap > img, .image-container .imgwrap > label > img');
 	var a = $(elem).parents('.image-row,.item-thumbnail').find('.image-container .imgwrap > a');
 	var imgbtn = $(elem).parents('.image-row').find('input[type="image"][src!="img/catalog_add.gif"]');
 	var mobile_img = $(elem).parents('.detail_image_wrapper').find('#d_preview_image > img');
 
+	// console.log(thumburl + ' :|: ' + largeurl);
+	
 	if (img.length) {
+		thumburl = largeurl
 		img.attr('src', thumburl);
 	}
 	else if (imgbtn.length) {
+		thumburl = largeurl
 		imgbtn.attr('src', thumburl);
 	}
 	else if (mobile_img.length) {
@@ -34,6 +38,7 @@ function set_preview_image(elem, thumburl, largeurl) {
 		}
 		else {
 			a.attr('onclick', unescape(largeurl));
+			// a.attr('href', largeurl);
 		}
 	}
 	// When clicking/changing Thumbnail images on Apparel, change the dropdown as well.
@@ -42,6 +47,66 @@ function set_preview_image(elem, thumburl, largeurl) {
 		$(colorselect).prop('selectedIndex', idx);
 	}
 }
+
+{/* Scale window to fit based on the item widths */}
+function WidthAdjuster(){
+	if ($('#all_items_view').hasClass('all-items-hide')){
+		return;
+	}
+	// console.log('WidthAdjuster')
+	// if (ow > 0) {ow = ow / 2}
+	var w = $(window).width(),
+		// 'p' is used to prevent the all_items_view from wrapping
+		//  to a new line when the window is around 1030px
+		//  p = 5,
+		p = 1,
+		t = $('.responsive_tabs-shell').width(),
+		n = 0;
+		if ($('div#basket-list-title').is(":hidden")) {t = 0}
+		// t = t + ow;
+	n = 100 - ((t/w) * 100) - p;
+
+	$('#all_items_view').css({
+		'float': 'right',
+		'width': n+'%'
+	});
+}
+
+{/* Function to scroll zoomed image into view if once zoomed it moves off the viewport */}
+$.fn.ensureVisible = function () { $(this).each(function () { $(this)[0].scrollIntoView(); }); };
+
+{/* Function to adjust the page size to fit a zoomed image then scroll it into view */}
+function AdjustForIMG(elem){
+	if ($(elem).closest('.imgwrap').find('input[type=checkbox].zoomCheck').is(':checked')){
+		var ofs = $(elem).offset();
+		var oh = $(elem).outerHeight();
+		var ow = $(elem).outerWidth();
+		// console.log(ofs)
+		// console.log($(elem).closest('.imgwrap').find('input[type=checkbox].zoomCheck').is(':checked'));
+		var mb = parseInt($("#copy5").css("margin-bottom").replace("px", ""));
+		while (ofs.top < 0){
+			mb += 1;
+			// console.log(mb);
+			$("#copy5").css("margin-bottom", mb + "px");
+			ofs = $(elem).offset();
+		}
+		ofs = $(elem).offset();
+		var alli = $("div#all_items_view").width();
+		while (ofs.left < 0) {
+			alli -= 1
+			$("div#all_items_view").width(alli);
+			ofs = $(elem).offset();
+		}
+		// $(elem).ensureVisible();
+		var topPos = ofs.top - $(window).scrollTop();
+		var rightPos = $(elem)[0].getBoundingClientRect().right  + $(window)['scrollLeft']();
+		var mp = $(elem).parents('.image-container').find('.multi_preview');
+		var bottomPos = $(mp)[0].getBoundingClientRect().bottom + $(window)['scrollTop']();
+		// console.log( topPos + " | " + bottomPos + " | " + $(window)['scrollTop']() + " | " + $(window).height() + " | " + ((bottomPos-$(window)['scrollTop']()) >= $(window).height()) );
+		if ((rightPos > $(window).width()) || (topPos < 0) || ((bottomPos-$(window)['scrollTop']()) > $(window).height())){$(elem).ensureVisible();}
+	}
+}
+
 
 $(window).load(function () {
 
@@ -55,6 +120,32 @@ $(window).load(function () {
 
 	$(".note:contains('Non-taxable items marked with *')").hide();
 	$(".pagetitle:contains('Mailing List')").hide();
+
+
+	// Add custome message to each item that is out of stock, or out dated.
+	var mrlink = '<a href= "https://www.wrike.com/frontend/requestforms/index.html?token=eyJhY2NvdW50SWQiOjQ4MTM1NzUsInRhc2tGb3JtSWQiOjUzNTk5M30JNDc4Njk3MDkxODMzMQk0ZGYzOGU4NDkzNmNkYWQ4ZWVlNWM5MzAwZjFkOWMwNWVkNzA0NmRlYTA1YzQxNzJjNjIyMWMyMjc0NWZkMDBl" target="_blank">Marketing Request Form</a>'
+
+	$('.responsive-choose-info').each(function() {
+		if ($(this).find('span:contains("Marketing Request Form")').length > 0) {
+			$(this).html( '<span class="mrf_outdated">The item is outdated and will need additional time for updating and printing.&nbsp; Please fill out the ' + mrlink + ' to notify Marketing that this item is needed.&nbsp; Thank you.</span>' );
+		}
+	});
+
+	// Out of stock Msg
+	// $('div.responsive-choose-info > span:not(:has(>div.proof)').prepend('<div class="proof"></div>');
+
+	$("span.responsive-tagcheck.tagcheck-bottom:contains('Out of Stock')").each(function() {
+		// console.log( $(this).html() );
+		var cont = $(this).parent('div').find('.responsive-choose-info').html();
+		// if (cont.length > 0) {cont = '<br><br>' + cont;}
+		$(this).parent('div').find('.responsive-choose-info').html( '<span class="mrf_outofstock">This item is in transit between warehouses and is not readily available for shipping.&nbsp; If this item is needed immediately, please fill out the ' + mrlink + '.&nbsp; Thank you.</span>' + cont );
+		cont = $(this).html();
+		$(this).html( '<div class="hideit">' + cont + '</div>' );
+		cont = $(this).prev('.note.responsive-onhand').html();
+		$(this).prev('.note.responsive-onhand').html( '<div class="hideit">' + cont + '</div>' );
+	});
+
+	// *************************************************************************************************************************************************************************
 
 	// $("div.error:contains('Incompatible Mail List or Delivery methods.')").each(function() {
 	// 	var errtxt = $(this).text().replace("Incompatible Mail List or Delivery methods.", "");
@@ -336,6 +427,7 @@ $(window).load(function () {
 		// ************ Size stretchy column items so all are top aligned and buttons are uniform *************
 		
 		// Wrap item imgs and thumbnails for sizing
+		// $('div.responsive-choose-info > span:not(:has(>div.proof)').prepend('<div class="proof"></div>');
 		$('div.image-container:not(:has(>div.multi_preview)').append('<div class="multi_preview"></div>');
 		$("div.image-container").find('img:first').each(function() {
 			if ($(this).parent('a').length > 0) {
@@ -344,6 +436,63 @@ $(window).load(function () {
 				$(this).wrap('<div class="imgwrap">')
 			}
 		});
+
+
+		// Handle zoom for images. *********************************************************************
+		if ( $( "input[name='tab']" ).length > 0 ) {
+			if ( $( "input[name='tab']" ).val().toLowerCase().indexOf("ms word templates") < 0) {
+				$(".image-container img").not("img.catalog-tiny-thumbnail").each(function() {
+					if ($(this).parent().prop('nodeName') == 'A') {  
+						$(this).unwrap();
+						// return
+						// if its a link then just unwrap the img to remove the link
+					}else{
+						// if it's a kit then create a new image and add it to the DOM, and remove the original so it doesn't use ng-click.
+						var source = $(this).attr('src'); //get img source for new img
+						var alt = $(this).attr('alt'); //get img alt text for new img
+						$(this).parent().prepend('<img alt="' + alt + '" src = "' + source + '">'); // add img to DOM at .img-container
+						$(this).remove(); // remove orginal img that was using ng-click.
+					}
+				});
+				// console.log($('.imgwrap > img').length);
+				x=0
+	
+				$(".image-container img").not("img.catalog-tiny-thumbnail").on('load', function () {
+					// console.log('** img load')
+					AdjustForIMG(this);
+				});
+	
+				$('.imgwrap > img').each(function() {
+					x += 1
+					$(this).on('transitionend webkitTransitionEnd oTransitionEnd', function () {
+						AdjustForIMG($(this));
+						// console.log('img transition end');
+					});
+					$(this).wrap('<label for="zoomCheck' + x + '">');
+					$(this).parents('.imgwrap').prepend('<input type="checkbox" id="zoomCheck' + x + '" class="zoomCheck">')
+	
+				});
+	
+				$('input[type=checkbox].zoomCheck').change(function() {
+					if(this.checked) {
+						var thisid = $(this).attr('id');
+						// console.log(thisid);
+						$('input[type=checkbox].zoomCheck:checked').each(function() {
+							if ($(this).attr('id') != thisid) {
+								$(this).prop('checked', false); // Unchecks all others that are checked.
+							}
+						});
+					}else{
+						$("#copy5").css("margin-bottom", "0px");
+						WidthAdjuster();
+					}
+				});
+			}
+		}
+		// *********************************************************************************************
+
+
+
 
 		// Set height of img wraps based on tallest img so items can be top aligned 
 		var maxH = 0
@@ -371,6 +520,33 @@ $(window).load(function () {
 		if (maxH > 0) {maxH += 1;}
 		maxH = maxH + "px";
 		$('div.responsive-longname').css('min-height', maxH);
+
+		// If .responsive-choose-info > span</input> exist set that area height the same for all items
+		maxH = 0
+		$('div.responsive-choose-info > span').eq(0).each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.responsive-choose-info > span').eq(0).css('min-height', maxH);
+
+		maxH = 0
+		$('div.responsive-choose-info > span').eq(1).each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.responsive-choose-info > span').eq(1).css('min-height', maxH);
+
+
+		// If .proof exist set that area height the same for all items
+		maxH = 0
+		$('div.proof').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.proof').css('min-height', maxH);
 
 		// If .responsive-choose-info exist set that area height the same for all items
 		maxH = 0
@@ -439,6 +615,7 @@ $(window).load(function () {
 	// }
 	
 	
+
 	$('.header-links').attr('style', 'display: revert !important');
 
 	/********* Hide FAQ Holders & Place Holders **********/
@@ -456,6 +633,7 @@ $(window).load(function () {
 	$(".true-table").show();
 
 	$(window).trigger('resize').delay(1000);
+	$(window).trigger('resize').delay(3000);
 
 
 });
@@ -480,6 +658,8 @@ $(document).ready(function () {
 	} else{
 		$("button#submit_cancel").has("span:contains('Cancel Order')").hide();
 	}
+
+	$('.items-table th:contains("Order Status History:")').parents('table').hide();
 
 	$(".item-search-block").hide();
 });
@@ -506,6 +686,7 @@ $(document).ready(function () {
 				$(prnt).find('.multi_preview a').eq(idx).trigger( "click" );
 			});
 		}
+
 	}
 	
 	// ********** Enable/Disable "Submit Order" button based on approval *****************************************************
@@ -521,6 +702,7 @@ $(document).ready(function () {
 	{/* ********** Move approval yes/no to just above Submit Order ******************* */}
 	$("tr:contains('I have verified and approve this order:')").appendTo($("p.approve_order").parents("tr").parent());
 	{/* ******************************************************************************* */}
+
 });
 
 </script>
@@ -563,6 +745,7 @@ $(document).ready(function(){
 
 	// Remove style attr of element if it exists
 	function killStyleAttr (elm) {
+		// console.log('killStyleAttr');
 		if (elm.attr('style')) {
 			elm.removeAttr('style');
 		}
@@ -592,6 +775,7 @@ $(document).ready(function(){
 
 	// On page load, call different height adjusters
 	function initialAdjuster (selector) {
+		// console.log('initialAdjuster');
 		if ($(window).outerWidth() >= windowSansScrollBars) {
 			killStyleAttr(selector);
 			itemScaler(selector, 2);
@@ -606,6 +790,7 @@ $(document).ready(function(){
 	// Get items to fit within cells better, bottom aligned
 
 	function itemScaler (selector, rows) {
+		// console.log('itemScaler');
 		selector.each(function() {
 			var tempHeight = $(this).height(),
 				tempParentHeight = $(this).parent().outerHeight();
@@ -629,6 +814,7 @@ $(document).ready(function(){
 
 	// if there is only one item, center it.
 	function singleItemCenter() {
+		// console.log('singleItemCenter');
 		if( $('.stretchy_cols').length < 2) {
 			$('.stretchy_cols').css({
 				'min-width': '100%',
@@ -640,6 +826,7 @@ $(document).ready(function(){
 
 	// Hide / Show logic for Tabs
 	function tabHandler(action) {
+		// console.log('tabHandler');
 		var openTabs = false;
 		if (!action){return;}
 		if (action == 'open') {
@@ -674,6 +861,7 @@ $(document).ready(function(){
 
 	// Scale the height of main class to be that of the items within it + 50 for spacing
 	function pageScaler () {
+		// console.log('pageScaler');
 		// return;
 		var hiddenFooter = 0,
 			timeVar = 0;
@@ -718,7 +906,7 @@ $(document).ready(function(){
 	// Set up Changer for mobile vs non-mobile
 	//////////////////////////////////////////////////
 	function catalogWidthChange(mq) {
-
+		// console.log('catalogWidthChange');
 		//////////////////////////////////////////////////
 		// WE ARE IN MOBILE VIEW HERE....
 		//////////////////////////////////////////////////
@@ -739,6 +927,7 @@ $(document).ready(function(){
 
 			// stop floating allItems once in mobile
 			$(window).resize(function() {
+				// console.log('resize triggered1');
 				if (itemDetails.css('display') != 'none'){
 					return;
 				}
@@ -746,10 +935,12 @@ $(document).ready(function(){
 					killStyleAttr(allItems);
 					pageScaler();
 				}
+				// console.log('resize finished1');
 			});
 
 			// As the window resizes, call different height adjusters
 			$(window).resize(function() {
+				// console.log('resize triggered2');
 				if (itemDetails.css('display') != 'none'){
 					return;
 				}
@@ -764,6 +955,7 @@ $(document).ready(function(){
 						itemScaler(heightAdjuster, 1);
 					}
 				}
+				// console.log('resize finished2');
 			});
 
 			singleItemCenter();
@@ -804,37 +996,37 @@ $(document).ready(function(){
 
 			// resizing adjustment
 			$(window).resize(function() {
-			if (itemDetails.css('display') != 'none'){
-				return;
-			}
-			if ($(window).width() < (parseInt(RESPONSIVE.min(), 10) - RESPONSIVE.scrollbars())) {
-				return;  //this is necessary despite the WidthChange context here...
-			}
-			itemWidthAdjuster();
-			pageScaler();
-
-			// let's be sure the item is not obscured by a short stretchy_col
-			// AND let's make all stretchy_cols on the page the same height
-			var tall = loadedStretchyColHeight,
-				safetyPadding = 10,
-				tallest;
-			heightAdjuster.each(function() {
-				// loop over height-adjuster cells and get the max height
-					if ($(this).height() > $(this).parent().height()) {
-					var taller = Math.max(tall, $(this).height()) + safetyPadding;
-					tallest = Math.max(tall, tallest);
-					}
-				else {
+				// console.log('resize triggered3');
+				if (itemDetails.css('display') != 'none'){
 					return;
 				}
-			});
-			// now set the parent height on all height-adjusters to this calculated height
-			heightAdjuster.parent().css({
-				'min-height': tallest,
-				'max-height': tallest,
-				'height': tallest,
-			});
+				if ($(window).width() < (parseInt(RESPONSIVE.min(), 10) - RESPONSIVE.scrollbars())) {
+					return;  //this is necessary despite the WidthChange context here...
+				}
+				itemWidthAdjuster();
+				pageScaler();
 
+				// let's be sure the item is not obscured by a short stretchy_col
+				// AND let's make all stretchy_cols on the page the same height
+				var tall = loadedStretchyColHeight,
+					safetyPadding = 10,
+					tallest;
+				heightAdjuster.each(function() {
+					// loop over height-adjuster cells and get the max height
+					if ($(this).height() > $(this).parent().height()) {
+						var taller = Math.max(tall, $(this).height()) + safetyPadding;
+						tallest = Math.max(tall, tallest);
+					}else {
+						return;
+					}
+				});
+				// now set the parent height on all height-adjusters to this calculated height
+				heightAdjuster.parent().css({
+					'min-height': tallest,
+					'max-height': tallest,
+					'height': tallest,
+				});
+				// console.log('resize end3');
 			});
 
 			// Kill the itemScaler stuff
