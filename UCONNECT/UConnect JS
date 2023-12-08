@@ -133,24 +133,24 @@ $(window).load(function () {
 
 	// Out of stock Msg
 	// $('div.responsive-choose-info > span:not(:has(>div.proof)').prepend('<div class="proof"></div>');
+	if ( $( "input[name='tab']" ).val() ) {
+		// console.log($( "input[name='tab']" ).val() + (!$( "input[name='tab']" ).val().includes("Large Patient Packets")));
+		if ( (!$( "input[name='tab']" ).val().includes("Large Patient Packets")) ) {
+			$("span.responsive-tagcheck.tagcheck-bottom:contains('Out of Stock')").each(function() {
+				// console.log( $(this).html() );
+				var cont = $(this).parent('div').find('.responsive-choose-info').html();
+				// if (cont.length > 0) {cont = '<br><br>' + cont;}
+				$(this).parent('div').find('.responsive-choose-info').html( '<span class="mrf_outofstock">This item is in transit between warehouses and is not readily available for shipping.&nbsp; If this item is needed immediately, please fill out the ' + mrlink + '.&nbsp; Thank you.</span>' + cont );
+				cont = $(this).html();
+				$(this).html( '<div class="hideit">' + cont + '</div>' );
+				cont = $(this).prev('.note.responsive-onhand').html();
+				$(this).prev('.note.responsive-onhand').html( '<div class="hideit">' + cont + '</div>' );
+			});				}
+	}
 
-	$("span.responsive-tagcheck.tagcheck-bottom:contains('Out of Stock')").each(function() {
-		// console.log( $(this).html() );
-		var cont = $(this).parent('div').find('.responsive-choose-info').html();
-		// if (cont.length > 0) {cont = '<br><br>' + cont;}
-		$(this).parent('div').find('.responsive-choose-info').html( '<span class="mrf_outofstock">This item is in transit between warehouses and is not readily available for shipping.&nbsp; If this item is needed immediately, please fill out the ' + mrlink + '.&nbsp; Thank you.</span>' + cont );
-		cont = $(this).html();
-		$(this).html( '<div class="hideit">' + cont + '</div>' );
-		cont = $(this).prev('.note.responsive-onhand').html();
-		$(this).prev('.note.responsive-onhand').html( '<div class="hideit">' + cont + '</div>' );
-	});
 
 	// *************************************************************************************************************************************************************************
 
-	// $("div.error:contains('Incompatible Mail List or Delivery methods.')").each(function() {
-	// 	var errtxt = $(this).text().replace("Incompatible Mail List or Delivery methods.", "");
-	// 	$(this).text(errtxt);
-	// });
 
 	// Hide eronious lines on the Accept page
 	$("table.items-table:contains('Configuration -')").hide();
@@ -195,7 +195,7 @@ $(window).load(function () {
 		$( "#desklogo" ).insertBefore(".header-links");
 
 
-		/************* TopTabs *************/
+		/************* Top Tabs *************/
 		
 		////$("div.responsive_tabs-shell").show();  /*** Only for testing; Show the old Tabs ***/
 		//$(".tab_html_wrapper").show();  /*** Only for testing; Show the old Tabs ***/
@@ -211,6 +211,10 @@ $(window).load(function () {
 			appendid = 'TabsMenu';
 			tabid = $(this).attr("id");
 			if ($(this).find("dfn").length == 1) {
+				// console.log('|' + $(this).find("dfn").first().text() + '|');
+				if ($(this).find("dfn").first().text() == "Training") {
+					$("#" + appendid).append( '<li class="onlyli" id="TMli_MRF"><a href= "https://www.wrike.com/frontend/requestforms/index.html?token=eyJhY2NvdW50SWQiOjQ4MTM1NzUsInRhc2tGb3JtSWQiOjUzNTk5M30JNDc4Njk3MDkxODMzMQk0ZGYzOGU4NDkzNmNkYWQ4ZWVlNWM5MzAwZjFkOWMwNWVkNzA0NmRlYTA1YzQxNzJjNjIyMWMyMjc0NWZkMDBl" target="_blank">Marketing Request Form</a></li>' );
+				}
 				$("#" + appendid).append( '<li class="onlyli" id="TMli_' + tabid + '">' + $(this).find("dfn").first().html() + '</li>' ); /**** Top most menu link with no sub items ****/
 			}else{
 				$("#" + appendid).append( '<li class="topli" id="TMli_' + tabid + '">' + $(this).find("dfn").first().text() + '<ul id="TMul_' + tabid + '"></ul></li>' ); /*Top most menu with sub items*/

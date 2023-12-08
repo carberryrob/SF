@@ -44,7 +44,7 @@ p.approve_order_text {
 }
 /*****************************************************************************/
 .mrf_outdated, .mrf_outofstock {
-    text-align: left !important;
+    text-align: center !important;
     width: 75.5%;
     word-break: break-word;
     font-weight: 500;
