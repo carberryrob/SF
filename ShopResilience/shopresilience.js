@@ -167,26 +167,28 @@ $(document).ready(function () {
 	}
     
 	// Show Banner only during a predetermined date and time.
-    var localStartDate = new Date('2023-11-24T00:00:01'); // Replace with your desired start date and time in your local time zone
-    var localEndDate = new Date('2023-11-27T23:59:59');   // Replace with your desired end date and time in your local time zone
-	if (shouldExecute(localStartDate,localEndDate)) {
-		console.log("Start - " + localStartDate.toString());
-		console.log("End - " + localEndDate.toString());
-		var dnow = new Date();
-		console.log("Now - " + dnow.toString());
-		console.log("Show Banner");
-		$("#salebanner").show();
-	} else {
-		console.log("Hide Banner");
-		$("#salebanner").hide();
-	}
 
-    if ($("#salebanner").length > 0) {
-        var classstr = $("#salebanner").parents("div").attr("class");
-        if (~classstr.indexOf("no_mobile")) {
-            $("#salebanner").parents("div").removeClass("no_mobile");
-        }    
-    }
+    // var localStartDate = new Date('2023-11-24T00:00:01'); // Replace with your desired start date and time in your local time zone
+    // var localEndDate = new Date('2023-11-27T23:59:59');   // Replace with your desired end date and time in your local time zone
+	// if (shouldExecute(localStartDate,localEndDate)) {
+	// 	console.log("Start - " + localStartDate.toString());
+	// 	console.log("End - " + localEndDate.toString());
+	// 	var dnow = new Date();
+	// 	console.log("Now - " + dnow.toString());
+	// 	console.log("Show Banner");
+	// 	$("#salebanner").show();
+	// } else {
+	// 	console.log("Hide Banner");
+	// 	$("#salebanner").hide();
+	// }
+
+    // if ($("#salebanner").length > 0) {
+    //     var classstr = $("#salebanner").parents("div").attr("class");
+    //     if (~classstr.indexOf("no_mobile")) {
+    //         $("#salebanner").parents("div").removeClass("no_mobile");
+    //     }    
+    // }
+	
 	//End Banner ************************************************************
 });
 function windowSize() {

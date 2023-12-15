@@ -75,6 +75,10 @@ ol > li {
 	padding: 1px 3px;
 }
 
+.main.new-account.catalog--container li {
+    list-style: none;
+}
+
 span.custom_title {
 	/* color: #6787B7 !important; */
     font-style: italic;
