@@ -730,22 +730,15 @@ button#submit_cancel {
     } */
 
   	div#TabsDiv {
-		/* display: block;
-		position: absolute;
-		white-space: nowrap;
-		top: 28px;
-		text-align: center;
-		width: 100%; */
 		display: block;
 		position: absolute;
 		white-space: nowrap;
-		top: 28px;
-		--w: 500px;
+		top: 32px;
+		--w: 1000px;
 		width: var(--w);
 		left: -webkit-calc((100% - var(--w))/2);
 		left: -moz-calc((100% - var(--w))/2);
 		left: calc((100% - var(--w))/2);
-
 	}
 
 	nav {
