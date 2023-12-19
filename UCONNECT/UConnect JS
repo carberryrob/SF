@@ -605,6 +605,10 @@ $(window).load(function () {
 	
 		// *****************************************************************************************
 
+		$(window).trigger('resize').delay(1000);
+		$(window).trigger('resize').delay(3000);
+	
+
 	}
 	
 	// adjust stretchy_cols if only 1 item exist
@@ -635,10 +639,6 @@ $(window).load(function () {
 
 	// $(".true-table").delay(1000).show();
 	$(".true-table").show();
-
-	$(window).trigger('resize').delay(1000);
-	$(window).trigger('resize').delay(3000);
-
 
 });
 
@@ -714,372 +714,374 @@ $(document).ready(function () {
 <script>
 {/* Rob Carberry - So we can customize the pdna itemWidthAdjuster function we add the code from responsive_catalog.js so we can alter the function */}
 $(document).ready(function(){
-	// return;
-	// bugfix var for iOS
-	var loadedWidth = $(window).width();
-
-	windowSansScrollBars = 535;
-
-	///////////////////////////////////////////////
-	// Set up Variables
-	///////////////////////////////////////////////
-
-	var searchNavBar = $('.before'),
-		tabList = $('#tab_responsive_tabs'),
-		onsAndOffs = $('div.on, div.off, dfn.on, dfn.off'),
-		navTabs = $('#navTabs'),
-		mainSection = $('.main-section'),
-		allItems = $('#all_items_view'),
-		itemDetails = $('#item_details_view'),
-		tabCloser = $('#mobile_tab_closer'),
-		tabExiter = $('.exit_overlay'),
-		tabShell = $('.responsive_tabs-shell'),
-		searchButton = $('#submit_catalog_search'),
-		oldSearchBtnHtml = searchButton.html(),
-		tabDivs = $('.responsive_tabs div[id^="tab_"]'),
-		tabOnDiv = $('.responsive_tabs div.on'),
-		heightAdjuster = $('.height-adjuster'),
-		loadedStretchyColHeight = $('.stretchy_cols').css('height'),
-		footer = $('.footer');
-
-
-	///////////////////////////////////////////////
-	// Set up Functions
-	///////////////////////////////////////////////
-
-	// Remove style attr of element if it exists
-	function killStyleAttr (elm) {
-		// console.log('killStyleAttr');
-		if (elm.attr('style')) {
-			elm.removeAttr('style');
-		}
-	}
-
-	// Scale window to fit based on the item widths
-	function itemWidthAdjuster(){
-		// console.log('itemWidthAdjuster')
-		if (allItems.hasClass('all-items-hide')){
-			return;
-		}
-		var w = $(window).width(),
-			// 'p' is used to prevent the all_items_view from wrapping
-			//   to a new line when the window is around 1030px
-			// p = 5,
-			p = 1,
-			t = tabShell.width(),
-			n = 0;
-			if ($('div#basket-list-title').is(":hidden")) {t = 0}
-		n = 100 - ((t/w) * 100) - p;
-
-		allItems.css({
-			'float': 'right',
-			'width': n+'%'
-		});
-	}
-
-	// On page load, call different height adjusters
-	function initialAdjuster (selector) {
-		// console.log('initialAdjuster');
-		if ($(window).outerWidth() >= windowSansScrollBars) {
-			killStyleAttr(selector);
-			itemScaler(selector, 2);
-		}
-		else if ($(window).outerWidth() < windowSansScrollBars) {
-			// Kill the itemScaler stuff here too on resize
-			killStyleAttr(selector);
-			itemScaler(selector, 1);
-		}
-	}
-
-	// Get items to fit within cells better, bottom aligned
-
-	function itemScaler (selector, rows) {
-		// console.log('itemScaler');
-		selector.each(function() {
-			var tempHeight = $(this).height(),
-				tempParentHeight = $(this).parent().outerHeight();
-			if (tempHeight <= tempParentHeight){
-				killStyleAttr($(this).parent());
-				if (rows == 2) {
-					$(this).css('margin-top', tempParentHeight - tempHeight);
-					singleItemCenter();
-				}
-				else if (rows == 1) {
-					// this is affecting the stretchy_cols class
-					$(this).parent().css({
-						'min-height': tempHeight,
-						'max-height': tempHeight,
-						'height': tempHeight,
-					});
-				}
-			}
-		});
-	}
-
-	// if there is only one item, center it.
-	function singleItemCenter() {
-		// console.log('singleItemCenter');
-		if( $('.stretchy_cols').length < 2) {
-			$('.stretchy_cols').css({
-				'min-width': '100%',
-				'max-width': '100%',
-				'width': '100%'
-			});
-		}
-	}
-
-	// Hide / Show logic for Tabs
-	function tabHandler(action) {
-		// console.log('tabHandler');
-		var openTabs = false;
-		if (!action){return;}
-		if (action == 'open') {
-			tabExiter.addClass('visible');  // add fake area for clicking out of tabs
-			tabDivs.addClass('temphide');
-			onsAndOffs.hide();
-			tabList.animate({
-			width:'toggle'
-			},300).promise().done(function(){
-			tabDivs.removeClass('temphide');
-			onsAndOffs.fadeIn(100);
-			killStyleAttr(tabOnDiv);
-			$('body, html').css('overflow','hidden');
-			});
-			mainSection.add(searchNavBar).css('pointer-events', 'none');
-			openTabs = true;
-			itemWidthAdjuster();
-		}
-		else if (action == 'close') {
-			tabExiter.removeClass('visible');
-			tabDivs.addClass('temphide');
-			onsAndOffs.fadeOut(100);
-			tabList.animate({width:'toggle'}, 300).promise().done(function(){
-			tabDivs.removeClass('temphide');
-			$('body, html').css('overflow','visible');
-			});
-			openTabs = false;
-			mainSection.add(searchNavBar).css('pointer-events', 'auto');
-			itemWidthAdjuster();
-		}
-	}
-
-	// Scale the height of main class to be that of the items within it + 50 for spacing
-	function pageScaler () {
-		// console.log('pageScaler');
+	if ($(window).width() >= 1025) {
 		// return;
-		var hiddenFooter = 0,
-			timeVar = 0;
-		if (allItems.hasClass('all-items-hide')){
-			return;
-		}
-		if(footer.css('display') != 'none') {
-			// If there is a footer on the page, hide it, wait for page to be drawn, then show footer
-			// This was the result of another hyper-urgent Costco demand....
-			footer.hide();
-			hiddenFooter = 1;
-			// timeVar = 1000;
-			timeVar = 1;
-		}
-		setTimeout(function () {
-			var taller = Math.max(tabShell.outerHeight(), allItems.outerHeight());
-			if (window.innerWidth > RESPONSIVE.max()) {
-			taller += $('#copy2').outerHeight();
-			taller += $('#copy3').outerHeight();
-			taller += $('#copy4').outerHeight();
-			taller += $('#copy5').outerHeight();
-			taller += $('.pagetitle.no_mobile').outerHeight();
+		// bugfix var for iOS
+		var loadedWidth = $(window).width();
+
+		windowSansScrollBars = 535;
+
+		///////////////////////////////////////////////
+		// Set up Variables
+		///////////////////////////////////////////////
+
+		var searchNavBar = $('.before'),
+			tabList = $('#tab_responsive_tabs'),
+			onsAndOffs = $('div.on, div.off, dfn.on, dfn.off'),
+			navTabs = $('#navTabs'),
+			mainSection = $('.main-section'),
+			allItems = $('#all_items_view'),
+			itemDetails = $('#item_details_view'),
+			tabCloser = $('#mobile_tab_closer'),
+			tabExiter = $('.exit_overlay'),
+			tabShell = $('.responsive_tabs-shell'),
+			searchButton = $('#submit_catalog_search'),
+			oldSearchBtnHtml = searchButton.html(),
+			tabDivs = $('.responsive_tabs div[id^="tab_"]'),
+			tabOnDiv = $('.responsive_tabs div.on'),
+			heightAdjuster = $('.height-adjuster'),
+			loadedStretchyColHeight = $('.stretchy_cols').css('height'),
+			footer = $('.footer');
+
+
+		///////////////////////////////////////////////
+		// Set up Functions
+		///////////////////////////////////////////////
+
+		// Remove style attr of element if it exists
+		function killStyleAttr (elm) {
+			// console.log('killStyleAttr');
+			if (elm.attr('style')) {
+				elm.removeAttr('style');
 			}
-			$('.select-items, .catalog, form').animate({height:(taller + 50)},3);
-			if (hiddenFooter == 1) {
-				footer.fadeIn();
-			}
-		}, timeVar);
-	}
-
-
-	///////////////////////////////////////////////
-	// Set up Media Query
-	/////////////////////////////////////////////////
-	if (matchMedia) {
-		mq = matchMedia("(max-width: " + RESPONSIVE.max() + "px)");
-		mq.addListener(catalogWidthChange);
-		catalogWidthChange(mq);
-	}
-
-	//////////////////////////////////////////////////
-	// Set up Changer for mobile vs non-mobile
-	//////////////////////////////////////////////////
-	function catalogWidthChange(mq) {
-		// console.log('catalogWidthChange');
-		//////////////////////////////////////////////////
-		// WE ARE IN MOBILE VIEW HERE....
-		//////////////////////////////////////////////////
-		if (mq.matches) {
-
-			$('.detail_closer').click();  // close details so item grid works
-
-			tabList.hide();
-			navTabs.add(tabCloser).show();
-
-			// Show magnifying glass in search
-			searchButton.html('<i class="fa fa-search">&nbsp;</i>');
-
-			// trying this for use with footnote, may need revisiting if this doesn't work
-			$(window).on('load',function(){
-				pageScaler();
-			});
-
-			// stop floating allItems once in mobile
-			$(window).resize(function() {
-				// console.log('resize triggered1');
-				if (itemDetails.css('display') != 'none'){
-					return;
-				}
-				if ($(window).width() != loadedWidth) {
-					killStyleAttr(allItems);
-					pageScaler();
-				}
-				// console.log('resize finished1');
-			});
-
-			// As the window resizes, call different height adjusters
-			$(window).resize(function() {
-				// console.log('resize triggered2');
-				if (itemDetails.css('display') != 'none'){
-					return;
-				}
-				if ($(window).width() != loadedWidth) {
-					if ($(window).outerWidth() >= windowSansScrollBars) {
-						killStyleAttr(heightAdjuster);
-						itemScaler(heightAdjuster, 2);
-					}
-					else if ($(window).outerWidth() < windowSansScrollBars) {
-						// Kill the itemScaler stuff here too on resize
-						killStyleAttr(heightAdjuster);
-						itemScaler(heightAdjuster, 1);
-					}
-				}
-				// console.log('resize finished2');
-			});
-
-			singleItemCenter();
-
-			navTabs.on('click', function(){tabHandler('open');});
-			tabCloser.on('click', function(){tabHandler('close');});
-			tabExiter.on('click', function(){
-				if ($('#mobile_link_box').css('display') != 'block') {
-					tabHandler('close'); // close tabs if links aren't showing
-				}
-			});
-
-			$(window).on('load',function(){initialAdjuster(heightAdjuster);});
-
 		}
 
-		//////////////////////////////////////////////////
-		// WE ARE NOT IN MOBILE VIEW HERE....
-		//////////////////////////////////////////////////
-		else {
+		// Scale window to fit based on the item widths
+		function itemWidthAdjuster(){
+			// console.log('itemWidthAdjuster')
+			if (allItems.hasClass('all-items-hide')){
+				return;
+			}
+			var w = $(window).width(),
+				// 'p' is used to prevent the all_items_view from wrapping
+				//   to a new line when the window is around 1030px
+				// p = 5,
+				p = 1,
+				t = tabShell.width(),
+				n = 0;
+				if ($('div#basket-list-title').is(":hidden")) {t = 0}
+			n = 100 - ((t/w) * 100) - p;
 
-			$('.detail_closer').click();  // close details so item grid works
-
-			navTabs.add(tabCloser).hide();
-			tabList.show();
-
-			singleItemCenter();
-
-			searchButton.html(oldSearchBtnHtml);
-
-			// runtime adjustment:
-			itemWidthAdjuster();
-
-			$(window).on('load',function(){
-			initialAdjuster(heightAdjuster);
-			pageScaler();
+			allItems.css({
+				'float': 'right',
+				'width': n+'%'
 			});
+		}
 
-			// resizing adjustment
-			$(window).resize(function() {
-				// console.log('resize triggered3');
-				if (itemDetails.css('display') != 'none'){
-					return;
+		// On page load, call different height adjusters
+		function initialAdjuster (selector) {
+			// console.log('initialAdjuster');
+			if ($(window).outerWidth() >= windowSansScrollBars) {
+				killStyleAttr(selector);
+				itemScaler(selector, 2);
+			}
+			else if ($(window).outerWidth() < windowSansScrollBars) {
+				// Kill the itemScaler stuff here too on resize
+				killStyleAttr(selector);
+				itemScaler(selector, 1);
+			}
+		}
+
+		// Get items to fit within cells better, bottom aligned
+
+		function itemScaler (selector, rows) {
+			// console.log('itemScaler');
+			selector.each(function() {
+				var tempHeight = $(this).height(),
+					tempParentHeight = $(this).parent().outerHeight();
+				if (tempHeight <= tempParentHeight){
+					killStyleAttr($(this).parent());
+					if (rows == 2) {
+						$(this).css('margin-top', tempParentHeight - tempHeight);
+						singleItemCenter();
+					}
+					else if (rows == 1) {
+						// this is affecting the stretchy_cols class
+						$(this).parent().css({
+							'min-height': tempHeight,
+							'max-height': tempHeight,
+							'height': tempHeight,
+						});
+					}
 				}
-				if ($(window).width() < (parseInt(RESPONSIVE.min(), 10) - RESPONSIVE.scrollbars())) {
-					return;  //this is necessary despite the WidthChange context here...
-				}
+			});
+		}
+
+		// if there is only one item, center it.
+		function singleItemCenter() {
+			// console.log('singleItemCenter');
+			if( $('.stretchy_cols').length < 2) {
+				$('.stretchy_cols').css({
+					'min-width': '100%',
+					'max-width': '100%',
+					'width': '100%'
+				});
+			}
+		}
+
+		// Hide / Show logic for Tabs
+		function tabHandler(action) {
+			// console.log('tabHandler');
+			var openTabs = false;
+			if (!action){return;}
+			if (action == 'open') {
+				tabExiter.addClass('visible');  // add fake area for clicking out of tabs
+				tabDivs.addClass('temphide');
+				onsAndOffs.hide();
+				tabList.animate({
+				width:'toggle'
+				},300).promise().done(function(){
+				tabDivs.removeClass('temphide');
+				onsAndOffs.fadeIn(100);
+				killStyleAttr(tabOnDiv);
+				$('body, html').css('overflow','hidden');
+				});
+				mainSection.add(searchNavBar).css('pointer-events', 'none');
+				openTabs = true;
 				itemWidthAdjuster();
-				pageScaler();
+			}
+			else if (action == 'close') {
+				tabExiter.removeClass('visible');
+				tabDivs.addClass('temphide');
+				onsAndOffs.fadeOut(100);
+				tabList.animate({width:'toggle'}, 300).promise().done(function(){
+				tabDivs.removeClass('temphide');
+				$('body, html').css('overflow','visible');
+				});
+				openTabs = false;
+				mainSection.add(searchNavBar).css('pointer-events', 'auto');
+				itemWidthAdjuster();
+			}
+		}
 
-				// let's be sure the item is not obscured by a short stretchy_col
-				// AND let's make all stretchy_cols on the page the same height
-				var tall = loadedStretchyColHeight,
-					safetyPadding = 10,
-					tallest;
-				heightAdjuster.each(function() {
-					// loop over height-adjuster cells and get the max height
-					if ($(this).height() > $(this).parent().height()) {
-						var taller = Math.max(tall, $(this).height()) + safetyPadding;
-						tallest = Math.max(tall, tallest);
-					}else {
+		// Scale the height of main class to be that of the items within it + 50 for spacing
+		function pageScaler () {
+			// console.log('pageScaler');
+			// return;
+			var hiddenFooter = 0,
+				timeVar = 0;
+			if (allItems.hasClass('all-items-hide')){
+				return;
+			}
+			if(footer.css('display') != 'none') {
+				// If there is a footer on the page, hide it, wait for page to be drawn, then show footer
+				// This was the result of another hyper-urgent Costco demand....
+				footer.hide();
+				hiddenFooter = 1;
+				// timeVar = 1000;
+				timeVar = 1;
+			}
+			setTimeout(function () {
+				var taller = Math.max(tabShell.outerHeight(), allItems.outerHeight());
+				if (window.innerWidth > RESPONSIVE.max()) {
+				taller += $('#copy2').outerHeight();
+				taller += $('#copy3').outerHeight();
+				taller += $('#copy4').outerHeight();
+				taller += $('#copy5').outerHeight();
+				taller += $('.pagetitle.no_mobile').outerHeight();
+				}
+				$('.select-items, .catalog, form').animate({height:(taller + 50)},3);
+				if (hiddenFooter == 1) {
+					footer.fadeIn();
+				}
+			}, timeVar);
+		}
+
+
+		///////////////////////////////////////////////
+		// Set up Media Query
+		/////////////////////////////////////////////////
+		if (matchMedia) {
+			mq = matchMedia("(max-width: " + RESPONSIVE.max() + "px)");
+			mq.addListener(catalogWidthChange);
+			catalogWidthChange(mq);
+		}
+
+		//////////////////////////////////////////////////
+		// Set up Changer for mobile vs non-mobile
+		//////////////////////////////////////////////////
+		function catalogWidthChange(mq) {
+			// console.log('catalogWidthChange');
+			//////////////////////////////////////////////////
+			// WE ARE IN MOBILE VIEW HERE....
+			//////////////////////////////////////////////////
+			if (mq.matches) {
+
+				$('.detail_closer').click();  // close details so item grid works
+
+				tabList.hide();
+				navTabs.add(tabCloser).show();
+
+				// Show magnifying glass in search
+				searchButton.html('<i class="fa fa-search">&nbsp;</i>');
+
+				// trying this for use with footnote, may need revisiting if this doesn't work
+				$(window).on('load',function(){
+					pageScaler();
+				});
+
+				// stop floating allItems once in mobile
+				$(window).resize(function() {
+					// console.log('resize triggered1');
+					if (itemDetails.css('display') != 'none'){
 						return;
 					}
+					if ($(window).width() != loadedWidth) {
+						killStyleAttr(allItems);
+						pageScaler();
+					}
+					// console.log('resize finished1');
 				});
-				// now set the parent height on all height-adjusters to this calculated height
-				heightAdjuster.parent().css({
-					'min-height': tallest,
-					'max-height': tallest,
-					'height': tallest,
+
+				// As the window resizes, call different height adjusters
+				$(window).resize(function() {
+					// console.log('resize triggered2');
+					if (itemDetails.css('display') != 'none'){
+						return;
+					}
+					if ($(window).width() != loadedWidth) {
+						if ($(window).outerWidth() >= windowSansScrollBars) {
+							killStyleAttr(heightAdjuster);
+							itemScaler(heightAdjuster, 2);
+						}
+						else if ($(window).outerWidth() < windowSansScrollBars) {
+							// Kill the itemScaler stuff here too on resize
+							killStyleAttr(heightAdjuster);
+							itemScaler(heightAdjuster, 1);
+						}
+					}
+					// console.log('resize finished2');
 				});
-				// console.log('resize end3');
-			});
 
-			// Kill the itemScaler stuff
-			killStyleAttr(heightAdjuster);
+				singleItemCenter();
 
-			// show tabs again in case we hid them in mobile then went back to desktop
-			if (onsAndOffs.attr('style')) {onsAndOffs.removeAttr('style');}
+				navTabs.on('click', function(){tabHandler('open');});
+				tabCloser.on('click', function(){tabHandler('close');});
+				tabExiter.on('click', function(){
+					if ($('#mobile_link_box').css('display') != 'block') {
+						tabHandler('close'); // close tabs if links aren't showing
+					}
+				});
 
-			// reset pointer events to be safe
-			mainSection.add(searchNavBar).css('pointer-events', 'auto');
+				$(window).on('load',function(){initialAdjuster(heightAdjuster);});
 
-			// unbind all click events so they start fresh if window shrinks back down
-			navTabs.add(tabCloser).add(tabExiter).unbind("click");
+			}
 
-			tabExiter.removeClass('visible');
+			//////////////////////////////////////////////////
+			// WE ARE NOT IN MOBILE VIEW HERE....
+			//////////////////////////////////////////////////
+			else {
 
-			// in case someone opened tabs, didn't close them, and increased window size
-			$('body, html').css('overflow','visible');
+				$('.detail_closer').click();  // close details so item grid works
 
-		} // end else for mq.matches
+				navTabs.add(tabCloser).hide();
+				tabList.show();
 
-	} // end WidthChange function
+				singleItemCenter();
+
+				searchButton.html(oldSearchBtnHtml);
+
+				// runtime adjustment:
+				itemWidthAdjuster();
+
+				$(window).on('load',function(){
+				initialAdjuster(heightAdjuster);
+				pageScaler();
+				});
+
+				// resizing adjustment
+				$(window).resize(function() {
+					// console.log('resize triggered3');
+					if (itemDetails.css('display') != 'none'){
+						return;
+					}
+					if ($(window).width() < (parseInt(RESPONSIVE.min(), 10) - RESPONSIVE.scrollbars())) {
+						return;  //this is necessary despite the WidthChange context here...
+					}
+					itemWidthAdjuster();
+					pageScaler();
+
+					// let's be sure the item is not obscured by a short stretchy_col
+					// AND let's make all stretchy_cols on the page the same height
+					var tall = loadedStretchyColHeight,
+						safetyPadding = 10,
+						tallest;
+					heightAdjuster.each(function() {
+						// loop over height-adjuster cells and get the max height
+						if ($(this).height() > $(this).parent().height()) {
+							var taller = Math.max(tall, $(this).height()) + safetyPadding;
+							tallest = Math.max(tall, tallest);
+						}else {
+							return;
+						}
+					});
+					// now set the parent height on all height-adjusters to this calculated height
+					heightAdjuster.parent().css({
+						'min-height': tallest,
+						'max-height': tallest,
+						'height': tallest,
+					});
+					// console.log('resize end3');
+				});
+
+				// Kill the itemScaler stuff
+				killStyleAttr(heightAdjuster);
+
+				// show tabs again in case we hid them in mobile then went back to desktop
+				if (onsAndOffs.attr('style')) {onsAndOffs.removeAttr('style');}
+
+				// reset pointer events to be safe
+				mainSection.add(searchNavBar).css('pointer-events', 'auto');
+
+				// unbind all click events so they start fresh if window shrinks back down
+				navTabs.add(tabCloser).add(tabExiter).unbind("click");
+
+				tabExiter.removeClass('visible');
+
+				// in case someone opened tabs, didn't close them, and increased window size
+				$('body, html').css('overflow','visible');
+
+			} // end else for mq.matches
+
+		} // end WidthChange function
 
 
-	//////////////////////////////////////////////////
-	// After all our magic is done - let the user see
-	//////////////////////////////////////////////////
-	var throbOverlay = $('#ajax_throbber_overlay');
-	throbOverlay.show();
-	$('body').animate({scrollTop: 0}, 200);
-	$(window).on('load',function() {
+		//////////////////////////////////////////////////
+		// After all our magic is done - let the user see
+		//////////////////////////////////////////////////
+		var throbOverlay = $('#ajax_throbber_overlay');
+		throbOverlay.show();
+		$('body').animate({scrollTop: 0}, 200);
+		$(window).on('load',function() {
 
-		$('body').css('opacity', '1');
+			$('body').css('opacity', '1');
 
-		if ($.active > 0) {
-			$(document).ajaxComplete(function(){
-			throbOverlay.animate({
-				opacity: 0,
-				duration: 1000,
-			}).promise().done(function(){
+			if ($.active > 0) {
+				$(document).ajaxComplete(function(){
+				throbOverlay.animate({
+					opacity: 0,
+					duration: 1000,
+				}).promise().done(function(){
+					throbOverlay.hide();
+					});
+				});
+			}
+			else {
+				// no ajax, no throbber
 				throbOverlay.hide();
-				});
-			});
-		}
-		else {
-			// no ajax, no throbber
-			throbOverlay.hide();
-		}
+			}
 
-	});
+		});
+	}
 });	
 </script>
