@@ -1,5 +1,5 @@
 
-<!-- Rob Carberry Updated 12/19/2023 -->
+<!-- Rob Carberry Updated 12/20/2023 -->
 <div class="footer_row3">
 <div><img src="con/White-PoweredBySF-2023-80h.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
 	<p class="footer_cr">
@@ -592,7 +592,20 @@ $(window).load(function () {
 		// console.log('2: ' + maxH);
 		maxH = maxH + "px";
 		$('div.note.responsive-onhand').css('min-height', maxH);
-		
+			
+		// If span.qtyspec_label exist set that area height the same for all items or add it
+		$('div.add-to-basket-qty-select:not(:has(>span.qtyspec_label)').each(function() {
+			var place = $(this).find('div.add-to-basket-btn');
+			$('<span class="qtyspec_label"></span>').insertBefore(place)
+		});
+		maxH = 0
+		$("span.qtyspec_label").each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$("span.qtyspec_label").css('min-height', maxH);
+
 		// If responsive-tagcheck.tagcheck-bottom exist set that area height the same for all items
 		maxH = 0
 		$('span.responsive-tagcheck.tagcheck-bottom').each(function() {

@@ -1,3 +1,4 @@
+/* Rob Carberry Updated 12/20/2023 */
 /****************************************************************************************
 ************************************ GLOBAL *****************************************
 ****************************************************************************************/
@@ -231,10 +232,11 @@ table.bottom-button-container {
 }
 
 .qtyspec_label {
-	margin-left: 5px !important;
+    margin-left: 5px !important;
     font-size: 12px !important;
     color: #191919 !important;
-	white-space: nowrap;
+    white-space: nowrap;
+    display: block;
 }
 
 /****************************************************************************************
@@ -1379,6 +1381,7 @@ input#searchfield_input {
 		margin: 30px 0px 0px 0px !important;
 		padding: 3px !important;
 		overflow: hidden !important;
+		max-height: fit-content !important;
 	}
 
 	.stretchy_cols:has(.hideit) {
