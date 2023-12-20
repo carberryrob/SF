@@ -1,3 +1,5 @@
+
+<!-- Rob Carberry Updated 12/19/2023 -->
 <div class="footer_row3">
 <div><img src="con/White-PoweredBySF-2023-80h.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
 	<p class="footer_cr">
@@ -145,7 +147,17 @@ $(window).load(function () {
 				$(this).html( '<div class="hideit">' + cont + '</div>' );
 				cont = $(this).prev('.note.responsive-onhand').html();
 				$(this).prev('.note.responsive-onhand').html( '<div class="hideit">' + cont + '</div>' );
-			});				}
+			});				
+		}else{
+			$("span.responsive-tagcheck.tagcheck-bottom:contains('Out of Stock')").each(function() {
+				var onH = $(this).prev('.note.responsive-onhand').text();
+				if (/Available: -/i.test(onH)) {
+					onH = "Available: 0";
+					$(this).prev('.note.responsive-onhand').text(onH);
+				}
+				// console.log(onH);
+			});
+		}
 	}
 
 
