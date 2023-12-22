@@ -1,6 +1,10 @@
+/* Rob Carberry changed .stretchy_cols color to #333333 */
+/*Changes in css  for .height-adjuster and .responsive longname -- Shreya 12/19/23*/
+
 /****************************************************************************************
 ************************************ GLOBAL *****************************************
 ****************************************************************************************/
+
 @font-face {
     font-family: "Core Sans DS";
     src: url("../con/CoreSansDS35Regular.ttf");
@@ -1385,9 +1389,11 @@ button#submit_cancel {
 	.note.responsive-pricing {
 		min-height: 20px;
 	}
+/* Modified font-weight and color to black --Shreya */
 	.responsive-longname {
 		min-height: 42px;
-		font-weight: 500 !important;
+		font-weight: 600 !important;
+                color: #000000;
 	}
 	.responsive_tabs dfn {
 		padding-top: 6px !important;
@@ -1409,6 +1415,7 @@ button#submit_cancel {
 		max-width: unset !important;
 		width: unset !important;*/
 	}
+/* Changed the background color and added border radius -- Shreya*/
 	.height-adjuster {
 		margin-top: 0px !important;
 		max-width: 375px;
@@ -1416,7 +1423,8 @@ button#submit_cancel {
 		-webkit-border-radius: 20px/20px;
         border-radius: 20px/20px; */
         padding: 25px 0 17px 0;
-        background-color: #000000;
+        background-color: #F2F2F2;
+        border-radius: 10px;
 
 	}
 
@@ -1431,7 +1439,7 @@ button#submit_cancel {
 		overflow: hidden !important;
 		max-height: unset !important;
 		min-height: 200px !important;
-		color: #a4a4a4;
+		color: #333333;
 		/*vertical-align: bottom !important;*/
 	}
 
