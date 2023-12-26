@@ -1,9 +1,6 @@
-/*  Rob Carberry --- Changes in the "nav ul ul" -- 12/26/23 */
-/*  Changes in the li top nav -- Shreya Rawal 12/21/23 */
 /****************************************************************************************
 ************************************ GLOBAL *****************************************
 ****************************************************************************************/
-
 @font-face {
     font-family: "Gilroy";
     font-weight: 900;
@@ -833,13 +830,11 @@ button#submit_cancel {
 		box-shadow: 1px 1px 6px rgb(255 255 255 / 20%), 1px 2px 6px 0px rgb(0 0 0 / 70%);
 		/* min-width: -webkit-fill-available; */
 	}
-/*changes in the li dropdown text transform and text align -- Shreya*/
+
 	nav ul ul li {
 		float: none; 
 		border-bottom: 0px solid transparent ;
 		position: relative;
-                text-transform: none;
-                text-align: left;
 	}
 
 	nav ul ul li a {
@@ -937,7 +932,6 @@ button#submit_cancel {
 		-webkit-transition: background-color 0.3s ease-in-out;
 		transition: background-color 0.3s ease-in-out;
 	}
-
 	nav ul li.subtopli {
 		/* background-color: #300370 !important;
 		color: #FFFFFF !important; */
