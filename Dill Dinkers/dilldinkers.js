@@ -1,3 +1,4 @@
+<!-- Rob Carberry Updated 1/5/2024 -->
 <div class="footer_row3">
 <div><img src="con/White-PoweredBySF.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
 	<p class="footer_cr">
@@ -37,7 +38,7 @@ $(window).load(function () {
 		});
 	});
 
-
+	
 	/****** Search Box ********/
 	$("input#searchfield_input").wrap('<div class="input-wrapper">');
 	$( '<label for="searchfield_input" class="fa fa fa-search"></label>' ).insertAfter("input#searchfield_input");
@@ -218,6 +219,8 @@ $(window).load(function () {
 });
 
 $(document).ready(function () {
+	$("#cost_options\\.quantity").closest('tr').hide();
+
 	if($('.pagetitle').text().toUpperCase() === 'IN YOUR CART') {
 		$(".buttonsbar").find("button:nth-child(4)").hide(); /**** Check to see if in basketview and hide extra checkout button ********/
 	}

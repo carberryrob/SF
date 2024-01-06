@@ -1,5 +1,7 @@
+/* Rob Carberry added "div#error_block .estimate-total" 1/5/2024 */
 /* Rob Carberry changed .stretchy_cols color to #333333 */
 /*Changes in css  for .height-adjuster and .responsive longname -- Shreya 12/19/23*/
+/*Changes in css .image-container height increased to 390px --Shreya 1/4/24 */
 
 /****************************************************************************************
 ************************************ GLOBAL *****************************************
@@ -161,6 +163,25 @@ button#submit_cancel {
 
 
 @media only screen and (min-width:1025px) {
+
+	div#error_block .estimate-total {
+		font-size: 0px;
+		width: 275px;
+		/* font-weight: bold; */
+		background-color: #FF0000;
+		padding: 10px;
+		color: transparent;
+		width: auto;
+	}
+	div#error_block .estimate-total > .orderr {
+		font-size: 20px;
+		color: #000000;
+		/* width: 275px; */
+		font-weight: bold;
+		/* background-color: #FF0000; */
+		/* padding: 10px; */
+		display: block;
+	}
 
 	div.field-container {
 		border-bottom: 0px solid #979797 !important;
@@ -1456,9 +1477,9 @@ button#submit_cancel {
 	div:has(> #submit_catalog_add) {
 		/* margin-bottom: 20px; */
 	}
-
+/* .image-container height increased from 320 to 390 - to scale the item tile - door and wall sign*/
 	.image-container {
-		min-height: 320px;
+		min-height: 390px;
 	}
 
 	/*div#header-wrapper {
