@@ -1,3 +1,4 @@
+/*  Rob Carberry --- added stretchy all the same size and zoom images. -- 1/8/2024 */
 /*  Rob Carberry --- Changes in the "nav ul ul" -- 12/26/23 */
 /*  Changes in the li top nav -- Shreya Rawal 12/21/23 */
 /****************************************************************************************
@@ -777,7 +778,7 @@ button#submit_cancel {
 		white-space: nowrap;
 		top: 104px;
 		right: 0;
-		z-index: 1001;
+		z-index: 80;
 		font-size: 1em;
 		letter-spacing: .05625em;
 	}
@@ -1160,11 +1161,11 @@ button#submit_cancel {
 		padding: 5px;
 	}*/
 	
-	div#all_items_view {
+	/* div#all_items_view {
 		width: 99% !important;
 		float: none !important;
 		margin: 0 auto !important;
-	}
+	} */
 
 	.basket-list-item {
 		font-size: 14px !important;
@@ -1395,6 +1396,36 @@ button#submit_cancel {
 	}
 
 
+	/**** 1/8/2024 ******** Handle zoom on images *****************/
+
+	.imgwrap > label > img {
+		/* transition: transform 0.25s ; */
+		transition: transform 0.25s;
+		cursor: zoom-in;
+	}
+
+	input[type=checkbox].zoomCheck {
+		display: none;
+	} 
+	input[type=checkbox].zoomCheck:checked ~ label > img {
+		cursor: zoom-out;
+		position: absolute;
+		transform-origin: 100% 100%;
+		transform: scale(2);
+		z-index: 200;
+	}
+
+	div#all_items_view {
+		width: 100% !important;
+		float: none !important;
+		/* float: right !important; */
+		margin: 0 auto !important;
+	}
+
+	/* **** 1/8/2024 ******* End of Zoom ***************************** */
+
+
+
 /*************************************** Align Stretchy_cols **********************************************/
 	.stretchy_cols.responsive-item.image-row {
 		vertical-align: bottom !important;
@@ -1408,8 +1439,9 @@ button#submit_cancel {
 		margin-top: 1px !important;
 		max-width: 375px;
 		/*border: solid 2px #1d75cf;*/
-		/*border-radius: 10px/10px !important;*/
+		border-radius: 10px/10px !important;
 		/*min-height: 580px;*/
+		background-color: rgba(29, 117, 207,0.05);
 	}
 
 	.singleItemCenter {
@@ -1421,8 +1453,6 @@ button#submit_cancel {
 	.stretchy_cols {
 		width: 100% !important;
 		max-width: 375px !important;
-		/*min-width: 328px !important;
-		min-height: 200px !important;*/
 		box-sizing: border-box !important;
 		margin: 20px 3px 0px 0px !important;
 		padding: 5px !important;
@@ -1437,7 +1467,8 @@ button#submit_cancel {
 	}
 
 	div:has(> #submit_catalog_add) {
-		margin-bottom: 20px;
+		margin-bottom: -5px;
+    	padding-bottom: 15px;
 	}
 
 	.image-container {
