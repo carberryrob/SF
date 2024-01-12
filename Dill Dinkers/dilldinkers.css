@@ -164,6 +164,25 @@ button#submit_cancel {
 
 @media only screen and (min-width:1025px) {
 
+	.main.catalog--container {
+		height: -webkit-fill-available !important;
+		min-height: 600px;
+	}
+	.main, .catalog, form {
+		/* height: 100vh; */
+		height: fit-content !important;
+	}
+
+	#curr_item_image {
+		border: 1px solid #ddd;
+		margin-top: 10px !important;
+	}
+
+	img.catalog-tiny-thumbnail {
+		padding: 0 5px;
+		border: solid 1px #cccccc;
+	}
+
 	div#error_block .estimate-total {
 		font-size: 0px;
 		width: 275px;
@@ -713,9 +732,11 @@ button#submit_cancel {
 		display: table-cell;
 		vertical-align: top;
 	} */
-	.main.catalog--container {
-		min-height: 600px;
-	}
+	/* form {
+		height: -webkit-fill-available !important;
+	} */
+
+
 	span.onhand_lbl {
 		font-size: 14px !important;
 	}
