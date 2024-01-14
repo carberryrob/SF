@@ -1,3 +1,4 @@
+/* Rob Carberry Updated multiple form items 1/13/2024 */
 /* Rob Carberry added "div#error_block .estimate-total" 1/5/2024 */
 /* Rob Carberry changed .stretchy_cols color to #333333 */
 /*Changes in css  for .height-adjuster and .responsive longname -- Shreya 12/19/23*/
@@ -163,6 +164,16 @@ button#submit_cancel {
 
 
 @media only screen and (min-width:1025px) {
+
+	/* div#sharedform\.DD_Door {
+		width: fit-content !important;
+		max-width: none !important;
+	} */
+
+	.left-side > .form-body {
+		width: fit-content !important;
+		max-width: none !important;
+	}
 
 	.main.catalog--container {
 		height: -webkit-fill-available !important;
@@ -1347,8 +1358,10 @@ button#submit_cancel {
 		padding: 8px 5px 8px 5px !important;
 	}
 	input, select {
-		font-size: 16px;
+		font-size: 15px;
 		padding: 3px 5px;
+		max-width: fit-content !important;
+		width: fit-content !important;
 	}
 	
 	.logolinkdiv {

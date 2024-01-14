@@ -28,9 +28,10 @@ mw = mens_num_shirts+womens_num_shirts
 if mw > 0:
 	num_shirts = mw
 else:
-	num_shirts = 0
+	num_shirts = num(0)
 
 env['master_calculation'] = num_shirts
+env['&total_quantity'] = num_shirts
 env['qty'] = num_shirts
 
 #--------------------------------------------------------
@@ -44,10 +45,9 @@ set_item_form_attr('qty', num_shirts, override=True)
 #--------------------------------------------------------
 # return an error if the order is less than 12 shirt
 #--------------------------------------------------------
-error = ''
+error = None
 if num_shirts < 12:
 	error = '<span class="orderr">The total combined quantity must be a minimum of 12 shirts<span>'
-	set_item_attr('qty', num_shirts, override=True)
 
 
 #--------------------------------------------------------
@@ -77,7 +77,7 @@ price = xsmall_pricing + small_pricing + medium_pricing + large_pricing + xlarge
 # Set the Men's Detail Text
 #--------------------------------------------------------
 mtag = 'K587'
-mtxt = mtag + ' - Qty: ' + str(mens_num_shirts) + ' / Sizes: '
+mtxt = ' - Qty: ' + str(mens_num_shirts) + ' / Sizes: '
 msz = []
 if mens_xsmall > 0:
 	msz.append('XS: ' + str(mens_xsmall))
@@ -103,7 +103,7 @@ mtxt += str(msz_txt)
 # Set the Women's Detail Text
 #--------------------------------------------------------
 wtag = 'LK587'
-wtxt = wtag + ' - Qty: ' + str(womens_num_shirts) + ' / Sizes: '
+wtxt = ' - Qty: ' + str(womens_num_shirts) + ' / Sizes: '
 wsz = []
 if womens_xsmall > 0:
 	wsz.append('XS: ' + str(womens_xsmall))
@@ -129,15 +129,14 @@ wtxt += str(wsz_txt)
 # Set the Size Text & Detail Description Text
 #--------------------------------------------------------
 detail = []
-detail.append('This is a details test line 1')
-detail.append('This is another line test line 2')
+detail.append('Below are the sizes for Mens(' + mtag + ') and Womens(' + wtag + ').')
+detail.append('Please add all appropriate components to complete this on-demand order that meets the minimum of 12 shirts.')
 
 
 detail_txt = '\r\n'.join(detail) + '\r\n'
-detail_txt += mtxt + '\r\n' + wtxt
+detail_txt += 'Men (' + mtag + ') ' + mtxt + '\r\n' + 'Women (' + wtag + ') ' + wtxt
 
 env['detail_txt'] = detail_txt
 set_item_attr('detail_txt', detail_txt, override=True)
 
-# set_item_form_attr('qtys_txt', qtxt, override=True)
 set_item_form_attr('detail_txt', detail_txt, override=True)

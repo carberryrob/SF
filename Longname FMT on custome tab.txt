@@ -15,3 +15,5 @@ Cecil Cty Sherriff only
 
 
 %(longname)s %(f.include_back)s - %(f.Physician_List)s
+
+%(longname)s - %(f.sides_txt)s for %(f.name_first)s %(f.name_last)s

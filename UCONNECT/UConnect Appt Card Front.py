@@ -23,6 +23,10 @@ addresses = []
 vs = 0
 lft = 2.10
 
+if (cnt > 3):
+	sides_txt = '2S'
+else:
+	sides_txt = '1Stest'
 
 ###independent of which address drop-downs are selected, create each address text.
 if (cnt == 1):  ### For 1 address we don't use the check boxes.
