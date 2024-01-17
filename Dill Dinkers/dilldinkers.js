@@ -1,3 +1,4 @@
+<!-- Rob Carberry Updated 1/16/2024 added numbers only for apparel -->
 <!-- Rob Carberry Updated 1/5/2024 -->
 <div class="footer_row3">
 <div><img src="con/White-PoweredBySF-2023-260.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
@@ -238,7 +239,31 @@ $(document).ready(function () {
 		$("button#submit_cancel").has("span:contains('Cancel Order')").hide();
 	}
 	
-	
+	console.log( '******************************************************' + $('table#estimate-item-container .form-body input[type="text"]').filter(':visible').length )
+	$('table#estimate-item-container .form-body input[type="text"]').filter(':visible').each(function() {
+		var nme = 'new_' + $(this).attr('name'); //get name for new input
+		var v = $(this).val(); //get name for new input
+		$(this).parent().prepend('<input name="' + nme + '" type="number" required value="'+ v + '" min="0">'); // add input to DOM with listener
+		// $(this).remove(); // remove orginal input that was type="text".
+		$(this).hide(); // remove orginal input that was type="text".
+
+	});
+
+	const numInputs = document.querySelectorAll('input[type=number]')
+
+	numInputs.forEach(function(input) {
+		input.addEventListener('change', function(e) {
+			if (e.target.value == '' || e.target.value <= 0) {
+			e.target.value = 0
+			}
+			console.log(e.target.name);
+			var nme = e.target.name;
+			nme = nme.split("new_")[1];
+			var v = e.target.value
+			$('table#estimate-item-container .form-body input[type="text"][name="' + nme + '"]').val(v).change();
+		})
+	})
+
 });
 
 </script>

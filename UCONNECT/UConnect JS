@@ -1,4 +1,5 @@
 
+<!-- Rob Carberry Updated 1/16/2024 added header info for favicon -->
 <!-- Rob Carberry Updated 12/20/2023 -->
 <div class="footer_row3">
 <div><img src="con/White-PoweredBySF-2023-80h.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
@@ -537,10 +538,10 @@ $(window).load(function () {
 	$('head').append('<link rel="apple-touch-icon" sizes="180x180" href="con/apple-touch-icon.png">');
 	$('head').append('<link rel="icon" type="image/png" sizes="32x32" href="con/favicon-32x32.png">');
 	$('head').append('<link rel="icon" type="image/png" sizes="16x16" href="con/favicon-16x16.png">');
-	// $('head').append('<link rel="manifest" href="con/site.webmanifest">');
-	// $('head').append('<link rel="mask-icon" href="con/safari-pinned-tab.svg" color="#5bbad5">');
-	// $('head').append('<meta name="msapplication-TileColor" content="#da532c">');
-	// $('head').append('<meta name="theme-color" content="#ffffff">');
+	$('head').append('<link rel="manifest" href="con/site.webmanifest">');
+	$('head').append('<link rel="mask-icon" href="con/safari-pinned-tab.svg" color="#5bbad5">');
+	$('head').append('<meta name="msapplication-TileColor" content="#da532c">');
+	$('head').append('<meta name="theme-color" content="#ffffff">');
 	
 	$( "link[href^='css/header.css']" ).removeAttr( "media" );
 	$('body').find("script[src^='responsive_catalog.js']").remove();
