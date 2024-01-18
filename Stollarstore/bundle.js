@@ -11,7 +11,7 @@ $(document).ready(function () {
         $(this).closest('td').prepend($(this).val());
         $(this).hide();
     });
-    $(input#ship_needby).each(function() {
+    $('input#ship_needby').each(function() {
         console.log($(this).val());
     });
 });
