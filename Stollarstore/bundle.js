@@ -8,12 +8,12 @@ $(window).load(function () {
     $("table.true-table .qty_select_cell > select[name*='_Bundle']").each(function() {
         // console.log( $(this).val() );
         $(this).closest('td').prepend($(this).val());
-        $(this).hide();
+        // $(this).hide();
     });
     $("table.true-table .qty_select_cell > input[name*='_Bundle']").each(function() {
         // console.log( $(this).val() );
         $(this).closest('td').prepend($(this).val());
-        $(this).hide();
+        // $(this).hide();
     });
 	// }
 	
