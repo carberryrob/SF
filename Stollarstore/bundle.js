@@ -12,6 +12,7 @@ $(document).ready(function () {
         $(this).hide();
     });
     $('input#ship_needby').each(function() {
-        console.log($(this).val());
+        // console.log($(this).val());
+        $(this).val('')
     });
 });
