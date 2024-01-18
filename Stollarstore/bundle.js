@@ -13,6 +13,7 @@ $(document).ready(function () {
     });
     $('input#ship_needby').each(function() {
         // console.log($(this).val());
+        $(this).attr('autocomplete','off')
         $(this).val('')
     });
 });
