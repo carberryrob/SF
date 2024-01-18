@@ -10,7 +10,7 @@ $(window).load(function () {
         $(this).closest('td').prepend($(this).val());
         // $(this).hide();
     });
-    $("table.true-table .qty_select_cell > input[name*='_Bundle']").each(function() {
+    $("table.true-table .qty_select_cell > input[type='text'][name*='_Bundle']").each(function() {
         // console.log( $(this).val() );
         $(this).closest('td').prepend($(this).val());
         // $(this).hide();
