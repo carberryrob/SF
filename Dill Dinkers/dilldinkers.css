@@ -19,6 +19,8 @@ body {
 	font-family: "Core Sans DS", Sans-serif !important;
 }
 
+
+
 /*************** header css for final approve order ***********************/
 td.label:has(>span#bill\.billcode10label) {
     white-space: nowrap;
@@ -165,10 +167,11 @@ button#submit_cancel {
 
 @media only screen and (min-width:1025px) {
 
-	div#sharedform\.DD_bc_all\:17 > .input.sbs_block_field {
-		float: left;
+	/* div#sharedform\.DD_bc_all\:17 > .input.sbs_block_field { */
+    div#sharedform\.DD_bc_all\:17 div.input:has(input[type="checkbox"]) {
+        float: left;
 	}
-
+    
 	table#estimate-item-container .form-body input[type="number"]:not([style*="display:none"]) {
 		max-width: 40% !important;
 	}
@@ -234,6 +237,9 @@ button#submit_cancel {
 		display: none !important;
 	}
 
+    .hideit > .stretchy_cols {
+        display: none;
+    }
 
 	/*.header-links, .header-links a {*/
 	.header-links {
@@ -1140,7 +1146,7 @@ button#submit_cancel {
 		/*text-align: right;*/
 		padding: 8px 14px;
 		text-decoration: none;
-		display: block;
+		display: block !important;
 		white-space: nowrap;
 	}
 

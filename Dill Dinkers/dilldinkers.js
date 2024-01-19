@@ -19,9 +19,9 @@ $(window).load(function () {
 	$( "link[href^='css/header.css']" ).removeAttr( "media" );
 	
 	$( ".header-links" ).find( "a" ).removeAttr( "style" );
-	$( "#header_logo img.no_mobile" ).wrap( '<td id="desklogo"><div class="logolinkdiv"><a style="display: inline-block;" href="index.cgi">' );
-	
-	$( "#header_logo img.no_desktop" ).wrap( '<a style="display: inline-block;" href="index.cgi">' );
+
+    // $( "#header_logo img.no_mobile" ).wrap( '<td id="desklogo"><div class="logolinkdiv"><a style="display: inline-block;" href="index.cgi">' );
+	// $( "#header_logo img.no_desktop" ).wrap( '<a style="display: inline-block;" href="index.cgi">' );
 
 	$(".note:contains('Non-taxable items marked with *')").hide();
 	$(".pagetitle:contains('Mailing List')").hide();
@@ -47,89 +47,77 @@ $(window).load(function () {
 
 	if($(window).width() >= 1025) {
 
-		/************* My Account Menu *************/
+
+		// /************* TopTabs *************/
 		
-		$( ".header-links a" ).wrapAll( '<div id="dropdown-contentdiv" class="dropdown-content"></div>  ' );
-		$( ".dropdown-content" ).wrapAll( '<div id="dropdowndiv" class="dropdown"><span id="dropicon">My Account</span>' );
-		$( ".dropdown-content" ).insertAfter( '#dropicon' );
-		$( "a[href='basket_view.cgi'].no_mobile" ).insertBefore( "#dropdowndiv" );
-		$( ".image-container img").css("max-height","max-content");
-		$( "#dropdowndiv" ).insertBefore( 'table.header' );
-		$( "#logout_userid" ).insertBefore( '.dropdown' );
-		
-		/*********** End My Account Menu ***********/
-
-		$( "#desklogo" ).insertBefore(".header-links");
-
-
-		/************* TopTabs *************/
-		
-		// $("div.responsive_tabs-shell").show();  /*** Only for testing; Show the old Tabs ***/
-		// $(".tab_html_wrapper").show();  /*** Only for testing; Show the old Tabs ***/
-		// $(".responsive_tabs-shell .before").show();  /*** Only for testing; Show the old Tabs ***/
-		// $("div#basket-list-title").show();  /*** Only for testing; Show the old Tabs ***/
+		// // $("div.responsive_tabs-shell").show();  /*** Only for testing; Show the old Tabs ***/
+		// // $(".tab_html_wrapper").show();  /*** Only for testing; Show the old Tabs ***/
+		// // $(".responsive_tabs-shell .before").show();  /*** Only for testing; Show the old Tabs ***/
+		// // $("div#basket-list-title").show();  /*** Only for testing; Show the old Tabs ***/
 
 
 
-		$( "#header-wrapper" ).after('<div id="TabsDiv"><nav id="TabsNav"><ul id="TabsMenu">'); /** Create the top nav place holder **/
-		var tabid = '';
-		var appendid = '';
-		$('#tab_responsive_tabs [id^="tab_"]').each(function() {
-			/**** Top most tabs menu item ****/
-			if ($("#TMul_" + $(this).attr("id")).length > 0 ) {return true;} /*** if it has already been created then skip to next ***/
-			//console.log( "TOP - " + $(this).find("dfn").first().text() + " : " + $(this).attr("id") + " | " + $(this).find("dfn").length );
-			appendid = 'TabsMenu';
-			tabid = $(this).attr("id");
-			if ($(this).find("dfn").length == 1) {
-				$("#" + appendid).append( '<li class="onlyli" id="TMli_' + tabid + '">' + $(this).find("dfn").first().html() + '</li>' ); /**** Top most menu link with no sub items ****/
-			}else{
-				$("#" + appendid).append( '<li class="topli" id="TMli_' + tabid + '">' + $(this).find("dfn").first().text() + '<ul id="TMul_' + tabid + '"></ul></li>' ); /*Top most menu with sub items*/
-			}
-			/**** Sub tabs menu items ****/
-			$(this).children().find('dfn').each(function () {
-				//console.log( "---- " + $(this).text() + " == " + $(this).parents('div [id^="tab_"]').parents('div [id^="tab_"]').attr("id") + " /// " + $(this).parents('div [id^="tab_"]').first().attr("id") + " || " + $(this).is(":last-child") );
-				if ($(this).is(":last-child")) {
-					appendid = 'TMul_' + $(this).parents('div [id^="tab_"]').first().attr("id");
-					tabid = $(this).parents('div [id^="tab_"]').parents('div [id^="tab_"]').attr("id");
-					if (tabid == 'tab_responsive_tabs') {tabid = 'TabsMenu';}
-					$("#" + appendid).append( '<li class="subtab">' + $(this).html() + '</li>' ); /**** All sub item links ****/
-				}else{
-					tabid = $(this).parents('div [id^="tab_"]').first().attr("id");
-					if (tabid == 'tab_responsive_tabs') {tabid = 'TabsMenu';}
-					appendid = 'TMul_' + $(this).parents('div [id^="tab_"]').parents('div [id^="tab_"]').attr("id");
-					$("#" + appendid).append( '<li class="subtopli" id="MMli_' + tabid + '">' + $(this).text() + '<ul id="TMul_' + tabid + '"></ul></li>' ); /**** Middle menu with sub items ****/
-				}
-			});
-		});
-		
-		$( ".toptabs:contains('undefined')" ).hide();  /** if on a page that tabs are not exposed, hide the place holders. **/
-		/********** End TopTabs ***********/
+		// $( "#header-wrapper" ).after('<div id="TabsDiv"><nav id="TabsNav"><ul id="TabsMenu">'); /** Create the top nav place holder **/
+		// var tabid = '';
+		// var appendid = '';
+		// $('#tab_responsive_tabs [id^="tab_"]').each(function() {
+		// 	/**** Top most tabs menu item ****/
+		// 	if ($("#TMul_" + $(this).attr("id")).length > 0 ) {return true;} /*** if it has already been created then skip to next ***/
+		// 	//console.log( "TOP - " + $(this).find("dfn").first().text() + " : " + $(this).attr("id") + " | " + $(this).find("dfn").length );
+		// 	appendid = 'TabsMenu';
+		// 	tabid = $(this).attr("id");
+		// 	if ($(this).find("dfn").length == 1) {
+		// 		$("#" + appendid).append( '<li class="onlyli" id="TMli_' + tabid + '">' + $(this).find("dfn").first().html() + '</li>' ); /**** Top most menu link with no sub items ****/
+		// 	}else{
+		// 		$("#" + appendid).append( '<li class="topli" id="TMli_' + tabid + '">' + $(this).find("dfn").first().text() + '<ul id="TMul_' + tabid + '"></ul></li>' ); /*Top most menu with sub items*/
+		// 	}
+		// 	/**** Sub tabs menu items ****/
+		// 	$(this).children().find('dfn').each(function () {
+		// 		//console.log( "---- " + $(this).text() + " == " + $(this).parents('div [id^="tab_"]').parents('div [id^="tab_"]').attr("id") + " /// " + $(this).parents('div [id^="tab_"]').first().attr("id") + " || " + $(this).is(":last-child") );
+		// 		if ($(this).is(":last-child")) {
+		// 			appendid = 'TMul_' + $(this).parents('div [id^="tab_"]').first().attr("id");
+		// 			tabid = $(this).parents('div [id^="tab_"]').parents('div [id^="tab_"]').attr("id");
+		// 			if (tabid == 'tab_responsive_tabs') {tabid = 'TabsMenu';}
+		// 			$("#" + appendid).append( '<li class="subtab">' + $(this).html() + '</li>' ); /**** All sub item links ****/
+		// 		}else{
+		// 			tabid = $(this).parents('div [id^="tab_"]').first().attr("id");
+		// 			if (tabid == 'tab_responsive_tabs') {tabid = 'TabsMenu';}
+		// 			appendid = 'TMul_' + $(this).parents('div [id^="tab_"]').parents('div [id^="tab_"]').attr("id");
+		// 			$("#" + appendid).append( '<li class="subtopli" id="MMli_' + tabid + '">' + $(this).text() + '<ul id="TMul_' + tabid + '"></ul></li>' ); /**** Middle menu with sub items ****/
+		// 		}
+		// 	});
+		// });
+        // // Hide "LandingPage" tab
+        // $( "li.onlyli:contains('LandingPage')" ).css( "display", "none" );
 
-		/***************** TopTab Search items feature ****************/
-		if ( $("a[href='basket_view.cgi'].no_mobile").length > 0 ) {
-			$(".input-wrapper:has(#searchfield_input)").first().clone(true,true).insertAfter("a[href='basket_view.cgi'].no_mobile").attr("id", "Srch");
-			$( "div#Srch input" ).keyup(function(event) {
-				//console.log(event.which);
-				$('.item-search-block input').val( $(this).val() );
-				if (event.which == 13) {
-					$("#submit_catalog_search").trigger("click");
-				}
-			});
-		}else{
-			$(".input-wrapper:has(#searchfield_input)").first().clone(true,true).insertAfter( "#pageurl" ).attr("id", "Srch");
-			$( "div#Srch input" ).keyup(function(event) {
-				//console.log(event.which);
-				$('.item-search-block input').val( $(this).val() );
-				if (event.which == 13) {
-					$("#submit_catalog_search").trigger("click");
-				}
-			});
-		}
-		/*************** End TopTab Search items feature **************/
+		// $( ".toptabs:contains('undefined')" ).hide();  /** if on a page that tabs are not exposed, hide the place holders. **/
+		// /********** End TopTabs ***********/
 
-		if ( $( "input[name='tab']" ).val() ) {
-			$("#copy5 span").text( $( "input[name='tab']" ).val().replace(/\|\|/g, ' - ') ); /** Set the catalog top left description **/
-		}
+		// /***************** TopTab Search items feature ****************/
+		// if ( $("a[href='basket_view.cgi'].no_mobile").length > 0 ) {
+		// 	$(".input-wrapper:has(#searchfield_input)").first().clone(true,true).insertAfter("a[href='basket_view.cgi'].no_mobile").attr("id", "Srch");
+		// 	$( "div#Srch input" ).keyup(function(event) {
+		// 		//console.log(event.which);
+		// 		$('.item-search-block input').val( $(this).val() );
+		// 		if (event.which == 13) {
+		// 			$("#submit_catalog_search").trigger("click");
+		// 		}
+		// 	});
+		// }else{
+		// 	$(".input-wrapper:has(#searchfield_input)").first().clone(true,true).insertAfter( "#pageurl" ).attr("id", "Srch");
+		// 	$( "div#Srch input" ).keyup(function(event) {
+		// 		//console.log(event.which);
+		// 		$('.item-search-block input').val( $(this).val() );
+		// 		if (event.which == 13) {
+		// 			$("#submit_catalog_search").trigger("click");
+		// 		}
+		// 	});
+		// }
+		// /*************** End TopTab Search items feature **************/
+
+		// if ( $( "input[name='tab']" ).val() ) {
+		// 	$("#copy5 span").text( $( "input[name='tab']" ).val().replace(/\|\|/g, ' - ') ); /** Set the catalog top left description **/
+		// }
 
 
 		//$( "td#header_logo" ).css("display", "table-cell");
@@ -214,12 +202,16 @@ $(window).load(function () {
 	/********* Hide FAQ Holders & Place Holders **********/
 	// $('div.height-adjuster').has('div.responsive-longname:contains("FAQ-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
 	// $('div.height-adjuster').has('div.responsive-longname:contains("PLACE-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
-	$('div.stretchy_cols').has('div.responsive-longname:contains("FAQ-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
-	$('div.stretchy_cols').has('div.responsive-longname:contains("PLACE-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
+
+    // $('div.stretchy_cols').has('div.responsive-longname:contains("FAQ-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
+	// $('div.stretchy_cols').has('div.responsive-longname:contains("PLACE-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
     
 });
 
 $(document).ready(function () {
+    $('div.stretchy_cols').has('div.responsive-longname:contains("FAQ-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
+    $('div.stretchy_cols').has('div.responsive-longname:contains("PLACE-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
+    
 	$("#cost_options\\.quantity").closest('tr').hide();
 
 	if($('.pagetitle').text().toUpperCase() === 'IN YOUR CART') {
@@ -239,7 +231,7 @@ $(document).ready(function () {
 		$("button#submit_cancel").has("span:contains('Cancel Order')").hide();
 	}
 	
-	console.log( '******************************************************' + $('table#estimate-item-container .form-body input[type="text"]').filter(':visible').length )
+	// console.log( '******************************************************' + $('table#estimate-item-container .form-body input[type="text"]').filter(':visible').length )
 	$('table#estimate-item-container .form-body input[type="text"]').filter(':visible').each(function() {
 		var nme = 'new_' + $(this).attr('name'); //get name for new input
 		var v = $(this).val(); //get name for new input
@@ -264,6 +256,98 @@ $(document).ready(function () {
 		})
 	})
 
+	if ($(window).width() >= 1025) {
+
+        $( "#header_logo img.no_mobile" ).wrap( '<td id="desklogo"><div class="logolinkdiv"><a style="display: inline-block;" href="index.cgi">' );
+        $( "#header_logo img.no_desktop" ).wrap( '<a style="display: inline-block;" href="index.cgi">' );
+		/************* My Account Menu *************/
+		
+		$( ".header-links a" ).wrapAll( '<div id="dropdown-contentdiv" class="dropdown-content"></div>  ' );
+		$( ".dropdown-content" ).wrapAll( '<div id="dropdowndiv" class="dropdown"><span id="dropicon">My Account</span>' );
+		$( ".dropdown-content" ).insertAfter( '#dropicon' );
+		$( "a[href='basket_view.cgi'].no_mobile" ).insertBefore( "#dropdowndiv" );
+		$( ".image-container img").css("max-height","max-content");
+		// $( "#dropdowndiv" ).insertBefore( 'table.header' );
+        $( "div#header-wrapper" ).prepend( $("#dropdowndiv") );
+		$( "#logout_userid" ).insertBefore( '.dropdown' );
+		
+		/*********** End My Account Menu ***********/
+
+		$( "#desklogo" ).insertBefore(".header-links");
+
+		/************* TopTabs *************/
+		
+		// $("div.responsive_tabs-shell").show();  /*** Only for testing; Show the old Tabs ***/
+		// $(".tab_html_wrapper").show();  /*** Only for testing; Show the old Tabs ***/
+		// $(".responsive_tabs-shell .before").show();  /*** Only for testing; Show the old Tabs ***/
+		// $("div#basket-list-title").show();  /*** Only for testing; Show the old Tabs ***/
+
+
+
+		$( "#header-wrapper" ).after('<div id="TabsDiv"><nav id="TabsNav"><ul id="TabsMenu">'); /** Create the top nav place holder **/
+		var tabid = '';
+		var appendid = '';
+		$('#tab_responsive_tabs [id^="tab_"]').each(function() {
+			/**** Top most tabs menu item ****/
+			if ($("#TMul_" + $(this).attr("id")).length > 0 ) {return true;} /*** if it has already been created then skip to next ***/
+			//console.log( "TOP - " + $(this).find("dfn").first().text() + " : " + $(this).attr("id") + " | " + $(this).find("dfn").length );
+			appendid = 'TabsMenu';
+			tabid = $(this).attr("id");
+			if ($(this).find("dfn").length == 1) {
+				$("#" + appendid).append( '<li class="onlyli" id="TMli_' + tabid + '">' + $(this).find("dfn").first().html() + '</li>' ); /**** Top most menu link with no sub items ****/
+			}else{
+				$("#" + appendid).append( '<li class="topli" id="TMli_' + tabid + '">' + $(this).find("dfn").first().text() + '<ul id="TMul_' + tabid + '"></ul></li>' ); /*Top most menu with sub items*/
+			}
+			/**** Sub tabs menu items ****/
+			$(this).children().find('dfn').each(function () {
+				//console.log( "---- " + $(this).text() + " == " + $(this).parents('div [id^="tab_"]').parents('div [id^="tab_"]').attr("id") + " /// " + $(this).parents('div [id^="tab_"]').first().attr("id") + " || " + $(this).is(":last-child") );
+				if ($(this).is(":last-child")) {
+					appendid = 'TMul_' + $(this).parents('div [id^="tab_"]').first().attr("id");
+					tabid = $(this).parents('div [id^="tab_"]').parents('div [id^="tab_"]').attr("id");
+					if (tabid == 'tab_responsive_tabs') {tabid = 'TabsMenu';}
+					$("#" + appendid).append( '<li class="subtab">' + $(this).html() + '</li>' ); /**** All sub item links ****/
+				}else{
+					tabid = $(this).parents('div [id^="tab_"]').first().attr("id");
+					if (tabid == 'tab_responsive_tabs') {tabid = 'TabsMenu';}
+					appendid = 'TMul_' + $(this).parents('div [id^="tab_"]').parents('div [id^="tab_"]').attr("id");
+					$("#" + appendid).append( '<li class="subtopli" id="MMli_' + tabid + '">' + $(this).text() + '<ul id="TMul_' + tabid + '"></ul></li>' ); /**** Middle menu with sub items ****/
+				}
+			});
+		});
+        // Hide "LandingPage" tab
+        $( "li.onlyli:contains('LandingPage')" ).css( "display", "none" );
+
+		$( ".toptabs:contains('undefined')" ).hide();  /** if on a page that tabs are not exposed, hide the place holders. **/
+		/********** End TopTabs ***********/
+
+		/***************** TopTab Search items feature ****************/
+		if ( $("a[href='basket_view.cgi'].no_mobile").length > 0 ) {
+			$(".input-wrapper:has(#searchfield_input)").first().clone(true,true).insertAfter("a[href='basket_view.cgi'].no_mobile").attr("id", "Srch");
+			$( "div#Srch input" ).keyup(function(event) {
+				//console.log(event.which);
+				$('.item-search-block input').val( $(this).val() );
+				if (event.which == 13) {
+					$("#submit_catalog_search").trigger("click");
+				}
+			});
+		}else{
+			$(".input-wrapper:has(#searchfield_input)").first().clone(true,true).insertAfter( "#pageurl" ).attr("id", "Srch");
+			$( "div#Srch input" ).keyup(function(event) {
+				//console.log(event.which);
+				$('.item-search-block input').val( $(this).val() );
+				if (event.which == 13) {
+					$("#submit_catalog_search").trigger("click");
+				}
+			});
+		}
+		/*************** End TopTab Search items feature **************/
+
+		if ( $( "input[name='tab']" ).val() ) {
+			$("#copy5 span").text( $( "input[name='tab']" ).val().replace(/\|\|/g, ' - ') ); /** Set the catalog top left description **/
+		}
+
+
+    }
 });
 
 </script>
