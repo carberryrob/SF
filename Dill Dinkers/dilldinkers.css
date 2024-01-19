@@ -1,3 +1,4 @@
+/* Rob Carberry Updated for zoom images and auto adjust stretchy for consistant size 1/19/2024 */
 /* Rob Carberry Updated multiple form items 1/13/2024 */
 /* Rob Carberry added "div#error_block .estimate-total" 1/5/2024 */
 /* Rob Carberry changed .stretchy_cols color to #333333 */
@@ -188,7 +189,7 @@ button#submit_cancel {
 
 	.main.catalog--container {
 		height: -webkit-fill-available !important;
-		min-height: 600px;
+		min-height: 710px;
 	}
 	.main, .catalog, form {
 		/* height: 100vh; */
@@ -820,7 +821,7 @@ button#submit_cancel {
 		font-weight: 700;
 		font-size: 15px;
 		text-transform: uppercase;
-		z-index: 1001;
+		z-index: 80;
 		position: relative;
 		font-family: "Core Sans DS", Sans-serif;
     	font-style: italic;
@@ -1198,11 +1199,12 @@ button#submit_cancel {
 		padding: 5px;
 	}*/
 	
-	div#all_items_view {
+     /* This must be commented out for zoom images */
+	/* div#all_items_view {
 		width: 100% !important;
 		float: none !important;
 		margin: 0 auto !important;
-	}
+	} */
 
 	.basket-list-item {
 		font-size: 14px !important;
@@ -1395,6 +1397,7 @@ button#submit_cancel {
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
+          z-index: 81;
 	}
 	
 	.container {
@@ -1446,6 +1449,33 @@ button#submit_cancel {
 		display: inline-block;
 	}
 
+	/************ Handle zoom on images *****************/
+
+	.imgwrap > label > img {
+		/* transition: transform 0.25s ; */
+		transition: transform 0.25s;
+		cursor: zoom-in;
+	}
+
+	input[type=checkbox].zoomCheck {
+		display: none;
+	} 
+	input[type=checkbox].zoomCheck:checked ~ label > img {
+		cursor: zoom-out;
+		position: absolute;
+		transform-origin: 100% 100%;
+		transform: scale(2);
+		z-index: 200;
+	}
+
+	div#all_items_view {
+		/* width: 100% !important; */
+		/* float: none !important; */
+		float: right !important;
+		margin: 0 auto !important;
+	}
+
+	/* *********** End of Zoom ***************************** */
 
 	/*************************************** Align Stretchy_cols **********************************************/
 	/* .stretchy_cols::before {
@@ -1455,14 +1485,15 @@ button#submit_cancel {
 		background-color: #000000;
 	} */
 
-	.note.responsive-pricing {
+	/* .note.responsive-pricing {
 		min-height: 20px;
-	}
+	} */
 /* Modified font-weight and color to black --Shreya */
 	.responsive-longname {
-		min-height: 42px;
+		/* min-height: 42px; */
 		font-weight: 600 !important;
-                color: #000000;
+          color: #000000;
+          margin-bottom: 20px;
 	}
 	.responsive_tabs dfn {
 		padding-top: 6px !important;
@@ -1471,7 +1502,7 @@ button#submit_cancel {
 	.responsive-choose-info {
 		display: block !important;
 		max-height: 100rem !important;
-		min-height: 53px;
+		/* min-height: 53px; */
 		overflow: visible !important;
 		font-size: 14px;
 	}
@@ -1486,14 +1517,14 @@ button#submit_cancel {
 	}
 /* Changed the background color and added border radius -- Shreya*/
 	.height-adjuster {
-		margin-top: 0px !important;
-		max-width: 375px;
-		/* -moz-border-radius: 20px/20px;
-		-webkit-border-radius: 20px/20px;
-        border-radius: 20px/20px; */
-        padding: 25px 0 17px 0;
-        background-color: #F2F2F2;
-        border-radius: 10px;
+          /* -moz-border-radius: 20px/20px;
+          -webkit-border-radius: 20px/20px;
+          border-radius: 20px/20px; */
+          padding: 25px 0 17px 0;
+          margin-top: 0px !important;
+          max-width: 375px;
+          background-color: #F2F2F2;
+          border-radius: 10px;
 
 	}
 
@@ -1527,7 +1558,8 @@ button#submit_cancel {
 	}
 /* .image-container height increased from 320 to 390 - to scale the item tile - door and wall sign*/
 	.image-container {
-		min-height: 390px;
+		/* min-height: 390px; */
+          padding: 10px;
 	}
 
 	/*div#header-wrapper {
