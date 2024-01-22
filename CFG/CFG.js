@@ -385,7 +385,20 @@ $(window).load(function () {
 });
 
 $(document).ready(function () {
-	if($('.pagetitle').text().toUpperCase() === 'IN YOUR CART') {
+     // Make Kit Qty read only in basket etc.
+     
+     $("table.true-table .qty_select_cell > select[name*='CFG-BC']").each(function() {
+          // console.log( $(this).val() );
+          $(this).closest('td').prepend($(this).val());
+          $(this).hide();
+     });
+     $("table.true-table .qty_select_cell > select[name*='CFG-Bank-BC']").each(function() {
+          // console.log( $(this).val() );
+          $(this).closest('td').prepend($(this).val());
+          $(this).hide();
+     });
+
+     if($('.pagetitle').text().toUpperCase() === 'IN YOUR CART') {
 		$(".buttonsbar").find("button:nth-child(4)").hide(); /**** Check to see if in basketview and hide extra checkout button ********/
 	}
 	//$( "#shipmeth-info" ).hide();
