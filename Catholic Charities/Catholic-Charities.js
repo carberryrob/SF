@@ -11,7 +11,7 @@
 </div>
 <script>
 
-jQuery.expr.filters.offscreen = function(el) {
+{/* jQuery.expr.filters.offscreen = function(el) {
 	console.log(el);
 	var rect = el.getBoundingClientRect();
 	return (
@@ -33,9 +33,10 @@ function outofView(el){
 
 	return out;
 
-};
+}; */}
 
-{/* Rob Carberry 1/8/2024 */}
+
+{/* Rob Carberry 2024 */}
 {/* Since we are wrapping the item images, we need to customize the pdna set_preview_image function */}
 function set_preview_image(elem, thumburl, largeurl) {
 	// console.log( $(elem).parent().find('a').index($(elem)) );
@@ -132,7 +133,7 @@ function AdjustForIMG(elem){
 		if ((rightPos > $(window).width()) || (topPos < 0) || ((bottomPos-$(window)['scrollTop']()) > $(window).height())){$(elem).ensureVisible();}
 	}
 }
-{/* 1/8/2024 *************************************************************************************************************************************************** */}
+
 
 $(window).load(function () {
 
@@ -323,12 +324,6 @@ $(window).load(function () {
 		$("span.cart_num_items.no_mobile").parent("a").wrap('<div class="carticon">');
 
 
-
-
-
-
-		// 1/8/2024
-		
 		// ************ Size stretchy column items so all are top aligned and buttons are uniform *************
 		
 		// Wrap item imgs and thumbnails for sizing
@@ -476,16 +471,6 @@ $(window).load(function () {
 		$("div.image-container").css('min-height', maxH);
 	
 		// *****************************************************************************************
-
-
-
-
-
-
-
-
-
-
 	}
 	
 	if( $('.stretchy_cols').length == 1) {$('.stretchy_cols').addClass("singleItemCenter");}
@@ -528,6 +513,10 @@ $(window).load(function () {
 		});
 	})
 	/******************************************/ 
+
+     $(window).trigger('resize').delay(1000);
+	$(window).trigger('resize').delay(3000);
+
 });
 
 $(document).ready(function () {
@@ -574,13 +563,53 @@ $(document).ready(function () {
 });
 /***********************************************************************************************************************/
 </script>
+<script>
+$(document).ready(function () {
+	if ($(window).width() >= 1025) {
+		$('.responsive_tabs-shell').hide();
+		$('.responsive_tabs-shell > .after').hide();
+	
 
+		// Give color dropdowns a class to call later.
+		$('.the_actual_qty_select').find('select:first').each(function() {
+			$(this).addClass('colorselect');
+		});
+		
+		// Apparel- When changing a color from a dropdown make the large image that color by code clicking the corresponding thumbnail.
+		if ( $('.colorselect').length > 0 ) {
+			$('.colorselect').change(function() {
+				var idx = $(this).prop('selectedIndex');
+				var prnt = $(this).closest('.stretchy_cols.responsive-item.image-row');
+				$(prnt).find('.multi_preview a').eq(idx).trigger( "click" );
+			});
+		}
 
-{/* 1/8/2024 */}
+	}
+
+	/********** Enable/Disable "Submit Order" button based on approval *****************************************************/
+	if ($("select[name='bill_code10']").val() == "No") {
+			$("button#submit_send_order").prop('disabled', 'disabled');
+		}
+		// console.log($("select[name='bill_code10']").val());
+		$('form[action="accept_bill.cgi"]').change(function() {
+			if ($("select[name='bill_code10']").val() == "No") {$("button#submit_send_order").prop('disabled', 'disabled');}
+			if ($("select[name='bill_code10']").val() == "Yes") {$("button#submit_send_order").prop('disabled', false);}
+			console.log($("select[name='bill_code10']").val());
+			//if ( $('select#ship_office').val() == '1 - Will Call at Strategic Factory in Owings Mills') {$("span#willcalltxt").show();}
+		});
+
+		//********** Move approval yes/no to just above "Submit Order"*******************
+		$("tr:contains('I have verified and approve this order:')").appendTo($("p.approve_order").parents("tr").parent());
+		//*******************************************************************************
+	/***********************************************************************************************************************/
+});
+</script>
+
 <script>
 {/* Rob Carberry - So we can customize the pdna itemWidthAdjuster function we add the code from responsive_catalog.js so we can alter the function */}
 $(document).ready(function(){
 	if ($(window).width() >= 1025) {
+          console.log('TEST')
 		// return;
 		// bugfix var for iOS
 		var loadedWidth = $(window).width();

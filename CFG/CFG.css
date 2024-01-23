@@ -1138,8 +1138,8 @@ button#submit_cancel {
 	}*/
 	
 	div#all_items_view {
-		width: 99% !important;
-		float: none !important;
+		/* width: 99% !important; */
+		float: right !important;
 		margin: 0 auto !important;
 	}
 
