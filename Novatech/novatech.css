@@ -1,0 +1,542 @@
+/****************************************************************************************
+************************************ GLOBAL *****************************************
+****************************************************************************************/
+.main .buttonsbar button {
+	margin-bottom: 20px;
+}
+
+button:focus {
+        border-radius: 3px;
+}
+
+h2.pagetitle, .pagetitle {
+	font-size: 16px;
+	color: #333;
+	font-weight: bold;
+	text-shadow: none;
+}
+
+.header-links {
+	text-decoration: none;
+        padding: 0px 10px;
+}
+
+.header-links a {
+	text-decoration: none;
+}
+
+/*** Max width on all pages except the Division / Catalog pages ***/
+.shipping, .billing, .review, .done, .customer-service, .profile, .basket-view, .view-order, .shiptrack_view2, .waitingorders {
+        max-width: 800px !important;
+        margin: 20px auto 0 !important;
+}
+
+.message-block {
+        text-align: center;
+}
+
+.req_fld {
+        color: red;
+}
+
+.form-body th, .tabular th, .form-body div.title {
+        font-size: 14px;
+}
+
+.footer {
+        padding: 15px 10px 0px !important;
+        width: auto !important;
+}
+
+/****************************************************************************************
+************************************** INDEX ******************************************
+****************************************************************************************/
+
+.index-container {
+	margin: 20px 20px;
+	padding-bottom: 20px;
+	font-size: 14px;
+}
+
+/****************************************************************************************
+********************************* CATALOG ******************************************
+****************************************************************************************/
+
+.select-items .vertical-shell {
+	margin-left: 10px !important;
+}
+
+.select-items .image-container img {
+	margin: 10px 0;
+}
+
+.select-items .longname *, .select-items .longname * {
+	font-size: 14px;
+}
+
+.select-items .pagetitle {
+	margin-left: 10px !important;
+}
+
+.select-items .buttonsbar button {
+	margin-bottom: 20px;
+}
+
+.responsive_tabs-shell .after {
+    margin-top: 20px !important;
+}
+
+#basket-list-title {
+        text-align: center;
+        font-size: 20px;
+/*        color: #0061df; */
+/*        border-bottom: 2px solid #0061df; */
+        margin-bottom: 10px;
+}
+
+.basket-list-item {
+        margin-bottom: 10px !important;
+}
+
+.basket-list-item .button {
+        padding: 1px 1px 1px 5px !important;
+}
+
+#basket_button_container {
+        text-align: center;
+}
+
+#submit_catalog_add {
+	margin-top: 5px;
+}
+
+#copy4 {
+	display: none;
+}
+
+.bundle_subitem_preview img {
+	border: 1px solid gray;
+}
+
+.qtyspec_label {
+	margin-left: 5px !important;
+}
+
+/****************************************************************************************
+************************* QUOTES/SIDE BY SIDE **********************************
+****************************************************************************************/
+
+.buttonsbar, .form-body {
+	border-radius: 0px !important;
+}
+
+#estimate-item-container {
+	padding: 20px 0;
+}
+
+.submit.center button{
+	margin-bottom: 20px !important;
+}
+
+#all_options, #all_options_container {
+	border: none !important;
+}
+
+.fileSpec {
+	position: relative;
+	left: 10px;
+}
+
+.form-subheader {
+	text-align: left !important;
+}
+
+#approval_checkbox_group input *{
+	width: 100px;
+	height: auto;
+}
+
+.uploadIcon {
+	margin-top: 5px !important;
+}
+
+div#confirm_container button{
+	margin-top: 20px !important;
+}
+
+.checkbox-table {
+	margin-left: 0 !important;
+}
+
+/****************************************************************************************
+******************************* MAIL MERGE ****************************************
+****************************************************************************************/
+
+.mail-merge header {
+	margin-left: 25px;
+}
+
+.mail-merge nav.submit {
+	padding-bottom: 30px !important;
+}
+
+#listimp-s3-section-5 div {
+	margin-left: 25px;
+}
+
+div.error {
+	margin-bottom: 10px;
+}
+
+#ml-handle-link {
+	margin-left: 25px;
+}
+
+.personal-list-actions {
+	text-align: center!important;
+}
+
+form[name='clientlist'] div:last-child {
+	padding: 20px 20px !important;
+}
+
+/****************************************************************************************
+****************************** BASKET VIEW ****************************************
+****************************************************************************************/
+
+.basket-view td.previewcell {
+	background-color: transparent!important;
+}
+
+.basket-view .buttonsbar button {
+	margin-bottom: 20px;
+}
+
+table:not(.items-table){
+	width: auto;
+	margin: 0 auto;
+}
+
+/****************************************************************************************
+***************************** DELIVERY METHODS ********************************
+****************************************************************************************/
+
+tr.dpt--headerRow, tr.dpt--headerRow span, tr.dpt--headerRow *, tr.item_row * {
+	font-size: 14px !important;
+}
+
+#i-dropship {
+	position: relative;
+	font-size: 14px;
+	color: #00000A;
+	font-family: "Lucida Sans", "Trebuchet MS", "Arial";
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 4px 10px 4px 10px;
+	border: 1px solid #CCCCCC;
+	-moz-border-radius: 0em;
+	-webkit-border-radius: 0em;
+	border-radius: 0em;
+	background: #FFFFFF;
+	background: linear-gradient(#FFFFFF, #CCCCCC);
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#CCCCCC));
+	background: -moz-linear-gradient(top, #FFFFFF, #CCCCCC);
+	background: -ms-linear-gradient(#FFFFFF, #CCCCCC);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFFFFF', endColorstr='#CCCCCC');
+	-pie-background: linear-gradient(#FFFFFF, #CCCCCC);
+	position: relative;
+	behavior: url(../hub/css/PIE.htc);
+}
+
+.mail-merge .buttonsbar, .mail-merge .buttonsbar a, .mail-merge .buttonsbar a:link, .mail-merge .buttonsbar * {
+	text-decoration: none !important;
+	text-align: center!important;
+}
+
+.mail-merge .buttonsbar {
+	margin-bottom: 10px;
+}
+
+tr.dpt--finalizeRow td.dpt--status {
+	border-bottom: 0px !important
+}
+
+/****************************************************************************************
+*********************************** SHIPPING ****************************************
+****************************************************************************************/
+
+.mail-merge .pagetitle {
+	margin-left: 15px !important;
+}
+
+#see_shipping_methods{
+	position: relative;
+	font-size: 14px;
+	color: #00000A;
+	font-family: "Lucida Sans", "Trebuchet MS", "Arial";
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 4px 10px 4px 10px;
+	border: 1px solid #CCCCCC;
+	-moz-border-radius: 0em;
+	-webkit-border-radius: 0em;
+	border-radius: 0em;
+	background: #FFFFFF;
+	background: linear-gradient(#FFFFFF, #CCCCCC);
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#CCCCCC));
+	background: -moz-linear-gradient(top, #FFFFFF, #CCCCCC);
+	background: -ms-linear-gradient(#FFFFFF, #CCCCCC);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFFFFF', endColorstr='#CCCCCC');
+	-pie-background: linear-gradient(#FFFFFF, #CCCCCC);
+	position: relative;
+	behavior: url(../hub/css/PIE.htc);
+	max-width: 150px;
+	text-shadow: none !important;
+}
+
+.mail-merge .field-note {
+	display: none !important; /*can't do much better without source change*/
+}
+
+.mail-merge #throbber {
+	margin-bottom: 20px !important;
+}
+
+.mail-merge .field-container * {
+	color: #333333 !important;
+}
+
+label[for="comments"] {
+	position: relative;
+	bottom: 12px;
+}
+
+.shipping .form-body {
+	width: 80%;
+}
+
+form[action="shiptrack.cgi"] {
+	padding-bottom: 25px !important;
+}
+
+/****************************************************************************************
+************************************** BILLING ****************************************
+****************************************************************************************/
+
+.billing .buttonsbar button {
+	margin-bottom: 20px;
+}
+
+.billing * {
+	font-size: 14px !important;
+}
+
+.billing .form-body {
+        width: 100%;
+	margin: 0 auto 20px;
+}
+
+/****************************************************************************************
+************************************** REVIEW ***************************************
+****************************************************************************************/
+
+.review .buttonsbar button {
+	margin-bottom: 20px;
+}
+
+.review .pageinstructions {
+	font-size: 14px;
+}
+
+.review * {
+	font-size: 14px !important;
+}
+
+.review td.data {
+	background-color: #eeeeee;
+}
+
+.review div {
+	margin: 0 10px;
+}
+
+.main p {
+	margin-left: 10px;
+}
+
+.accept-proofs table{
+        width: 80%;
+        margin-bottom: 20px;
+}
+
+/****************************************************************************************
+************************************ ACCEPT *****************************************
+****************************************************************************************/
+
+.done div * {
+	font-size: 14px;
+}
+
+.done td.data {
+	background-color: #eeeeee;
+}
+
+.done .accept-proofs .form-body {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+	width: 80%;
+}
+
+.done .accept-msg {
+        margin: 0 5px;
+}
+
+.catalog--container .pagetitle {
+	margin-top: 10px !important;
+}
+
+.accept-showneworderbutton {
+        margin: 20px auto !important;
+}
+
+.accept-proofs  b{
+	margin-left: 20px;
+	margin-top: 10px;
+	line-height: 30px;
+}
+
+.previewcell a span {
+    position: relative;
+    font-size: 14px;
+    color: #00000A;
+    font-family: "Lucida Sans", "Trebuchet MS", "Arial";
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    font-weight: normal;
+    padding: 4px 10px 4px 10px;
+    border: 1px solid #CCCCCC;
+    -moz-border-radius: 0em;
+    -webkit-border-radius: 0em;
+    border-radius: 0em;
+    background: #FFFFFF;
+    background: linear-gradient(#FFFFFF, #CCCCCC);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#CCCCCC));
+    background: -moz-linear-gradient(top, #FFFFFF, #CCCCCC);
+    background: -ms-linear-gradient(#FFFFFF, #CCCCCC);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFFFFF', endColorstr='#CCCCCC');
+    -pie-background: linear-gradient(#FFFFFF, #CCCCCC);
+    position: relative;
+    behavior: url(../hub/css/PIE.htc);
+    margin: 5px 20px;
+}
+
+.previewcell a {
+	text-decoration: none;
+	margin: 0px auto;
+	line-height: 50px;
+	text-align: center;
+}
+
+.previewcell * {
+	text-align: center!important;
+}
+
+/*Add border to preview image on Basket, Review, Accept pages*/
+.previewcell img {
+        border: 1px solid #ccc !important;  
+}
+
+/* Remove sr_ error text from Basket, Review, Accept pages */
+.previewcell pre {
+  	display: none;
+}
+
+/****************************************************************************************
+************************ ~~-- aplaceformom --~~ *********************************
+****************************** TABLE OF CONTENTS ***************************************/
+/****************************************************************************************
+
+  1. GLOBAL 
+ 
+
+  - If you are making changes here, changes may need to be made in 
+  the con/responsive.css file as well
+
+*****************************************************************************************
+*****************************************************************************************
+*****************************************************************************************
+****************************************************************************************/
+
+
+
+
+
+/****************************************************************************************
+************************************* 1. GLOBAL *****************************************
+****************************************************************************************/
+
+/*Remove sr_ error text from Basket, Review, Accept pages*/
+.previewcell pre { display: none;}
+
+
+/*** FONT ***/
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+}
+
+/*** Header ***/
+#header-wrapper{
+  border-bottom: 24px solid #000000;
+}
+
+#header_logo {
+  padding: 80px 0;
+}
+
+#header_logo > img.no_mobile {
+    position: absolute;
+    top: 32px;
+    left: 25px;
+    max-width: 350px;
+    height: auto;
+}
+
+#header-links-container {
+  position: absolute;
+  top: 70px;
+  right: 10%;
+  text-transform: uppercase;
+}
+
+.header-links a {
+  margin: 0px 15px;
+  padding: 5px;
+}
+.header-links a:hover {
+  padding: 5px;
+}
+
+#logout_userid{
+    padding-left: 15px
+}
+/*-- CANCEL LINK ---*/
+#footer\2e footercanceltext{
+  padding-right: 15px;
+}
+
+/*** Item Search Block ***/
+.item-search-block {
+    border-bottom: 4px solid #000000;
+    padding-bottom: 8px;
+}
+
+/****************************************************************************************
+*********************************** END GLOBAL ******************************************
+****************************************************************************************/
