@@ -17,3 +17,20 @@ Cecil Cty Sherriff only
 %(longname)s %(f.include_back)s - %(f.Physician_List)s
 
 %(longname)s - %(f.sides_txt)s for %(f.name_first)s %(f.name_last)s
+
+%(longname)s - %(f.logo1_title)s for %(f.name_first)s %(f.name_last)s
+
+
+%(longname)s - for %(f.name_first)s (Requester: %(login_name_first)s %(login_name_last)s)
+
+
+%(longname)s (%(f.name_first)s)
+
+%(longname)s (%(f.name_first)s %(f.name_last)s)
+
+%(longname)s (%(f.name_full)s)
+
+%(longname)s (%(f.name_firstlast)s)
+
+
+%(longname)s (%(f.name_first)s %(f.name_last)s -  %(f.card_company)s)
