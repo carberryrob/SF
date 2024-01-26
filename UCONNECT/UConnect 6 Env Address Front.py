@@ -13,6 +13,7 @@ for address in (card_address, card2_address, card3_address, card4_address, card5
 address = None
 
 if cnt == 1:
+	lft = 1*72
 	add1 = None
 	add2 = None
 	add3 = None
@@ -43,6 +44,6 @@ if cnt == 1:
 		add6 = DWIMLINES([CENTER, F1, card6_street1, NEWLINE,
 		card6_street2, NEWLINE,
 		JOIN3(card6_city, ', ', JOIN3(card6_state, ' ', card6_zip)), NEWLINE])
-	Block1a = DWIMBLOCK([add1, add2, add3, add4, add5, add6], (1*72, 3.15*72), (CENTER, TOP), (1.65*72, 0), uniform_linescale=1, layer=0)
+	Block1a = DWIMBLOCK([add1, add2, add3, add4, add5, add6], (lft, 3.15*72), (CENTER, TOP), (1.65*72, 0), uniform_linescale=1, layer=0)
 
 
