@@ -116,7 +116,9 @@ $(window).load(function () {
 });
 $(document).ready(function () {
 	// $( "#shipmeth-info" ).hide();
-	$('tr:contains("Shipping")').hide();
+
+	// r $('tr:contains("Shipping")').hide();
+
 	if($('form[action="profile.cgi"]').length === 0) {
 		if( $(".item_count").text() > 0) {
 			$("button#submit_cancel").show();
@@ -125,52 +127,60 @@ $(document).ready(function () {
 		}
 	}
 
-    // Set Shipping....
+     // Set Shipping....
 	if($('form[action="accept_bill.cgi"]').length >= 1 || $('form[action="review_bill.cgi"]').length >= 1) {
-        
-        var sm = getQuery( 'ship_method', $("#pageurl").text())
-		// console.log('ship_method' + ':' + sm + 'sm exist = ' + sm);
+          $('tr:contains("Shipping")').hide();
+          var sm = getQuery( 'ship_method', $("#pageurl").text())
+          var country = getQuery( 'ship_country', $("#pageurl").text())
+		console.log('ship_method' + ':' + sm + ' - country = |' + country + '|');
+          if (sm == '') {
+               if (country == 'US' || country == 'United States') {
+                    sm = 'ups-net30'
+               }else{
+                    sm = 'ups-ww-net30'
+               }
+          }
 
 		////var sel = $('select#service_code').val(sm).change();
-        if (sm != null) {
-            console.log('sm != null')
-            $('select#service_code option').each(function() {
-                if ($(this).val() == sm) {
-                    // console.log($(this).text());
-                    $('<span id="shipmeth">' + $(this).text().replaceAll(' - -', ' $0.00') + '</span>').insertBefore($(this).parent());
-                    var shiptxt = $("#shipmeth").html().replaceAll('UPS - Ground $0.00', '<span style="float: left;">UPS - Ground</span><br><span> $0.00</span>');
-                    $("#shipmeth").html(shiptxt);
-                    $(this).attr('selected', 'selected');
-                    $(this).prop('selected', true);
-                    sessionStorage.setItem("ship_method_save", sm);
-                    $(this).parent().hide();
-                }
-                else{
-                    $(this).remove();
-                }
-            });
-        }else{
-            var sm = sessionStorage.getItem("ship_method_save");
-            if(sm != null){
-                // console.log(sm);
-                $('select#service_code option').each(function() {
+          if (sm != null) {
+               console.log('sm != null')
+               $('select#service_code option').each(function() {
                     if ($(this).val() == sm) {
-                        $('<span id="shipmeth">' + $(this).text().replaceAll(' - -', ' $0.00') + '</span>').insertBefore($(this).parent());
-                        var shiptxt = $("#shipmeth").html().replaceAll('UPS - Ground $0.00', '<span style="float: left;">UPS - Ground</span><br><span> $0.00</span>');
-                        $("#shipmeth").html(shiptxt);
-                        $(this).attr('selected', 'selected');
-                        $(this).prop('selected', true);
-                        sessionStorage.setItem("ship_method_save", sm);
-                        $(this).parent().hide();
+                         // console.log($(this).text());
+                         $('<span id="shipmeth">' + $(this).text().replaceAll(' - -', ' $0.00') + '</span>').insertBefore($(this).parent());
+                         var shiptxt = $("#shipmeth").html().replaceAll('UPS - Ground $0.00', '<span style="float: left;">UPS - Ground</span><br><span> $0.00</span>');
+                         $("#shipmeth").html(shiptxt);
+                         $(this).attr('selected', 'selected');
+                         $(this).prop('selected', true);
+                         sessionStorage.setItem("ship_method_save", sm);
+                         $(this).parent().hide();
                     }
-                    else{
-                        $(this).remove();
-                    }
-                });
-            }
-         
-        }
-	}
+                    // else{
+                    //      $(this).remove();
+                    // }
+               });
+          }else{
+               var sm = sessionStorage.getItem("ship_method_save");
+               if(sm != null){
+                    // console.log(sm);
+                    $('select#service_code option').each(function() {
+                         if ($(this).val() == sm) {
+                              $('<span id="shipmeth">' + $(this).text().replaceAll(' - -', ' $0.00') + '</span>').insertBefore($(this).parent());
+                              var shiptxt = $("#shipmeth").html().replaceAll('UPS - Ground $0.00', '<span style="float: left;">UPS - Ground</span><br><span> $0.00</span>');
+                              $("#shipmeth").html(shiptxt);
+                              $(this).attr('selected', 'selected');
+                              $(this).prop('selected', true);
+                              sessionStorage.setItem("ship_method_save", sm);
+                              $(this).parent().hide();
+                         }
+                         // else{
+                         //      $(this).remove();
+                         // }
+                    });
+               }
+          
+          }
+     }
 });
 </script>
 
