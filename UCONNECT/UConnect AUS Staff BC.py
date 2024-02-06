@@ -128,3 +128,5 @@ else:
     wwwBlock.move( 0, (moveby) )
 
 #TestBlock = DWIMBLOCK([LEFT, F8, 'vspc: ' + str(vspc), NEWLINE, 'wwwInline: ' + str(wwwInline), NEWLINE, 'H: ' + str(h), NEWLINE, 'R: ' + str(r), NEWLINE, NEWLINE], (0, 0), (LEFT, BOTTOM), (3.5*72,0), layer=0)
+
+
