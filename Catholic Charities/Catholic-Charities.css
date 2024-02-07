@@ -758,6 +758,10 @@ button#submit_cancel {
 /*****************************************************************************/
 @media only screen and (min-width:1025px) {
 
+     div.field-container {
+          border-bottom: none !important;
+     }
+
      #confirm_overlay {
           left: 0 !important;
           top: 0 !important;
