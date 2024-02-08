@@ -1,0 +1,1186 @@
+/****************************************************************************************
+************************** TABLE OF CONTENTS **********************************/
+/****************************************************************************************
+
+  1. FONTS
+  2. GLOBAL
+  3. INDEX
+  4. CATALOG
+  5. QUOTES/SBS
+  6. MAIL MERGE
+  7. BASKET VIEW
+  8. Delivery Methods
+  9. SHIPPING
+  10. BILLING
+  11. REVIEW
+  12. ACCEPT
+  13. ANIMATIONS
+
+/****************************************************************************************
+************************************ 1. FONTS ****************************************
+****************************************************************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Barlow&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Krub&display=swap');
+
+/****************************************************************************************
+************************************ 2. GLOBAL ****************************************
+****************************************************************************************/
+
+/*************** header css for final approve order ***********************/
+td.label:has(>span#bill\.billcode10label) {
+    white-space: nowrap;
+}
+span.standout {
+	text-shadow: 1px 1px 1px rgb(125 125 125 / 75%) !important;
+}
+p.approve_order {
+	font-size:1.25em !important;
+	padding: 15px;
+	background-color: #EEE;
+	border-radius: 0.35em;
+    -webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 2px 4px rgb(0 0 0 / 7%);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 0 rgb(255 255 255), 0 2px 4px rgb(0 0 0 / 75%);
+    text-shadow: 0 1px 0 rgb(0 0 0 / 5%);
+}
+p.approve_order_text {
+	font-size:1.15em !important;
+	padding: 15px;
+	/*font-weight: normal !important;*/
+	background-color: #EEE;
+	border-radius: 0.35em;
+    -webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 2px 4px rgb(0 0 0 / 7%);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 0 rgb(255 255 255), 0 2px 4px rgb(0 0 0 / 75%);
+    text-shadow: 0 1px 0 rgb(0 0 0 / 5%);
+}
+/*****************************************************************************/
+
+
+body {
+	font-family: "Open Sans",Helvetica,Roboto,Arial,sans-serif;
+}
+
+.form-body {
+	font-family: "Open Sans",Helvetica,Roboto,Arial,sans-serif;
+}
+
+#rush-info td.input-left {
+	width: unset;
+	min-width: unset;
+}
+.form-body th, .tabular th, .form-body div.title, .form-body div.title > h1 {
+	color: #555555;
+}
+
+.form-subheader, .form-headernote, .form-subheader > h2 {
+	color: #555555;
+}
+
+#shipaddr-info td.label {
+	width: unset;
+	min-width: unset;
+}
+
+#misc-comment-table td.label {
+	width: unset;
+	min-width: unset;
+}
+
+/* links */
+/*a {
+    color: #2C2C29;
+}*/
+
+
+.header-links a {
+  text-decoration: none;
+}
+
+.responsive_tabs div.off:hover, .responsive_tabs div.on:hover{
+    background-color: #2E9EE2 !important;
+	color: #FFFFFF !important;
+}
+
+.responsive_tabs div.off:hover a, .responsive_tabs div.on:hover a {
+    background-color: #2E9EE2 !important;
+    color: #FFFFFF !important
+}
+
+a:hover {
+    color: #2E9EE2;
+}
+
+.form-body td.label-right {
+	font-size: 14px !important
+}
+
+.previewcell pre { 
+  display: none; 
+}
+
+.main .buttonsbar button {
+  margin-bottom: 20px;
+ }
+
+h2.pagetitle, .pagetitle {
+  font-size: 16px;
+  color: #555;
+  font-weight: bold;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+
+
+.footer .middle-row td {
+    /*padding: 0px 10px;*/
+    padding: 20px 20px;
+}
+
+/*---- CUSTOM BUTTON ---- */
+
+
+button {
+   cursor: pointer;
+   text-align: center !important;
+   letter-spacing: 1px;
+   /*text-transform: uppercase;*/
+   font-size: 1em !important;
+	border-radius: 0.25em;
+    -webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 1px 2px rgb(0 0 0 / 7%);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.065);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 1px 2px rgb(0 0 0 / 7%);
+    text-shadow: 0 1px 0 rgb(0 0 0 / 5%);
+}
+
+button:disabled,
+button[disabled]{
+	opacity: 0.3;
+	cursor: default;
+}
+
+
+button#submit_cancel {
+    margin-right: 5%;
+	min-width: 155px;
+}
+.catalog #upper_buttons {
+    position: relative;
+    right: 7%;
+}
+
+button#submit_continue {
+	min-width: 155px;
+}
+
+.fa-shopping-basket:before {
+    content: "\f07a";
+}
+
+.main {
+  animation: fadeIn ease 1s;
+  -webkit-animation: fadeIn ease 1s;
+  -moz-animation: fadeIn ease 1s;
+  -o-animation: fadeIn ease 1s;
+  -ms-animation: fadeIn ease 1s;
+}
+
+.message-block, .message-block .left, .pageinstructions {
+        text-align: center !important;
+}
+
+.req_fld {
+        color: red;
+}
+
+/*** Max width on all pages except the Division / Catalog pages ***/
+.shipping, .billing, .review, .done, .customer-service, .profile, .basket-view, .view-order, .shiptrack_view2, .waitingorders {
+        max-width: 800px !important;
+        margin: 20px auto 0 !important;
+}
+.billing {
+        max-width: 675px !important;
+        margin: 20px auto 0 !important;
+}
+
+body #header-wrapper.scrolled #header-welcome-msg {
+    right: 8.5%;
+}
+
+body #header-wrapper.scrolled .profileCircle {
+    height: 35px;
+    width: 35px;
+}
+
+body #header-wrapper.unscrolled {
+    left: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+body #header-wrapper.scrolled {
+    background: rgba(12, 35, 54, 1);
+    height: 85px;
+    color: white;
+    transition: 0.6s;
+    z-index: 99;
+}
+
+body #header-wrapper.scrolled:focus, body #header-wrapper.scrolled:hover {
+    opacity: 1;
+}
+
+body #header-wrapper.scrolled #desktoplogo {
+    filter: brightness(0) invert(1);
+    transition: 0.3s;
+    width: 80%;
+}
+
+body #header-wrapper.scrolled #header-welcome-msg {
+    top: 0;
+}
+
+body #header-wrapper.scrolled #header-links-container a {
+    color: white;
+}
+
+body #header-wrapper.scrolled .headerSearchBar div.item-search-block {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+}
+
+body #header-wrapper.scrolled .headerSearchBar div.item-search-block:focus, body #header-wrapper.scrolled .headerSearchBar div.item-search-block:hover {
+    background: rgba(255, 255, 255, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+}
+
+body #header-wrapper.scrolled .headerSearchBar div.item-search-block button {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 4px 8px 9px;
+    margin-top: 1px;
+    top: 12px;
+}
+
+body #header-wrapper.scrolled div.item-search-block input#searchfield_input {
+    background: transparent;
+    height: 25px;
+}
+
+body #header-wrapper.scrolled div.item-search-block input#searchfield_input:focus, body #header-wrapper.scrolled div.item-search-block input#searchfield_input:hover {
+    background: white;
+}
+
+body .footer .backtotop.unscrolled {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+body .footer .backtotop.scrolled {
+    opacity: 1;
+    pointer-events: auto;
+    transition: 0.5s;
+}
+
+.footer .middle-row {
+    margin: 10px 0px !important;
+}
+
+/****************************************************************************************
+*********************************** 3. INDEX *****************************************
+****************************************************************************************/
+
+.login {
+    text-align: center;
+}
+
+.index-container {
+  margin: 20px 20px;
+  padding-bottom: 20px;
+  font-size: 14px;
+}
+
+
+/****************************************************************************************
+********************************** 4. CATALOG **************************************
+****************************************************************************************/
+.responsive-choose-info {
+  display: contents !important;
+}
+
+.select-items .vertical-shell {
+  margin-left: 10px!important;
+}
+
+.select-items .image-container img {
+  margin: 20px 0;
+}
+.image-container img {
+    width: auto;
+    height: auto;
+    max-width: 230px;
+    max-height: none !important;
+}
+
+.select-items .longname *, .select-items .longname *{
+  font-size: 14px;
+}
+
+.select-items .pagetitle {
+  margin-left: 10px!important;
+}
+
+.select-items .buttonsbar button {
+  margin-bottom: 20px;
+}
+
+.stretchy_cols {
+    /*max-height: 525px !important;*/
+    max-height: Unset !important;
+}
+
+#submit_catalog_add {
+  margin-top: 5px;
+}
+
+#copy4 {
+  display: none;
+}
+
+.bundle_subitem_preview img {
+  /*border: 1px solid gray;*/
+}
+
+.qtyspec_label {
+  margin-left: 5px;
+}
+
+div#all_items_view {
+    /*float: none !important;
+    width: 100% !important;*/
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.select-items .pageinstructions, .error {
+    text-align: center;
+    background: #f1f1f1;
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px 0px;
+}
+
+.imprint .error {
+    background: #f1f1f1;
+    width: 100%;
+    padding: 10px 0px;
+    position: relative;
+    left: 0;
+    margin-top: 20px;
+}
+
+
+.select-items .pageinstructions {
+    -webkit-animation: cssAnimation 8s forwards; 
+    animation: cssAnimation 8s forwards;
+}
+@keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+@-webkit-keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.responsive_tabs a {
+    text-decoration: none;
+	/*text-transform: uppercase;*/
+	padding-bottom: 4px;
+	display: block;
+	font-weight: normal !important;
+}
+.responsive_tabs div.off a:hover {
+	background-color: #2E9EE2 !important;
+	color: #FFFFFF !important;
+}
+
+div.whitehover a:hover {
+	background-color: #2E9EE2 !important;
+	color: #FFFFFF !important;
+}
+
+.responsive_tabs .opened:before, .responsive_tabs .closed:before {
+    float: right;
+    position: absolute;
+    left: 200px;
+}
+
+.responsive_tabs .closed:before {
+    content: "\f0d9" !important;
+}
+
+.responsive_tabs .opened:before, .responsive_tabs .closed:before {
+    margin-top: 6px;
+}
+
+.responsive_tabs .opened a, .responsive_tabs .closed a, .responsive_tabs div.off a, .responsive_tabs div.off a, .responsive_tabs .opened:before, .responsive_tabs .closed:before {
+    display: block;
+}
+
+.qtyspec_label {
+	margin-left: 5px !important;
+}
+
+.item-search-block {
+    margin-left: 25px !important;
+    width: 220px;
+	white-space: nowrap;
+}
+
+.responsive_tabs-shell .after {
+    margin-top: 20px !important;
+}
+
+#basket-list-title {
+        text-align: center;
+        font-size: 14px;
+        margin-bottom: 10px;
+}
+
+.basket-list-item {
+        margin-bottom: 10px !important;
+}
+
+.basket-list-item .button {
+        padding: 1px 1px 1px 5px !important;
+}
+
+#basket_button_container {
+        text-align: center;
+}
+
+/*.select-items {
+    margin-top: 30px;
+}*/
+
+/* BUNDLE */
+.detail_text_wrapper {
+    width: 29%  !important;
+}
+
+.detail_tagcheck_wrapper {
+    width: 32% !important;
+    margin-top: 0px !important;
+}
+
+.bundle-qty-selection {
+    position: inherit !important;
+}
+
+.bundle-qty-selection .add-to-basket-qty-select {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.multi_preview a {
+    margin-right:5px;
+}
+
+.multi_preview a img {
+    margin-bottom: 5px;
+}
+
+.bundle_subitem td {
+    display: table-cell !important;
+}
+
+.bundle_subitem_longname {
+    margin-bottom: 6px !important;
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 25px !important;
+}
+
+#d_tag_check input[type="text"] {
+    border-radius: 5px !important;
+    text-align: center;
+    padding: 5px;
+    border-style: groove;
+    font-weight: bold;
+    width: 100px !important;
+}
+
+.bundle_subitem_input {
+    position: relative;
+    top: -4px;
+    float: left;
+}
+
+/****************************************************************************************
+**********************************  5. QUOTES/SBS *********************************
+****************************************************************************************/
+
+.leftSideFieldContainer .title {
+    background: #ccc !important;
+    border-radius: 0 !important;
+    margin-bottom: 15px !important;
+}
+
+.leftSideFieldContainer .title h1 {
+    font-size: 18px !important;
+}
+
+.leftSideFieldContainer .title .form-subheader {
+    font-size: 14px !important;
+    padding: 0px 6px 6px !important;
+}
+
+div.field-container div.input select {
+    margin: 0px !important;
+    max-width: 100% !important;
+}
+
+.buttonsbar, .form-body {
+  border-radius: 0px !important;
+}
+
+#estimate-item-container {
+  padding: 20px 0;
+}
+
+.submit.center button {
+  margin-bottom: 20px!important;
+}
+
+#all_options, #all_options_container {
+  border: none !important;
+}
+
+.fileSpec {
+  position: relative;
+  left: 10px;
+}
+
+.form-subheader {
+  text-align: left !important;
+  padding: 0px !important;
+}
+
+#approval_checkbox_group input *{
+  width: 100px;
+  height: auto;
+}
+
+.uploadIcon {
+  margin-top: 5px !important;
+}
+
+div#confirm_container button{
+  margin-top: 20px!important;
+}
+
+.checkbox-table {
+  margin-left: 0!important;
+}
+
+.imprint  div.field-container {
+    border-bottom: 0px !important;
+}
+
+/****************************************************************************************
+*****************************  6. MAIL MERGE **************************************
+****************************************************************************************/
+
+.mail-merge header {
+  margin-left: 25px;
+}
+
+.mail-merge nav.submit {
+  padding-bottom: 30px!important;
+}
+
+#listimp-s3-section-5 div {
+  margin-left: 25px;
+}
+
+div.error {
+  margin-bottom: 10px;
+}
+
+#ml-handle-link {
+  margin-left: 25px;
+}
+
+.personal-list-actions {
+  text-align: center!important;
+}
+
+form[name='clientlist'] div:last-child {
+  padding: 20px 20px!important;
+}
+
+/***************************************************************************************
+*****************************  7. BASKET VIEW  ************************************
+****************************************************************************************/
+
+.basket-view td.previewcell {
+  background-color: transparent!important;
+}
+
+.basket-view .buttonsbar button {
+  margin-bottom: 20px;
+}
+
+/*table:not(.items-table) {
+  width: auto;
+  margin: 0 auto;
+}*/
+
+/***************************************************************************************
+******************************  8. Delivery Methods  ********************************
+****************************************************************************************/
+
+tr.dpt--headerRow, tr.dpt--headerRow span, tr.dpt--headerRow *, tr.item_row * {
+  font-size: 14px !important;
+}
+
+#i-dropship {
+  position: relative;
+  font-size: 14px;
+  color: #00000A;
+  font-family: "Open Sans,Arial,sans-serif";
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  font-weight: normal;
+  padding: 4px 10px 4px 10px;
+  border: 1px solid #CCCCCC;
+  -moz-border-radius: 0em;
+  -webkit-border-radius: 0em;
+  border-radius: 0em;
+  background: #FFFFFF;
+  background: linear-gradient(#FFFFFF, #CCCCCC);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#CCCCCC));
+  background: -moz-linear-gradient(top, #FFFFFF, #CCCCCC);
+  background: -ms-linear-gradient(#FFFFFF, #CCCCCC);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFFFFF', endColorstr='#CCCCCC');
+  -pie-background: linear-gradient(#FFFFFF, #CCCCCC);
+  position: relative;
+  behavior: url(/hub/css/PIE.htc);
+}
+
+.mail-merge .buttonsbar,
+.mail-merge .buttonsbar a,
+.mail-merge .buttonsbar a:link,
+.mail-merge .buttonsbar * {
+  text-decoration: none!important;
+  text-align: center!important;
+}
+
+.mail-merge .buttonsbar {
+  margin-bottom: 10px;
+}
+
+tr.dpt--finalizeRow td.dpt--status{
+  border-bottom: 0px!important
+}
+
+/***************************************************************************************
+********************************  9. SHIPPING  **************************************
+****************************************************************************************/
+
+.mail-merge .pagetitle{
+  margin-left: 15px!important;
+}
+
+#see_shipping_methods{
+  position: relative;
+  font-size: 14px;
+  color: #00000A;
+  font-family: "Open Sans,Arial,sans-serif";
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  font-weight: normal;
+  padding: 4px 10px 4px 10px;
+  border: 1px solid #CCCCCC;
+  -moz-border-radius: 0em;
+  -webkit-border-radius: 0em;
+  border-radius: 0em;
+  background: #FFFFFF;
+  background: linear-gradient(#FFFFFF, #CCCCCC);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#CCCCCC));
+  background: -moz-linear-gradient(top, #FFFFFF, #CCCCCC);
+  background: -ms-linear-gradient(#FFFFFF, #CCCCCC);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFFFFF', endColorstr='#CCCCCC');
+  -pie-background: linear-gradient(#FFFFFF, #CCCCCC);
+  position: relative;
+  behavior: url(/hub/css/PIE.htc);
+  max-width: 150px;
+  text-shadow: none!important;
+}
+
+.mail-merge .field-note{
+  display: none!important; /*can't do much better without source change*/
+}
+
+.mail-merge #throbber {
+  margin-bottom: 20px!important;
+}
+
+.mail-merge .field-container *{
+  color: #333333!important;
+}
+
+label[for="comments"] {
+  position: relative;
+  bottom: 12px;
+}
+
+.shipping .form-body {
+  width: 80%;
+}
+
+form[action="shiptrack.cgi"] {
+  padding-bottom: 25px!important;
+}
+
+/***************************************************************************************
+************************************  10. BILLING  ***********************************
+****************************************************************************************/
+
+.billing .pagetitle{
+  margin-left: 15px!important;
+}
+
+.billing .buttonsbar button{
+  margin-bottom: 20px;
+}
+
+/*.billing *{
+  font-size: 14px!important;
+}*/
+
+.billing .form-body {
+	width: auto;
+	margin-top: 0;
+    margin-bottom: 20px !important;
+}
+
+/***************************************************************************************
+*********************************  11. REVIEW  **************************************
+****************************************************************************************/
+
+.review .buttonsbar button{
+  margin-bottom: 20px;
+}
+
+.review .pageinstructions {
+  font-size: 14px;
+}
+
+.review *{
+  font-size: 14px!important;
+}
+
+.review td.data {
+  background-color: #eeeeee;
+}
+
+.review div {
+margin: 0 10px;
+}
+
+.pagetitle {
+  margin-left: 10px;
+  text-align:center;
+}
+
+.main p {
+  margin-left: 10px;
+}
+
+.accept-proofs table{
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+/***************************************************************************************
+**********************************  12. ACCEPT  ************************************
+****************************************************************************************/
+.done div *{
+  font-size: 14px;
+}
+
+.done td.data{
+        background-color: #eeeeee;
+}
+
+.done .accept-proofs .form-body{
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 30px;
+        width: 80%;
+}
+
+.done div {
+        margin: 0 10px;
+}
+
+.accept-showneworderbutton {
+        margin: 20px auto !important;
+}
+
+.catalog--container .pagetitle {
+        margin-top: 10px!important;
+}
+
+.accept-proofs  b{
+        margin-left: 20px;
+        margin-top: 10px;
+        line-height: 30px;
+}
+
+.previewcell a span {
+    position: relative;
+    font-size: 14px;
+    color: #00000A;
+    font-family: "Open Sans,Arial,sans-serif";
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    font-weight: normal;
+    padding: 4px 10px 4px 10px;
+    border: 1px solid #CCCCCC;
+    -moz-border-radius: 0em;
+    -webkit-border-radius: 0em;
+    border-radius: 0em;
+    background: #FFFFFF;
+    background: linear-gradient(#FFFFFF, #CCCCCC);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#CCCCCC));
+    background: -moz-linear-gradient(top, #FFFFFF, #CCCCCC);
+    background: -ms-linear-gradient(#FFFFFF, #CCCCCC);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFFFFF', endColorstr='#CCCCCC');
+    -pie-background: linear-gradient(#FFFFFF, #CCCCCC);
+    position: relative;
+    behavior: url(/hub/css/PIE.htc);
+    margin: 5px 20px;
+}
+
+.previewcell img {
+	border: 0px solid black !important;
+	max-width: 230px !important;
+}
+
+.previewcell a {
+  text-decoration: none;
+  margin: 0px auto;
+  line-height: 50px;
+  text-align: center;
+}
+
+.previewcell *{
+  text-align: center!important;
+}
+
+td.cart_item {
+	display: inline-block;
+	vertical-align: top;
+}
+table:not(.items-table, .header) {
+    width: auto;
+    margin: 0 auto;
+}
+table.items-table.true-table {
+    margin-left: -70px;
+}
+/*************************************************************************************
+**********************************  13. ANIMATIONS  *****************************
+**************************************************************************************/
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes AdminAnimation {
+ 0% {
+  background-position: 0% 50%
+ }
+
+ 50% {
+  background-position: 100% 50%
+ }
+
+ 100% {
+  background-position: 0% 50%
+ }
+}
+
+@-moz-keyframes AdminAnimation {
+ 0% {
+  background-position: 0% 50%
+ }
+
+ 50% {
+  background-position: 100% 50%
+ }
+
+ 100% {
+  background-position: 0% 50%
+ }
+}
+
+@keyframes AdminAnimation {
+ 0% {
+  background-position: 0% 50%
+ }
+
+ 50% {
+  background-position: 100% 50%
+ }
+
+ 100% {
+  background-position: 0% 50%
+ }
+}
+
+@-webkit-keyframes AdminAdnimationhover {
+ 0% {
+  background-position: 100% 50%
+ }
+
+ 50% {
+  background-position: 0% 50%
+ }
+
+ 100% {
+  background-position: 100% 50%
+ }
+}
+
+@-moz-keyframes AdminAdnimationhover {
+ 0% {
+  background-position: 100% 50%
+ }
+
+ 50% {
+  background-position: 0% 50%
+ }
+
+ 100% {
+  background-position: 100% 50%
+ }
+}
+
+@keyframes AdminAdnimationhover {
+ 0% {
+  background-position: 100% 50%
+ }
+
+ 50% {
+  background-position: 0% 50%
+ }
+
+ 100% {
+  background-position: 100% 50%
+ }
+}
+
+@font-face {
+    /*font-family: 'Montserrat', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');*/
+}
+@media only screen and (min-width:1025px) {
+
+
+	.responsive_tabs dfn {
+		padding-top: 3px !important;
+		padding-bottom: 0px  !important;
+	}
+	.header {
+		padding: 0px;
+		border: 0px;
+		width: auto;
+		max-width: 72.5rem;
+		margin: 0 auto;
+	}
+	#header-wrapper {
+		/*border-bottom: 8px solid #164789;*/
+		background-color: #fff;
+	}
+
+	#header_logo {
+		/*padding: 80px 0;*/
+		padding: 31px 0px 64px;
+		width: 72rem;
+	}
+
+	td#header_logo > a img.no_mobile {
+		height: auto;
+		max-width: 440px;
+	}
+
+	#header_logo > img.no_mobile {
+		position: absolute;
+		top: 170px;
+		/*left: 45px;*/
+		left: 4%;
+		height: 70px;
+		width: auto;
+	}
+	.header-links {
+		font-size: 1em;
+		text-align: center;
+		font-weight: bold;
+		background-color: #164789;
+		text-decoration: none;
+		padding: 9px 12px 9px 12px;
+	}
+
+	#header-links-container {
+		position: absolute;
+		top: 151px;
+		/* right: 5%; */
+		/* text-transform: uppercase; */
+		width: 100%;
+		white-space: nowrap;
+	}
+
+	.header-links a {
+		margin: 0px 20px;
+		padding: 0px 5px;
+		color: #fff;
+		font-size: 1em;
+		/*letter-spacing: 1px;*/
+	}
+	.header-links a:after {
+position: absolute;
+		content: "";
+		width: 2px;
+		height: 0;
+		border: inset 5px;
+		border-color: rgba(255,255,255,0.4) transparent transparent transparent;
+		border-top-style: solid;
+		margin-top: -2.5px;
+		top: 1.40625rem;
+		margin-left: 7px;
+	}
+	.header-links a:hover {
+		padding: 5px;
+		/*text-decoration: underline;
+		border-bottom: #FFC423 2px solid; */
+		color: #FFC423;
+	}
+
+	#logout_userid {
+		padding-left: 15px;
+		color: #fff;
+	}
+	#footer\2e footercanceltext {
+		padding-right: 15px;
+	}
+
+	.item-search-block {
+		border-bottom: 4px solid #2C2C29; /* Replace this colour with the same as above, or with the client's secondary branding colour if they have one */
+		padding-bottom: 8px;
+	}
+
+	#curr_item_longinfo {
+		padding: 1rem 7rem;
+		text-align: center;
+	}
+
+	.responsive-choose-info {
+		display: block !important;
+		max-height: 100rem !important;
+		overflow: visible !important;
+	}
+
+	.stretchy_cols.responsive-item.image-row {
+		/*overflow: visible !important;*/
+		vertical-align: bottom !important;
+	}
+
+	div.form-body div.title {
+	  display: none;
+	}
+
+	td.left-side div.form-body {
+		margin-bottom: 0 !important;
+	}
+
+	input#passwd, input#userid, input, select {
+		padding: 5px;
+	}
+	.footer .middle-row, .footer .middle-row td {
+		font-size: 1em !important;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	#header_logo {
+		margin: 14px 0px 0px 0px;
+		padding: 0px;
+	}
+	table.items-table.true-table {
+    margin-left: auto;
+	}
+	.previewcell img {
+		border: 1px solid #ccc!important;
+		max-width: 230px !important;
+	}
+	.footnote {
+		margin-top: 250px;
+	}
+	img.img-fluid.mt-3 {
+		display: none;
+	}
+	.select-items #item_details_view div[class^=detail_] {
+		height: auto;
+		margin: 0 auto;
+		padding: 10px 0;
+		text-align: center;
+		word-wrap: break-word;
+		overflow: visible;
+		text-overflow: unset;
+	}
+	.select-items #submit_catalog_search {
+		background: 0 0;
+		border: none;
+		font-size: 25px;
+		color: #000;
+		padding: 5px 0px;
+		margin: 3px !important;
+	}
+}

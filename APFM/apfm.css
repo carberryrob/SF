@@ -1,0 +1,112 @@
+/****************************************************************************************
+************************ ~~-- aplaceformom --~~ *********************************
+****************************** TABLE OF CONTENTS ***************************************/
+/****************************************************************************************
+
+  1. GLOBAL 
+ 
+
+  - If you are making changes here, changes may need to be made in 
+  the con/responsive.css file as well
+
+*****************************************************************************************
+*****************************************************************************************
+*****************************************************************************************
+****************************************************************************************/
+
+
+
+
+
+/****************************************************************************************
+************************************* 1. GLOBAL *****************************************
+****************************************************************************************/
+
+/*Remove sr_ error text from Basket, Review, Accept pages*/
+.previewcell pre { display: none;}
+
+
+
+/*** FONT ***/
+@font-face {
+	font-family: 'Montserrat', sans-serif;
+	src: url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+}
+span.note:has(.budgetlbl) {
+	display: block;
+}
+
+@media only screen and (min-width:1025px) {
+
+	/*** Header ***/
+	#header-wrapper{
+		border-bottom: 24px solid #007791;
+	}
+
+	#header_logo {
+		padding: 80px 0;
+	}
+
+	#header_logo > img.no_mobile {
+		position: absolute;
+		top: 32px;
+		left: 25px;
+		max-width: 350px;
+		height: auto;
+	}
+
+	#header-links-container {
+		position: absolute;
+		top: 70px;
+		right: 10%;
+		text-transform: uppercase;
+	}
+
+	.header-links a {
+		margin: 0px 15px;
+		padding: 5px;
+	}
+	.header-links a:hover {
+		padding: 5px;
+	}
+
+	#logout_userid{
+		padding-left: 15px
+	}
+	/*-- CANCEL LINK ---*/
+	#footer\2e footercanceltext{
+		padding-right: 15px;
+	}
+
+	/*** Item Search Block ***/
+	.item-search-block {
+		border-bottom: 4px solid #094F6E;
+		padding-bottom: 8px;
+	}
+
+	#curr_item_longinfo {
+		padding: 1rem 7rem;
+		text-align: center;
+	}
+
+	.responsive-choose-info {
+		display: block !important;
+		max-height: 100rem !important;
+		overflow: visible !important;
+	}
+
+	.stretchy_cols.responsive-item.image-row {
+		overflow: visible !important;
+	}
+
+	.shipping, .billing, .review, .done, .customer-service, .profile, .basket-view, .view-order, .shiptrack_view2, .waitingorders {
+		max-width: 800px !important;
+		margin: 20px auto 0 !important;
+	}
+	button#button_file_upload_popup {
+		margin-bottom: 30px;
+	}
+}
+/****************************************************************************************
+*********************************** END GLOBAL ******************************************
+****************************************************************************************/

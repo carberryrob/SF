@@ -1,11 +1,12 @@
 <div class="footer_row3">
-	<p class="footer_cr">
+<div><img src="con/SF-PoweredBy2024-260w-003781.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
+	<div class="outfoot"><div class="footer_cr">
 		Strategic Factory<br>
 		11195 Dolfield Boulevard<br>
 		Owings Mills, Maryland 21117<br>
 		(443) 548-3500<br>
-		<a href="mailto:sfportalorders@strategicfactory.com" style="color:#000;">sfportalorders@strategicfactory.com</a>
-	</p>
+		<a href="mailto:sfportalorders@strategicfactory.com">sfportalorders@strategicfactory.com</a>
+	</div></div>
 </div>
 
 <script>

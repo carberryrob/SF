@@ -10,33 +10,6 @@
 </div>
 <script>
 
-{/* Rob Carberry 2023 */}
-{/* Since we are wrapping the item images, we need to customize the pdna set_preview_image function */}
-function set_preview_image(elem, thumburl, largeurl) {
-	// console.log('set_preview_image');
-	var img = $(elem).parents('.image-row,.item-thumbnail').find('.image-container .imgwrap > a > img, .image-container .imgwrap > img');
-	var a = $(elem).parents('.image-row,.item-thumbnail').find('.image-container .imgwrap > a');
-	var imgbtn = $(elem).parents('.image-row').find('input[type="image"][src!="img/catalog_add.gif"]');
-	var mobile_img = $(elem).parents('.detail_image_wrapper').find('#d_preview_image > img');
-	if (img.length) {
-		img.attr('src', thumburl);
-	}
-	else if (imgbtn.length) {
-		imgbtn.attr('src', thumburl);
-	}
-	else if (mobile_img.length) {
-		mobile_img.attr('src', thumburl);
-	}
-	if (a.length) {
-		if (largeurl.startswith('img/')) {
-			a.attr('href', largeurl);
-		}
-		else {
-			a.attr('onclick', unescape(largeurl));
-		}
-	}
-}
-
 $(window).load(function () {
 
 	$('head').append('<link rel="icon" type="image/x-icon" href="con/favicon.ico">');
@@ -74,7 +47,7 @@ $(window).load(function () {
 		/************* My Account Menu *************/
 		
 		$( ".header-links a" ).wrapAll( '<div id="dropdown-contentdiv" class="dropdown-content"></div>  ' );
-		$( ".dropdown-content" ).wrapAll( '<div id="dropdowndiv" class="dropdown"><span id="dropicon">My Account</span>' );
+		$( ".dropdown-content" ).wrapAll( '<div id="dropdowndiv" class="dropdown"><span id="dropicon">My Account</span><span class="button_arrow_down"> </span></span>' );
 		$( ".dropdown-content" ).insertAfter( '#dropicon' );
 		$( "a[href='basket_view.cgi'].no_mobile" ).insertBefore( "#dropdowndiv" );
 		$( ".image-container img").css("max-height","max-content");
@@ -88,12 +61,10 @@ $(window).load(function () {
 
 		/************* TopTabs *************/
 		
-		// $("div.responsive_tabs-shell").show();  /*** Only for testing; Show the old Tabs ***/
-		// $(".tab_html_wrapper").show();  /*** Only for testing; Show the old Tabs ***/
-		// $(".responsive_tabs-shell .before").show();  /*** Only for testing; Show the old Tabs ***/
-		// $("div#basket-list-title").show();  /*** Only for testing; Show the old Tabs ***/
-
-
+		////$("div.responsive_tabs-shell").show();  /*** Only for testing; Show the old Tabs ***/
+		//$(".tab_html_wrapper").show();  /*** Only for testing; Show the old Tabs ***/
+		//$(".responsive_tabs-shell .before").show();  /*** Only for testing; Show the old Tabs ***/
+		//$("div#basket-list-title").show();  /*** Only for testing; Show the old Tabs ***/
 
 		$( "#header-wrapper" ).after('<div id="TabsDiv"><nav id="TabsNav"><ul id="TabsMenu">'); /** Create the top nav place holder **/
 		var tabid = '';
@@ -125,15 +96,7 @@ $(window).load(function () {
 				}
 			});
 		});
-
-		// Division
-		$( "input[name='corp_tag']" ).each(function() {
-			console.log('Division:  ' + $(this).val());
-			if ( $(this).val().toLowerCase() != "marketing" ) {
-				$('li.topli:contains("Marketing Materials")').hide();
-			}
-		});
-
+		
 		$( ".toptabs:contains('undefined')" ).hide();  /** if on a page that tabs are not exposed, hide the place holders. **/
 		/********** End TopTabs ***********/
 
@@ -171,13 +134,6 @@ $(window).load(function () {
 		$("table.items-table.true-table").find("th:nth-child(3)").removeClass("right").addClass("center");
 		$("table.items-table.true-table").find("td:nth-child(2)").removeClass("right").addClass("center");
 		$("table.items-table.true-table").find("td:nth-child(3)").removeClass("right").addClass("center");
-		
-		// $("table.items-table.true-table").find("tr:contains('Same as above')").each(function () {
-		// 	$(this).hide();
-		// 	var cartcount = $("span.cart_num_items.no_mobile").html().replace("(","").replace(")","").trim();
-		// 	cartcount -= 1;
-		// 	$("span.cart_num_items.no_mobile").html(cartcount);
-		// });
 		/***********************************/
 
 		/*********Shipping Table************/
@@ -189,13 +145,6 @@ $(window).load(function () {
 		$("table#shipping-pricetable").find("td:nth-child(3)").removeClass("left").addClass("centerimp");
 		$("table#shipping-pricetable").find("td:nth-child(4)").removeClass("left").addClass("centerimp");
 		$("table#shipping-pricetable").find("td:nth-child(5)").removeClass("left").addClass("centerimp");
-
-		// $("table#shipping-pricetable").find("tr:contains('Same as above')").each(function () {
-		// 	$(this).hide();
-		// 	var cartcount = $("span.cart_num_items.no_mobile").html().replace("(","").replace(")","").trim();
-		// 	cartcount -= 1;
-		// 	$("span.cart_num_items.no_mobile").html(cartcount);
-		// });
 		/***********************************/
 		
 		/*********Billing Table************/
@@ -206,14 +155,7 @@ $(window).load(function () {
 		//$("table#billing-pricetable").find("td.input.right.totalinpcol").removeClass("right").addClass("left");
 		$("table#billing-pricetable").find("th:nth-child(1)").removeClass("left").addClass("center");
 		//$("table#billing-pricetable").find("td:nth-child(1)").removeClass("left").addClass("center");
-		// $('td:contains("UUG Paid")').attr('style', 'text-align: right !important; font-weight: bold;');
-
-		// $("table#billing-pricetable").find("tr:contains('Spot UV (Included)')").each(function () {
-		// 	$(this).hide();
-		// 	var cartcount = $("span.cart_num_items.no_mobile").html().replace("(","").replace(")","").trim();
-		// 	cartcount -= 1;
-		// 	$("span.cart_num_items.no_mobile").html(cartcount);
-		// });
+		$('td:contains("UUG Paid")').attr('style', 'text-align: right !important; font-weight: bold;');
 		/***********************************/
 
 		if($('.pagetitle').text().toUpperCase() === 'IN YOUR CART') {
@@ -255,122 +197,6 @@ $(window).load(function () {
 			
 		});
 		$("span.cart_num_items.no_mobile").parent("a").wrap('<div class="carticon">');
-
-
-		// ************ Size stretchy column items so all are top aligned and buttons are uniform *************
-		
-		// Wrap item imgs and thumbnails for sizing
-		$('div.image-container:not(:has(>div.multi_preview)').append('<div class="multi_preview"></div>');
-		$("div.image-container").find('img:first').each(function() {
-			if ($(this).parent('a').length > 0) {
-				$(this).parent('a').wrap('<div class="imgwrap">')
-			}else{
-				$(this).wrap('<div class="imgwrap">')
-			}
-		});
-
-		// Set height of img wraps based on tallest img so items can be top aligned 
-		var maxH = 0
-		$('div.imgwrap').each(function() {
-			if ($(this).height() > maxH) {maxH = $(this).height();}
-		});
-		if (maxH > 0) {maxH += 1;}
-		maxH = maxH + "px";
-		$('div.imgwrap').css('min-height', maxH); /* set all the wrapped heights to the tallest img height */
-		
-		// If multi-page img thumbs exist set that area height the same for all items
-		maxH = 0
-		$('div.multi_preview').each(function() {
-			if ($(this).height() > maxH) {maxH = $(this).height();}
-		});
-		if (maxH > 0) {maxH += 1;}
-		maxH = maxH + "px";
-		$('div.multi_preview').css('min-height', maxH);
-
-		// If Responsive Longname exist set that area height the same for all items
-		maxH = 0
-		$('div.responsive-longname').each(function() {
-			if ($(this).height() > maxH) {maxH = $(this).height();}
-		});
-		if (maxH > 0) {maxH += 1;}
-		maxH = maxH + "px";
-		$('div.responsive-longname').css('min-height', maxH);
-
-		// If .responsive-choose-info exist set that area height the same for all items
-		maxH = 0
-		$('div.responsive-choose-info').each(function() {
-			if ($(this).height() > maxH) {maxH = $(this).height();}
-		});
-		if (maxH > 0) {maxH += 1;}
-		maxH = maxH + "px";
-		$('div.responsive-choose-info').css('min-height', maxH);
-
-		// If .note.responsive-pricing exist set that area height the same for all items
-		maxH = 0
-		$('div.note.responsive-pricing').each(function() {
-			if ($(this).height() > maxH) {maxH = $(this).height();}
-		});
-		if (maxH > 0) {maxH += 1;}
-		maxH = maxH + "px";
-		$('div.note.responsive-pricing').css('min-height', maxH);
-
-		// If onhand exist set that area height the same for all items
-		maxH = 0
-		$('div.note.responsive-onhand').each(function() {
-			if ($(this).height() > maxH) {maxH = $(this).height();}
-		});
-		// console.log('1: ' + maxH);
-		if (maxH > 0) {maxH += 1;}
-		// console.log('2: ' + maxH);
-		maxH = maxH + "px";
-		$('div.note.responsive-onhand').css('min-height', maxH);
-		
-		// If responsive-tagcheck.tagcheck-bottom exist set that area height the same for all items
-		maxH = 0
-		$('span.responsive-tagcheck.tagcheck-bottom').each(function() {
-			if ($(this).height() > maxH) {maxH = $(this).height();}
-		});
-		// console.log('1: ' + maxH);
-		if (maxH > 0) {maxH += 1;}
-		// console.log('2: ' + maxH);
-		maxH = maxH + "px";
-		$('span.responsive-tagcheck.tagcheck-bottom').css('min-height', maxH);
-	
-		// If div.image-container exist set that area height the same for all items
-		maxH = 0
-		$("div.image-container").each(function() {
-			if ($(this).height() > maxH) {maxH = $(this).height();}
-		});
-		// console.log('1: ' + maxH);
-		if (maxH > 0) {maxH += 1;}
-		// console.log('2: ' + maxH);
-		maxH = maxH + "px";
-		$("div.image-container").css('min-height', maxH);
-	
-		// *****************************************************************************************
-
-
-		// // Wrap item imgs and thumbnails for sizing
-		// $('div.image-container:not(:has(>div.multi_preview)').append('<div class="multi_preview"></div>');
-		// $("div.image-container").find('img:first').wrap('<div class="imgwrap">')
-
-		// // Set height of img wraps based on tallest img so items can be top aligned 
-		// var maxH = 0
-		// $('div.imgwrap').each(function() {
-		// 	if ($(this).height() > maxH) {maxH = $(this).height();}
-		// });
-		// maxH = maxH + "px";
-		// $('div.imgwrap').css('min-height', maxH); /* set all the wrapped heights to the tallest img height */
-		
-		// // If multi-page img thumbs exist set that area height the same for all items
-		// maxH = 0
-		// $('div.multi_preview').each(function() {
-		// 	if ($(this).height() > maxH) {maxH = $(this).height();}
-		// });
-		// maxH = maxH + "px";
-		// $('div.multi_preview').css('min-height', maxH);
-
-
 	}
 	
 	if( $('.stretchy_cols').length == 1) {$('.stretchy_cols').addClass("singleItemCenter");}
@@ -385,20 +211,7 @@ $(window).load(function () {
 });
 
 $(document).ready(function () {
-     // Make Kit Qty read only in basket etc.
-     
-     $("table.true-table .qty_select_cell > select[name*='CFG-BC']").each(function() {
-          // console.log( $(this).val() );
-          $(this).closest('td').prepend($(this).val());
-          $(this).hide();
-     });
-     $("table.true-table .qty_select_cell > select[name*='CFG-Bank-BC']").each(function() {
-          // console.log( $(this).val() );
-          $(this).closest('td').prepend($(this).val());
-          $(this).hide();
-     });
-
-     if($('.pagetitle').text().toUpperCase() === 'IN YOUR CART') {
+	if($('.pagetitle').text().toUpperCase() === 'IN YOUR CART') {
 		$(".buttonsbar").find("button:nth-child(4)").hide(); /**** Check to see if in basketview and hide extra checkout button ********/
 	}
 	//$( "#shipmeth-info" ).hide();
@@ -425,7 +238,7 @@ $(document).ready(function () {
 	if ($("select[name='bill_code10']").val() == "No") {
 		$("button#submit_send_order").prop('disabled', 'disabled');
 	}
-	// console.log($("select[name='bill_code10']").val());
+	console.log($("select[name='bill_code10']").val());
 	$('form[action="accept_bill.cgi"]').change(function() {
 		if ($("select[name='bill_code10']").val() == "No") {$("button#submit_send_order").prop('disabled', 'disabled');}
 		if ($("select[name='bill_code10']").val() == "Yes") {$("button#submit_send_order").prop('disabled', false);}

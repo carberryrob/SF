@@ -1,5 +1,5 @@
 <div class="footer_row3">
-<div><img style="opacity: 50%;" src="con/260-wide-PoweredBySF-2023-2e2e2e.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
+<div><img style="opacity: 50%;" src="con/SF-PoweredBy2024-260w-2e2e2e.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
 	<p class="footer_cr">
 		Strategic Factory<br>
 		11195 Dolfield Boulevard<br>

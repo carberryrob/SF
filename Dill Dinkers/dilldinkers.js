@@ -1,7 +1,7 @@
 <!-- Rob Carberry Updated 1/16/2024 added numbers only for apparel -->
 <!-- Rob Carberry Updated 1/5/2024 -->
 <div class="footer_row3">
-<div><img src="con/White-PoweredBySF-2023-260.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
+<div><img src="con/SF-PoweredBy2024-260w-White.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
 	<p class="footer_cr">
 		Strategic Factory<br>
 		11195 Dolfield Boulevard<br>
@@ -832,7 +832,7 @@ $(document).ready(function(){
 				navTabs.add(tabCloser).show();
 
 				// Show magnifying glass in search
-				searchButton.html('<i class="fa fa-search">&nbsp;</i>');
+				searchButton.html('<i class="fa fa-search"> </i>');
 
 				// trying this for use with footnote, may need revisiting if this doesn't work
 				$(window).on('load',function(){
