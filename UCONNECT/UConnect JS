@@ -1,8 +1,7 @@
-
 <!-- Rob Carberry Updated 1/16/2024 added header info for favicon -->
 <!-- Rob Carberry Updated 12/20/2023 -->
 <div class="footer_row3">
-<div><img src="con/White-PoweredBySF-2023-80h.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
+<div><img src="con/SF-PoweredBy2024-80h-White.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
 	<!-- p class="footer_cr">
 		Strategic Factory<br>
 		11195 Dolfield Boulevard<br>
@@ -266,7 +265,7 @@ $(document).ready(function(){
 				navTabs.add(tabCloser).show();
 
 				// Show magnifying glass in search
-				searchButton.html('<i class="fa fa-search">&nbsp;</i>');
+				searchButton.html('<i class="fa fa-search"> </i>');
 
 				// trying this for use with footnote, may need revisiting if this doesn't work
 				$(window).on('load',function(){
@@ -560,7 +559,7 @@ $(window).load(function () {
 	// Out Dated
 	$('.responsive-choose-info').each(function() {
 		if ($(this).find('span:contains("Marketing Request Form")').length > 0) {
-			$(this).html( '<span class="mrf_outdated">The item is outdated and will need additional time for updating and printing.&nbsp; Please fill out the ' + mrlink + ' to notify Marketing that this item is needed.&nbsp; Thank you.</span>' );
+			$(this).html( '<span class="mrf_outdated">The item is outdated and will need additional time for updating and printing.  Please fill out the ' + mrlink + ' to notify Marketing that this item is needed.  Thank you.</span>' );
 		}
 	});
 
@@ -574,7 +573,7 @@ $(window).load(function () {
 				// console.log( $(this).html() );
 				var cont = $(this).parent('div').find('.responsive-choose-info').html();
 				// if (cont.length > 0) {cont = '<br><br>' + cont;}
-				$(this).parent('div').find('.responsive-choose-info').html( '<span class="mrf_outofstock">This item is in transit between warehouses and is not readily available for shipping.&nbsp; If this item is needed immediately, please fill out the ' + mrlink + '.&nbsp; Thank you.</span>' + cont );
+				$(this).parent('div').find('.responsive-choose-info').html( '<span class="mrf_outofstock">This item is in transit between warehouses and is not readily available for shipping.  If this item is needed immediately, please fill out the ' + mrlink + '.  Thank you.</span>' + cont );
 				cont = $(this).html();
 				$(this).html( '<div class="hideit">' + cont + '</div>' );
 				cont = $(this).prev('.note.responsive-onhand').html();

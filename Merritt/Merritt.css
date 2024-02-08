@@ -1387,6 +1387,10 @@ table.form-body.preview-form-footer.true-table {
 /*****************************************************************************/
 @media only screen and (min-width:1025px) {
 
+     form {
+          height: unset !important;
+     }
+
 	.input.sbs_block_field {
 		width: 100%;
 	}
