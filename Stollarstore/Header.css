@@ -1,3 +1,5 @@
+/*added class for NEW items, clearance items  - Shreya 02/07 */
+
 /*https://cdn.jsdelivr.net/gh/digitalsf/custom-page-dna@main/style.css*/
 
 /*https://cdn.jsdelivr.net/gh/carberryrob/SF@main/Stollarstore/style.css*/
@@ -956,6 +958,33 @@ select#changeto, input#search {
     font-weight: bold;
 }
 
+/* new item */
+
+.new{
+    color: #00a8d5;
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.new::before {
+    content: "NEW";
+    color: #00a8d5;
+    font-weight: bold;
+}
+
+/* clearance */
+
+.clearance{
+    color: #00a8d5;
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.clearance::before {
+    content: "CLEARANCE - 50% OFF";
+    color: #00a8d5;
+    font-weight: bold;
+}
 .sale {
     /*color: #f7921e;
     display:block;*/
@@ -1394,11 +1423,57 @@ td.bundle_subitem_subgroupname {
 }
 
 .responsive-onhand:has(> table.multisize-table) {
-    display: none;
+    display: block;
 }
 
 #confirm_overlay {
     left: 0 !important;
     top: 0 !important;
     margin: 0 !important;
+}
+
+
+@media only screen and (min-width:1025px) {
+
+	/************ Handle zoom on images *****************/
+
+	.imgwrap > label > img {
+		/* transition: transform 0.25s ; */
+		transition: transform 0.25s;
+		cursor: zoom-in;
+	}
+
+	input[type=checkbox].zoomCheck {
+		display: none;
+	} 
+	input[type=checkbox].zoomCheck:checked ~ label > img {
+		cursor: zoom-out;
+		position: absolute;
+		transform-origin: 100% 100%;
+		transform: scale(2);
+		z-index: 200;
+	}
+
+	div#all_items_view {
+		/* width: 100% !important; */
+		/* float: none !important; */
+		float: right !important;
+		margin: 0 auto !important;
+	}
+
+     span.responsive-tagcheck.tagcheck-bottom {
+          display: flex;
+          flex-direction: column-reverse;
+          justify-content: flex-start;
+     }
+
+     .height-adjuster {
+          padding: 20px 5px 15px;
+          margin-top: 0px !important;
+          /* max-width: 375px; */
+          /* background-color: #F2F2F2; */
+          border-radius: 10px;
+          border: 1px solid rgba(0, 168, 213, .5);
+      }
+	/* *********** End of Zoom ***************************** */
 }

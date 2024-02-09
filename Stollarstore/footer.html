@@ -1,0 +1,287 @@
+<footer class="site-footer p-5">
+     <div class="row justify-content-md-between g-0">
+         <div id="company-info" class="col-12 col-md-8 col-lg-9 col-xl-8 text-center text-md-start d-md-flex">
+             <div class="holder col-12 col-md-8 col-lg-9 col-xl-8 col-xxl-7 d-flex flex-column flex-lg-row">
+                 <a href="https://www.strategicfactoryportals.com/strategicfactory/catalog.cgi" title="Strategic Factory" class="d-block">
+                     <img src="con/SF-Logo-2023_white.png" width="337" alt="Strategic Factory - Printing | Signage | Branding | Marketing" class="img-fluid me-md-2">
+                 </a>
+                 <div class="company-info my-4 my-lg-0 ms-lg-5">
+                     <ul class="fa-ul mb-0">
+                         <li><i class="fa-li fa fa-globe" aria-hidden="true"></i> 11195 Dolfield Blvd.<br>
+                         Owings Mills, MD 21117                           
+                         </li>                    <li>
+                         <li><i class="fa-li fa fa-phone" aria-hidden="true"></i> <a href="tel:443.548.3500" title="Call us at 443.548.3500" class="text-white">443.548.3500</a><br>
+                         <li><i class="fa-li fa fa-envelope" aria-hidden="true"></i> <a href="mailto:info@strategicfactory.com" title="Email us at info@strategicfactory.com" class="text-white">info@strategicfactory.com</a>
+                         </ul>
+                 </div>
+             </div>
+             <div class="account-links ps-xxl-2 col-12 col-md-4 col-lg-3 col-xl-4">
+                 <h4 class="text-white">MY ACCOUNT</h4>
+                 <ul class="list-unstyled ms-0 mb-0">
+                     <li><a href="/strategicfactory/catalog.cgi">Start a New Order</a></li>
+                     <li><a href="/strategicfactory/reorder.cgi">Place a Re-Order</a></li>
+                     <li><a href="/strategicfactory/basket_view.cgi">View Cart</a></li>
+                     <li><a href="/strategicfactory/item_form.cgi">Check Out</a></li>
+                     <li><a href="/strategicfactory/cancel.cgi">Cancel Order</a></li>
+                 </ul>
+             </div>
+         </div>
+         <div id="social-links" class="col-12 col-md-4 col-lg-3 col-xl-4 text-center text-md-end mt-4 mt-md-0">
+             <a class="text-white text-uppercase font-headings website-link" href="http://www.strategicfactory.com" target="_blank" title="Go to the Strategic Factory website">
+                 Strategicfactory.com
+             </a><br>
+             <ul class="list-inline">
+ 
+                                     
+                 <li class="list-inline-item">
+ 
+                     <a href="https://www.facebook.com/strategicfactory/" title="Follow us on Facebook" target="_blank">
+                         <span class="fa-stack">
+                             <i class="fa fa-circle fa-stack-2x"></i>
+                             <i class=" fa-stack-1x fa fa-facebook"></i> <span class="sr-only">Follow us on Facebook</span>
+                         </span>
+                     </a>
+ 
+                 </li>
+ 
+             
+                 <li class="list-inline-item">
+ 
+                     <a href="https://www.instagram.com/strategicfactory/" title="Follow us on Instagram" target="_blank">
+                         <span class="fa-stack">
+                             <i class="fa fa-circle fa-stack-2x"></i>
+                             <i class=" fa-stack-1x fa fa-instagram"></i> <span class="sr-only">Follow us on Instagram</span>
+                         </span>
+                     </a>
+ 
+                 </li>
+ 
+             
+                 <li class="list-inline-item">
+ 
+                     <a href="https://twitter.com/Strategicfact" title="Follow us on Twitter" target="_blank">
+                         <span class="fa-stack">
+                             <i class="fa fa-circle fa-stack-2x"></i>
+                             <i class=" fa-stack-1x fa fa-twitter"></i> <span class="sr-only">Follow us on Twitter</span>
+                         </span>
+                     </a>
+ 
+                 </li>
+ 
+             
+                 <li class="list-inline-item">
+ 
+                     <a href="https://www.linkedin.com/company/strategic-factory" title="Follow us on Linkedin" target="_blank">
+                         <span class="fa-stack">
+                             <i class="fa fa-circle fa-stack-2x"></i>
+                             <i class=" fa-stack-1x fa fa-linkedin"></i> <span class="sr-only">Follow us on Linkedin</span>
+                         </span>
+                     </a>
+ 
+                 </li>
+ 
+             
+                 <li class="list-inline-item">
+ 
+                     <a href="https://www.youtube.com/channel/UCBJBCxbv6lh5hvmEB8tKS3w" title="Follow us on Youtube" target="_blank">
+                         <span class="fa-stack">
+                             <i class="fa fa-circle fa-stack-2x"></i>
+                             <i class=" fa-stack-1x fa fa-youtube-play"></i> <span class="sr-only">Follow us on Youtube</span>
+                         </span>
+                     </a>
+ 
+                 </li>
+ 
+             </ul>
+         </div>
+     </div>
+</footer>
+ 
+<footer class="bg-tertiary text-white px-5 py-4 text-center text-lg-start">
+     <p class="mb-0">Copyright 2022 Strategic Factory. All Rights Reserved.</p>
+</footer>
+
+<!--script src="https://combinatronics.com/digitalsf/custom-page-dna/main/custom.js" type="text/javascript" defer></script-->
+
+<script src="https://cdn.jsdelivr.net/gh/digitalsf/custom-page-dna@main/custom.js" type="text/javascript" defer></script>
+<script src="con/bundle.js" type="text/javascript" defer></script>
+
+<script type="text/javascript" defer>
+{/* Rob Carberry 2024 */}
+
+{/* Since we are wrapping the item images, we need to customize the pdna set_preview_image function */}
+function set_preview_image(elem, thumburl, largeurl) {
+	// console.log( $(elem).parent().find('a').index($(elem)) );
+	var idx = $(elem).parent().find('a').index($(elem));
+	var img = $(elem).parents('.image-row,.item-thumbnail').find('.image-container .imgwrap > a > img, .image-container .imgwrap > img, .image-container .imgwrap > label > img');
+	var a = $(elem).parents('.image-row,.item-thumbnail').find('.image-container .imgwrap > a');
+	var imgbtn = $(elem).parents('.image-row').find('input[type="image"][src!="img/catalog_add.gif"]');
+	var mobile_img = $(elem).parents('.detail_image_wrapper').find('#d_preview_image > img');
+
+	// console.log(thumburl + ' :|: ' + largeurl);
+	
+	if (img.length) {
+		thumburl = largeurl
+		img.attr('src', thumburl);
+	}
+	else if (imgbtn.length) {
+		thumburl = largeurl
+		imgbtn.attr('src', thumburl);
+	}
+	else if (mobile_img.length) {
+		mobile_img.attr('src', thumburl);
+	}
+	if (a.length) {
+		if (largeurl.startswith('img/')) {
+			a.attr('href', largeurl);
+		}
+		else {
+			a.attr('onclick', unescape(largeurl));
+			// a.attr('href', largeurl);
+		}
+	}
+	// When clicking/changing Thumbnail images on Apparel, change the dropdown as well.
+	var colorselect = $(elem).closest('.stretchy_cols.responsive-item.image-row').find('.colorselect');
+	if ($(colorselect).length > 0) {
+		$(colorselect).prop('selectedIndex', idx);
+	}
+}
+
+
+$(window).load(function () {
+     if($(window).width() >= 1025) {
+		// ************ Size stretchy column items so all are top aligned and buttons are uniform *************
+		
+		// Wrap item imgs and thumbnails for sizing
+		$('div.image-container:not(:has(>div.multi_preview)').append('<div class="multi_preview"></div>');
+		$("div.image-container").find('img:first').each(function() {
+			if ($(this).parent('a').length > 0) {
+				$(this).parent('a').wrap('<div class="imgwrap">')
+			}else{
+				$(this).wrap('<div class="imgwrap">')
+			}
+		});
+
+
+
+		// Set height of img wraps based on tallest img so items can be top aligned 
+		var maxH = 0
+		$('div.imgwrap').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.imgwrap').css('min-height', maxH); /* set all the wrapped heights to the tallest img height */
+		
+		// If multi-page img thumbs exist set that area height the same for all items
+		maxH = 0
+		$('div.multi_preview').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.multi_preview').css('min-height', maxH);
+
+		// If Responsive Longname exist set that area height the same for all items
+		maxH = 0
+		$('div.responsive-longname').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.responsive-longname').css('min-height', maxH);
+
+		// If .responsive-choose-info > span</input> exist set that area height the same for all items
+		maxH = 0
+		$('div.responsive-choose-info > span').eq(0).each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.responsive-choose-info > span').eq(0).css('min-height', maxH);
+
+		maxH = 0
+		$('div.responsive-choose-info > span').eq(1).each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.responsive-choose-info > span').eq(1).css('min-height', maxH);
+
+
+		// If .proof exist set that area height the same for all items
+		maxH = 0
+		$('div.proof').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.proof').css('min-height', maxH);
+
+		// If .responsive-choose-info exist set that area height the same for all items
+		maxH = 0
+		$('div.responsive-choose-info').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.responsive-choose-info').css('min-height', maxH);
+
+		// If .note.responsive-pricing exist set that area height the same for all items
+		maxH = 0
+		$('div.note.responsive-pricing').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$('div.note.responsive-pricing').css('min-height', maxH);
+
+		// If onhand exist set that area height the same for all items
+		maxH = 0
+		$('div.note.responsive-onhand').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		// console.log('1: ' + maxH);
+		if (maxH > 0) {maxH += 1;}
+		// console.log('2: ' + maxH);
+		maxH = maxH + "px";
+		$('div.note.responsive-onhand').css('min-height', maxH);
+			
+		// If span.qtyspec_label exist set that area height the same for all items or add it
+		$('div.add-to-basket-qty-select:not(:has(>span.qtyspec_label)').each(function() {
+			var place = $(this).find('div.add-to-basket-btn');
+			$('<span class="qtyspec_label"></span>').insertBefore(place)
+		});
+		maxH = 0
+		$("span.qtyspec_label").each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		if (maxH > 0) {maxH += 1;}
+		maxH = maxH + "px";
+		$("span.qtyspec_label").css('min-height', maxH);
+
+		// If responsive-tagcheck.tagcheck-bottom exist set that area height the same for all items
+		maxH = 0
+		$('span.responsive-tagcheck.tagcheck-bottom').each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		// console.log('1: ' + maxH);
+		if (maxH > 0) {maxH += 1;}
+		// console.log('2: ' + maxH);
+		maxH = maxH + "px";
+		$('span.responsive-tagcheck.tagcheck-bottom').css('min-height', maxH);
+	
+		// If div.image-container exist set that area height the same for all items
+		maxH = 0
+		$("div.image-container").each(function() {
+			if ($(this).height() > maxH) {maxH = $(this).height();}
+		});
+		// console.log('1: ' + maxH);
+		if (maxH > 0) {maxH += 1;}
+		// console.log('2: ' + maxH);
+		maxH = maxH + "px";
+		$("div.image-container").css('min-height', maxH);
+		// *****************************************************************************************
+     }
+});     
+</script>
