@@ -1,9 +1,8 @@
 USE Enterprise32
 GO
+DROP TABLE #TEMP
+GO
 SELECT 
-Account, 
-ContactName, 
--- dbo.fn_SplitString(ContactName,'(',1)
 RTRIM(LTRIM(REPLACE(REPLACE(REPLACE(REPLACE(dbo.fn_SplitString(dbo.fn_SplitString(dbo.fn_SplitString(dbo.fn_SplitString(REPLACE(REPLACE(REPLACE(ContactName,'AP - ',''),'AP/ ',''),'AP / ',''),'(',1),'/',1),', ',1), ' - ',1), 'Ms. ', ''), 'Dr. ', ''), '  ', ' '),'.',''))) as test,
 CASE
      WHEN (ContactName='') or (CHARINDEX('http:', ContactName)>0) or (CHARINDEX('@', ContactName)>0) or (CHARINDEX('.', ContactName)=4) THEN ''
@@ -35,9 +34,15 @@ CASE
                ELSE ''
           END
 END AS xLastName,
-FirstName, 
-LastName, 
-IsInactive, 
 ID 
---FROM Enterprise32.dbo.Contact where (FirstName = '' and IsInactive = 0) or (LastName = '' and IsInactive = 0)
+INTO #TEMP
 FROM Enterprise32.dbo.Contact where (FirstName = '' and LastName = '' and IsInactive = 0)
+GO
+select xFirstName, xLastName, ID from #TEMP
+GO
+UPDATE t1
+SET t1.FirstName = t2.xFirstName, t1.LastName = t2.xLastName
+FROM Enterprise32.dbo.Contact t1
+INNER JOIN #TEMP t2
+ON t1.ID = t2.ID
+GO
