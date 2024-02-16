@@ -1,3 +1,4 @@
+/* Rob Carberry Updated for mobile styling 2/16/2024 */
 /* Rob Carberry Updated for zoom images and auto adjust stretchy for consistant size 1/19/2024 */
 /* Rob Carberry Updated multiple form items 1/13/2024 */
 /* Rob Carberry added "div#error_block .estimate-total" 1/5/2024 */
@@ -191,10 +192,10 @@ button#submit_cancel {
 		height: -webkit-fill-available !important;
 		min-height: 710px;
 	}
-	.main, .catalog, form {
+	/* .main, .catalog, form {
 		/* height: 100vh; */
 		height: fit-content !important;
-	}
+	} */
 
 	#curr_item_image {
 		border: 1px solid #ddd;
@@ -1612,6 +1613,20 @@ button#submit_cancel {
 
 @media only screen and (max-width:1024px) {
 
+     .main.select-items, .catalog, form {
+          height: max-content !important;
+     }
+
+     .stretchy_cols {
+          min-height: fit-content !important;
+          max-height: 400px !important;
+          height: fit-content !important;
+     }
+
+     .responsive_tabs-shell {
+          background-color: #FFF;
+     }
+
 	div#tab_responsive_tabs {
 		background-color: #FFFFFF;
 	}
@@ -1650,7 +1665,7 @@ button#submit_cancel {
 	}
 	.footnote, .footnote a {
 		width: 95%;
-		margin: 45% auto;
+		margin: 10% auto;
 		background-color: #fd850c;
 		color: #FFFFFF;
 	}
