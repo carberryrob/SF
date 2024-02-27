@@ -560,4 +560,24 @@ form[action="shiptrack.cgi"] {
           height: -webkit-fill-available;
      }
 
+     .stretchy_cols, .responsive-choose-info {
+          max-height: fit-content !important;
+     }
+
+     table.price-table.center {
+          padding: 0 5px;
+          border-radius: 5px;
+          border: 1px solid #c2c2c2;
+     }
+
+     .main-section {
+     margin-top: 0px !important;
+     text-align: center;
+     margin-left: 10%;
+     }
+
+     .responsive_tabs .opened a, .responsive_tabs .closed a, .responsive_tabs div.off a, .responsive_tabs div.on a, .responsive_tabs .opened:before, .responsive_tabs .closed:before {
+          display: block;
+          /* padding: 10px 0; */
+      }
 }
