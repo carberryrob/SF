@@ -10,6 +10,17 @@
 /*======================================
 *            style resets              *
 ======================================*/
+
+.mb-4, .mb-sm-4 {
+    min-height: 330px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.pageinstructions h3.h2.text-primary.mb-4 {
+    min-height: fit-content;
+}
+
 body {
     padding-left: 0;
     padding-right: 0;
@@ -1432,6 +1443,13 @@ td.bundle_subitem_subgroupname {
     margin: 0 !important;
 }
 
+table#shipmeth-info {
+    display: none !important;
+}
+
+table#shipaddr-info {
+    display: none !important;
+}
 
 @media only screen and (min-width:1025px) {
 
