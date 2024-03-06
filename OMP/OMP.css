@@ -1266,7 +1266,7 @@ button#submit_cancel {
           background-color: transparent !important;
           vertical-align: top !important;
           float: left !important;
-          height: 100vh;
+          height: 65vh;
      }
      /*****************************/	
 
@@ -1443,6 +1443,10 @@ button#submit_cancel {
           display: inline-block;
      }
 
+     .carticon a.no_mobile {
+          z-index: 1;
+          position: relative;
+     }
 
      /*************************************** Align Stretchy_cols **********************************************/
      .multi_preview {
@@ -1585,10 +1589,10 @@ button#submit_cancel {
      }
 
      div#all_items_view {
-          width: 100% !important;
-          float: none !important;
+          /* width: unset !important; */
+          /* float: none !important; */
           /* float: right !important; */
-          margin: 0 auto !important;
+          /* margin: 0 auto !important; */
      }
 
      /* *********** End of Zoom ***************************** */

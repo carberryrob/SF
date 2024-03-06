@@ -1,0 +1,220 @@
+/****************************************************************************************
+************************ ~~-- strategicfactory --~~ *********************************
+****************************** TABLE OF CONTENTS ***************************************/
+/****************************************************************************************
+
+  1. GLOBAL 
+ 
+
+  - If you are making changes here, changes may need to be made in 
+  the con/responsive.css file as well
+
+*****************************************************************************************
+*****************************************************************************************
+*****************************************************************************************
+****************************************************************************************/
+
+
+
+
+
+/****************************************************************************************
+************************************* 1. GLOBAL *****************************************
+****************************************************************************************/
+
+/*Remove sr_ error text from Basket, Review, Accept pages*/
+.previewcell pre { display: none;}
+
+/*** FONT ***/
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+}
+
+/*** Header ***/
+#header-wrapper{
+  border-bottom: 24px solid #545456;
+}
+
+#header_logo {
+  padding: 80px 0;
+}
+
+#header_logo > img.no_mobile {
+    position: absolute;
+    top: 32px;
+    left: 25px;
+    height: 123px;
+    width: auto;
+}
+
+#header-links-container {
+  position: absolute;
+  top: 70px;
+  right: 10%;
+  text-transform: uppercase;
+}
+
+.header-links a {
+  margin: 0px 15px;
+  padding: 5px;
+}
+.header-links a:hover {
+  padding: 5px;
+}
+
+#logout_userid{
+    padding-left: 15px
+}
+/*-- CANCEL LINK ---*/
+#footer\2e footercanceltext{
+  padding-right: 15px;
+}
+
+/*** Item Search Block ***/
+.item-search-block {
+    border-bottom: 4px solid #00a8d5;
+    padding-bottom: 8px;
+}
+
+/****************************************************************************************
+*********************************** END GLOBAL ******************************************
+****************************************************************************************/
+
+#curr_item_longinfo
+{
+    padding: 1rem 7rem;
+    text-align: center;
+}
+
+.responsive-choose-info
+{
+    display: block !important;
+    max-height: 100rem !important;
+    overflow: visible !important;
+}
+
+.stretchy_cols.responsive-item.image-row
+{
+    overflow: visible !important;
+}
+
+.true-table.multisize-table {
+display: none;
+}
+
+.field-container.title.leftSideFieldContainer {
+    /*display: none;*/
+}
+
+div.form-body div.title > h1 {
+    padding: 0 !important;
+}
+
+td.left-side div.form-body {
+    margin-bottom: 0 !important;
+}
+input[type="file"] {
+    padding: 15px;
+}
+
+
+/**** UL Style ****/
+input[type="file"] {
+    padding: 15px;
+}
+div.qr_howto {
+    display: none;
+    margin: 0px;
+    padding: 0px;
+}
+div.qr_howto + form {
+    border: solid 1px #ccc
+    padding: 25px 15px;
+}
+div.qr_howto ul, ol, dl {
+    margin-left: 3rem;
+}
+div.qr_howto li {
+    text-align: start;
+    line-height: 1.5em;
+}
+form.uload {
+    border: solid 1px #ccc;
+    padding: 25px 15px;
+}
+span#file_upload_popup\.main_banner_label {
+    font-size: 25px;
+}
+.globalContentSubSection {
+    font-size: 14px;
+    margin: 0 auto;
+    width: 75%;
+    display: block;
+    font-weight: 600 !important;
+    line-height: 18px;
+    margin-top: 25px;
+}
+#buttons .nonFlashButtons label {
+    font-size: 20px;
+    text-shadow: 1px 1px 0px #ccc;
+    color: #444;
+    font-weight: 300;
+}
+.upinstr {
+    font-size: 14px;
+
+}
+
+/*form {
+    max-width: 50%;
+    text-align: center;
+    margin: auto;
+    white-space: nowrap;
+}
+form.ng-pristine.ng-valid {
+    max-width: unset;
+    text-align: unset;
+    margin: unset;
+    white-space: unset;
+}*/
+.main {
+    max-width: fit-content;
+    margin: auto;
+}
+
+#sharedform\.hac_bc_v3\:1 h1, #sharedform\.hac_bc_v3\:9 h1, #sharedform\.hac_bc_v3\:11 h1 {
+    color: #000000 !important;
+    font-size: 15px !important;
+    margin-top: 25px !important;
+}
+
+.main, .catalog, form {
+     /* height: 100vh; */
+     height: max-content !important;
+}
+
+
+@media only screen and (min-width:1025px) {
+     .responsive_tabs-shell {
+          width: unset !important;
+          border-collapse: collapse !important;
+          border: 0px !important;
+          font-family: inherit !important;
+          padding: 0 0 0 7px !important;
+          margin: 0px !important;
+          max-width: 200px !important;
+          background-color: transparent !important;
+          vertical-align: top !important;
+          float: left !important;
+          height: 65vh;
+     }
+
+     div#all_items_view {
+          /* width: 100% !important;
+          float: none !important; */
+          float: right !important;
+          margin: 0 auto !important;
+     }
+
+}

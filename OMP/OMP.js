@@ -60,13 +60,15 @@ function WidthAdjuster(){
      var w = $(window).width(),
           // 'p' is used to prevent the all_items_view from wrapping
           //  to a new line when the window is around 1030px
-          //  p = 5,
           p = 1,
+          // p = 1,
           t = $('.responsive_tabs-shell').width(),
           n = 0;
-          if ($('div#basket-list-title').is(":hidden")) {t = 0}
+          // if ($('div#basket-list-title').is(":hidden")) {t = 0}
           // t = t + ow;
      n = 100 - ((t/w) * 100) - p;
+     // console.log('**************************************************' + t);
+     // console.log('**************************************************' + $('.responsive_tabs-shell').width());
 
      $('#all_items_view').css({
           'float': 'right',
@@ -113,8 +115,11 @@ function AdjustForIMG(elem){
 
 $(window).load(function () {
 
-     $('head').append('<link rel="icon" type="image/x-icon" href="con/favicon.ico">');
-     $('head').append('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=DM+Serif+Display&display=swap">');
+     $('head').append('<link rel="icon" href="con/favicon-150x150.png" sizes="32x32" />')
+     $('head').append('<link rel="icon" href="con/favicon-300x300.png" sizes="192x192" />')
+     $('head').append('<link rel="apple-touch-icon" href="con/favicon-300x300.png" />')
+     // $('head').append('<link rel="icon" type="image/x-icon" href="con/favicon.ico">');
+     // $('head').append('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=DM+Serif+Display&display=swap">');
      $( "link[href^='css/header.css']" ).removeAttr( "media" );
 
      $( ".header-links" ).find( "a" ).removeAttr( "style" );
@@ -366,7 +371,12 @@ $(window).load(function () {
 
           // *****************************************************************************************
 
-          // $(window).trigger('resize').delay(1000);
+          // $(window).trigger('resize').delay(10);
+          WidthAdjuster();
+          // window.setTimeout( WidthAdjuster(), 2000 );
+          // console.log('----------------------------------------Calling WidAdjuster');
+          // console.log('-------------------+--------------------' + $('.responsive_tabs-shell').width());
+          // console.log('-------------------+--------------------' + $('.responsive_tabs-shell').height());
 		// $(window).trigger('resize').delay(1000);
 
 
@@ -414,6 +424,7 @@ $(document).ready(function () {
 
      // console.log( '******************************************************' + $('table#estimate-item-container .form-body input[type="text"]').filter(':visible').length )
      $('table#estimate-item-container .form-body input[type="text"]').filter(':visible').each(function() {
+          // console.log('******************************************************table#estimate-item-container .form-body input[type="text"]');
           var nme = 'new_' + $(this).attr('name'); //get name for new input
           var v = $(this).val(); //get name for new input
           $(this).parent().prepend('<input name="' + nme + '" type="number" required value="'+ v + '" min="0">'); // add input to DOM with listener
@@ -437,10 +448,12 @@ $(document).ready(function () {
           })
      })
 
+     $("input.noclear.sbs_update_field").attr( "autocomplete", "new-password" );
+
      if ($(window).width() >= 1025) {
           
-          $("#cost_options\\.quantity").closest('tr').hide();
-          
+          // $("#cost_options\\.quantity").closest('tr').hide();
+          // The above hides the estimate qty
           
           /************* My Account Menu *************/
           
@@ -617,7 +630,7 @@ $(document).ready(function(){
                     p = 1,
                     t = tabShell.width(),
                     n = 0;
-                    if ($('div#basket-list-title').is(":hidden")) {t = 0}
+                    // if ($('div#basket-list-title').is(":hidden")) {t = 0}
                n = 100 - ((t/w) * 100) - p;
 
                allItems.css({
@@ -857,6 +870,7 @@ $(document).ready(function(){
                               return;  //this is necessary despite the WidthChange context here...
                          }
                          itemWidthAdjuster();
+                         WidthAdjuster();
                          pageScaler();
 
                          // let's be sure the item is not obscured by a short stretchy_col
