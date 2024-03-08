@@ -1,16 +1,39 @@
-/**** Rob Carberry 2/28/2024 ****/
+/**** Rob Carberry 3/7/2024 ****/
 /****************************************************************************************
 ************************************ GLOBAL *****************************************
 ****************************************************************************************/
 
 /* @import "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"; */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); */
 
+@font-face {
+     font-family: "Acronym-ExtraBold";
+     src: url('../con/Acronym-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+     font-family: "Acronym-Bold";
+     src: url('../con/Acronym-Bold.ttf') format('truetype');
+}
+@font-face {
+     font-family: "Acronym-Regular";
+     src: url('../con/Acronym-Regular.ttf') format('truetype');
+}
+@font-face {
+     font-family: "Acronym-BlackItalic";
+     src: url('../con/Acronym-BlackItalic.ttf') format('truetype');
+}
+@font-face {
+     font-family: "Acronym-Light";
+     src: url('../con/Acronym-Light.ttf') format('truetype');
+}
+/* src: url('../con/Acronym-Light.ttf') format('truetype'); */
+   
 body {
-     color: #333;
+     color: #4f5a65;
      font-size: 14px;
-     font-family: 'Montserrat', sans-serif !important; 
+     font-family: Acronym-Regular, serif !important; 
+     letter-spacing: 0.8px;
      font-weight: 500;
 }
 
@@ -19,14 +42,14 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-     color: #333;
-     font-family: 'Bebas Neue', sans-serif !important;
+     color: #4f5a65;
+     font-family: Acronym-Bold, serif !important;
      letter-spacing: .08em;
      text-transform: uppercase;
 }
 
 h1 {
-     color: white;
+     color: #4f5a65;
      font-size: 3.5rem;
 }
 
@@ -35,14 +58,14 @@ h2 {
 }
  
 h3 {
-     font-family: 'Montserrat', sans-serif !important;
+     font-family: Acronym-Bold, serif !important;
      font-weight: bold;
      font-size: 1.25rem;
      text-transform: none;
 }
  
 .h2 {
-     font-family: 'Bebas Neue', sans-serif !important;
+     font-family: Acronym-Bold, serif !important;
      font-size: 2.375rem;
      font-weight: bold;
 }
@@ -70,8 +93,8 @@ h3 {
 }*/
 .form-body td.submit {
      background-color: transparent;
-     font-family: "Poppins", sans-serif !important;
-     color: #111111;
+     font-family: Acronym-Regular, serif !important;
+     color: #4F5A65;
      margin: 0px;
      padding: 5px;
      text-align: center;
@@ -79,34 +102,34 @@ h3 {
 button#button_file_upload_remove, button {
      cursor: pointer;
      text-align: center !important;
-     /* text-transform: uppercase; */
-     font-size: 16px !important;
-     font-weight: 600 !important;
-     letter-spacing: 1px !important;
-     padding: 6px 24px !important;
+     font-family: Acronym-Bold, serif;
+     text-transform: uppercase;
+     font-size: 18px !important;
+     font-weight: 700 !important;
+     letter-spacing: .12em !important;
+     padding: 4px 24px !important;
      margin: 8px 3px !important;
-     color: #FFFFFF !important;
-     background-color: #111111 !important;
-     font-family: "Poppins", sans-serif !important;
+     color: #ff4500 !important;
+     background-color: #ffffff !important;
      vertical-align: middle !important;
      text-decoration: none !important;
-     border: 2px solid #111111 !important;
-     -moz-border-radius: 50px/50px !important;
-     -webkit-border-radius: 50px/50px !important;
-     border-radius: 50px/50px !important;
+     border: 4px solid #ff4500 !important;
+     -moz-border-radius: 27px !important;
+     -webkit-border-radius: 27px !important;
+     border-radius: 27px !important;
      position: relative !important;
      /* behavior: url(/hub/css/PIE.htc); */
      min-width: max-content !important;
 }
 
 button#button_file_upload_remove:hover, button:hover, button#submit_catalog_search:hover {
-     background-color: #114734 !important;
-     border-color: #114734 !important;
+     background-color: #ff4500 !important;
+     border-color: #ff4500 !important;
      color: #FFFFFF !important;
-     border-radius: 50px/50px !important;
+     border-radius: 27px !important;
      z-index: unset;
-     -webkit-transition: background-color 0.3s ease-in-out;
-     transition: background-color 0.3s ease-in-out;
+     /* -webkit-transition: background-color 0.3s ease-in-out; */
+     /* transition: background-color 0.3s ease-in-out; */
 }
 
 /*button#button_file_upload_remove:before, button:not(#submit_catalog_search):before {*/
@@ -119,10 +142,10 @@ button#button_file_upload_remove:before, button:before {
      left: -2px;
      padding: 2px;
      box-sizing: content-box;
-     -webkit-transition: background-color 0.3s ease-in-out;
-     transition: background-color 0.3s ease-in-out;
-     border-radius: 50px/50px;
-     -webkit-border-radius: 50px/50px;
+     /* -webkit-transition: background-color 0.3s ease-in-out; */
+     /* transition: background-color 0.3s ease-in-out; */
+     border-radius: 27px;
+     -webkit-border-radius: 27px;
      display: block;
      position: absolute;
      height: 100%;
@@ -194,9 +217,13 @@ button#submit_cancel {
           padding: 15px;
           /*background-color: #EEE;*/
           border-radius: 0.35em;
-          -webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 3px 6px rgb(0 0 0 / 7%);
+          /* -webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 3px 6px rgb(0 0 0 / 7%);
           -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 3px 6px rgba(0,0,0,0.040);
-          box-shadow: inset 0 1px 0 rgb(255 255 255), 0 3px 6px rgb(0 0 0 / 40%);
+          box-shadow: inset 0 1px 0 rgb(255 255 255), 0 3px 6px rgb(0 0 0 / 40%); */
+          -webkit-box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+          -moz-box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+          box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+
           text-shadow: 0 1px 0 rgb(0 0 0 / 5%);
      }
      p.approve_order_text {
@@ -205,9 +232,12 @@ button#submit_cancel {
           /*font-weight: normal !important;*/
           /*background-color: #EEE;*/
           border-radius: 0.35em;
-          -webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 3px 6px rgb(0 0 0 / 7%);
+          /* -webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 3px 6px rgb(0 0 0 / 7%);
           -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 3px 6px rgba(0,0,0,0.040);
-          box-shadow: inset 0 1px 0 rgb(255 255 255), 0 3px 6px rgb(0 0 0 / 40%);
+          box-shadow: inset 0 1px 0 rgb(255 255 255), 0 3px 6px rgb(0 0 0 / 40%); */
+          -webkit-box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+          -moz-box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+          box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
           text-shadow: 0 1px 0 rgb(0 0 0 / 5%);
      }
      /*****************************************************************************/
@@ -245,7 +275,7 @@ button#submit_cancel {
           /*color: #333;*/
           font-weight: bold;
           text-shadow: none;
-          font-family: "Montserrat", sans-serif !important;
+          font-family: Acronym-Regular, serif !important;
           
      }
 
@@ -458,7 +488,7 @@ button#submit_cancel {
           position: relative;
           font-size: 16px;
           /*color: #00000A;*/
-          /* font-family: "Poppins", sans-serif !important; */
+          /* font-family: Acronym-Regular, serif !important; */
           text-align: center;
           vertical-align: middle;
           text-decoration: none;
@@ -504,7 +534,7 @@ button#submit_cancel {
           position: relative;
           font-size: 16px;
           /*color: #00000A;*/
-          /* font-family: "Poppins", sans-serif !important; */
+          /* font-family: Acronym-Regular, serif !important; */
           text-align: center;
           vertical-align: middle;
           text-decoration: none;
@@ -642,7 +672,7 @@ button#submit_cancel {
           position: relative;
           font-size: 16px;
           /*color: #00000A;*/
-          /* font-family: "Poppins", sans-serif !important; */
+          /* font-family: Acronym-Regular, serif !important; */
           text-align: center;
           vertical-align: middle;
           text-decoration: none;
@@ -776,8 +806,10 @@ button#submit_cancel {
           height: auto;
           display: inline-block;
           background: transparent;
+          color: #4F5A65;
+          font-size: 20px !important;
+          font-family: Acronym-Light, serif;
           font-weight: 600;
-          font-size: 16px;
           position: relative;
           z-index: 80;
      }
@@ -818,9 +850,9 @@ button#submit_cancel {
           position: absolute; 
           top: 100%;
           margin-left: -20px;
-          -webkit-box-shadow: 1px 1px 6px rgb(255 255 255 / 20%), 1px 2px 6px 0px rgb(0 0 0 / 70%);
-          -moz-box-shadow: 1px 1px 6px rgba(255,255,255,0.2), 1px 2px 6px 0px rgba(0,0,0,0.070);
-          box-shadow: 1px 1px 6px rgb(255 255 255 / 20%), 1px 2px 6px 0px rgb(0 0 0 / 70%);
+          -webkit-box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+          -moz-box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+          box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
      }
 
      nav ul ul li {
@@ -858,9 +890,9 @@ button#submit_cancel {
      nav ul li:hover > ul {
           display: block;
           background-color: #FFFFFF;
-          font-size: 16px;
-          padding: 10px 0px;
-          font-weight: 400;
+          font-size: 15px;
+          padding: 8px 0px;
+          font-weight: 600;
           border-radius: 4px;
           min-width: 200px;
           text-align: left;
@@ -885,7 +917,7 @@ button#submit_cancel {
           position: relative;
           height: 10px;
           width: 10px;
-          top: -4px;
+          top: -3px;
           border: 0 solid currentColor;
           border-width: 0 2px 2px 0;
           content: '';
@@ -902,9 +934,9 @@ button#submit_cancel {
           background-repeat: no-repeat; */
           display: inline-block;
           position: relative;
-          height: 9px;
-          width: 9px;
-          top: -3px;
+          height: 8px;
+          width: 8px;
+          top: -1px;
           border: 0 solid currentColor;
           border-width: 0 2px 2px 0;
           content: '';
@@ -916,7 +948,7 @@ button#submit_cancel {
           background-image: url(../con/button_right_arrow.png);
      } */
      nav ul li.topli:hover {
-          color: #114734 !important;
+          color: #4f5a65 !important;
           /* background-color: #222222 !important; */
           text-decoration-line: underline;
           -webkit-transition: text-underline-offset .3s 0s;
@@ -926,56 +958,59 @@ button#submit_cancel {
      }
      nav ul li.topli {
           /*background-color: #FFFFFF !important;*/
-          color: #111111 !important;
-          text-decoration-color: #114734;
+          color: #4f5a65 !important;
+          text-decoration-color: #ff4500;
           text-underline-offset: 18px;
           padding-bottom: 20px;
      }
      nav ul li.topli:hover a {
-          color: #114734 !important;
+          color: #4f5a65 !important;
      }
      nav ul li.topli:not(:hover) a {
-          color: #111111 !important;
+          color: #4f5a65 !important;
      }
 
      /* nav ul li.subtopli:hover:after {
           background-image: url(../con/button_right_arrow.png);
      } */
      nav ul li.subtopli:hover {
-          color: #FFFFFF !important;
-          background-color: #114734 !important;
-          /* border-bottom-color: #114734; */
-          /* border-top-color: #114734 */
-          -webkit-transition: background-color 0.3s ease-in-out;
-          transition: background-color 0.3s ease-in-out;
+          color: #4f5a65 !important;
+          border-left: 2px solid #FF4500;
+          background-color: #FEF5F1 !important;
+          /* border-bottom-color: #ff4500; */
+          /* border-top-color: #ff4500 */
+          /* -webkit-transition: background-color 0.3s ease-in-out; */
+          /* transition: background-color 0.3s ease-in-out; */
      }
      nav ul li.subtopli {
           /* background-color: #FFFFFF !important; */
-          color: #111111 !important;
+          color: #4f5a65 !important;
+          border-left: 2px solid transparent;
+          padding-right: 64px;
      }
      nav ul li.subtopli:hover a {
-          color: #114734 !important;
+          color: #4f5a65 !important;
      }
      nav ul li.subtopli:not(:hover) a {
-          color: #111111 !important;
+          color: #4F5A65 !important;
      }
 
      nav ul li.onlyli {
           /*background-color: #FFFFFF !important;*/
-          color: #111111 !important;
+          color: #4F5A65 !important;
      }
      nav ul li.onlyli a {
-          text-decoration-color: #114734;
+          text-decoration-color: #ff4500;
           text-underline-offset: 18px;
           padding-bottom: 20px;
      }
 
      nav ul li.onlyli:hover {
-          color: #114734 !important;
+          color: #4f5a65 !important;
           /* background-color: #36837d !important; */
      }
      nav ul li.onlyli:hover a {
-          color: #114734 !important;
+          color: #4f5a65 !important;
           text-decoration-line: underline;
           -webkit-transition: text-underline-offset .3s 0s;
           transition: text-underline-offset .3s 0s;
@@ -983,26 +1018,28 @@ button#submit_cancel {
           text-decoration-thickness: 4px;
      }
      /* nav ul li.onlyli:not(:hover) a {
-          color: #111111 !important;
+          color: #4F5A65 !important;
      } */
 
-     /* nav ul li.subtab {
-          background-color: #FFFFFF !important;
-          color: #114734 !important;
-     } */
+     nav ul li.subtab {
+          border-left: 2px solid transparent;
+          padding-right: 64px;
+     }
+
      nav ul li.subtab:hover {
-          color: #FFFFFF !important;
-          background-color: #114734 !important;
-          /* border-bottom-color: #114734; */
-          /* border-top-color: #114734 */
-          -webkit-transition: background-color 0.3s ease-in-out;
-          transition: background-color 0.3s ease-in-out;
+          color: #4f5a65 !important;
+          border-left: 2px solid #FF4500;
+          background-color: #FEF5F1 !important;
+          /* border-bottom-color: #ff4500; */
+          /* border-top-color: #ff4500 */
+          /* -webkit-transition: background-color 0.3s ease-in-out; */
+          /* transition: background-color 0.3s ease-in-out; */
      }
           nav ul li.subtab:hover a {
-          color: #FFFFFF !important;
+          color: #4F5A65 !important;
      }
      nav ul li.subtab:not(:hover) a {
-          color: #111111 !important;
+          color: #4F5A65 !important;
      }
 
      /*****************************************/
@@ -1042,7 +1079,7 @@ button#submit_cancel {
 
      .form-body .note {
           font-size: inherit;
-          /* font-family: "Poppins", sans-serif !important; */
+          /* font-family: Acronym-Regular, serif !important; */
      }
      .items-table th {
           background-color: inherit;
@@ -1095,7 +1132,7 @@ button#submit_cancel {
 
      /* .dropdown:hover {
           color: #FFFFFF !important;
-          background-color: #fa8a3c !important;
+          background-color: #ff4500 !important;
      } */
      .dropdown {
           position: absolute;
@@ -1107,7 +1144,7 @@ button#submit_cancel {
           text-align: left;
           padding: 14px 10px 14px 10px;
           /* margin-bottom: 10px; */
-          /* color: #111111; */
+          /* color: #4F5A65; */
           cursor: pointer;
           z-index: 2;
      }
@@ -1123,7 +1160,9 @@ button#submit_cancel {
           left: 0px;
           position: absolute;
           min-width: 140px;
-          box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+          -webkit-box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+          -moz-box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+          box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
           text-align: left;
           z-index: 1;
           background-color: #FFFFFF;
@@ -1132,17 +1171,20 @@ button#submit_cancel {
      }
 
      .dropdown-content a {
-          padding: 4px 16px;
+          padding: 6px 16px;
           text-decoration: none;
-          display: block !important; 
+          display: block !important;
           white-space: nowrap;
+          border-left: 2px solid transparent;
+          color: #4f5a65 !important;
+
      }
 
      .dropdown-content a:hover {
-          color: #FFFFFF !important;
-          background-color: #fa8a3c !important;
-          -webkit-transition: background-color 0.3s ease-in-out;
-          transition: background-color 0.3s ease-in-out;
+          border-left: 2px solid #FF4500;
+          background-color: #FEF5F1 !important;
+          /* -webkit-transition: background-color 0.3s ease-in-out; */
+          /* transition: background-color 0.3s ease-in-out; */
      }
 
      .dropdown:hover .dropdown-content {
@@ -1179,7 +1221,7 @@ button#submit_cancel {
           white-space: nowrap;
           text-decoration: none;
           text-transform: uppercase;
-          /* font-family: "Poppins", sans-serif !important; */
+          /* font-family: Acronym-Regular, serif !important; */
      }
 
      /*.toptabs a:hover {
@@ -1198,9 +1240,9 @@ button#submit_cancel {
           display: -webkit-box;
           padding: 5px;
           border-radius: 5px;
-          -webkit-box-shadow: 1px 1px 6px rgb(255 255 255 / 20%), 1px 2px 6px 0px rgb(0 0 0 / 70%);
-          -moz-box-shadow: 1px 1px 6px rgba(255,255,255,0.2), 1px 2px 6px 0px rgba(0,0,0,0.070);
-          box-shadow: 1px 1px 6px rgb(255 255 255 / 20%), 1px 2px 6px 0px rgb(0 0 0 / 70%);
+          -webkit-box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+          -moz-box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+          box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
      }
 
      .basket-text, .basket-butt {
@@ -1229,7 +1271,7 @@ button#submit_cancel {
           white-space: nowrap;
           text-decoration: none;
           text-transform: uppercase;
-          font-family: "Poppins", sans-serif !important;
+          font-family: Acronym-Regular, serif !important;
      }
 
      /*.toptabs a:hover {
@@ -1294,7 +1336,7 @@ button#submit_cancel {
           background-color: transparent !important;
           vertical-align: top !important;
           float: left !important;
-          height: 100vh;
+          height: 65vh;
      }
      /*****************************/	
 
@@ -1308,13 +1350,13 @@ button#submit_cancel {
      /*** Header ***/
 
      img.no_mobile {
-          height: 65px;
-          width: auto;
+          height: auto;
+          width: 115px;
      }
 
      td#header_logo > a img.no_mobile {
-          /*max-height: 75px;*/
-          width: auto;
+          height: auto;
+          width: 115px;
      }
      /*.header {
           padding: 0px;
@@ -1330,8 +1372,8 @@ button#submit_cancel {
 
 
      .header-links a:hover {
-          color: #cccccc;
-          border-bottom: 4px solid #111111;
+          /* color: #cccccc; */
+          border-bottom: 4px solid #253772;
      }
 
      .header-links, .header-links a {
@@ -1371,12 +1413,12 @@ button#submit_cancel {
           border-top: 25px solid transparent;
           /* border-bottom: 39px solid #000000; */
           background-color: transparent;
-          color: #111111;
+          color: #4F5A65;
           height: 100px;
-          -webkit-box-shadow: 0px 0px 6px rgb(17 17 17 / 20%);
-          -moz-box-shadow: 0px 0px 6px rgba(17,17,17,0.2);
+          /* -webkit-box-shadow: 0px 0px 6px rgb(17 17 17 / 20%); */
+          /* -moz-box-shadow: 0px 0px 6px rgba(17,17,17,0.2); */
           /* box-shadow: 1px 1px 6px rgb(255 255 255 / 20%), 1px 2px 6px 0px rgb(0 0 0 / 70%); */
-          box-shadow: 0 0 6px rgba(17,17,17,.2);
+          /* box-shadow: 0 0 6px rgba(17,17,17,.2); */
      }
 
 
@@ -1472,17 +1514,13 @@ button#submit_cancel {
      }
 
      .carticon span.cart_num_items.no_mobile {
-          box-shadow: 1px 1px 3px rgb(0 0 0 / 100%) !important;
+          /* box-shadow: 1px 1px 3px rgb(0 0 0 / 100%) !important; */
      }
 
      .carticon span.fa.fa-shopping-basket {
-          text-shadow: 1px 1px 3px rgb(0 0 0 / 100%), -1px -1px 3px rgb(0 0 0 / 100%) !important;
+          /* text-shadow: 1px 1px 3px rgb(0 0 0 / 100%), -1px -1px 3px rgb(0 0 0 / 100%) !important; */
+          color: #253772;
      }
-
-     .carticon a.no_mobile {
-          z-index: 1;
-          position: relative;
-      }
 
 
      /*************************************** Align Stretchy_cols **********************************************/
@@ -1572,13 +1610,13 @@ button#submit_cancel {
      }
 
      .item_count, span.cart_num_items.no_mobile {
-          font-size: .8rem;
-          width: 1rem;
-          height: 1rem;
-          border: 1px solid #111111;
-          color:#111111;
+          font-size: 12px;
+          width: 16px;
+          height: auto;
+          border: 1px solid #253772;
+          color: #253772;
           border-radius: 100px;
-          padding: 1px;
+          padding: 0px;
           position: relative;
           box-sizing: content-box;
           top: -24px;
@@ -1624,6 +1662,13 @@ button#submit_cancel {
           transform: scale(2);
           z-index: 200;
      }
+
+     /* div#all_items_view {
+          width: 100% !important;
+          float: none !important;
+          /* float: right !important; */
+          margin: 0 auto !important;
+     } */
 
      /* *********** End of Zoom ***************************** */
 
@@ -1701,7 +1746,7 @@ button#submit_cancel {
      }
 
      /* h1, h2, h3, h4, h5, h6 {
-          font-family: "Poppins", sans-serif !important;
+          font-family: Acronym-Regular, serif !important;
      } */
 
      td#desklogo {

@@ -108,9 +108,8 @@ function AdjustForIMG(elem){
 
 $(window).load(function () {
 
-     $('head').append('<link rel="icon" href="con/favicon-150x150.png" sizes="32x32" />')
-     $('head').append('<link rel="icon" href="con/favicon-300x300.png" sizes="192x192" />')
-     $('head').append('<link rel="apple-touch-icon" href="con/favicon-300x300.png" />')
+     $('head').append('<link rel="icon" href="con/favicon.ico" sizes="16x16" />')
+     $('head').append('<link rel="apple-touch-icon" href="con/favicon.ico" />')
      // $('head').append('<link rel="icon" type="image/x-icon" href="con/favicon.ico">');
      // $('head').append('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=DM+Serif+Display&display=swap">');
      $( "link[href^='css/header.css']" ).removeAttr( "media" );
@@ -190,8 +189,8 @@ $(window).load(function () {
                     $(this).prepend(menuknob);
                     cnt = cnt + 1;
                });
-               // $('.cart_item').parents('table').css('text-align', 'center');
-               $('.cart_item').parents('table').css({'text-align': 'center','overflow': 'scroll','display': 'block','width': '100%'});
+               $('.cart_item').parents('table').css('text-align', 'center');
+               // $('.cart_item').parents('table').css({'text-align': 'center','overflow': 'scroll','display': 'block','width': '100%'});
                
           }
 
