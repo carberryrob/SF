@@ -217,4 +217,10 @@ form.ng-pristine.ng-valid {
           margin: 0 auto !important;
      }
 
+     div.LabeledPhoneField {
+          white-space: nowrap;
+          display: flex;
+          align-items: baseline;
+     }
+
 }
