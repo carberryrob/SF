@@ -202,8 +202,8 @@ $(window).load(function () {
                     $(this).prepend(menuknob);
                     cnt = cnt + 1;
                });
-               // $('.cart_item').parents('table').css('text-align', 'center');
-               $('.cart_item').parents('table').css({'text-align': 'center','overflow': 'scroll','display': 'block','width': '100%'});
+               $('.cart_item').parents('table').css('text-align', 'center');
+               // $('.cart_item').parents('table').css({'text-align': 'center','overflow': 'scroll','display': 'block','width': '100%'});
                
           }
 

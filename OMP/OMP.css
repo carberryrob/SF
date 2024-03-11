@@ -1609,7 +1609,12 @@ button#submit_cancel {
 
      div.field-container {
           border: none !important;
-      }
+     }
+
+     .gallery-row a {
+          border: 1px solid #777777 !important;
+          display: block !important;
+     }
 
 /*********************************************************************************************************/
 }
@@ -1710,6 +1715,7 @@ button#submit_cancel {
           border: none !important;
           background-color: transparent !important;
      }
+
 }
 
 @media (min-width: 320px) {
