@@ -12,6 +12,7 @@ body {
      font-size: 14px;
      font-family: 'Montserrat', sans-serif !important; 
      font-weight: 500;
+     letter-spacing: 0.5px;
 }
 
 .main, .main td {
@@ -20,20 +21,38 @@ body {
 
 .bar {
      width: 100%;
-     min-height: 10px;
-     background-color: #777777;
+     min-height: 3px;
+     background-color: #003650;
      color: #ffffff;
      line-height: 2;
      padding: 3px 0 0 10px;
      font-weight: 500;
 }
 
-h1, h2, h3, h4, h5 {
+.bar a, .bar a:link {
+     color: #ffffff;
+}
+
+div.field-container div.form-sublabel {
+     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)" !important;
+     filter: alpha(opacity = 90) !important;
+     -moz-opacity: 0.9 !important;
+     -khtml-opacity: 0.9 !important;
+     opacity: 0.9 !important;
+}
+
+h1, h3, h4, h5 {
      color: #333;
      font-family: 'Bebas Neue', sans-serif !important;
      letter-spacing: .08em;
      text-transform: uppercase;
 }
+/* h1, h2, h3, h4, h5 {
+     color: #333;
+     font-family: 'Bebas Neue', sans-serif !important;
+     letter-spacing: .08em;
+     text-transform: uppercase;
+} */
 
 h1 {
      color: #333333;
@@ -50,7 +69,11 @@ h3 {
      font-size: 1.25rem;
      text-transform: none;
 }
- 
+
+.catalog-tab-blurb h3 {
+     letter-spacing: .06em;
+}
+
 .h2 {
      font-family: 'Bebas Neue', sans-serif !important;
      font-size: 2.375rem;
@@ -788,7 +811,7 @@ button#submit_cancel {
      div#TabsDiv {
           position: absolute;
           white-space: nowrap;
-          top: 44px;
+          top: 75px;
           --w: 700px;
           width: var(--w);
           left: -webkit-calc((100% - var(--w))/2);
@@ -804,6 +827,7 @@ button#submit_cancel {
           background: transparent;
           font-weight: 600;
           font-size: 1rem;
+          letter-spacing: 1px;
           position: relative;
           z-index: 80;
      }
@@ -1310,6 +1334,9 @@ button#submit_cancel {
           margin: 0px auto;
      }
 
+     .input.sbs_block_field table {
+          margin: unset;
+     }
 
      .header-links a:hover {
           color: #fa8a3c;
@@ -1359,11 +1386,13 @@ button#submit_cancel {
           box-shadow: 0 0 6px rgba(17,17,17,.2); */
           font-family: 'Bebas Neue', sans-serif;
           font-size: 1.25rem;
+          letter-spacing: 1px;
      }
 
 
      #header_logo {
-          padding: 30px 0;
+          /* padding: 30px 0; */
+          display: none;
      }
 
 
@@ -1616,10 +1645,57 @@ button#submit_cancel {
           display: block !important;
      }
 
+     .storesign {
+          display: block;
+          color: #ffffff;
+     }
+
+     #header_title {
+          text-align: center;
+          vertical-align: middle !important;
+          position: relative;
+          top: -20px;
+          padding: 0 !important;
+          margin: 0 !important;
+     }
+
+     h1.storesign {
+          padding: 0 !important;
+          margin: 0 !important;
+          vertical-align: middle;
+          line-height: 1;
+          font-size: 2.25rem;
+          letter-spacing: 4px;
+     }
+
+     h2.storesign {
+          text-transform: capitalize;
+          font-family: 'Montserrat', sans-serif !important;
+          font-weight: 600;
+          font-size: 1.125rem;
+          letter-spacing: 2px;
+          padding: 0;
+          margin: 0;
+          vertical-align: middle;
+          position: relative;
+     }
+
 /*********************************************************************************************************/
 }
 
 @media only screen and (max-width:1024px) {
+
+     .left-side .UploadToStyleField .input table td {
+          border: none;
+     }
+
+     div.RadioTableField td.checkbox-label label {
+          width: auto !important;
+     }
+
+     div.form-body div.title > h2 {
+          text-align: center !important;
+     }
 
      .main.select-items, .catalog, form {
           margin-bottom: 15%;
