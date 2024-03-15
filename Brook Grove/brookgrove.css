@@ -77,8 +77,8 @@ button#button_file_upload_remove:hover, button:hover, button#submit_catalog_sear
      color: #FFFFFF !important;
      border-radius: 5px;
      z-index: unset;
-     -webkit-transition: background-color 0.3s ease-in-out;
-     transition: background-color 0.3s ease-in-out;
+     -webkit-transition: background-color .2s ease, border-color .2s ease;
+     transition: background-color .2s ease, border-color .2s ease;
 }
 
 /*button#button_file_upload_remove:before, button:not(#submit_catalog_search):before {*/
@@ -91,8 +91,8 @@ button#button_file_upload_remove:before, button:before {
      left: -2px;
      padding: 2px;
      box-sizing: content-box;
-     -webkit-transition: background-color 0.3s ease-in-out;
-     transition: background-color 0.3s ease-in-out;
+     -webkit-transition: background-color .2s ease, border-color .2s ease;
+     transition: background-color .2s ease, border-color .2s ease;
      border-radius: 50px/50px;
      -webkit-border-radius: 50px/50px;
      display: block;
@@ -718,13 +718,13 @@ button#submit_cancel {
 
      /************* Tabs Nav Menu ******************/
 
-     body::before {
+     /* body::before {
           content: url(../con/bg_wave.png);
           position: absolute;
           top: -9999rem;
           left: -9999rem;
           opacity: 0;
-     }
+     } */
 
      div#TabsDiv {
           position: absolute;
@@ -777,7 +777,7 @@ button#submit_cancel {
 
      nav ul li a {
           display: block; 
-          padding: 10px 20px;
+          padding: 13px 20px;
           text-decoration: none;
           width: -webkit-fill-available;
      }
@@ -842,7 +842,7 @@ button#submit_cancel {
      /***** Menu Colors *****/
 
      nav ul li.topli, nav ul li.subtopli, nav ul li.subtabliul {
-          padding: 10px 20px;
+          padding: 13px 20px;
      }
 
      :after, :before {
@@ -917,8 +917,8 @@ button#submit_cancel {
           background-color: #242424 !important;
           /* border-bottom-color: #114734; */
           /* border-top-color: #114734 */
-          -webkit-transition: background-color 0.3s ease-in-out;
-          transition: background-color 0.3s ease-in-out;
+          /* -webkit-transition: background-color 0.3s ease-in-out; */
+          /* transition: background-color 0.3s ease-in-out; */
      }
      nav ul li.subtopli {
           /* background-color: #FFFFFF !important; */
@@ -967,8 +967,8 @@ button#submit_cancel {
           background-color: #114734 !important;
           /* border-bottom-color: #114734; */
           /* border-top-color: #114734 */
-          -webkit-transition: background-color 0.3s ease-in-out;
-          transition: background-color 0.3s ease-in-out;
+          /* -webkit-transition: background-color 0.3s ease-in-out; */
+          /* transition: background-color 0.3s ease-in-out; */
      }
           nav ul li.subtab:hover a {
           color: #FFFFFF !important;
@@ -1117,8 +1117,8 @@ button#submit_cancel {
      .dropdown-content a:hover {
           color: #FFFFFF !important;
           background-color: #242424 !important;
-          -webkit-transition: background-color 0.3s ease-in-out;
-          transition: background-color 0.3s ease-in-out;
+          /* -webkit-transition: background-color 0.3s ease-in-out; */
+          /* transition: background-color 0.3s ease-in-out; */
      }
 
      .dropdown:hover .dropdown-content {
@@ -1534,6 +1534,23 @@ button#submit_cancel {
           height: max-content !important;
      }
 
+     tr:has(span#shipping\.billcode10label) {
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: center;
+     }
+
+     .pagetitle:has(span#shipping\.billbanner) {
+          display: none !important;
+     }
+
+     table#shipaddr-info {
+          margin-top: -25px;
+     }
+
+     div.field-container {
+          border-bottom: 0px solid #979797 !important;
+     }
      /*********************************************************************************************************/
 }
 
