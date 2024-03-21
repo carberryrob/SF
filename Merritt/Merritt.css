@@ -1356,9 +1356,9 @@ input#searchfield_input {
 	display: inline-block;
 }
 
-h3.proof-title {
+/* h3.proof-title {
 	display: none;
-}
+} */
 
 .jcrop-holder {
 	display: none !important;
@@ -1646,13 +1646,14 @@ table.form-body.preview-form-footer.true-table {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 75px;
+		height: 150px;
 		/* border: 3px solid green; */
 	}
 
 	.responsive-choose-info {
 		display: block !important;
-		max-height: 100rem !important;
+		/* max-height: 100rem !important; */
+		max-height: unset !important;
 		overflow: visible !important;
 	}
 /************************************************** Align Stretchy_cols *************************************************/
@@ -1665,7 +1666,7 @@ table.form-body.preview-form-footer.true-table {
 		/*min-width: unset !important;
 		max-width: unset !important;
 		width: unset !important;*/
-		font-size: 15px !important;
+		font-size: 14px !important;
 	}
 	.height-adjuster {
 		margin-top: 1px !important;
