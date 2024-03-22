@@ -794,7 +794,7 @@ button#submit_cancel {
           position: absolute;
           white-space: nowrap;
           top: 44px;
-          --w: 700px;
+          --w: 1070px;
           width: var(--w);
           left: -webkit-calc((100% - var(--w))/2);
           left: -moz-calc((100% - var(--w))/2);
