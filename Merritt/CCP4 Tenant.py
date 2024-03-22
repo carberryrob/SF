@@ -21,7 +21,7 @@ if (logo == ''):
           Block2Height = Cust2Block.height
           Block2Width = Cust2Block._get_right() - Cust2Block._get_left()
 
-          while (Block1Height > (2*72) or Block1Width > (6*72) or Block2Height > (2*72) or Block2Width > (6*72)):
+          while (Block1Height > (1.5*72) or Block1Width > (6*72) or Block2Height > (1.5*72) or Block2Width > (6*72)):
                F1.pointsize = F1.pointsize - 1
                F2.pointsize = F2.pointsize - 1
                C1Line = LINES(card_title1, font=F1, align=CENTER, newline=NEWLINE, wrap_lf=1)
@@ -36,7 +36,7 @@ if (logo == ''):
                Block1Width = Cust1Block._get_right() - Cust1Block._get_left()
                Block2Height = Cust2Block.height
                Block2Width = Cust2Block._get_right() - Cust2Block._get_left()
-               if (Block1Height <= (2*72) and Block1Width <= (6*72) and Block2Height <= (2*72) and Block2Width <= (6*72)):
+               if (Block1Height <= (1.5*72) and Block1Width <= (6*72) and Block2Height <= (1.5*72) and Block2Width <= (6*72)):
                     break
 
           linecount1 = 0
@@ -55,17 +55,17 @@ if (logo == ''):
 
           txt1BlockHeight = float(((adjfont + linegap) * linecount1) - linegap)
           txt2BlockHeight = float(((adjfont + linegap) * linecount2) - linegap)
-          txtBlockHeight = float(txt1BlockHeight + txt2BlockHeight +  + 72 + Line1Block.height)
+          txtBlockHeight = float(txt1BlockHeight + txt2BlockHeight +  + 40 + Line1Block.height)
 
           pgHeight = float(7.75*72)
 
           m = float((pgHeight - txtBlockHeight) / 2)
           Cust2Block.move(0,m)
           Cust4Block.move(0,m)
-          m = float(m + txt2BlockHeight + 36)
+          m = float(m + txt2BlockHeight + 20)
           Line1Block.move(0,m)
           Line2Block.move(0,m)
-          m = float(Line1Block._get_top() + 36)
+          m = float(Line1Block._get_top() + 20)
           Cust1Block.move(0,m)
           Cust3Block.move(0,m)
  
@@ -82,7 +82,7 @@ if (logo == ''):
           Cust2Block = DWIMBLOCK([C2Line], (3.875*72, 0), (CENTER, BOTTOM), (0, 0), layer=-2500)
           BlockHeight = Cust1Block.height
           BlockWidth = Cust1Block._get_right() - Cust1Block._get_left()
-          while (BlockHeight > (5*72) or BlockWidth > (6*72)):
+          while (BlockHeight > (3.5*72) or BlockWidth > (6*72)):
                F1.pointsize = F1.pointsize - 1
                F2.pointsize = F2.pointsize - 1
                C1Line = LINES(card_title1, font=F1, align=CENTER, newline=NEWLINE, wrap_lf=1)
@@ -91,7 +91,7 @@ if (logo == ''):
                Cust2Block = DWIMBLOCK([C2Line], (3.875*72, 0), (CENTER, BOTTOM), (0, 0), layer=-2500)
                BlockHeight = Cust1Block.height
                BlockWidth = Cust1Block._get_right() - Cust1Block._get_left()
-               if (BlockHeight <= (5*72) and BlockWidth <= (6*72)):
+               if (BlockHeight <= (3.5*72) and BlockWidth <= (6*72)):
                     break
 
           linecount = 0
@@ -115,7 +115,7 @@ if (logo == ''):
           Cust2Block = DWIMBLOCK([C2Line], (3.875*72, 0), (CENTER, BOTTOM), (0, 0), layer=-2500)
           BlockHeight = Cust1Block.height
           BlockWidth = Cust1Block._get_right() - Cust1Block._get_left()
-          while (BlockHeight > (5*72) or BlockWidth > (6*72)):
+          while (BlockHeight > (3.5*72) or BlockWidth > (6*72)):
                F1.pointsize = F1.pointsize - 1
                F2.pointsize = F2.pointsize - 1
                C1Line = LINES(card_title2, font=F1, align=CENTER, newline=NEWLINE, wrap_lf=1)
@@ -124,7 +124,7 @@ if (logo == ''):
                Cust2Block = DWIMBLOCK([C2Line], (3.875*72, 0), (CENTER, BOTTOM), (0, 0), layer=-2500)
                BlockHeight = Cust1Block.height
                BlockWidth = Cust1Block._get_right() - Cust1Block._get_left()
-               if (BlockHeight <= (5*72) and BlockWidth <= (6*72)):
+               if (BlockHeight <= (3.5*72) and BlockWidth <= (6*72)):
                     break
 
           linecount = 0
@@ -142,5 +142,3 @@ if (logo == ''):
 
           # s = 'Cust1Block.height: ' + str(Cust1Block.height) + ' | top: ' + str(Cust1Block._get_top()) + ' | Bottom: ' + str(Cust1Block._get_bottom()) + ' | F1: ' + str(F1.pointsize) + ' | BlockHeight: ' + str(BlockHeight) + ' | BlockWidth: ' + str(BlockWidth) + ' | txtBlockHeight: ' + str(txtBlockHeight)
           # Block5 = DWIMBLOCK([F1, LINEWRAP, str(s)], (0, 0), (LEFT, BOTTOM), (8.5*72, 3.5*72), layer=-2500, uniform_linescale=1)  #Not Used
-
-
