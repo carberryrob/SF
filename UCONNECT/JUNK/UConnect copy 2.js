@@ -2,13 +2,13 @@
 <!-- Rob Carberry Updated 12/20/2023 -->
 <div class="footer_row3">
 <div><img src="con/SF-PoweredBy2024-80h-White.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
-	<!-- p class="footer_cr">
-		Strategic Factory<br>
-		11195 Dolfield Boulevard<br>
-		Owings Mills, Maryland 21117<br>
-		(443) 548-3500<br>
-		<a href="mailto:sfportalorders@strategicfactory.com">sfportalorders@strategicfactory.com</a>
-	</p -->
+     <!-- p class="footer_cr">
+          Strategic Factory<br>
+          11195 Dolfield Boulevard<br>
+          Owings Mills, Maryland 21117<br>
+          (443) 548-3500<br>
+          <a href="mailto:sfportalorders@strategicfactory.com">sfportalorders@strategicfactory.com</a>
+     </p -->
 </div>
 
 <script>
