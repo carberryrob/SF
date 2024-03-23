@@ -1,6 +1,7 @@
-# Created 7/6/2023 Rob Carberry
-# Updated 7/7/2023 Rob Carberry
+# Updated 3/23/2024 Rob Carberry
 # Updated 7/10/2023 Rob Carberry
+# Updated 7/7/2023 Rob Carberry
+# Created 7/6/2023 Rob Carberry
 
 ### add addresses to the list and test that the address doesn't exist twice.
 from ast import If
@@ -18,7 +19,18 @@ for address in (card_address, card2_address, card3_address, card4_address, card5
 address = None
 
 ### Variable declarations
-wwwurl = 'arizonaurologyspecialists.com' ### Make url a variable to make it easier to copy code to other locations
+try:
+     tag = __tag__
+     if (tag.startswith('AUS')):
+          wwwurl = 'arizonaurologyspecialists.com' 
+     elif (tag.startswith('COUA')):
+          wwwurl = 'coloradouro.com' 
+     elif (tag.startswith('CUA')):
+          wwwurl = 'chesapeakeurology.com'
+     elif (tag.startswith('TUA')):
+          wwwurl = 'tnurology.com.com'
+except:
+     pass
 
 sadd = None
 add1 = None
@@ -34,7 +46,7 @@ delimit = WORD('    |    ', F3) ### Used to CHAIN the address fields for one add
 BT = -3.5 ### Adjustment value for the check boxes.
 top = (0.4125*72) ### This places the bottom of the addresses.
 stop = (0.45*72) ### This places the bottom of the address for the one address version.
-Bspc = 2.25 ### Space between the check box and the address block.
+Bspc = 3 ### Space between the check box and the address block.
 
 ### Set the space between address blocks based on the number of addresses.
 Aspc = 0
@@ -57,7 +69,10 @@ bloks = []
 bxs = []
 
 ### This will be used to create the check boxes multiple times.
-box = DWIMLINES([LEFT, F5, BORDER(WORD('q ',F5),0.3,C1,1), NEWLINE])
+# box = DWIMLINES([LEFT, F5, BORDER(WORD('q ',F5),0.3,C1,1), NEWLINE])
+C100 = PROCESSCOLOR('C011_M000_Y000_K064', 0.11, 0.00, 0.00, 0.64)
+F100 = NONISOFONT('Dingbats', 10, 0, color=C100)
+box = DWIMLINES([LEFT, F100, 'q', NEWLINE]) 
 
 ### For each address selected, create DWIMLINES for use in DWIMBLOCKS.  These will be added to python list.
 ### The list will be used later to measure the dimensions before we add them to DWIMBLOCKS.
