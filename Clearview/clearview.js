@@ -401,6 +401,7 @@ $(window).load(function () {
           maxH = maxH + "px";
           $('div.the_actual_qty_select').css('min-height', maxH);
           // *****************************************************************************************
+          WidthAdjuster();
      }
 });
 $(document).ready(function () {
@@ -485,6 +486,27 @@ $(document).ready(function () {
           });
           //********** End Handle Will Call *******************
      }
+     $("table.true-table .qty_select_cell > select[name*='_Bundle']").each(function() {
+          // console.log( $(this).val() );
+          $(this).closest('td').prepend($(this).val());
+          $(this).hide();
+     });
+     $("table.true-table .qty_select_cell > input[type='text'][name*='_Bundle']").each(function() {
+          // console.log( $(this).val() );
+          $(this).closest('td').prepend($(this).val());
+          $(this).hide();
+     });
+     $("table.true-table .qty_select_cell > select[name*='For_Kit']").each(function() {
+          // console.log( $(this).val() );
+          $(this).closest('td').prepend($(this).val());
+          $(this).hide();
+     });
+     $("table.true-table .qty_select_cell > input[type='text'][name*='For_Kit']").each(function() {
+          // console.log( $(this).val() );
+          $(this).closest('td').prepend($(this).val());
+          $(this).hide();
+     });
+
 });
 </script>
 

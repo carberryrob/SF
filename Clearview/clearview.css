@@ -211,8 +211,8 @@ button {
      text-shadow: 0 1px 0 rgb(0 0 0 / 5%);*/
      /*background: #f47f36;
      background: linear-gradient(90deg,#f47f36 0,#cd128c);*/
-     padding: 6px 25px 5px 25px;
-     margin: 5px !important;
+     padding: 6px 20px 5px 20px;
+     margin: 15px 8px !important;
 }
 
 /*button:hover, button#submit_catalog_search:hover {*/
@@ -1287,7 +1287,35 @@ form {
      height: max-content !important;
 }
 
+.form-body td,
+.tabular td {
+     background-color: transparent !important;
+}
+
 @media only screen and (min-width:1025px) {
+
+     /* form {
+               max-width: 70%;
+               margin: 0 auto;
+     } */
+     .form-body, .main.proofs {
+          max-width: 70%;
+          margin: 0 auto;
+     }
+
+     .preview-form-footer {
+          max-width: max-content !important;
+     }
+
+     button > span {
+          white-space: nowrap;
+     }
+
+     .center > button {
+          margin-left: 10px !important;
+          margin-right: 10px !important;
+     }
+
      .responsive_tabs-shell .responsive_tabs {
           width: 103% !important;
      }
