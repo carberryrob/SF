@@ -1526,6 +1526,7 @@ form {
           transform-origin: 100% 100%;
           transform: scale(2);
           z-index: 200;
+          box-shadow: 2px 3px 5px rgb(0 0 0 / 40%) !important;
      }
 
      div#all_items_view {
