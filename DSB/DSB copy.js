@@ -22,10 +22,10 @@ $(window).load(function () {
      $( "#header_logo img.no_mobile" ).wrap( '<td id="desklogo"><div class="logolinkdiv"><a style="display: inline-block;" href="index.cgi">' );
      $( "#header_logo img.no_desktop" ).wrap( '<a style="display: inline-block;" href="index.cgi">' );
 
-     // /****** Search Box ********/
-     // $("input#searchfield_input").wrap('<div class="input-wrapper">')
-     // $( '<label for="searchfield_input" class="fa fa fa-search"></label>' ).insertAfter("input#searchfield_input");
-     // /**************************/
+     /****** Search Box ********/
+     $("input#searchfield_input").wrap('<div class="input-wrapper">')
+     $( '<label for="searchfield_input" class="fa fa fa-search"></label>' ).insertAfter("input#searchfield_input");
+     /**************************/
 
      if($(window).width() >= 1025) {
           //$( "td#header_logo" ).css("display", "table-cell");
@@ -86,21 +86,28 @@ $(window).load(function () {
                $('.cart_item').parents('table').css('text-align', 'center');
           }
 
-          
-          /************* My Account Menu *************/
-          if ($( ".header-links a" ).length > 1){
-               $( ".header-links a" ).wrapAll( '<div id="dropdown-contentdiv" class="dropdown-content"></div>  ' );
-               $( ".dropdown-content" ).wrapAll( '<div id="dropdowndiv" class="dropdown"><span id="dropicon">My Account</span>' );
-               $( ".dropdown-content" ).insertAfter( '#dropicon' );
-               $( "a[href='basket_view.cgi'].no_mobile" ).insertBefore( "#dropdowndiv" );
-               $( ".image-container img").css("max-height","max-content");
-               $( "div#header-wrapper" ).prepend( $("#dropdowndiv") );
-               $( "#logout_userid" ).insertBefore( '.dropdown' );
-          }
-          
-          /*********** End My Account Menu ***********/
 
+          /************* TopTabs *************/
           $( "#desklogo" ).insertBefore(".header-links");
+          var idN = 'desklogo';
+          // var idN2 = '';
+          // $('#tab_responsive_tabs dfn').each(function() {
+          //      idN2 = $(this).text().replace(' ', '_') + 'TD';
+          //      $('#' + idN).after('<td id="' + idN2 + '" class="toptabs">' + $(this).html() + "   ");
+          //      idN = idN2;
+          //      //console.log(idN);
+          // });
+          $("#" + idN).after('<td id="rightSP" class="space">');
+          $('#desklogo').after('<td id="leftSP" class="space">');
+
+          // $('a#submit_logout').after('   ');
+          $( ".toptabs:contains('undefined')" ).hide();
+
+
+          // $( "a[href='basket_view.cgi'].no_mobile" ).insertBefore( "a[href='index.cgi']:contains('Home')" );
+          $( "a[href='basket_view.cgi'].no_mobile" ).insertAfter( "#submit_logout" );
+          /********** End TopTabs ***********/
+
 
           /************* TopTabs *************/
           
@@ -111,7 +118,12 @@ $(window).load(function () {
 
 
 
+          $('.header-links a').wrapAll('<nav><ul>')
+          $('.header-links ul a').wrap('<li class="onlyli">')
           $( "#header-wrapper" ).after('<div id="TabsDiv"><nav id="TabsNav"><ul id="TabsMenu">'); /** Create the top nav place holder **/
+          // $( "#TabsDiv" ).insertBefore(".header-links");
+          // $( "#TabsDiv" ).prepend(".header-links");
+          $(".header-links").prepend( $("#TabsDiv") )
           var tabid = '';
           var appendid = '';
           $('#tab_responsive_tabs [id^="tab_"]').each(function() {
@@ -147,50 +159,26 @@ $(window).load(function () {
           $( ".toptabs:contains('undefined')" ).hide();  /** if on a page that tabs are not exposed, hide the place holders. **/
           /********** End TopTabs ***********/
 
+
+
+
           /***************** TopTab Search items feature ****************/
-          /****** Move Search Box ********/
-          $("input#searchfield_input").wrap('<div class="input-wrapper">');
-          $( '<label for="searchfield_input" class="fa fa fa-search"></label>' ).insertAfter("input#searchfield_input");
-          /**************************/
-
-          if ( $("a[href='basket_view.cgi'].no_mobile").length > 0 ) {
-               $(".input-wrapper:has(#searchfield_input)").first().clone(true,true).insertAfter("a[href='basket_view.cgi'].no_mobile").attr("id", "Srch");
-               $( "div#Srch input" ).keyup(function(event) {
-                    //console.log(event.which);
-                    $('.item-search-block input').val( $(this).val() );
-                    if (event.which == 13) {
-                         $("#submit_catalog_search").trigger("click");
-                    }
-               });
-          }else{
-               $(".input-wrapper:has(#searchfield_input)").first().clone(true,true).insertAfter( "#pageurl" ).attr("id", "Srch");
-               $( "div#Srch input" ).keyup(function(event) {
-                    //console.log(event.which);
-                    $('.item-search-block input').val( $(this).val() );
-                    if (event.which == 13) {
-                         $("#submit_catalog_search").trigger("click");
-                    }
-               });
-          }
+          //console.log($("div#Srch").length + " 1| " + ($("div#Srch").length === 0));
+          //if( $("div#Srch").length === 0 ) {
+          $(".input-wrapper:has(#searchfield_input)").first().clone(true,true).insertAfter("#leftSP").attr("id", "Srch");
+          $("div#Srch").after('<td class="space">');
+          $( "div#Srch input" ).keyup(function(event) {
+               //console.log(event.which);
+               $('.item-search-block input').val( $(this).val() );
+               if (event.which == 13) {
+                    $("#submit_catalog_search").trigger("click");
+               }
+          });
+          //}
           /*************** End TopTab Search items feature **************/
-          $('.header-links').attr('style', 'display: revert !important');
-          $(".basket-list-item").html(function() {
-               var txt = '<div class="basket-text">' + this.innerText.trim() + '</div>';
-               //console.log("|" + txt + "|");
-               var butt = $(this).html();
-               var buttend = butt.search(/<\/button>/);
-               butt = '<div class="basket-butt">' + butt.substring(1, buttend) + '</button>' + '</div>';
-               return butt + txt;
-          });
-          $('span.cart_num_items.no_mobile').each(function() {
-               var cartcnt = $(this).text();
-               cartcnt = cartcnt.replace("(", "").replace(")", "").trim();
-               $(this).text(cartcnt);
-               
-          });
+          //console.log($("div#Srch").length + " 2| " + ($("div#Srch").length === 0));
 
-          $("span.cart_num_items.no_mobile").parent("a").wrap('<div class="carticon">');
-
+           
      }
 });
 $(document).ready(function () {
