@@ -61,13 +61,15 @@ function WidthAdjuster(){
      var w = $(window).width(),
           // 'p' is used to prevent the all_items_view from wrapping
           //  to a new line when the window is around 1030px
-          //  p = 5,
           p = 1,
+          // p = 1,
           t = $('.responsive_tabs-shell').width(),
           n = 0;
-          if ($('div#basket-list-title').is(":hidden")) {t = 0}
+          // if ($('div#basket-list-title').is(":hidden")) {t = 0}
           // t = t + ow;
      n = 100 - ((t/w) * 100) - p;
+     // console.log('**************************************************' + t);
+     // console.log('**************************************************' + $('.responsive_tabs-shell').width());
 
      $('#all_items_view').css({
           'float': 'right',
@@ -198,8 +200,8 @@ $(window).load(function () {
                     $(this).prepend(menuknob);
                     cnt = cnt + 1;
                });
-               // $('.cart_item').parents('table').css('text-align', 'center');
-               $('.cart_item').parents('table').css({'text-align': 'center','overflow': 'scroll','display': 'block','width': '100%'});
+               $('.cart_item').parents('table').css('text-align', 'center');
+               // $('.cart_item').parents('table').css({'text-align': 'center','overflow': 'scroll','display': 'block','width': '100%'});
                
           }
 
@@ -366,7 +368,7 @@ $(window).load(function () {
           $("div.image-container").css('min-height', maxH);
 
           // *****************************************************************************************
-
+          WidthAdjuster();
 
 
      }
@@ -524,6 +526,12 @@ $(document).ready(function () {
 
           if ( $( "input[name='tab']" ).val() ) {
                $("#copy5 span").text( $( "input[name='tab']" ).val().replace(/\|\|/g, ' - ') ); /** Set the catalog top left description **/
+               console.log($("#copy5 span").text());
+               if ($("#copy5 span").text() == 'LandingPageLandingPage') {
+                    $('div.buttonsbar').hide();
+                    $('table:has(#submit_cancel)').hide();
+                    $('div.responsive_tabs-shell').hide();
+               }
           }
 
 

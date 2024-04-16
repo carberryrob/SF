@@ -518,7 +518,6 @@ input#searchfield_input {
 .fa-shopping-basket:before {
      content: "\f07a";
 }
-
 /*---- CUSTOM BUTTON ---- */
 
 /*button#submit_catalog_search {
@@ -557,7 +556,8 @@ button#button_file_upload_remove, button {
      -webkit-border-radius: 1em;
      border-radius: 1em;
      position: relative;
-     behavior: url(/hub/css/PIE.htc);
+     z-index: 1;
+     /* behavior: url(/hub/css/PIE.htc); */
 }
 
 button#button_file_upload_remove:hover, button:hover, button#submit_catalog_search:hover {
@@ -647,14 +647,11 @@ button#submit_cancel {
      margin-right: 5%;
      min-width: 155px;
 }
-/************************************/
-
-
-/****************************/
 
 /*****************************************************************************/
-@media only screen and (min-width:1025px) {
 
+@media only screen and (min-width:1025px) {
+ 
      a:visited {
           color: #07294E;
      }
@@ -959,9 +956,6 @@ button#submit_cancel {
           margin: unset;
      }
 
-
-
-
      div.blurb {
           /*margin-right: 90%;
           white-space: nowrap;*/
@@ -972,10 +966,6 @@ button#submit_cancel {
           /*content: "\f07a";*/
           font-size: 20px;
      }
-
-
-
-
 
      .form-body .note {
           font-size: inherit;
@@ -1011,14 +1001,25 @@ button#submit_cancel {
           padding-top: 6px !important;
           padding-bottom: 6px	!important;
      }
-
-     .responsive-choose-info {
-          display: block !important;
-          max-height: 100rem !important;
-          overflow: visible !important;
-     }
      
+     .responsive-choose-info {
+          max-width: 90%;
+          line-height: 1.1rem;
+          margin: 0 auto;
+          font-size: 12px;
+          /* min-height: 160px; */
+          display: flex !important;
+          align-items: center;
+          /* display: inline-block !important;
+          vertical-align: middle; */
+          overflow: visible !important;
+          max-height: unset !important;
+          /* padding: 5px 0; */
+     }
 
+     .responsive-choose-info span {
+          display: block;
+     }
      /******** Dropdown menu************/
      .dropbtn {
           /* background-color: #4CAF50; */
@@ -1141,7 +1142,7 @@ button#submit_cancel {
      }
 
 
-/*** Header ***/
+     /*** Header ***/
 
      img.no_mobile {
           height: 60px;
@@ -1286,7 +1287,7 @@ button#submit_cancel {
           padding: 0px 4%px;*/
      }
      
-/*****************************************************/
+     /*****************************************************/
      .stretchy_cols.responsive-item.image-row {
           max-height: 1000px !important;
      }
@@ -1416,7 +1417,7 @@ button#submit_cancel {
           display: inline-block;
      }
 
-/*************************************** Align Stretchy_cols **********************************************/
+     /*************************************** Align Stretchy_cols **********************************************/
      .stretchy_cols.responsive-item.image-row {
           vertical-align: bottom !important;
           display: inline-table;
@@ -1442,28 +1443,29 @@ button#submit_cancel {
           overflow: hidden !important;
           /* border: 1px dashed gray !important; */
      }
-/*********************************************************************************************************/
+     /*********************************************************************************************************/
 }
 
 @media only screen and (max-width:1024px) {
 
-     .responsive_tabs dfn {
+     /* .responsive_tabs dfn {
           padding-top: 10px;
           padding-bottom: 10px;
      }
 
      div#tab_0 {
           margin-top: 50px;
-     }
+     } */
      
      .fa-search:before {
           content: "\f002";
           font-size: 25px;
      }
+     
      .select-items #searchfield_input {
-          width: 65vw;
+          width: 60vw;
           position: absolute;
-          right: 3%;
+          right: 5%;
           margin-right: 10%;
      }
      
@@ -1486,13 +1488,11 @@ button#submit_cancel {
      #d_on_hand_html #d_on_hand_html_label {
           display: block !important;
      }
-/*************************/
-     .responsive_tabs {
+     /*************************/
+     /* .responsive_tabs {
           background-color: #FFF !important;
-          /*filter: alpha(opacity=60);
-          -moz-opacity: 0.6;
-          opacity: 0.6;*/
      }
+
      .responsive_tabs-shell .after {
           margin-top: 20px !important;
      }
@@ -1526,10 +1526,6 @@ button#submit_cancel {
           display: block;
           background-color: transparent !important;
      }
-     .responsive_tabs div.off a:hover {
-          /*background-color: #2E9EE2 !important;
-          color: #FFFFFF !important;*/
-     }
      .responsive_tabs .opened:before, .responsive_tabs .closed:before {
           float: right;
           position: absolute;
@@ -1548,9 +1544,6 @@ button#submit_cancel {
      .responsive_tabs-shell .after {
           margin-top: 20px !important;
      }
-     /*.responsive_tabs div.off:hover dfn, .responsive_tabs div.on:hover dfn{
-          color: #FFFFFF !important;
-     }*/
      .responsive_tabs div.off:hover dfn a, .responsive_tabs div.on:hover dfn a {
           color: #FFFFFF !important;
           background: #002A4E;
@@ -1583,17 +1576,13 @@ button#submit_cancel {
      }
      .responsive_tabs div.off:hover a {
           color: #FFFFFF !important;
-     }
-     .select-items #tab_responsive_tabs div, .select-items #tab_responsive_tabs div a:link, .select-items #tab_responsive_tabs div a:visited {
-          /*padding: 5px 10px;
-          font-style: normal;
-          text-decoration: none;
-          color: #002A4E !important;*/
-     }
+     } */
      /**************************************/
      div#upper_buttons {
           display: none;
      }
-     
+     .select-items #tab_responsive_tabs {
+          background: #E5E5E5;
+     }     
 }
 

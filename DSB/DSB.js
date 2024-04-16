@@ -191,6 +191,17 @@ $(window).load(function () {
 
           $("span.cart_num_items.no_mobile").parent("a").wrap('<div class="carticon">');
 
+          // If .responsive-choose-info exist set that area height the same for all items
+          maxH = 0
+          $('div.responsive-choose-info').each(function() {
+               if ($(this).height() > maxH) {maxH = $(this).height();}
+               console.log('**********************************' + $(this).height() + ' | ' + maxH);
+          });
+          if (maxH > 0) {maxH += 16;}
+          maxH = maxH + "px";
+          $('div.responsive-choose-info').css('min-height', maxH);
+          
+
      }
 });
 $(document).ready(function () {
