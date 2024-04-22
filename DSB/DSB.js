@@ -141,6 +141,10 @@ $(window).load(function () {
                     }
                });
           });
+          // Save Order Button to top tabs menu
+          $("#button_save_order").each(function() {
+               $("#upper_buttons").prepend($(this));
+          });
           // Hide "LandingPage" tab
           $( "li.onlyli:contains('LandingPage')" ).css( "display", "none" );
 
@@ -195,7 +199,7 @@ $(window).load(function () {
           maxH = 0
           $('div.responsive-choose-info').each(function() {
                if ($(this).height() > maxH) {maxH = $(this).height();}
-               console.log('**********************************' + $(this).height() + ' | ' + maxH);
+               // console.log('**********************************' + $(this).height() + ' | ' + maxH);
           });
           if (maxH > 0) {maxH += 16;}
           maxH = maxH + "px";

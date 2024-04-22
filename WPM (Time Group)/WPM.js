@@ -31,6 +31,7 @@ $(document).ready(function () {
           $(this).closest('td').prepend($(this).val());
           $(this).hide();
      });
+     $("table#shipmeth-info").hide();
 });
 
 </script>
