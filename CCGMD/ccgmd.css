@@ -1077,6 +1077,7 @@ button#submit_cancel {
           /* min-height: 50px; */
           display: inline-flex;
           flex-wrap: wrap;
+          padding: 5px;
      }
 
      .responsive_tabs dfn {

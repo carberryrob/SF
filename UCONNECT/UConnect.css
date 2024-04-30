@@ -15,6 +15,21 @@ select {
 	padding: 0.3rem 1.2rem 0.3rem 0.4rem !important;
 }
 
+.disclaimer {
+     text-align: left;
+     font-size: 16px;
+     width: 650px;
+     margin: auto;
+     color: #000;
+     line-height: normal;
+     background: #f1f1f1;
+     padding: 15px 20px;
+     -moz-border-radius: 15px;
+     -webkit-border-radius: 15px;
+     border-radius: 15px;
+
+}
+
 /*************** header css for final approve order ***********************/
 td.label:has(>span#bill\.billcode10label) {
     white-space: nowrap;

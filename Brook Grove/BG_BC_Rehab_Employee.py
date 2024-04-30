@@ -1,5 +1,6 @@
 ################################
 ###  Rob Carberry 4/17/2024  ###
+###  Rachel Dunn 4/30/2024   ###
 ################################
 
 try:
@@ -14,9 +15,14 @@ try:
           credentials = creds1[:-2]
           credentials2 = creds2[:-2]
           AddressBlock = DWIMBLOCK([RIGHT, F2, name_first, IF(' ', name_last), IF(', ', credentials), NEWLINE, credentials2, NEWLINE, F3, VSPACER(2), ' ', NEWLINE], (3.348614*72, 1.662501*72), (RIGHT, TOP_BASELINE), (2*72,0), uniform_linescale=1, layer=0)
-          TitleBlock = DWIMBLOCK([RIGHT, F3, card_title1, NEWLINE], (3.348614*72, AddressBlock._get_bottom()), (RIGHT, TOP_BASELINE), (1.65*72,0), layer=0)
+          TitleBlock = DWIMBLOCK([RIGHT, F3, card_title1, NEWLINE, VSPACER(2), card_title2, NEWLINE], (3.348614*72, AddressBlock._get_bottom()), (RIGHT, TOP_BASELINE), (1.5*72,0), uniform_linescale=1, layer=0)
+          # top = float(TitleBlock._get_bottom()- 2) # get bottom plus VSPACER(2)
+          # top -= float(TitleBlock._get_top()-TitleBlock._get_bottom()) # measure titleblock height and subtract that from top
+          # Title2Block = DWIMBLOCK([RIGHT, F3, card_title2, NEWLINE], (3.348614*72, top), (RIGHT, TOP_BASELINE), (1.5*72,0), layer=0)
      else:
-          AddressBlock = DWIMBLOCK([RIGHT, F2, name_first, IF(' ', name_last), IF(', ', credentials), NEWLINE, F3, VSPACER(2), card_title1, NEWLINE], (3.348614*72, 1.662501*72), (RIGHT, TOP_BASELINE), (2*72,0), layer=0)
+          AddressBlock = DWIMBLOCK([RIGHT, F2, name_first, IF(' ', name_last), IF(', ', credentials), NEWLINE, F3, VSPACER(2), card_title1, NEWLINE, F3, VSPACER(2), card_title2, NEWLINE], (3.348614*72, 1.662501*72), (RIGHT, TOP_BASELINE), (2.075*72,0), layer=0)
 except:
      pass
-# AddressBlock = DWIMBLOCK([RIGHT, F2, name_first, IF(' ', name_last), IF(WRAPHERE(', '), credentials), NEWLINE, F3, VSPACER(2), card_title1, NEWLINE], (3.348614*72, 1.662501*72), (RIGHT, TOP_BASELINE), (2.075*72,0), layer=0)
+
+# AddressBlock = DWIMBLOCK([RIGHT, F2, name_first, IF(' ', name_last), IF(WRAPHERE(', '), credentials), NEWLINE, F3, VSPACER(2), card_title1, NEWLINE, F3, VSPACER(2), card_title2, NEWLINE], (3.348614*72, 1.662501*72), (RIGHT, TOP_BASELINE), (2.075*72,0), layer=0)
+
