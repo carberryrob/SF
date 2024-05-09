@@ -1,6 +1,6 @@
-<!-- Rob Carberry 4/16/2024 -->
+<!-- Rob Carberry 3/7/2024 -->
 <div class="footer_row3">
-<div><img src="con/SF-Logo-new_PoweredBy_ALL-260w-464547.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
+<div><img src="con/SF-PoweredBy2024-260w-White.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
      <p class="footer_cr">
           Strategic Factory<br>
           11195 Dolfield Boulevard<br>
@@ -108,16 +108,11 @@ function AdjustForIMG(elem){
 
 $(window).load(function () {
 
-     $('head').append('<link rel="icon" href="con/favicon.png" sizes="32x32" />')
-     // $('head').append('<link rel="icon" href="con/ccg_logo192.png" sizes="192x192" />')
-     // $('head').append('<link rel="apple-touch-icon" href="con/ccg_logo.png" />')
-
-     // $('head').append('<link rel="icon" href="https://www.ccgmd.com/wp-content/uploads/2021/06/ccg_logo.svg" sizes="32x32" />')
-     $('head').append('<link rel="icon" href="https://www.ccgmd.com/wp-content/uploads/2021/06/ccg_logo.svg" sizes="192x192" />')
-     $('head').append('<link rel="apple-touch-icon" href="https://www.ccgmd.com/wp-content/uploads/2021/06/ccg_logo.svg" />')
-
-
+     $('head').append('<link rel="icon" href="con/favicon-150x150.png" sizes="32x32" />')
+     $('head').append('<link rel="icon" href="con/favicon-300x300.png" sizes="192x192" />')
+     $('head').append('<link rel="apple-touch-icon" href="con/favicon-300x300.png" />')
      // $('head').append('<link rel="icon" type="image/x-icon" href="con/favicon.ico">');
+     // $('head').append('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=DM+Serif+Display&display=swap">');
      $( "link[href^='css/header.css']" ).removeAttr( "media" );
 
      $( ".header-links" ).find( "a" ).removeAttr( "style" );
@@ -195,8 +190,8 @@ $(window).load(function () {
                     $(this).prepend(menuknob);
                     cnt = cnt + 1;
                });
-               $('.cart_item').parents('table').css('text-align', 'center');
-               // $('.cart_item').parents('table').css({'text-align': 'center','overflow': 'scroll','display': 'block','width': '100%'});
+               // $('.cart_item').parents('table').css('text-align', 'center');
+               $('.cart_item').parents('table').css({'text-align': 'center','overflow': 'scroll','display': 'block','width': '100%'});
                
           }
 

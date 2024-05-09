@@ -20,13 +20,13 @@ elif (cnt >= 4):
           tag = __tag__
           card_back = None
           if (tag.startswith('AUS')):
-               card_back = '197498_C1AUSApptCard_ThreeAddressUL.pdf'   ### Since the card won't be blank we add the back layer logo.
+               card_back = '221295_C7AUSAuto-fillapptcardthreeaddressesbackground.pdf'   ### Since the card won't be blank we add the back layer logo.
           elif (tag.startswith('COUA')):
-               card_back = '197498_C1COUAApptCard_FRONT.pdf'   ### Since the card won't be blank we add the back layer logo.
+               card_back = '221295_C9COUAAuto-fillApptCardthreeaddressbackground.pdf'   ### Since the card won't be blank we add the back layer logo.
           elif (tag.startswith('CUA')):
-               card_back = '197498_C1CUAAppointmentCardCustom.pdf'   ### Since the card won't be blank we add the back layer logo.
+               card_back = '221295_C1CUAAppointmentCardCustom.pdf'   ### Since the card won't be blank we add the back layer logo.
           elif (tag.startswith('TUA')):
-               card_back = '197498_C1TUAApptCard_FRONT.pdf'   ### Since the card won't be blank we add the back layer logo.
+               card_back = '221295_C11TUAAuto-fillApptCardthreeaddresses_bkgrd.pdf'   ### Since the card won't be blank we add the back layer logo.
      except:
           pass
 
