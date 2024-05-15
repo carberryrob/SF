@@ -125,11 +125,10 @@ $(window).load(function () {
      console.log(GetNextGangDate('5/10/2024'));
 
 
-     $('head').append('<link rel="icon" href="con/favicon-150x150.png" sizes="32x32" />')
-     $('head').append('<link rel="icon" href="con/favicon-300x300.png" sizes="192x192" />')
-     $('head').append('<link rel="apple-touch-icon" href="con/favicon-300x300.png" />')
-     // $('head').append('<link rel="icon" type="image/x-icon" href="con/favicon.ico">');
-     // $('head').append('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=DM+Serif+Display&display=swap">');
+     $('head').append('<link rel="icon" href="con/cropped-Everstand-Icon-192x192.png" sizes="32x32" />')
+     $('head').append('<link rel="icon" href="con/cropped-Everstand-Icon-192x192.png" sizes="192x192" />')
+     $('head').append('<link rel="apple-touch-icon" href="con/cropped-Everstand-Icon-180x180.png" />')
+ 
      $( "link[href^='css/header.css']" ).removeAttr( "media" );
 
      $( ".header-links" ).find( "a" ).removeAttr( "style" );
@@ -207,8 +206,8 @@ $(window).load(function () {
                     $(this).prepend(menuknob);
                     cnt = cnt + 1;
                });
-               // $('.cart_item').parents('table').css('text-align', 'center');
-               $('.cart_item').parents('table').css({'text-align': 'center','overflow': 'scroll','display': 'block','width': '100%'});
+               $('.cart_item').parents('table').css('text-align', 'center');
+               // $('.cart_item').parents('table').css({'text-align': 'center','overflow': 'scroll','display': 'block','width': '100%'});
                
           }
 
@@ -444,6 +443,20 @@ $(document).ready(function () {
 
      if ($(window).width() >= 1025) {
           
+          // Give color dropdowns a class to call later.
+          $('.the_actual_qty_select').find('select:first').each(function() {
+               $(this).addClass('colorselect');
+          });
+          
+          // Apparel- When changing a color from a dropdown make the large image that color by code clicking the corresponding thumbnail.
+          if ( $('.colorselect').length > 0 ) {
+               $('.colorselect').change(function() {
+                    var idx = $(this).prop('selectedIndex');
+                    var prnt = $(this).closest('.stretchy_cols.responsive-item.image-row');
+                    $(prnt).find('.multi_preview a').eq(idx).trigger( "click" );
+               });
+          }
+
           // $("#cost_options\\.quantity").closest('tr').hide();
           // The above hides the estimate qty
           

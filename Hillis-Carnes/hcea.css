@@ -832,7 +832,7 @@ form {
           top: 36px;
           right: 16%;
           text-align: right;
-          --w: 980px;
+          --w: 1000px;
           width: var(--w);
           /* left: -webkit-calc((100% - var(--w)) / 2); */
           /* left: -moz-calc((100% - var(--w)) / 2); */

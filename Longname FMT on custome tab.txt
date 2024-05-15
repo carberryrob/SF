@@ -34,3 +34,5 @@ Cecil Cty Sherriff only
 
 
 %(longname)s (%(f.name_first)s %(f.name_last)s -  %(f.card_company)s)
+
+%(longname)s (%(f.card_company)s)

@@ -442,7 +442,19 @@ $(document).ready(function () {
           $("#cost_options\\.quantity").closest('tr').hide();
           
           
-          /************* My Account Menu *************/
+          // Give color dropdowns a class to call later.
+          $('.the_actual_qty_select').find('select:first').each(function() {
+               $(this).addClass('colorselect');
+          });
+          
+          // Apparel- When changing a color from a dropdown make the large image that color by code clicking the corresponding thumbnail.
+          if ( $('.colorselect').length > 0 ) {
+               $('.colorselect').change(function() {
+                    var idx = $(this).prop('selectedIndex');
+                    var prnt = $(this).closest('.stretchy_cols.responsive-item.image-row');
+                    $(prnt).find('.multi_preview a').eq(idx).trigger( "click" );
+               });
+          }
           
           $( ".header-links a" ).wrapAll( '<div id="dropdown-contentdiv" class="dropdown-content"></div>  ' );
           $( ".dropdown-content" ).wrapAll( '<div id="dropdowndiv" class="dropdown"><span id="dropicon">My Account</span>' );
