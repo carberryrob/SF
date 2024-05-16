@@ -1,3 +1,4 @@
+<!-- Rob Carberry 5/16/2024 -->
 <!-- Rob Carberry 3/7/2024 -->
      <div class="footer_row3">
           <div><img src="con/SF-PoweredBy2024-260w-White.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
@@ -428,6 +429,22 @@ $(document).ready(function () {
 
      if ($(window).width() >= 1025) {
           
+
+          // Give color dropdowns a class to call later.
+          $('.the_actual_qty_select').find('select:first').each(function() {
+               $(this).addClass('colorselect');
+          });
+          
+          // Apparel- When changing a color from a dropdown make the large image that color by code clicking the corresponding thumbnail.
+          if ( $('.colorselect').length > 0 ) {
+               $('.colorselect').change(function() {
+                    var idx = $(this).prop('selectedIndex');
+                    var prnt = $(this).closest('.stretchy_cols.responsive-item.image-row');
+                    $(prnt).find('.multi_preview a').eq(idx).trigger( "click" );
+               });
+          }
+
+
           // $("#cost_options\\.quantity").closest('tr').hide();
           // The above hides the estimate qty
           
@@ -519,7 +536,9 @@ $(document).ready(function () {
           /*************** End TopTab Search items feature **************/
 
           if ( $( "input[name='tab']" ).val() ) {
-               $("#copy5 span").text( $( "input[name='tab']" ).val().replace(/\|\|/g, ' - ') ); /** Set the catalog top left description **/
+               // console.log($( "input[name='tab']" ).val());
+               // console.log($( "input[name='tab']" ).val().replace(/\\/gi, ''));
+               $("#copy5 span").text( $( "input[name='tab']" ).val().replace(/\|\|/gi, ' - ').replace(/\\/gi, '') ); /** Set the catalog top left description **/
           }
 
 
