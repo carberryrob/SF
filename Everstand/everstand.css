@@ -1,3 +1,4 @@
+/**** Rob Carberry 5/17/2024 ****/
 /**** Rob Carberry 5/9/2024 ****/
 /****************************************************************************************
 ************************************ GLOBAL *****************************************
@@ -179,6 +180,17 @@ button#submit_cancel {
 
 
 @media only screen and (min-width:1025px) {
+
+     .imprint-splitview .left-side > .form-body {
+          margin-left: 0px;
+          min-width: 300px;
+          max-width: 375px !important;
+          width: 375px !important;
+     }
+
+     div.field-container {
+          border-bottom: unset !important;
+     }
 
      /*************** header css for final approve order ***********************/
      td.label:has(>span#bill\.billcode10label) {
@@ -770,7 +782,8 @@ button#submit_cancel {
           width: 100%;
           background-color: #0c2340;
           box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.16);
-          /* height: 63px; */
+          min-height: 63px;
+          height: 63px;
      }
 
      nav {
@@ -1507,6 +1520,7 @@ button#submit_cancel {
      .stretchy_cols.responsive-item.image-row {
           vertical-align: bottom !important;
           display: inline-table;
+          min-width: 390px;
           /*margin-bottom: 30px !important;
           min-width: unset !important;
           max-width: unset !important;
@@ -1516,12 +1530,13 @@ button#submit_cancel {
      .height-adjuster {
           display: block;
           margin-top: 1px !important;
-          border-radius: 10px/10px !important;
+          border-radius: 12px/12px !important;
           max-width: 375px;
           /* background-color: rgba(91, 103, 112,0.05); */
           /* background-color: rgba(7, 79, 145,0.05); */
-          background-color: #efefef;
-          
+          /* background-color: #efefef; */
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+          padding: 20px 20px 0 20px;
      }
 
      .singleItemCenter {
@@ -1532,12 +1547,12 @@ button#submit_cancel {
 
      .stretchy_cols {
           width: 100% !important;
-          max-width: 375px !important;
+          /* max-width: 375px !important; */
           /*min-width: 328px !important;
           min-height: 200px !important;*/
           box-sizing: border-box !important;
           margin: 20px 3px 0px 0px !important;
-          padding: 5px !important;
+          padding: 14px !important;
           overflow: hidden !important;
           max-height: unset !important;
           min-height: 200px !important;
@@ -1550,6 +1565,7 @@ button#submit_cancel {
           display: inline-flex;
           justify-content: flex-end;
           flex-direction: column;
+          margin-bottom: 8px;
      }
      /* .note.responsive-pricing {
           min-height: 22px;

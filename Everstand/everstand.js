@@ -551,6 +551,15 @@ $(document).ready(function () {
                $("#copy5 span").text( $( "input[name='tab']" ).val().replace(/\|\|/g, ' - ') ); /** Set the catalog top left description **/
           }
 
+          $( "input[name='tab']" ).each(function() {
+               console.log($(this).val().toLowerCase());
+               if ( $(this).val().toLowerCase().indexOf("promo/apparel") >= 0 ) {
+                     // Remove border around promo/apparel large image
+                    $(".image-container img").not("img.catalog-tiny-thumbnail").each(function() {
+                         $(this).css('border', 'none');
+                    });
+               }
+          });
 
      }
 });
