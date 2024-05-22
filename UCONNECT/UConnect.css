@@ -1,3 +1,4 @@
+/* Rob Carberry Updated 5/22/2024 */
 /* Rob Carberry Updated 12/20/2023 */
 /****************************************************************************************
 ************************************ GLOBAL *****************************************
@@ -658,6 +659,18 @@ input#searchfield_input {
 
 /*****************************************************************************/
 @media only screen and (min-width:1025px) {
+
+     .imprint-splitview .left-side > .form-body {
+          margin-left: 0px;
+          min-width: 300px;
+          max-width: 385px !important;
+          width: 385px !important;
+     }
+
+     div.field-container {
+          border-bottom: unset !important;
+     }
+
 
 /*---- CUSTOM BUTTON ---- */
 

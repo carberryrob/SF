@@ -1,0 +1,227 @@
+/****************************************************************************************
+************************ ~~-- aplaceformom --~~ *********************************
+****************************** TABLE OF CONTENTS ***************************************/
+/****************************************************************************************
+
+  1. GLOBAL 
+ 
+
+  - If you are making changes here, changes may need to be made in 
+  the con/responsive.css file as well
+
+*****************************************************************************************
+*****************************************************************************************
+*****************************************************************************************
+****************************************************************************************/
+
+
+
+
+
+/****************************************************************************************
+************************************* 1. GLOBAL *****************************************
+****************************************************************************************/
+
+/*Remove sr_ error text from Basket, Review, Accept pages*/
+.previewcell pre { display: none;}
+
+
+/*** FONT ***/
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+}
+
+/*** Header ***/
+#header-wrapper{
+  border-bottom: 24px solid #d7b127;
+}
+
+#header_logo {
+  padding: 80px 0;
+}
+
+#header_logo > img.no_mobile {
+    position: absolute;
+    top: 32px;
+    left: 25px;
+    max-width: 350px;
+    height: auto;
+}
+
+#header-links-container {
+  position: absolute;
+  top: 70px;
+  right: 10%;
+  text-transform: uppercase;
+}
+
+.header-links a {
+  margin: 0px 15px;
+  padding: 5px;
+}
+.header-links a:hover {
+  padding: 5px;
+}
+
+#logout_userid{
+    padding-left: 15px
+}
+/*-- CANCEL LINK ---*/
+#footer\2e footercanceltext{
+  padding-right: 15px;
+}
+
+/*** Item Search Block ***/
+.item-search-block {
+    border-bottom: 4px solid #d7b127;
+    padding-bottom: 8px;
+}
+
+/****************************************************************************************
+*********************************** END GLOBAL ******************************************
+****************************************************************************************/
+
+.bundle-qty-selection.details_only
+{
+    margin: 0 !important;
+    padding-right: 0;
+    width: 100%;
+}
+
+.bundle_subitem
+{
+    width: 100% !important;
+}
+
+.bundle_subitem tbody tr
+{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+}
+
+.bundle_subitem_longname
+{
+    color: #363636;
+    font-size: 0.97rem;
+    font-weight: 600 !important;
+    margin-bottom: 2rem !important;
+    white-space: normal !important;
+}
+
+.bundle_subitem_preview img
+{
+    width: 250px;
+}
+
+.catalog-arrow
+{
+    cursor: pointer;
+}
+
+.catalog-description
+{
+    margin-top: 0.25rem;
+}
+
+/* .catalog-details
+{
+    display: none;
+} */
+
+.catalog-note:not(:last-child)
+{
+    margin-bottom: 0;
+}
+
+.catalog-turnaround
+{
+    margin-top: 0.5rem;
+}
+
+/* .detail_image_wrapper.ng-scope
+{
+    display: none !important;
+}
+
+.detail_text_wrapper.ng-scope
+{
+    display: none !important;
+} */
+
+.note.responsive-pricing
+{
+    clear: both;
+}
+
+.previewcell pre
+{
+    display: none; 
+}
+
+.responsive-choose-info
+{
+    display: block !important;
+    max-height: 14rem !important;
+    overflow: visible !important;
+}
+
+.responsive-longname
+{
+    color: #363636;
+    font-size: 1.03rem;
+    font-weight: 600 !important;
+    line-height: 1.125;
+    margin-bottom: 0.5rem;
+}
+
+.stretchy_cols.responsive-item.image-row, .bundle_subitem_longname
+{
+    color: #4A4A4A;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.stretchy_cols.responsive-item.image-row
+{
+    max-height: 40rem !important;
+}
+
+.tab-description
+{
+    max-width: 50%;
+}
+
+.add-to-basket-btn
+{
+    margin-left: 20px;
+}
+
+@media only screen and (min-width: 800px)
+{
+    .bundle_subitem tbody tr
+    {
+        width: 33%;
+    }
+}
+
+@media only screen and (min-width: 1200px)
+{
+    .bundle_subitem tbody tr
+    {
+        width: 25%;
+    }
+}
+
+@media only screen and (min-width: 1600px)
+{
+    .bundle_subitem tbody tr
+    {
+        width: 20%;
+    }
+}
+
+#d_tag_check select {
+    margin-bottom: 0px !important;
+    margin-left: 20px !important;
+}

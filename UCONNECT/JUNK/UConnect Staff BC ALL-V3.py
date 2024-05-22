@@ -1,4 +1,4 @@
-# Updated 5/16/2024 Rob Carberry
+# Updated 4/18/2024 Rob Carberry
 
 try:
      if (extension):
@@ -6,15 +6,10 @@ try:
 except:
      pass
 
-# COND('|' + card_phone + '|' + card_fax + '|')
-if (card_phone != '--'):
+if (card_phone):
      Phone1Word = card_phone
-else:
-     Phone1Word = None
-if (card_fax != '--'):
-     Phone3Word = card_fax
-else:
-     Phone3Word = None
+# if (card_fax):
+     # Phone3Word = card_fax
 
 bloks = []
 ### Create all the blocks so they can be tested for the first time for horizontal and vertical size.  They will be reduced to fit later.
@@ -116,3 +111,5 @@ if (Phone1Word or Phone2Word or Phone3Word or Phone4Word or card_email):
 
 
 #TestBlock = DWIMBLOCK([LEFT, F8, 'vspc: ' + str(vspc), NEWLINE, NEWLINE, 'H: ' + str(h), NEWLINE, 'R: ' + str(r), NEWLINE, NEWLINE], (0, 0), (LEFT, BOTTOM), (3.5*72,0), layer=0)
+
+

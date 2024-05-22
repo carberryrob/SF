@@ -1,15 +1,18 @@
-# Updated 4/18/2024 Rob Carberry
+# Updated 5/22/2024 Rob Carberry
 
-try:
-     if (extension):
-          ph1_ext_lbl = extension
-except:
-     pass
+# COND('|' + card_phone + '|' + card_fax + '|')
+if (card_phone != '--  Ext '):
+     if (card_phone[-4:] == 'Ext '):
+          Phone1Word = card_phone[:-6]
+     else:
+          Phone1Word = CHAIN(card_phone1, '-', card_phone2, '-', card_phone3, [F2, '  Ext '], [F1, card_phone4])
+else:
+     Phone1Word = None
 
-if (card_phone):
-     Phone1Word = card_phone
-# if (card_fax):
-     # Phone3Word = card_fax
+if (card_fax != '--'):
+     Phone3Word = card_fax
+else:
+     Phone3Word = None
 
 bloks = []
 ### Create all the blocks so they can be tested for the first time for horizontal and vertical size.  They will be reduced to fit later.
@@ -27,7 +30,8 @@ if card_office != '-None':
         
 ### Create office, mobile, and fax numbers.
 if (Phone1Word or Phone2Word or Phone3Word or Phone4Word or card_email):
-     PhnBlock = DWIMBLOCK([LEFT, F2, IFSET(Phone1Word, ['Office', F8, ' ', F1, Phone1Word, IF([F2, '  Ext ', F1],ph1_ext_lbl)]), NEWLINE,
+     # PhnBlock = DWIMBLOCK([LEFT, F2, IFSET(Phone1Word, ['Office', F8, ' ', F1, Phone1Word, IF([F2, '  Ext ', F1],ph1_ext_lbl)]), NEWLINE,
+     PhnBlock = DWIMBLOCK([LEFT, F2, IFSET(Phone1Word, ['Office', F8, ' ', F1, Phone1Word]), NEWLINE,
      F2, IFSET(Phone4Word, ['Direct Line', F8, ' ', F1, Phone4Word]), NEWLINE,
      F2, IFSET(Phone2Word, ['Mobile', F8, ' ', F1, Phone2Word]), NEWLINE,
      F2, IFSET(Phone3Word, ['Fax', F8, ' ', F1, Phone3Word]), NEWLINE,
@@ -75,7 +79,7 @@ while (height > 126 or maxright > 243):
           bloks.append(Add1Block)
                
      if (Phone1Word or Phone2Word or Phone3Word or Phone4Word or card_email):
-          PhnBlock = DWIMBLOCK([LEFT, F2, IFSET(Phone1Word, ['Office', F8, ' ', F1, Phone1Word, IF([F2, '  Ext ', F1],ph1_ext_lbl)]), NEWLINE,
+          PhnBlock = DWIMBLOCK([LEFT, F2, IFSET(Phone1Word, ['Office', F8, ' ', F1, Phone1Word]), NEWLINE,
           F2, IFSET(Phone4Word, ['Direct Line', F8, ' ', F1, Phone4Word]), NEWLINE,
           F2, IFSET(Phone2Word, ['Mobile', F8, ' ', F1, Phone2Word]), NEWLINE,
           F2, IFSET(Phone3Word, ['Fax', F8, ' ', F1, Phone3Word]), NEWLINE,
