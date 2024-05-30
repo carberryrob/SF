@@ -60,6 +60,20 @@ h3 {
      content: "\f07a" !important;
 }
 
+.rescom {
+     background: #a38e73;
+     color: #FFFFFF;
+     width: min-content;
+     padding: 3px 10px;
+     margin: auto;
+}
+.custom {
+     background: #e11837;
+     color: #FFFFFF;
+     width: min-content;
+     padding: 3px 10px;
+}
+
 /*---- CUSTOM BUTTON ---- */
 
 /*button#submit_catalog_search {
@@ -187,6 +201,17 @@ button#submit_cancel {
 
 
 @media only screen and (min-width:1025px) {
+     .imprint-splitview .left-side > .form-body {
+          margin-left: 0px;
+          min-width: 300px;
+          max-width: 375px !important;
+          width: 375px !important;
+     }
+
+     div.field-container {
+          border-bottom: unset !important;
+     }
+
 
      /*************** header css for final approve order ***********************/
      td.label:has(>span#bill\.billcode10label) {
@@ -724,8 +749,11 @@ button#submit_cancel {
           text-align: center !important;
      }
      td.cart_item {
-          display: table-cell;
+          display: block;
           vertical-align: top;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
      }
      .main.catalog--container {
           min-height: 600px;
@@ -1077,6 +1105,7 @@ button#submit_cancel {
           /* min-height: 50px; */
           display: inline-flex;
           flex-wrap: wrap;
+          align-content: flex-end;
           padding: 5px;
      }
 
@@ -1253,10 +1282,11 @@ button#submit_cancel {
      } */
 
      .basket-list-item {
-          font-size: 14px !important;
-          display: -webkit-box;
+          font-size: 12px !important;
+          display: -webkit-inline-box;
           padding: 5px;
           border-radius: 5px;
+          min-width: 205px;
           -webkit-box-shadow: 1px 1px 6px rgb(255 255 255 / 20%), 1px 2px 6px 0px rgb(0 0 0 / 70%);
           -moz-box-shadow: 1px 1px 6px rgba(255,255,255,0.2), 1px 2px 6px 0px rgba(0,0,0,0.070);
           box-shadow: 1px 1px 6px rgb(255 255 255 / 20%), 1px 2px 6px 0px rgb(0 0 0 / 70%);
@@ -1447,7 +1477,7 @@ button#submit_cancel {
      #copy5 {
           text-align: left;
           padding-left: 2%;
-          padding-top: 5px;
+          padding-top: 30px;
           margin-bottom: 0px;
           font-weight: 600;
           color: #777777;
@@ -1509,15 +1539,30 @@ button#submit_cancel {
           width: unset !important;*/
      }
 
-     .height-adjuster {
+     /* .height-adjuster {
           display: block;
           margin-top: 1px !important;
           border-radius: 10px/10px !important;
           max-width: 375px;
-          /* background-color: rgba(91, 103, 112,0.05); */
           background-color: rgba(7, 79, 145,0.05);
           background-color: rgba(34, 63, 123,0.05);
           
+     } */
+
+     .height-adjuster {
+          display: block;
+          margin-top: 1px !important;
+          border-radius: 12px/12px !important;
+          max-width: 375px;
+          /* background-color: rgba(91, 103, 112,0.05); */
+          /* background-color: rgba(7, 79, 145,0.05); */
+          /* background-color: #efefef; */
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+          padding: 20px 20px 0 20px;
+     }
+
+     .height-adjuster:hover {
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
      }
 
      .singleItemCenter {
@@ -1532,8 +1577,8 @@ button#submit_cancel {
           /*min-width: 328px !important;
           min-height: 200px !important;*/
           box-sizing: border-box !important;
-          margin: 20px 3px 0px 0px !important;
-          padding: 5px !important;
+          margin: 0px !important;
+          padding: 18px !important;
           overflow: hidden !important;
           max-height: unset !important;
           min-height: 200px !important;
@@ -1696,8 +1741,8 @@ button#submit_cancel {
      .footnote, .footnote a {
           width: 95%;
           /* margin: 45% auto; */
-          background-color: #003650;
-          color: #FFFFFF;
+          background-color: #edeced;
+          color: #464547;
      }
      li#d_tag, li#d_prodcode {
           display: none;
@@ -1724,9 +1769,9 @@ button#submit_cancel {
           text-align: left;
      }
 
-     i.fa.fa-shopping-basket, i.fa.fa-user {
+     /* i.fa.fa-shopping-basket, i.fa.fa-user {
           color: #ffffff !important;
-     }
+     } */
 
      #mobile_link_box a {
           opacity: 1 !important;

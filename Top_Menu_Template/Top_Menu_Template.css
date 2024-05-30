@@ -182,6 +182,17 @@ button#submit_cancel {
 
 @media only screen and (min-width:1025px) {
 
+     .imprint-splitview .left-side > .form-body {
+          margin-left: 0px;
+          min-width: 300px;
+          max-width: 375px !important;
+          width: 375px !important;
+     }
+
+     div.field-container {
+          border-bottom: unset !important;
+     }
+
      /*************** header css for final approve order ***********************/
      td.label:has(>span#bill\.billcode10label) {
           white-space: nowrap;
@@ -718,8 +729,10 @@ button#submit_cancel {
           text-align: center !important;
      }
      td.cart_item {
-          display: table-cell;
           vertical-align: top;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
      }
      .main.catalog--container {
           min-height: 600px;

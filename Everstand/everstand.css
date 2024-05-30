@@ -728,8 +728,9 @@ button#submit_cancel {
           text-align: center !important;
      }
      td.cart_item {
-          display: table-cell;
-          vertical-align: top;
+          /* display: table-cell;
+          vertical-align: top; */
+          display: block;
      }
      .main.catalog--container {
           min-height: 600px;
@@ -1627,7 +1628,7 @@ button#submit_cancel {
      }
 
      .previewcell img {
-          max-width: 200px;
+          max-width: 400px !important;
           border: 1px solid #999999 !important;
      }
 

@@ -663,8 +663,8 @@ input#searchfield_input {
      .imprint-splitview .left-side > .form-body {
           margin-left: 0px;
           min-width: 300px;
-          max-width: 385px !important;
-          width: 385px !important;
+          max-width: 400px !important;
+          width: 400px !important;
      }
 
      div.field-container {
