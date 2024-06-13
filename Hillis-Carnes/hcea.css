@@ -61,6 +61,25 @@ h3 {
 
 /*---- CUSTOM BUTTON ---- */
 
+.size-chart > button {
+     font-size: 12px !important;
+     line-height: 1.25;
+     background-color: #8d8d8d !important;
+     border: 2px solid #8d8d8d !important;
+     text-transform: none;
+     padding: 6px 10px;
+ }
+ .size-chart > button:hover {
+     font-size: 12px !important;
+     line-height: 1.25;
+     background-color: #e3280e !important;
+     border: 2px solid #e3280e !important;
+     text-transform: none;
+     padding: 6px 10px;
+     box-shadow: none;
+ }
+ 
+
 /*button#submit_catalog_search {
      padding: 5px 8px 4px 8px !important;
      margin: -2.5px 0px 0px 0px !important;

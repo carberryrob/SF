@@ -138,6 +138,24 @@ $(window).load(function () {
           });
      });
 
+     if ($("select[name='bill_code10']").val() == "No") {
+          $("button#submit_send_order").prop('disabled', 'disabled');
+     }
+     // console.log($("select[name='bill_code10']").val());
+     $('form[action="accept_bill.cgi"]').change(function() {
+          if ($("select[name='bill_code10']").val() == "No") {$("button#submit_send_order").prop('disabled', 'disabled');}
+          if ($("select[name='bill_code10']").val() == "Yes") {$("button#submit_send_order").prop('disabled', false);}
+          console.log($("select[name='bill_code10']").val());
+          //if ( $('select#ship_office').val() == '1 - Will Call at Strategic Factory in Owings Mills') {$("span#willcalltxt").show();}
+     });
+
+     //********** Move approval yes/no to just above "Submit Order"*******************
+     $("tr:contains('I have verified and approve this order:')").appendTo($("p.approve_order").parents("tr").parent());
+     //*******************************************************************************
+
+     $("span#bill\\.nocc_sect_title").text("Invoice")
+     $("span#bill_admin\\.nocc_sect_title").text("Invoice")
+
 
      if($(window).width() >= 1025) {
 
