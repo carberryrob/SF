@@ -1,6 +1,6 @@
-<!-- Rob Carberry 3/7/2024 -->
+<!-- Rob Carberry 6/14/2024 -->
 <div class="footer_row3">
-<div><img src="con/SF-PoweredBy2024-260w-White.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
+<div><img src="con/SF-PoweredBy2024-260w-Black.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
      <p class="footer_cr">
           Strategic Factory<br>
           11195 Dolfield Boulevard<br>
@@ -125,11 +125,11 @@ $(window).load(function () {
      console.log(GetNextGangDate('5/10/2024'));
 
 
-     $('head').append('<link rel="icon" href="con/favicon-150x150.png" sizes="32x32" />')
-     $('head').append('<link rel="icon" href="con/favicon-300x300.png" sizes="192x192" />')
-     $('head').append('<link rel="apple-touch-icon" href="con/favicon-300x300.png" />')
-     // $('head').append('<link rel="icon" type="image/x-icon" href="con/favicon.ico">');
-     // $('head').append('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=DM+Serif+Display&display=swap">');
+     // $('head').append('<link rel="icon" href="con/favicon-150x150.png" sizes="32x32" />')
+     // $('head').append('<link rel="icon" href="con/favicon-300x300.png" sizes="192x192" />')
+     // $('head').append('<link rel="apple-touch-icon" href="con/favicon-300x300.png" />')
+     $('head').append('<link rel="icon" type="image/x-icon" href="con/favicon.png">');
+
      $( "link[href^='css/header.css']" ).removeAttr( "media" );
 
      $( ".header-links" ).find( "a" ).removeAttr( "style" );
