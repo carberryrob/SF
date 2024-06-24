@@ -1,0 +1,107 @@
+/****************************************************************************************
+************************ ~~-- universityofmaryland --~~ *********************************
+****************************** TABLE OF CONTENTS ***************************************/
+/****************************************************************************************
+
+  1. GLOBAL 
+ 
+
+  - If you are making changes here, changes may need to be made in 
+  the con/responsive.css file as well
+
+*****************************************************************************************
+*****************************************************************************************
+*****************************************************************************************
+****************************************************************************************/
+
+
+
+
+
+/****************************************************************************************
+************************************* 1. GLOBAL *****************************************
+****************************************************************************************/
+
+/*Remove sr_ error text from Basket, Review, Accept pages*/
+.previewcell pre { display: none;}
+
+
+/*** FONT ***/
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+}
+
+
+div#copy3 {
+     width: 80% !important;
+}
+
+h2.blurb {
+     display: none;
+}
+
+.error {
+     padding-bottom: 20px;
+}
+
+
+/*** Header ***/
+#header-wrapper{
+  border-bottom: 24px solid #FFCD00;
+}
+
+#header_logo {
+  padding: 80px 0;
+}
+
+#header_logo > img.no_mobile {
+    position: absolute;
+    top: 32px;
+    left: 25px;
+    max-width: 350px;
+    height: auto;
+}
+
+#header-links-container {
+  position: absolute;
+  top: 70px;
+  right: 10%;
+  text-transform: uppercase;
+}
+
+.header-links a {
+  margin: 0px 15px;
+  padding: 5px;
+}
+.header-links a:hover {
+  padding: 5px;
+}
+
+#logout_userid{
+    padding-left: 15px
+}
+/*-- CANCEL LINK ---*/
+#footer\2e footercanceltext{
+  padding-right: 15px;
+}
+
+/*** Item Search Block ***/
+.item-search-block {
+    border-bottom: 4px solid #C8102E;
+    padding-bottom: 8px;
+}
+
+.main {
+    margin-bottom: 165px !important;
+	max-width: 50%;
+    margin: 0 auto;
+}
+
+#item_details_view {
+    margin-bottom: 305px !important;
+}
+
+/****************************************************************************************
+*********************************** END GLOBAL ******************************************
+****************************************************************************************/

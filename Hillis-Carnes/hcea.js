@@ -210,14 +210,16 @@ $(window).load(function () {
                     $(this).prepend(menuknob);
                     cnt = cnt + 1;
                });
-               // $('.cart_item').parents('table').css('text-align', 'center');
-               $('.cart_item').parents('table').css({'text-align': 'center','overflow': 'scroll','display': 'block','width': '100%'});
+
+               
+               $('.cart_item').parents('table').css('text-align', 'center');
+               // $('.cart_item').parents('table').css({'text-align': 'center','overflow': 'scroll','display': 'block','width': '100%'});
                
           }
 
           $(".basket-list-item").html(function() {
                var txt = '<div class="basket-text">' + this.innerText.trim() + '</div>';
-               //console.log("|" + txt + "|");
+               // console.log("|" + txt + "|");
                var butt = $(this).html();
                var buttend = butt.search(/<\/button>/);
                butt = '<div class="basket-butt">' + butt.substring(1, buttend) + '</button>' + '</div>';
@@ -381,7 +383,6 @@ $(window).load(function () {
 
           WidthAdjuster();
 
-
      }
 
      if( $('.stretchy_cols').length == 1) {$('.stretchy_cols').addClass("singleItemCenter");}
@@ -401,8 +402,17 @@ $(document).ready(function () {
      $( "#header_logo img.no_desktop" ).wrap( '<a style="display: inline-block;" href="index.cgi">' );
 
      if($('.pagetitle').text().toUpperCase() === 'IN YOUR CART') {
-          $(".buttonsbar").find("button:nth-child(4)").hide(); /**** Check to see if in basketview and hide extra checkout button ********/
+          //$(".buttonsbar").find("button:nth-child(4)").hide(); /**** Check to see if in basketview and hide extra checkout button ********/
      }
+
+          // Adds Save Cart button to Basket pge, and Shipping page
+     $('form[action="item_form.cgi"]').each(function() {
+          $('<button type="button" class="button" id="button_save_order" onclick="return disable_buttons(this,\'button[data-disableable=1]\', {callback:function(btn){btn.form.action=\'save_basket.cgi\';btn.form.submit()}});" data-disableable="1" name="save_basket" value="1"><span class="ic-msg" id="BasketPlugin.SAVE_ORDER_BUTTON_TEXT">Save This Cart</span></button>').insertBefore($(".buttonsbar").find("button:nth-of-type(2)"));
+     });
+     $('form[action="bill.cgi"]').each(function() {
+          $('<button type="button" class="button" id="button_save_order" onclick="return disable_buttons(this,\'button[data-disableable=1]\', {callback:function(btn){btn.form.action=\'save_basket.cgi\';btn.form.submit()}});" data-disableable="1" name="save_basket" value="1"><span class="ic-msg" id="BasketPlugin.SAVE_ORDER_BUTTON_TEXT">Save This Cart</span></button>').insertBefore($(".buttonsbar").find("button:nth-of-type(2)"));
+     });
+
      //$( "#shipmeth-info" ).hide();
 
      /** -None are blank addresses to make sure it clears the fields.  Hide it from the shipping page **/

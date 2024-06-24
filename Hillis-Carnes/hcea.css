@@ -800,10 +800,13 @@ form {
      }
 
      td.cart_item {
-          display: table-cell;
+          display: block;
           vertical-align: top;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
      }
-
+     
      .main.catalog--container {
           min-height: 600px;
      }

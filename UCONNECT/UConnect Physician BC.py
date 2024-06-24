@@ -1,3 +1,4 @@
+# Updated 6/20/2024 Rob Carberry
 # Updated 7/05/2023 Rob Carberry
 # Updated 7/12/2023 Rob Carberry
 
@@ -39,10 +40,15 @@ else:
      if (ph3):
           Phone3Word = ph3
 
-     ### If credentials are 4 char or less, then combine them on the same line.
-     if (len(credentials)<=4):
-          physician = physician, IF(', ', credentials)
-          credentials = ''
+     ### If credentials are 5 char or less, then combine them on the same line.
+
+     if (len(physician) + len(credentials) <= 27):
+               physician = physician, IF(', ', credentials)
+               credentials = ''
+     else:
+          if (len(credentials)<=5):
+               physician = physician, IF(', ', credentials)
+               credentials = ''
 
      bloks = []
      height = 0
