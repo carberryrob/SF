@@ -800,7 +800,7 @@ form {
      }
 
      td.cart_item {
-          display: block;
+          /* display: block; */
           vertical-align: top;
           display: flex;
           align-items: center;

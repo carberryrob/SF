@@ -40,8 +40,10 @@ elif cnt >= 2:
      ###used to create a python list of addresses
      addresses = []
 
-     C100 = PROCESSCOLOR('C011_M000_Y000_K064', 0.11, 0.00, 0.00, 0.64)
-     F100 = NONISOFONT('Dingbats', 10, 0, color=C100)
+     # C100 = PROCESSCOLOR('C011_M000_Y000_K064', 0.11, 0.00, 0.00, 0.64)
+     # C100 = CUSTOMCOLOR('PANTONE 431 C', 0.67, 0.52, 0.44, 0.17)
+     # F100 = NONISOFONT('Dingbats', 10, 0, color=C100)
+     F100 = NONISOFONT('Dingbats', 10, 0, color=C1)
      box = DWIMLINES([LEFT, F100, 'q', NEWLINE]) 
      ###this is how I create the check box. (draw a border around a font that is white)
 

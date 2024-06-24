@@ -70,8 +70,8 @@ bxs = []
 
 ### This will be used to create the check boxes multiple times.
 # box = DWIMLINES([LEFT, F5, BORDER(WORD('q ',F5),0.3,C1,1), NEWLINE])
-C100 = PROCESSCOLOR('C011_M000_Y000_K064', 0.11, 0.00, 0.00, 0.64)
-F100 = NONISOFONT('Dingbats', 10, 0, color=C100)
+# C100 = PROCESSCOLOR('C011_M000_Y000_K064', 0.11, 0.00, 0.00, 0.64)
+F100 = NONISOFONT('Dingbats', 10, 0, color=C1)
 box = DWIMLINES([LEFT, F100, 'q', NEWLINE]) 
 
 ### For each address selected, create DWIMLINES for use in DWIMBLOCKS.  These will be added to python list.
