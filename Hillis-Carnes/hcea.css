@@ -59,6 +59,14 @@ h3 {
      content: "\f07a" !important;
 }
 
+
+.basket-view .buttonsbar:nth-of-type(2) {
+     display: none;
+ }
+ .basket-view table:has(td.previewcell) {
+     display: none;
+ }
+
 /*---- CUSTOM BUTTON ---- */
 
 .size-chart > button {
@@ -228,6 +236,15 @@ form {
 
 
 @media only screen and (min-width:1025px) {
+
+     span.note:has(.budgetlbl) {
+          display: flex;
+          padding-left: 20px;
+          padding-top: 12px;
+     }
+     span.budget {
+          padding-left: 5px;
+     }
 
      img.catalog-tiny-thumbnail {
           padding: 0 5px;

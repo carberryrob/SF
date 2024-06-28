@@ -1,3 +1,4 @@
+<!-- Rob Carberry 6/25/2024 -->
 <!-- Rob Carberry 5/16/2024 -->
 <!-- Rob Carberry 3/7/2024 -->
      <div class="footer_row3">
@@ -48,6 +49,30 @@ function set_preview_image(elem, thumburl, largeurl) {
      if ($(colorselect).length > 0) {
           $(colorselect).prop('selectedIndex', idx);
      }
+
+     // sessionStorage.setItem("color_index", (idx + 1));
+     // console.log("********************************************  " + (idx + 1));
+     // var ci = sessionStorage.getItem("color_index");
+     // if(ci != null){
+     //     console.log("sessionStorage-color_index: " + ci);
+     //     $('select#service_code option').each(function() {
+     //         if ($(this).val() == sm) {
+     //             $('<span id="shipmeth">' + $(this).text().replaceAll(' - -', ' $0.00') + '</span>').insertBefore($(this).parent());
+     //             var shiptxt = $("#shipmeth").html().replaceAll('UPS - Ground (Invoiced when shipped) $0.00', '<span style="float: left;">UPS - Ground</span><br><span>(Invoiced when shipped) $0.00</span>');
+     //             $("#shipmeth").html(shiptxt);
+     //             $(this).attr('selected', 'selected');
+     //             $(this).prop('selected', true);
+     //             sessionStorage.setItem("ship_method_save", sm);
+     //             $(this).parent().hide();
+     //             // $('select#service_code option').change();
+     //         }
+     //         else{
+     //             $(this).remove();
+     //         }
+     //     });
+     // }
+
+
 }
 
 function WidthAdjuster(){
@@ -106,8 +131,18 @@ function AdjustForIMG(elem){
      }
 }
 
+{/* function numberWithCommas(x) {
+     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+} */}
 
 $(window).load(function () {
+
+     // var val = $('.budget').text().trim().replace('$','');
+     // //Use the code in the answer above to replace the commas.
+     // // val = numberWithCommas(val);
+     // val = val.toLocaleString('en-US', {useGrouping:true})
+     // console.log('*********************' + val + '***');
+     // // $('.budget').text(val);
 
      // $('head').append('<link rel="icon" href="con/favicon-150x150.png" sizes="32x32" />')
      // $('head').append('<link rel="icon" href="con/favicon-300x300.png" sizes="192x192" />')
@@ -204,11 +239,25 @@ $(window).load(function () {
                });
                cnt = 1;
                $('.cart_item').each(function() {
-                    var previewcell = $('.previewcell_tr'+cnt)
-                    var menuknob = $('.menu-knob_tr'+cnt)
+                    var previewcell = $('.previewcell_tr'+cnt);
+                    var menuknob = $('.menu-knob_tr'+cnt);
+                    // var imgNum = $(menuknob).text(); //.split('-',0));
+                    // imgNum = imgNum.split(/\-/)[1].split(' ')[0];
+                    // $(previewcell).find('img')
+                    // console.log('********************** |' + imgNum + '|');
                     $(this).prepend(previewcell);
                     $(this).prepend(menuknob);
                     cnt = cnt + 1;
+                    // $(this).find('img').each(function() {
+                    //      if ($(this).parent().prop('nodeName') == 'A') {  
+                    //           $(this).unwrap();
+                    //      }
+                    //      if ($.isNumeric(imgNum)) {
+                    //           var src = $(this).attr('src').replace('.jpg', '.' + imgNum + '.jpg').replace('.png', '.' + imgNum + '.png');
+                    //           $(this).attr('src', src);
+                    //           console.log($(this).attr('src').replace('.jpg', '.' + imgNum + '.jpg').replace('.png', '.' + imgNum + '.png'));
+                    //      }
+                    // });
                });
 
                
@@ -393,6 +442,17 @@ $(window).load(function () {
 });
 
 $(document).ready(function () {
+
+     // sessionStorage.setItem("color_index", 1);
+     $(".budgetlbl").text($(".budgetlbl").text().replace('Budget', 'Company Cash'));
+     $(".budget").text($(".budget").text().trim().replace('$',''));
+     let x = $(".budget")  //document.querySelectorAll(".budget");
+     for (let i = 0, len = x.length; i < len; i++) {
+         let num = Number(x[i].innerHTML)
+               // .toLocaleString('en-US');
+               .toLocaleString("en-US", {style:"currency", currency:"USD"});
+          x[i].innerHTML = num; //num.toFixed(2);
+     }
 
      /********* Hide FAQ Holders & Place Holders **********/
      $('div.stretchy_cols').has('div.responsive-longname:contains("FAQ-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
