@@ -378,7 +378,6 @@ $(window).load(function () {
 
           WidthAdjuster();
 
-
      }
 
      if( $('.stretchy_cols').length == 1) {$('.stretchy_cols').addClass("singleItemCenter");}
@@ -397,9 +396,9 @@ $(document).ready(function () {
      $( "#header_logo img.no_mobile" ).wrap( '<td id="desklogo"><div class="logolinkdiv"><a style="display: inline-block;" href="index.cgi">' );
      $( "#header_logo img.no_desktop" ).wrap( '<a style="display: inline-block;" href="index.cgi">' );
 
-     if($('.pagetitle').text().toUpperCase() === 'IN YOUR CART') {
-          // $(".buttonsbar").find("button:nth-child(4)").hide(); /**** Check to see if in basketview and hide extra checkout button ********/
-     }
+     // if($('.pagetitle').text().toUpperCase() === 'IN YOUR CART') {
+     //      // $(".buttonsbar").find("button:nth-child(4)").hide(); /**** Check to see if in basketview and hide extra checkout button ********/
+     // }
 
      // *********************************************************************************************************************************************************************
      // Adds Save Cart button to Basket pge, and Shipping page
@@ -436,7 +435,7 @@ $(document).ready(function () {
 
      });
 
-     const numInputs = document.querySelectorAll('input[type=number]')
+     const numInputs = document.querySelectorAll('input[type=number]');
 
      numInputs.forEach(function(input) {
           input.addEventListener('change', function(e) {
@@ -448,8 +447,8 @@ $(document).ready(function () {
                nme = nme.split("new_")[1];
                var v = e.target.value
                $('table#estimate-item-container .form-body input[type="text"][name="' + nme + '"]').val(v).change();
-          })
-     })
+          });
+     });
 
      $("input.noclear.sbs_update_field").attr( "autocomplete", "new-password" );
 
@@ -459,8 +458,9 @@ $(document).ready(function () {
           // The above hides the estimate qty
           
           /************* My Account Menu *************/
-          
-          $( ".header-links a" ).wrapAll( '<div id="dropdown-contentdiv" class="dropdown-content"></div>  ' );
+
+          // $( ".header-links a" ).wrapAll( '<div id="dropdown-contentdiv" class="dropdown-content"></div>  ' );
+          $( ".header-links a" ).wrapAll( '<div id="dropdown-contentdiv" class="dropdown-content"></div>' );
           $( ".dropdown-content" ).wrapAll( '<div id="dropdowndiv" class="dropdown"><span id="dropicon">My Account</span>' );
           $( ".dropdown-content" ).insertAfter( '#dropicon' );
           $( "a[href='basket_view.cgi'].no_mobile" ).insertBefore( "#dropdowndiv" );
@@ -493,18 +493,18 @@ $(document).ready(function () {
                tabid = $(this).attr("id");
                if ($(this).find("dfn").length == 1) {
                     $("#" + appendid).append( '<li class="onlyli" id="TMli_' + tabid + '">' + $(this).find("dfn").first().html() + '</li>' ); /**** Top most menu link with no sub items ****/
-               }else{
+               } else{
                     $("#" + appendid).append( '<li class="topli" id="TMli_' + tabid + '">' + $(this).find("dfn").first().text() + '<ul id="TMul_' + tabid + '"></ul></li>' ); /*Top most menu with sub items*/
                }
                /**** Sub tabs menu items ****/
                $(this).children().find('dfn').each(function () {
                     //console.log( "---- " + $(this).text() + " == " + $(this).parents('div [id^="tab_"]').parents('div [id^="tab_"]').attr("id") + " /// " + $(this).parents('div [id^="tab_"]').first().attr("id") + " || " + $(this).is(":last-child") );
-                    if ($(this).is(":last-child")) {
+                    if($(this).is(":last-child")) {
                          appendid = 'TMul_' + $(this).parents('div [id^="tab_"]').first().attr("id");
                          tabid = $(this).parents('div [id^="tab_"]').parents('div [id^="tab_"]').attr("id");
                          if (tabid == 'tab_responsive_tabs') {tabid = 'TabsMenu';}
                          $("#" + appendid).append( '<li class="subtab">' + $(this).html() + '</li>' ); /**** All sub item links ****/
-                    }else{
+                    } else{
                          tabid = $(this).parents('div [id^="tab_"]').first().attr("id");
                          if (tabid == 'tab_responsive_tabs') {tabid = 'TabsMenu';}
                          appendid = 'TMul_' + $(this).parents('div [id^="tab_"]').parents('div [id^="tab_"]').attr("id");
@@ -514,7 +514,7 @@ $(document).ready(function () {
           });
           // Hide "LandingPage" tab
           $( "li.onlyli:contains('LandingPage')" ).css( "display", "none" );
-
+          
           $( ".toptabs:contains('undefined')" ).hide();  /** if on a page that tabs are not exposed, hide the place holders. **/
           /********** End TopTabs ***********/
 
@@ -549,13 +549,42 @@ $(document).ready(function () {
                $("#copy5 span").text( $( "input[name='tab']" ).val().replace(/\|\|/g, ' - ') ); /** Set the catalog top left description **/
           }
 
+          $("nav li.topli:contains('Properties') ul").addClass("propertyUL");
+          $("nav li.topli:contains('Properties') ul").show();
+          // var propW = $('ul.propertyUL li:first').width() + 10;
+          var propW = $('ul.propertyUL li:first').width();
+          $('ul.propertyUL li').each(function () {
+               if ( $(this).width() > propW ) {
+                    // propW = $(this).width() + 10;
+                    propW = $(this).width();
+                    // console.log(propW);
+               }
+          });
+          // var propgrp = Math.round($('ul.propertyUL li').length / 3);
+          var propgrp = Math.ceil($('ul.propertyUL li').length / 3);
 
+          $('ul.propertyUL li:lt('+ propgrp +')').wrapAll('<div></div>');
+          $('ul.propertyUL li').slice(propgrp, (propgrp*2)).wrapAll('<div></div>');
+          var x = (propgrp*2)-1
+          $('ul.propertyUL li:gt(' + x + ')').wrapAll('<div></div>');
+          // console.log("**************************" + $('ul.propertyUL li').length);
+          // console.log("**************************" + propgrp);
+          // console.log("**************************" + (propgrp*2));
+          // console.log("**************************" + ((propgrp*2)-1));
+          
+          $("nav li.topli:contains('Properties') ul").hide();
+          $('ul.propertyUL li').width(propW);
+          $('ul.propertyUL').css('margin-left', (propW * -1)+30);
+          // $('ul.propertyUL').width((propW*3)+30);
+          $('ul.propertyUL').width((propW*3));
+          
      }
 });
 
 </script>
 <script type="text/javascript" defer>
-/********** Enable/Disable "Submit Order" button based on approval *****************************************************/
+// ********** Enable/Disable "Submit Order" button based on approval *****************************************************
+
 $(document).ready(function () {
      if ($("select[name='bill_code10']").val() == "No") {
           $("button#submit_send_order").prop('disabled', 'disabled');
@@ -564,15 +593,14 @@ $(document).ready(function () {
      $('form[action="accept_bill.cgi"]').change(function() {
           if ($("select[name='bill_code10']").val() == "No") {$("button#submit_send_order").prop('disabled', 'disabled');}
           if ($("select[name='bill_code10']").val() == "Yes") {$("button#submit_send_order").prop('disabled', false);}
-          console.log($("select[name='bill_code10']").val());
+          // console.log($("select[name='bill_code10']").val());
           //if ( $('select#ship_office').val() == '1 - Will Call at Strategic Factory in Owings Mills') {$("span#willcalltxt").show();}
      });
 
-     //********** Move approval yes/no to just above "Submit Order"*******************
+     {/* ********** Move approval yes/no to just above "Submit Order"******************* */}
      $("tr:contains('I have verified and approve this order:')").appendTo($("p.approve_order").parents("tr").parent());
-     //*******************************************************************************
+     {/* ******************************************************************************* */}
 });
-/***********************************************************************************************************************/
 </script>
 
 <script type="text/javascript" defer>

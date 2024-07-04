@@ -182,6 +182,10 @@ button#submit_cancel {
 
 @media only screen and (min-width:1025px) {
 
+     .corp-cell button {
+          min-width: 100% !important;
+     }
+
      .imprint-splitview .left-side > .form-body {
           margin-left: 0px;
           min-width: 300px;
@@ -789,7 +793,7 @@ button#submit_cancel {
           margin: 0 auto;
           height: auto;
           display: inline-block;
-          background: transparent;
+          background: #FFFFFF;
           font-style: normal;
           font-weight: 600;
           font-size: 18px;
@@ -1023,6 +1027,24 @@ button#submit_cancel {
      nav ul li.subtab:not(:hover) a {
           color: #333333 !important;
      }
+
+     li:hover ul.propertyUL {
+          /* left: 0; */
+          display: flex !important;
+          flex-direction: row;
+          flex-wrap: wrap;
+          order: 1
+     }
+
+     ul.propertyUL li {
+          /* padding-right: 10px; */
+          font-size: 13px;
+     }
+
+     ul.propertyUL li a {
+          padding: 7px 10px;
+     }
+
 
      /*****************************************/
 
