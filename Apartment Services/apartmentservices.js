@@ -549,34 +549,33 @@ $(document).ready(function () {
                $("#copy5 span").text( $( "input[name='tab']" ).val().replace(/\|\|/g, ' - ') ); /** Set the catalog top left description **/
           }
 
-          $("nav li.topli:contains('Properties') ul").addClass("propertyUL");
-          $("nav li.topli:contains('Properties') ul").show();
-          // var propW = $('ul.propertyUL li:first').width() + 10;
-          var propW = $('ul.propertyUL li:first').width();
-          $('ul.propertyUL li').each(function () {
-               if ( $(this).width() > propW ) {
-                    // propW = $(this).width() + 10;
-                    propW = $(this).width();
+          $("nav li.topli:contains('Properties') ul:first").addClass("propertyUL").prop("id", "propertyUL");
+          $("#propertyUL").show();
+          $("#propertyUL").children("li").addClass("proptop");
+          var propW = $("#propertyUL li.proptop").first().outerWidth();
+          $("#propertyUL li.proptop").each(function () {
+               if ( $(this).outerWidth() > propW ) {
+                    // propW = $(this).outerWidth() + 10;
+                    propW = $(this).outerWidth();
                     // console.log(propW);
                }
           });
           // var propgrp = Math.round($('ul.propertyUL li').length / 3);
-          var propgrp = Math.ceil($('ul.propertyUL li').length / 3);
+          var propgrp = Math.ceil($("#propertyUL li.proptop").length / 3);
 
-          $('ul.propertyUL li:lt('+ propgrp +')').wrapAll('<div></div>');
-          $('ul.propertyUL li').slice(propgrp, (propgrp*2)).wrapAll('<div></div>');
+          $('#propertyUL li.proptop:lt('+ propgrp +')').wrapAll('<div></div>');
+          $('#propertyUL li.proptop').slice(propgrp, (propgrp*2)).wrapAll('<div></div>');
           var x = (propgrp*2)-1
-          $('ul.propertyUL li:gt(' + x + ')').wrapAll('<div></div>');
+          $('#propertyUL li.proptop:gt(' + x + ')').wrapAll('<div></div>');
           // console.log("**************************" + $('ul.propertyUL li').length);
           // console.log("**************************" + propgrp);
           // console.log("**************************" + (propgrp*2));
           // console.log("**************************" + ((propgrp*2)-1));
           
-          $("nav li.topli:contains('Properties') ul").hide();
-          $('ul.propertyUL li').width(propW);
-          $('ul.propertyUL').css('margin-left', (propW * -1)+30);
-          // $('ul.propertyUL').width((propW*3)+30);
-          $('ul.propertyUL').width((propW*3));
+          $("#propertyUL").hide();
+          $('#propertyUL li.proptop').outerWidth(propW);
+          $('#propertyUL').css('margin-left', (propW * -1)+30);
+          $('#propertyUL').outerWidth((propW*3));
           
      }
 });

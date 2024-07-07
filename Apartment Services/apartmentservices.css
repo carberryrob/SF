@@ -1041,10 +1041,21 @@ button#submit_cancel {
           font-size: 13px;
      }
 
-     ul.propertyUL li a {
-          padding: 7px 10px;
+     ul.propertyUL li.proptop a, li.subtopli {
+          padding: 7px 10px !important;
      }
 
+     ul.propertyUL li.subtopli:after {
+          height: 7px;
+          width: 7px;
+          top: -1px;
+          margin: 0 0 0 7px;
+     }
+
+     ul.propertyUL ul {
+          top: 85%;
+          left: 20%;
+     }
 
      /*****************************************/
 
