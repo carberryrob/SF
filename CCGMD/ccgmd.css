@@ -1607,6 +1607,7 @@ button#submit_cancel {
      .image-container {
           /* min-height: 262px; */
           padding: 10px;
+          min-width: 300px;
      }
 
      /*div#header-wrapper {

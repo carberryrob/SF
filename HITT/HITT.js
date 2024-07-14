@@ -209,6 +209,12 @@ $(window).load(function () {
                });
                $('.cart_item').parents('table').css('text-align', 'center');
                //</td>$('.cart_item').parents('table').css({'text-align': 'center','overflow': 'scroll','display': 'block','width': '100%'});
+
+               if ($('.cart_item').length == 0) {
+                    $('form').find("div.buttonsbar").eq(1).css("display", "none");
+                    $('form table:has(td.previewcell)').hide();
+                    $('div.pagetitle').hide();
+               }
                
           }
 
@@ -341,6 +347,27 @@ $(window).load(function () {
           maxH = maxH + "px";
           $('div.note.responsive-pricing').css('min-height', maxH);
 
+          // If onhand exist set multi-size area height the same for all items
+          maxH = 0
+          $('table.true-table.multisize-table th').each(function() {
+               if ($(this).height() > maxH) {maxH = $(this).height();}
+          });
+          // console.log('1: ' + maxH);
+          if (maxH > 0) {maxH += 1;}
+          // console.log('2: ' + maxH);
+          maxH = maxH + "px";
+          $('table.true-table.multisize-table th').css('min-height', maxH);
+
+          maxH = 0
+          $('table.true-table.multisize-table').each(function() {
+               if ($(this).height() > maxH) {maxH = $(this).height();}
+          });
+          // console.log('1: ' + maxH);
+          if (maxH > 0) {maxH += 1;}
+          // console.log('2: ' + maxH);
+          maxH = maxH + "px";
+          $('table.true-table.multisize-table').css('min-height', maxH);
+
           // If onhand exist set that area height the same for all items
           maxH = 0
           $('div.note.responsive-onhand').each(function() {
@@ -455,6 +482,20 @@ $(document).ready(function () {
 
      if ($(window).width() >= 1025) {
           
+          // Give color dropdowns a class to call later.
+          $('.the_actual_qty_select').find('select:first').each(function() {
+               $(this).addClass('colorselect');
+          });
+          
+          // Apparel- When changing a color from a dropdown make the large image that color by code clicking the corresponding thumbnail.
+          if ( $('.colorselect').length > 0 ) {
+               $('.colorselect').change(function() {
+                    var idx = $(this).prop('selectedIndex');
+                    var prnt = $(this).closest('.stretchy_cols.responsive-item.image-row');
+                    $(prnt).find('.multi_preview a').eq(idx).trigger( "click" );
+               });
+          }
+
           // $("#cost_options\\.quantity").closest('tr').hide();
           // The above hides the estimate qty
           
@@ -571,7 +612,8 @@ $(document).ready(function () {
 
 
           if ( $( "input[name='tab']" ).val() ) {
-               $("#copy5 span").text( $( "input[name='tab']" ).val().replace(/\|\|/g, ' - ') ); /** Set the catalog top left description **/
+               // $("#copy5 span").text( $( "input[name='tab']" ).val().replace(/\|\|/g, ' - ') ); /** Set the catalog top left description **/
+               $("#copy5 span").text( $( "input[name='tab']" ).val().replace(/\|\|/gi, ' - ').replace(/\\/gi, '') ); /** Set the catalog top left description **/
           }
 
           $("nav li.topli:contains('Properties') ul:first").addClass("propertyUL").prop("id", "propertyUL");
