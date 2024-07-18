@@ -1,3 +1,4 @@
+<!-- Rob Carberry 7/15/2024 -->
 <!-- Rob Carberry 4/16/2024 -->
 <div class="footer_row3">
 <div><img src="con/SF-Logo-new_PoweredBy_ALL-260w-464547.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
@@ -105,6 +106,24 @@ function AdjustForIMG(elem){
      }
 }
 
+function getQuery(key, queryString) {
+     queryString = queryString.substring(0);
+     queryString = queryString.split('?');
+     queryString = queryString[1];
+
+     const urlParams = new URLSearchParams(queryString);
+     const
+          keys = urlParams.keys(),
+          values = urlParams.values(),
+          entries = urlParams.entries();
+     if (key.length > 0) {
+          return urlParams.get(key)
+     }else{
+          for(const entry of entries) {
+               console.log(`${entry[0]}: ${entry[1]}`);
+          }
+     }
+}
 
 $(window).load(function () {
 
@@ -389,6 +408,7 @@ $(document).ready(function () {
           $(".buttonsbar").find("button:nth-child(4)").hide(); /**** Check to see if in basketview and hide extra checkout button ********/
      }
      //$( "#shipmeth-info" ).hide();
+
 
      /** -None are blank addresses to make sure it clears the fields.  Hide it from the shipping page **/
      if($('#ship_office').find('option[value="-None"]').length > 0) {$('#ship_office').find('option[value="-None"]').remove();} 

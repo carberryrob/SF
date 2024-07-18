@@ -183,6 +183,10 @@ button#submit_cancel {
 
 @media only screen and (min-width:1025px) {
 
+     ul.corp-list button, div.corp_divisions button {
+          min-width: 305px !important;
+     }
+
      /* div#sharedform\.DD_bc_all\:17 > .input.sbs_block_field { */
      div#sharedform\.DD_bc_all\:17 div.input:has(input[type="checkbox"]) {
           float: left;
@@ -1534,7 +1538,8 @@ button#submit_cancel {
           /* -moz-border-radius: 20px/20px;
           -webkit-border-radius: 20px/20px;
           border-radius: 20px/20px; */
-          padding: 25px 0 17px 0;
+          /* padding: 25px 0 17px 0; */
+          padding: 8px 17px;
           margin-top: 0px !important;
           max-width: 375px;
           background-color: #F2F2F2;

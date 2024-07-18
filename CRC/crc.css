@@ -225,3 +225,7 @@
     margin-bottom: 0px !important;
     margin-left: 20px !important;
 }
+
+ul.corp-list button, div.corp_divisions button {
+     min-width: 346px !important;
+}
