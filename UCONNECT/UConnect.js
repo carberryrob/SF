@@ -516,36 +516,46 @@ $(window).load(function () {
           // Handle zoom for images. *********************************************************************
           if ( $( "input[name='tab']" ).length > 0 ) {
                if ( $( "input[name='tab']" ).val().toLowerCase().indexOf("ms word templates") < 0) {
+
                     $(".image-container img").not("img.catalog-tiny-thumbnail").each(function() {
-                         if ($(this).parent().prop('nodeName') == 'A') {  
-                              $(this).unwrap();
-                              // return
-                              // if its a link then just unwrap the img to remove the link
-                         }else{
-                              // if it's a kit then create a new image and add it to the DOM, and remove the original so it doesn't use ng-click.
-                              var source = $(this).attr('src'); //get img source for new img
-                              var alt = $(this).attr('alt'); //get img alt text for new img
-                              $(this).parent().prepend('<img alt="' + alt + '" src = "' + source + '">'); // add img to DOM at .img-container
-                              $(this).remove(); // remove orginal img that was using ng-click.
+                         if ($(this).parents("div.height-adjuster").find("div.responsive-choose-info").find("input.nozoom").length == 0) {
+                              if ($(this).parent().prop('nodeName') == 'A') {  
+                                   $(this).unwrap();
+                                   // return
+                                   // if its a link then just unwrap the img to remove the link
+                              }else{
+                                   // if it's a kit then create a new image and add it to the DOM, and remove the original so it doesn't use ng-click.
+                                   var source = $(this).attr('src'); //get img source for new img
+                                   var alt = $(this).attr('alt'); //get img alt text for new img
+                                   $(this).parent().prepend('<img alt="' + alt + '" src = "' + source + '">'); // add img to DOM at .img-container
+                                   $(this).remove(); // remove orginal img that was using ng-click.
+                              }
                          }
-                    });
+               });
                     // console.log($('.imgwrap > img').length);
                     x=0
+
+                    $('.imgwrap > img').each(function() {
+                         if ($(this).parents("div.height-adjuster").find("div.responsive-choose-info").find("input.nozoom").length == 0) {
+                              x += 1
+                              $(this).on('transitionend webkitTransitionEnd oTransitionEnd', function () {
+                                   AdjustForIMG($(this));
+                                   // console.log('img transition end');
+                              });
+                              $(this).wrap('<label for="zoomCheck' + x + '">');
+                              $(this).parents('.imgwrap').prepend('<input type="checkbox" id="zoomCheck' + x + '" class="zoomCheck">')
+                         }else{
+                              $(this).parents("div.height-adjuster").find("div.responsive-choose-info").find("div.details_button").appendTo($(this).parents("div.height-adjuster").find("span.responsive-tagcheck.tagcheck-bottom"));
+                              // var clickbundle = $(this).attr('ng-click'); // + ' return false;';
+                              // var keybundle = $(this).attr('ng-keydown'); // + ' return false;';
+                              // $(this).parents("div.height-adjuster").find("div.responsive-choose-info").find("div.details_button").append('<button type="button" class="button select_bundle_items" id="select_bundle_items" onclick="' + clickbundle + '" ng-keydown="' + keybundle + '"><span class="ic-msg">Add To Cart</span></button>')
+                         }
+
+                    });
 
                     $(".image-container img").not("img.catalog-tiny-thumbnail").on('load', function () {
                          // console.log('** img load')
                          AdjustForIMG(this);
-                    });
-
-                    $('.imgwrap > img').each(function() {
-                         x += 1
-                         $(this).on('transitionend webkitTransitionEnd oTransitionEnd', function () {
-                              AdjustForIMG($(this));
-                              // console.log('img transition end');
-                         });
-                         $(this).wrap('<label for="zoomCheck' + x + '">');
-                         $(this).parents('.imgwrap').prepend('<input type="checkbox" id="zoomCheck' + x + '" class="zoomCheck">')
-
                     });
 
                     $('input[type=checkbox].zoomCheck').change(function() {

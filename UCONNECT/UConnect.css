@@ -659,6 +659,70 @@ input#searchfield_input {
 
 /*****************************************************************************/
 @media only screen and (min-width:1025px) {
+     /* .details_button {
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-evenly;
+     } */
+
+     #d_longname {
+          font-size: 1.5vw !important;
+          text-align: left;
+          padding: 36px;
+     }
+
+     .bundle-qty-selection {
+          position: relative !important;
+          right: unset !important;
+          padding: 0 !important;
+     }
+
+     .detail_image_wrapper {
+          width: 30% !important;
+     }
+
+     .detail_text_wrapper {
+          width: 30% !important;
+     }
+
+     .detail_tagcheck_wrapper {
+          width: 35% !important;
+     }
+
+     table.bundle_subitem tr, table.bundle_subitem td {
+          white-space: nowrap;
+     }
+
+     #d_tag_check .add-to-basket-btn, #d_tag_check select {
+          margin: 0px !important;
+     } 
+     
+     .bundle-qty-selection .add-to-basket-qty-select {
+          padding: 0 0 0 30px;
+          width: fit-content;
+     }
+
+     table.bundle_subitem {
+          margin-bottom: 25px !important;
+          width: 100% !important;
+     }
+
+     /* .bundle-qty-selection.details_only {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+     } */
+
+     .bundle_subitem_input {
+          float: inline-start;
+          padding: 5px 10px 0 0 !important;
+          margin: 5px 10px 0 0 !important;
+     }
+
+     .bundle_subitem_longname {
+          display: inline-flex;
+     }
 
      .imprint-splitview .left-side > .form-body {
           margin-left: 0px;
@@ -1530,8 +1594,11 @@ input#searchfield_input {
 
 	span.responsive-tagcheck.tagcheck-bottom {
 		/* min-height: 82px; */
-		display: block;
+		/* display: block; */
 		padding: 8px 0px 20px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
 	}
 
 	.note.responsive-pricing {
