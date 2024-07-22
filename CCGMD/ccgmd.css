@@ -201,6 +201,30 @@ button#submit_cancel {
 
 
 @media only screen and (min-width:1025px) {
+
+     .full{
+          position: relative;
+          float: right;
+          /* margin-right: 10px; */
+          top: 9px;
+     }
+
+     .full .note{
+          display: none;
+          white-space: nowrap;
+          font-weight: 700;
+          color: #e11837;
+          /* text-shadow: 1px 1px 6px #333; */
+          background-color: #ddd;
+          padding: 3px 25px 3px 3px;
+          letter-spacing: .5px;
+     }
+
+	.full .note:has(.budget) {
+          display: block;
+	}
+
+
      .imprint-splitview .left-side > .form-body {
           margin-left: 0px;
           min-width: 300px;
