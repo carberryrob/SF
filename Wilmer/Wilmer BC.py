@@ -1,5 +1,10 @@
-# Rob Carberry Updated 6/6/2024
+# Rob Carberry Updated 7/23/2024
 
+if (not ph74):
+     ph7_ext_lbl = ""
+else:
+	ph7_ext_lbl = "ext:"
+	
 Phone7Word = PHONEWORD(F4, (ph7_label, ph71, ph72, ph73, ph7_ext_lbl, ph74), '*: *-*-* * *')
 Phone8Word = PHONEWORD(F4, (ph8_label, ph81, ph82, ph83, ph8_ext_lbl, ph84), '*: *-*-* * *')
 Phone9Word = PHONEWORD(F4, (ph9_label, ph91, ph92, ph93, ph9_ext_lbl, ph94), '*: *-*-* * *')

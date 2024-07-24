@@ -397,7 +397,21 @@ $(window).load(function () {
 
 $(document).ready(function () {
 
-     /********* Hide FAQ Holders & Place Holders **********/
+     $("button#submit_send_order").on('click', function(){
+          if ($('input[name="bill_code5"]').val().length > 0) {
+               $('input[name="bill_code5"]').val( $('input[name="bill_code5"]').val() + " / " );
+          }
+     });
+
+     $('table#bill-sect td.data:contains("/")').each(function() {
+          var txt = $(this).text().replace("/", "").trim();
+          $(this).text(txt);
+     });
+
+     $('<tr class="pickup-fields misc"><td class="misc" colspan="2"></td></tr>').insertAfter($("tr.pickup-fields"));
+     $("table#misc-comment-table").appendTo($("tr.pickup-fields.misc td.misc"));
+
+/********* Hide FAQ Holders & Place Holders **********/
      $('div.stretchy_cols').has('div.responsive-longname:contains("FAQ-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
      $('div.stretchy_cols').has('div.responsive-longname:contains("PLACE-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
 
@@ -413,7 +427,7 @@ $(document).ready(function () {
      /** -None are blank addresses to make sure it clears the fields.  Hide it from the shipping page **/
      if($('#ship_office').find('option[value="-None"]').length > 0) {$('#ship_office').find('option[value="-None"]').remove();} 
 
-     $('div.note:contains("(optional)")').hide();  /** remove (optional) blurb **/
+     // $('div.note:contains("(optional)")').hide();  /** remove (optional) blurb **/
 
      /********** Only show Cancel Order button when items are in the cart ***********/
      if( $(".item_count").text() > 0) {

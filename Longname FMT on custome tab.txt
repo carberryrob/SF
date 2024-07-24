@@ -38,3 +38,8 @@ Cecil Cty Sherriff only
 %(longname)s (%(f.card_company)s)
 
 %(longname)s (Sheets: %(f.treatment_sheet1_title)s)
+
+
+'%(bill_code5)s %(login_name_first)s %(login_name_last)s' % order.form
+
+'%(corp_tag)s / %(login_name_first)s %(login_name_last)s' % order.form

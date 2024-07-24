@@ -199,6 +199,11 @@ button#submit_cancel {
      height: max-content !important;
 }
 
+/* tr.pickup-fields {
+     display: flex;
+     flex-direction: column;
+     align-items: baseline;
+} */
 
 @media only screen and (min-width:1025px) {
 
@@ -253,6 +258,7 @@ button#submit_cancel {
           -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 3px 6px rgba(0,0,0,0.040);
           box-shadow: inset 0 1px 0 rgb(255 255 255), 0 3px 6px rgb(0 0 0 / 40%);
           text-shadow: 0 1px 0 rgb(0 0 0 / 5%);
+          margin-top: 40px;
      }
      p.approve_order_text {
           font-size:1.15em !important;
@@ -266,6 +272,25 @@ button#submit_cancel {
           text-shadow: 0 1px 0 rgb(0 0 0 / 5%);
      }
      /*****************************************************************************/
+
+     tr:has(span#bill\.billcode5label), tr:has(span#bill\.billcode5label) + tr {
+          background-color: #dddddd;
+     }
+
+     /* tr:has(span#bill\.billcode5label) + tr {
+          margin-bottom: 50px;
+          display: block;
+     } */
+     /* span#bill\.billcode5info {
+          padding-bottom: 50px;
+          display: block;
+     } */
+
+     tr:has(span#bill\.billcode5label) td, span#bill\.billcode5info {
+          font-weight: 600;
+          font-size: 16px !important;
+
+     }
 
      .main.billing.catalog--container {
           max-width: 675px !important;
@@ -1642,12 +1667,26 @@ button#submit_cancel {
           display: none !important;
      }*/
 
+
      .catalog-tab-blurb {
           text-align: left;
           line-height: 1.5em;
           font-size: 16px;
           width: 80% !important;
           margin-top: 0 !important;
+     }
+
+     .catalog-tab-blurb:has(.tabmsg) {
+          text-align: center;
+          margin-bottom: 20px;
+     }
+
+     span.tabmsg {
+          font-size: 23px;
+          color: #FFFFFF;
+          background-color: #000;
+          padding: 8px 20px;
+          border-radius: 10px;
      }
 
      .item_count, span.cart_num_items.no_mobile {
