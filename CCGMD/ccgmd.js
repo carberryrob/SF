@@ -397,6 +397,7 @@ $(window).load(function () {
 
 $(document).ready(function () {
 
+     /********* Handle adding / to combine bill code and name for PO **********/
      $("button#submit_send_order").on('click', function(){
           if ($('input[name="bill_code5"]').val().length > 0) {
                $('input[name="bill_code5"]').val( $('input[name="bill_code5"]').val() + " / " );
@@ -407,11 +408,21 @@ $(document).ready(function () {
           var txt = $(this).text().replace("/", "").trim();
           $(this).text(txt);
      });
+     /*******************************************************/
+
+     /********* Handle making Will call attn the ship_attn **********/
+     $("button#submit_review_order").on('click', function(){
+          if ( $('input#ship_cube').val().length > 0) {
+               $('input#ship_attn_override').val($('input#ship_cube').val());
+          }
+          // return false;
+     });
+     /*******************************************************/
 
      $('<tr class="pickup-fields misc"><td class="misc" colspan="2"></td></tr>').insertAfter($("tr.pickup-fields"));
      $("table#misc-comment-table").appendTo($("tr.pickup-fields.misc td.misc"));
 
-/********* Hide FAQ Holders & Place Holders **********/
+     /********* Hide FAQ Holders & Place Holders **********/
      $('div.stretchy_cols').has('div.responsive-longname:contains("FAQ-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
      $('div.stretchy_cols').has('div.responsive-longname:contains("PLACE-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
 

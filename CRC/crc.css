@@ -1,5 +1,4 @@
 /****************************************************************************************
-************************ ~~-- aplaceformom --~~ *********************************
 ****************************** TABLE OF CONTENTS ***************************************/
 /****************************************************************************************
 
@@ -30,6 +29,11 @@
 @font-face {
     font-family: 'Montserrat', sans-serif;
     src: url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+}
+
+.profile form, .basket-view form, .shipping form, .billing form, .login form {
+     max-width: fit-content;
+     margin: auto;
 }
 
 /*** Header ***/
@@ -196,6 +200,29 @@
 {
     margin-left: 20px;
 }
+
+span.promoblurb {
+     text-align: center;
+     display: block;
+     font-size: 24px;
+     font-weight: bold;
+     padding: 12px 0px;
+     /* margin-bottom: -15px; */
+     /* text-shadow: 1px 1px 3px #d7b127; */
+}
+span.promoblurb a {
+     text-decoration: none;
+     color: blue;
+}
+span.promoblurb a:hover {
+     text-decoration: none;
+     color: #d7b127;
+}
+
+.catalog-tab-blurb {
+     margin-top: 30px !important;
+     margin-bottom: -20px;
+ }
 
 @media only screen and (min-width: 800px)
 {
