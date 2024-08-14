@@ -142,11 +142,6 @@ $(window).load(function () {
      });
 
 
-     /****** Search Box ********/
-     $("input#searchfield_input").wrap('<div class="input-wrapper">');
-     $( '<label for="searchfield_input" class="fa fa fa-search"></label>' ).insertAfter("input#searchfield_input");
-     /**************************/
-
      if($(window).width() >= 1025) {
 
 
@@ -514,6 +509,12 @@ $(document).ready(function () {
           $( ".toptabs:contains('undefined')" ).hide();  /** if on a page that tabs are not exposed, hide the place holders. **/
           /********** End TopTabs ***********/
 
+               /****** Search Box ********/
+          $("input#searchfield_input").wrap('<div class="input-wrapper">');
+          $( '<label for="searchfield_input" class="fa fa fa-search"></label>' ).insertAfter("input#searchfield_input");
+          /**************************/
+
+
           /***************** TopTab Search items feature ****************/
           if ( $("a[href='basket_view.cgi'].no_mobile").length > 0 ) {
                $(".input-wrapper:has(#searchfield_input)").first().clone(true,true).insertAfter("a[href='basket_view.cgi'].no_mobile").attr("id", "Srch");
@@ -535,11 +536,12 @@ $(document).ready(function () {
                });
           }
           /*************** End TopTab Search items feature **************/
-
+          // console.log("*****************************" + $( "input[name='tab']" ).val());
           if ( $( "input[name='tab']" ).val() ) {
                $("#copy5 span").text( $( "input[name='tab']" ).val().replace(/\|\|/g, ' - ') ); /** Set the catalog top left description **/
-               console.log($("#copy5 span").text());
-               if ($("#copy5 span").text() == 'LandingPageLandingPage') {
+               $("#copy5").text( $( "input[name='tab']" ).val().replace(/\|\|/g, ' - ') ); /** Set the catalog top left description **/
+               // console.log("*****************************" + $("#copy5").text());
+               if ($("#copy5 span").text() == 'LandingPageLandingPage' || $("#copy5").text() == 'LandingPage') {
                     $('div.buttonsbar').hide();
                     $('table:has(#submit_cancel)').hide();
                     $('div.responsive_tabs-shell').hide();

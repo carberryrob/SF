@@ -122,7 +122,7 @@ $(window).load(function () {
      // const targetDay = 4; // Thursday
      // d.setDate(d.getDate() + (((1 + 7 - d.getDay()) % 7) || 7));
      // d.setDate(d.getDate() + (((targetDay + 7 - d.getDay()) % 7) || 7));
-     console.log(GetNextGangDate('5/10/2024'));
+     //console.log(GetNextGangDate('5/10/2024'));
 
 
      // $('head').append('<link rel="icon" href="con/favicon-150x150.png" sizes="32x32" />')
@@ -396,6 +396,7 @@ $(document).ready(function () {
      $( "#header_logo img.no_mobile" ).wrap( '<td id="desklogo"><div class="logolinkdiv"><a style="display: inline-block;" href="index.cgi">' );
      $( "#header_logo img.no_desktop" ).wrap( '<a style="display: inline-block;" href="index.cgi">' );
 
+     console.log('****************************************** HERE');
      // if($('.pagetitle').text().toUpperCase() === 'IN YOUR CART') {
      //      // $(".buttonsbar").find("button:nth-child(4)").hide(); /**** Check to see if in basketview and hide extra checkout button ********/
      // }

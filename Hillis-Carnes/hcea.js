@@ -188,8 +188,8 @@ $(window).load(function () {
      $("tr:contains('I have verified and approve this order:')").appendTo($("p.approve_order").parents("tr").parent());
      //*******************************************************************************
 
-     $("span#bill\\.nocc_sect_title").text("Invoice")
-     $("span#bill_admin\\.nocc_sect_title").text("Invoice")
+     // $("span#bill\\.nocc_sect_title").text("Invoice")
+     // $("span#bill_admin\\.nocc_sect_title").text("Invoice")
 
 
      if($(window).width() >= 1025) {

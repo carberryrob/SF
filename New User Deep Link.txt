@@ -65,7 +65,10 @@ UMB
 	https://www.strategicfactoryportals.com/umb/index.cgi?corp_tag=umb_schoolofmedicine
 	https://www.strategicfactoryportals.com/UMB/index.cgi?corp_tag=umb_dentistry-continue-ed
 	
-	
+
+UMBC
+    https://www.strategicfactoryportals.com/umbc/index.cgi?corp_tag=umbc-ceit
+    https://www.strategicfactoryportals.com/umbc/index.cgi?corp_tag=umbc-transportation
 	
 APFM	
 	https://www.strategicfactoryportals.com/APFM/index.cgi?corp_tag=apfm_hae

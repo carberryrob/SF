@@ -69,6 +69,13 @@ h3 {
 
 /*---- CUSTOM BUTTON ---- */
 
+button#button_save_order {
+     padding: 5px 15px;
+}
+b.corp-division button {
+     min-width: 200px !important;
+}
+
 .size-chart > button {
      font-size: 12px !important;
      line-height: 1.25;
@@ -235,16 +242,55 @@ form {
 }
 
 
+.full .note{
+     display: none;
+     white-space: nowrap;
+     letter-spacing: .25px;
+     padding-left: 20px;
+     padding-top: 12px;
+}
+
+.full .note:has(.budget) {
+     display: flex;
+}
+span.budget {
+     padding-left: 5px;
+     font-weight: 600;
+}
+
+.responsive-longname p {
+     font-weight: normal;
+     font-size: 13px;
+     font-style: italic;
+     background: rgba(0, 0, 0, .05);
+     padding: 3px 15px;
+     max-width: fit-content;
+     margin-left: auto !important;
+     margin-right: auto !important;
+     text-align: center;
+}
+.responsive-longname span {
+     color: #1baea9;
+     padding: 5px !important;
+     display: block;
+}
+
+/*Hide Save Order button*/
+#button_save_order {
+     display:none;
+}
+   
 @media only screen and (min-width:1025px) {
 
-     span.note:has(.budgetlbl) {
+
+     /* span.note:has(.budgetlbl) {
           display: flex;
           padding-left: 20px;
           padding-top: 12px;
      }
      span.budget {
           padding-left: 5px;
-     }
+     } */
 
      img.catalog-tiny-thumbnail {
           padding: 0 5px;

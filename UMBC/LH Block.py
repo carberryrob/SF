@@ -1,0 +1,10 @@
+LEFT, F2, CASE('upper'), card_department, NEWLINE,
+card_department2, NEWLINE,
+card_department3, NEWLINE,
+VSPACER(3.5), F1, CASE('None'), 'University of Maryland, Baltimore County', NEWLINE,
+F3, card_building, NEWLINE,
+JOIN3(card_street1, ', ', JOIN3(card_street2, ', ', JOIN3(card_city, ', ', JOIN3(card_state, ' ', card_zip)))), NEWLINE,
+VSPACER(6.0), F1, JOIN3(card_email, ' // ', Phone1Word), NEWLINE,
+F3, JOIN3(IF('c: ', Phone2Word), ' // ', IF('f: ', Phone3Word)), NEWLINE,
+IFSET(Phone4Word, JOIN3(VSPACER(6.0), 'TTY: ', Phone4Word)), NEWLINE,
+card_www, NEWLINE

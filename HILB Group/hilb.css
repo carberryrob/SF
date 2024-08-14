@@ -306,6 +306,10 @@ div.explanationText.explanationTextGood {
      border: 1px dashed #2B6D1F !important;
 }
 
+/*Hide Save Order button*/
+#button_save_order {
+     display:none;
+}
 
 
 @media only screen and (min-width:1025px) {

@@ -16,3 +16,5 @@ else:
     T2 = T1
 if card_street1 or card_street2 or card_city or card_state or card_zip:
     addressBlock = DWIMBLOCK([EPSWORD('con/address.pdf', xscale=1, yscale=1), LEFT, F1, SPACER(7), F5, card_street1, IF(', ', card_street2), IF(', ', card_city), IF(', ', card_state), IF(' ', card_zip), NEWLINE], (0.1875 * 72, T3), (LEFT, TOP_BASELINE), layer=0)
+
+

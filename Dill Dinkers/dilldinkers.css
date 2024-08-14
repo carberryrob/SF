@@ -173,6 +173,7 @@ button[disabled]{
 button#submit_cancel {
      margin-right: 5%;
      min-width: 155px;
+     /* display: none; */
 }
 /************************************/
 .main, .catalog, form {
@@ -824,7 +825,7 @@ button#submit_cancel {
           position: absolute;
           white-space: nowrap;
           top: 32px;
-          --w: 1000px;
+          --w: 1100px;
           width: var(--w);
           left: -webkit-calc((100% - var(--w))/2);
           left: -moz-calc((100% - var(--w))/2);

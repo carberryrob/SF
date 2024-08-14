@@ -659,7 +659,14 @@ input#searchfield_input {
 
 /*****************************************************************************/
 @media only screen and (min-width:1025px) {
-     /* .details_button {
+     
+     span.resblurb {
+          text-align: left;
+          display: block;
+          font-size: 14px;
+          max-width: 210px;
+     }
+           /* .details_button {
           display: flex;
           align-items: flex-end;
           justify-content: space-evenly;

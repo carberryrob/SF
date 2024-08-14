@@ -1,3 +1,4 @@
+/*Updated  - Rob 8/3/2024 */
 /*added class for NEW items, clearance items  - Shreya 02/07 */
 
 /*https://cdn.jsdelivr.net/gh/digitalsf/custom-page-dna@main/style.css*/
@@ -10,6 +11,23 @@
 /*======================================
 *            style resets              *
 ======================================*/
+
+ul.sfbundle li {
+     text-align: left;
+}
+
+span#basket_view\.maillist_header {
+     font-size: 40px;
+}
+
+a#ml-handle-link {
+     text-align: center;
+     display: block;
+}
+
+.mail-merge td.label:has(input[type="radio"]) {
+     width: 15%;
+}
 
 .mb-4, .mb-sm-4 {
     min-height: 330px;
@@ -1477,6 +1495,7 @@ table#shipaddr-info {
 		/* float: none !important; */
 		float: right !important;
 		margin: 0 auto !important;
+          max-width: 85% !important;
 	}
 
      span.responsive-tagcheck.tagcheck-bottom {
