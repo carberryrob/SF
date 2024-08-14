@@ -115,6 +115,10 @@ a.button:hover {
 	text-decoration-line: none !important;
 }
 
+td.corp-cell button {
+     min-width: 250px;
+}
+
 /************************************************************************/
 
 
