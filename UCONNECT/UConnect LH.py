@@ -1,3 +1,4 @@
+# Updated 8/15/2024 Rob Carberry
 # Updated 3/23/2024 Rob Carberry
 # Updated 7/10/2023 Rob Carberry
 # Updated 7/7/2023 Rob Carberry
@@ -28,7 +29,7 @@ try:
      elif (tag.startswith('CUA')):
           wwwurl = 'chesapeakeurology.com'
      elif (tag.startswith('TUA')):
-          wwwurl = 'tnurology.com.com'
+          wwwurl = 'tnurology.com'
 except:
      pass
 
