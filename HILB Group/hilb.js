@@ -1,3 +1,4 @@
+<!-- Rob Carberry Updated 8/20/2024 -->
 <!-- Rob Carberry 5/31/2024 -->
 <div class="footer_row3">
 <div><img src="con/SF-PoweredBy2024-260w-White.png" alt="Online Storefront Powered by Strategic Factory" class="img-fluid mt-3"></div>
@@ -9,6 +10,9 @@
           <a href="mailto:sfportalorders@strategicfactory.com">sfportalorders@strategicfactory.com</a>
      </p>
 </div>
+
+<script src="con/jquery.initialize.min.js" type="text/javascript"></script>
+
 <script type="text/javascript">
 {/* Rob Carberry 2024 */}
 {/* Since we are wrapping the item images, we need to customize the pdna set_preview_image function */}
@@ -116,7 +120,9 @@ function GetNextGangDate(OrderDate){
      return d
 }
 
+
 $(window).load(function () {
+
      // Mon=1, Tue=2, Wed=3, Thu=4, Fri=5, Sat=6, Sun=7
      // var d = new Date();
      // const targetDay = 4; // Thursday
@@ -129,7 +135,6 @@ $(window).load(function () {
      $('head').append('<link rel="icon" href="con/cropped-Favicon-e1556906063867-192x192.png" sizes="192x192" />')
      $('head').append('<link rel="apple-touch-icon" href="con/cropped-Favicon-e1556906063867-180x180.png" />')
      $('head').append('<meta name="msapplication-TileImage" content="con5/cropped-Favicon-e1556906063867-270x270.png" />')
-
 
 
      // $('head').append('<link rel="icon" type="image/x-icon" href="con/favicon.ico">');
@@ -162,10 +167,15 @@ $(window).load(function () {
 
 
           /*********Cart/Basket table*********/
-          $("table.items-table.true-table").find("th:nth-child(2)").removeClass("right").addClass("center");
-          $("table.items-table.true-table").find("th:nth-child(3)").removeClass("right").addClass("center");
-          $("table.items-table.true-table").find("td:nth-child(2)").removeClass("right").addClass("center");
-          $("table.items-table.true-table").find("td:nth-child(3)").removeClass("right").addClass("center");
+          // $("table.items-table.true-table").find("th:nth-child(2)").removeClass("right").addClass("center");
+          // $("table.items-table.true-table").find("th:nth-child(3)").removeClass("right").addClass("center");
+          // $("table.items-table.true-table").find("td:nth-child(2)").removeClass("right").addClass("center");
+          // $("table.items-table.true-table").find("td:nth-child(3)").removeClass("right").addClass("center");
+
+          $("table.items-table.true-table").find("th:nth-child(2)").hide();
+          $("table.items-table.true-table").find("th:nth-child(3)").hide();
+          $("table.items-table.true-table").find("td:nth-child(2)").hide();
+          $("table.items-table.true-table").find("td:nth-child(3)").hide();
           /***********************************/
 
           /*********Shipping Table************/
@@ -389,10 +399,28 @@ $(window).load(function () {
      if( $('.basket-list-item').length >= 1) {$('#basket-list-title').show();}
 
      $('.header-links').attr('style', 'display: revert !important');
-    
+
+     // $('td.input:has(input[name="new_HILB-Benefit_Guides_mailing_1_qty"][type="number"])').parent('tr').hide();
+     $('td.input:has(input[name="new_HILB-Benefit_Guides_mailing_1_qty"][type="number"])').each(function() {
+          $(this).parent('tr').hide();
+          $('tr#total_block').hide();
+     });
+     $('td.input:has(input[name="new_HILB-Benefit_Guides_distribution_1_qty"][type="number"])').each(function() {
+          $(this).parent('tr').hide();
+          $('tr#total_block').hide();
+     });
+
 });
 
 $(document).ready(function () {
+
+     $.initialize("div.estimate-total", function() {
+          // console.log('**************************************' + $(this).text());
+          var errtxt = $(this).text().replace("Note: Quote options problem: ", "");
+          $(this).text(errtxt);
+     });
+
+     
 
      /********* Hide FAQ Holders & Place Holders **********/
      $('div.stretchy_cols').has('div.responsive-longname:contains("FAQ-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );

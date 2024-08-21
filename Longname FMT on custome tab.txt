@@ -43,3 +43,19 @@ Cecil Cty Sherriff only
 '%(bill_code5)s %(login_name_first)s %(login_name_last)s' % order.form
 
 '%(corp_tag)s / %(login_name_first)s %(login_name_last)s' % order.form
+
+
+'%(detail_txt)s' % item.form
+
+
+try:
+	if name_first and name_last:
+		full_name = name_first + ' ' + name_last
+	elif name_first:
+		full_name = name_first
+	elif name_last:
+		full_name = name_last
+	else:
+		full_name = ''
+except:
+	pass
