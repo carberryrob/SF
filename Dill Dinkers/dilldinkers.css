@@ -184,6 +184,10 @@ button#submit_cancel {
 
 @media only screen and (min-width:1025px) {
 
+     span.responsive-tagcheck.tagcheck-bottom {
+          display: block;
+     }
+
      ul.corp-list button, div.corp_divisions button {
           min-width: 305px !important;
      }

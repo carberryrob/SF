@@ -351,6 +351,7 @@ $(window).load(function () {
           maxH = maxH + "px";
           $('span.responsive-tagcheck.tagcheck-bottom').css('min-height', maxH);
 
+
           // If div.image-container exist set that area height the same for all items
           maxH = 0
           $("div.image-container").each(function() {
