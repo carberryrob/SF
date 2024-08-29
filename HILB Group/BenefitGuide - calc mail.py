@@ -4,145 +4,101 @@ pgs = 0
 
 if qty > 1000:
      error = '<span>Error! &nbsp; The maximum quantity is 1000</span>'
+elif qty < 200:
+     error = '<span>Error! &nbsp; The minimum quantity for mailing is 200</span>'
 else:
-     # try:
      pgs = int(pretty(lookup('num_originals')))
      if pgs == 12:
-          set_sku('SomeValue')
-          if 1 <= qty <= 74:
-               price = num(6.6)
-          elif 75 <= qty <= 99:
-               price = num(5.4)
-          elif 100 <= qty <= 149:
-               price = num(4.0)
-          elif 150 <= qty <= 199:
-               price = num(3.6)
-          elif 200 <= qty <= 299:
-               price = num(2.5)
+          set_sku('HILB_8PG_Mail')
+          if 200 <= qty <= 299:
+               price = num(3.63 * qty)
           elif 300 <= qty <= 499:
-               price = num(2.0)
+               price = num(2.83 * qty)
           elif 500 <= qty <= 999:
-               price = num(1.6)
+               price = num(2.16 * qty)
           elif qty == 1000:
-               price = num(1.3)
+               price = num(1.63 * qty)
           else:
                price = 0
      elif pgs == 16:
-          if 1 <= qty <= 74:
-               price = num(7.3)
-          elif 75 <= qty <= 99:
-               price = num(6.0)
-          elif 100 <= qty <= 149:
-               price = num(4.3)
-          elif 150 <= qty <= 199:
-               price = num(3.9)
-          elif 200 <= qty <= 299:
-               price = num(2.8)
+          set_sku('HILB_12PG_Mail')
+          if 200 <= qty <= 299:
+               price = num(3.93 * qty)
           elif 300 <= qty <= 499:
-               price = num(2.3)
+               price = num(3.13 * qty)
           elif 500 <= qty <= 999:
-               price = num(1.9)
+               price = num(2.46 * qty)
           elif qty == 1000:
-               price = num(1.5)
+               price = num(1.83 * qty)
           else:
                price = 0
      elif pgs == 20:
-          if 1 <= qty <= 74:
-               price = num(7.6)
-          elif 75 <= qty <= 99:
-               price = num(6.3)
-          elif 100 <= qty <= 149:
-               price = num(4.6)
-          elif 150 <= qty <= 199:
-               price = num(4.1)
-          elif 200 <= qty <= 299:
-               price = num(3.0)
+          set_sku('HILB_16PG_Mail')
+          if 200 <= qty <= 299:
+               price = num(4.13 * qty)
           elif 300 <= qty <= 499:
-               price = num(2.5)
+               price = num(3.33 * qty)
           elif 500 <= qty <= 999:
-               price = num(2.1)
+               price = num(2.66 * qty)
           elif qty == 1000:
-               price = num(1.8)
+               price = num(2.13 * qty)
           else:
                price = 0
      elif pgs == 24:
-          if 1 <= qty <= 74:
-               price = num(8.0)
-          elif 75 <= qty <= 99:
-               price = num(6.6)
-          elif 100 <= qty <= 149:
-               price = num(4.9)
-          elif 150 <= qty <= 199:
-               price = num(4.4)
-          elif 200 <= qty <= 299:
-               price = num(3.3)
+          set_sku('HILB_20PG_Mail')
+          if 200 <= qty <= 299:
+               price = num(4.43 * qty)
           elif 300 <= qty <= 499:
-               price = num(2.8)
+               price = num(3.63 * qty)
           elif 500 <= qty <= 999:
-               price = num(2.4)
+               price = num(2.96 * qty)
           elif qty == 1000:
-               price = num(2.1)
+               price = num(2.43 * qty)
           else:
                price = 0
      elif pgs == 28:
-          if 1 <= qty <= 74:
-               price = num(8.4)
-          elif 75 <= qty <= 99:
-               price = num(6.9)
-          elif 100 <= qty <= 149:
-               price = num(5.2)
-          elif 150 <= qty <= 199:
-               price = num(4.7)
-          elif 200 <= qty <= 299:
-               price = num(3.6)
+          set_sku('HILB_24PG_Mail')
+          if 200 <= qty <= 299:
+               price = num(4.73 * qty)
           elif 300 <= qty <= 499:
-               price = num(3.1)
+               price = num(3.93 * qty)
           elif 500 <= qty <= 999:
-               price = num(2.7)
+               price = num(3.26 * qty)
           elif qty == 1000:
-               price = num(2.3)
+               price = num(2.63 * qty)
           else:
                price = 0
      elif pgs == 32:
-          if 1 <= qty <= 74:
-               price = num(8.75)
-          elif 75 <= qty <= 99:
-               price = num(7.2)
-          elif 100 <= qty <= 149:
-               price = num(5.5)
-          elif 150 <= qty <= 199:
-               price = num(5.0)
-          elif 200 <= qty <= 299:
-               price = num(3.9)
+          set_sku('HILB_28PG_Mail')
+          if 200 <= qty <= 299:
+               price = num(5.03 * qty)
           elif 300 <= qty <= 499:
-               price = num(3.35)
+               price = num(4.18 * qty)
           elif 500 <= qty <= 999:
-               price = num(2.95)
+               price = num(3.51 * qty)
           elif qty == 1000:
-               price = num(2.6)
+               price = num(2.93 * qty)
           else:
                price = 0
      elif pgs == 36:
-          if 1 <= qty <= 74:
-               price = num(9.1)
-          elif 75 <= qty <= 99:
-               price = num(7.5)
-          elif 100 <= qty <= 149:
-               price = num(5.8)
-          elif 150 <= qty <= 199:
-               price = num(5.3)
-          elif 200 <= qty <= 299:
-               price = num(4.2)
+          set_sku('HILB_32PG_Mail')
+          if 200 <= qty <= 299:
+               price = num(5.33 * qty)
           elif 300 <= qty <= 499:
-               price = num(3.6)
+               price = num(4.43 * qty)
           elif 500 <= qty <= 999:
-               price = num(3.2)
+               price = num(3.76 * qty)
           elif qty == 1000:
-               price = num(2.9)
+               price = num(3.23 * qty)
           else:
                price = 0
 
-     # except:
-     #      pass
-
 env['calc'] = price
+env['price'] = price
+
+book = pgs - 4
+
+detail_txt = str(qty) + ' (' + str(book) + 'pg plus cover)'
+
+set_item_attr('detail_txt', detail_txt, override=True)
+set_item_form_attr('detail_txt', detail_txt, override=True)

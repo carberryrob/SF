@@ -282,7 +282,17 @@ span.budget {
    
 @media only screen and (min-width:1025px) {
 
-
+     table.true-table.multisize-table {
+          max-width: 315px;
+          display: flex;
+          overflow: auto;
+          align-items: flex-end;
+          margin: 8px auto;
+     }
+     .note.responsive-onhand {
+          align-content: space-between;
+          margin: 10px auto;
+     }
      /* span.note:has(.budgetlbl) {
           display: flex;
           padding-left: 20px;
