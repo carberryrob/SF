@@ -167,15 +167,15 @@ $(window).load(function () {
 
 
           /*********Cart/Basket table*********/
-          // $("table.items-table.true-table").find("th:nth-child(2)").removeClass("right").addClass("center");
-          // $("table.items-table.true-table").find("th:nth-child(3)").removeClass("right").addClass("center");
-          // $("table.items-table.true-table").find("td:nth-child(2)").removeClass("right").addClass("center");
-          // $("table.items-table.true-table").find("td:nth-child(3)").removeClass("right").addClass("center");
+          $("table.items-table.true-table").find("th:nth-child(2)").removeClass("right").addClass("center");
+          $("table.items-table.true-table").find("th:nth-child(3)").removeClass("right").addClass("center");
+          $("table.items-table.true-table").find("td:nth-child(2)").removeClass("right").addClass("center");
+          $("table.items-table.true-table").find("td:nth-child(3)").removeClass("right").addClass("center");
 
-          $("table.items-table.true-table").find("th:nth-child(2)").hide();
-          $("table.items-table.true-table").find("th:nth-child(3)").hide();
-          $("table.items-table.true-table").find("td:nth-child(2)").hide();
-          $("table.items-table.true-table").find("td:nth-child(3)").hide();
+          // $("table.items-table.true-table").find("th:nth-child(2)").hide();
+          // $("table.items-table.true-table").find("th:nth-child(3)").hide();
+          // $("table.items-table.true-table").find("td:nth-child(2)").hide();
+          // $("table.items-table.true-table").find("td:nth-child(3)").hide();
           /***********************************/
 
           /*********Shipping Table************/

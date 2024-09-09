@@ -10,3 +10,6 @@ item.corp_filter == 'AAA' and item.tag in ('AAA-PRM-TENT-001', 'AAA-PRM-TBLCVR-0
 item.corp_filter == 'AAA' and item.tag not in ('AAA-PRM-TENT-001', 'AAA-PRM-TBLCVR-001', 'AAA-PRM-BAN-001') $8
 
 [i for i in order.items if i.corp_filter not in ('AAA') and i.is_inventory_item()]
+
+
+[i for i in order.items if i.is_inventory_item()]

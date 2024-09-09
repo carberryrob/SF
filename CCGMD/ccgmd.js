@@ -422,6 +422,31 @@ $(document).ready(function () {
      $('<tr class="pickup-fields misc"><td class="misc" colspan="2"></td></tr>').insertAfter($("tr.pickup-fields"));
      $("table#misc-comment-table").appendTo($("tr.pickup-fields.misc td.misc"));
 
+     if($("input#ship-element").is(':checked')) {
+          console.log('input#ship-element.checked');
+          $("table#misc-comment-table").hide();
+     }
+     if($("input#pickup-element").is(':checked')) {
+          console.log('input#pickup-element.checked');
+          $(".ship-address").hide();
+     }
+
+     $("input#pickup-element").on('change', function(){
+          if($("input#pickup-element").is(':checked')) {
+               console.log('input#pickup-element.checked');
+               $("table#misc-comment-table").show();
+               $(".ship-address").hide();
+          }
+     });
+     $("input#ship-element").on('change', function(){
+          if($("input#ship-element").is(':checked')) {
+               console.log('input#ship-element.checked');
+               $(".ship-address").show();
+               $("table#misc-comment-table").hide();
+          }
+     });
+     $("table#shipping-pricetable div:contains('Up to the value of products above.')").text("You can change the amount of Chesapeake Cash you wish to use on your order.  Up to the value of products above.");
+
      /********* Hide FAQ Holders & Place Holders **********/
      $('div.stretchy_cols').has('div.responsive-longname:contains("FAQ-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );
      $('div.stretchy_cols').has('div.responsive-longname:contains("PLACE-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );

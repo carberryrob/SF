@@ -48,14 +48,20 @@ Cecil Cty Sherriff only
 '%(detail_txt)s' % item.form
 
 
-try:
-	if name_first and name_last:
-		full_name = name_first + ' ' + name_last
-	elif name_first:
-		full_name = name_first
-	elif name_last:
-		full_name = name_last
-	else:
-		full_name = ''
-except:
-	pass
+'%(detail_txt)s' % item.form
+
+'%(longname)s' % item.form
+
+
+'%(detail_name)s' % item.form &AND& ' %(detail_txt)s' % item.form
+
+'%(detail_name)s %(detail_txt)s' % item.form
+
+'%(detail_name)s %(detail_txt)s' % item.form
+
+
+'%(ship_cost)s' % item.form
+
+
+%(longname)s %(qty)s %(f.detail_txt1)s %(qty*float(1.04))s)
+%(longname)s (%(qty)s %(f.detail_txt1)s %(f.shiptxt)s)

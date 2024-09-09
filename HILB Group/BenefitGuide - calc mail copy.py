@@ -5,9 +5,9 @@ pgs = 0
 postage = float(1.04)
 
 if qty > 1000:
-     error = '<span>Error! &nbsp; The maximum quantity is 1000</span>'
+     error = '<span>Error!   The maximum quantity is 1000</span>'
 elif qty < 200:
-     error = '<span>Error! &nbsp; The minimum quantity for mailing is 200</span>'
+     error = '<span>Error!   The minimum quantity for mailing is 200</span>'
 else:
      pgs = int(pretty(lookup('num_originals')))
      if pgs == 12:
@@ -115,17 +115,27 @@ else:
      shiptxt = str(order_ship_cost)
 
 price = float(price + order_ship_cost)
-env['calc'] = price
-env['price'] = price
 
 book = pgs - 4
 
-detail_txt = str(qty) + ' (' + str(book) + ' pg plus cover / Postage = $' + str(shiptxt) + ')'
+#detail_txt = str(qty) + ' (' + str(book) + ' pg plus cover / Postage = $' + str(shiptxt) + ')'
+detail_txt1 = str(book) + ' pg plus cover / Postage = $'
 
-set_item_attr('detail_txt', detail_txt, override=True)
-set_item_form_attr('detail_txt', detail_txt, override=True)
+env['calc'] = price
+env['price'] = price
+env['shiptxt'] = shiptxt
+env['detail_txt1'] = detail_txt1
+
+
+#set_item_attr('detail_txt', detail_txt, override=True)
+set_item_attr('shiptxt', shiptxt, override=True)
+#set_item_form_attr('detail_txt', detail_txt, override=True)
+set_item_form_attr('shiptxt', shiptxt, override=True)
+
+set_item_attr('detail_txt1', detail_txt1, override=True)
+set_item_form_attr('detail_txt1', detail_txt1, override=True)
+
 
 detail_name = 'Benefit Guides (Mailing)'
 set_item_attr('detail_name', detail_name, override=True)
 set_item_form_attr('detail_name', detail_name, override=True)
-

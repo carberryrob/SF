@@ -184,7 +184,11 @@ $(window).load(function () {
      // Out Dated
      $('.responsive-choose-info').each(function() {
           if ($(this).find('span:contains("Marketing Request Form")').length > 0) {
-               $(this).html( '<span class="mrf_outdated">The item is outdated and will need additional time for updating and printing.  Please fill out the ' + mrlink + ' to notify Marketing that this item is needed.  Thank you.</span>' );
+               if ( $(this).text().indexOf("out of stock") > 0 ) {
+                    $(this).html( '<span class="mrf_outdated">The item is out of stock and is in the production process.  Please fill out the ' + mrlink + ' to notify Marketing that this item is needed.  Thank you.</span>' );
+               }else{ 
+                    $(this).html( '<span class="mrf_outdated">The item is outdated and will need additional time for updating and printing.  Please fill out the ' + mrlink + ' to notify Marketing that this item is needed.  Thank you.</span>' );
+               }
           }
      });
 

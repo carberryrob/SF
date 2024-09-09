@@ -8,6 +8,7 @@ else:
      pgs = int(pretty(lookup('num_originals')))
      if pgs == 12:
           set_sku('P_8+Cvr_BKLT_80_Silk_4.4')
+          weight = num(0.125 * qty)
           if qty < 50:
                price = num(330.0)
           elif 50 <= qty <= 74:
@@ -30,6 +31,7 @@ else:
                price = 0
      elif pgs == 16:
           set_sku('P_12+Cvr_BKLT_80_Silk_4.4')
+          weight = num(0.155 * qty)
           if qty < 50:
                price = num(365.0)
           elif 50 <= qty <= 74:
@@ -52,6 +54,7 @@ else:
                price = 0
      elif pgs == 20:
           set_sku('P_16+Cvr_BKLT_80_Silk_4.4')
+          weight = num(0.185 * qty)
           if qty < 50:
                price = num(380.0)
           elif 50 <= qty <= 74:
@@ -74,6 +77,7 @@ else:
                price = 0
      elif pgs == 24:
           set_sku('P_20+Cvr_BKLT_80_Silk_4.4')
+          weight = num(0.22 * qty)
           if qty < 50:
                price = num(400.0)
           elif 50 <= qty <= 74:
@@ -96,6 +100,7 @@ else:
                price = 0
      elif pgs == 28:
           set_sku('P_24+Cvr_BKLT_80_Silk_4.4')
+          weight = num(0.25 * qty)
           if qty < 50:
                price = num(420.0)
           elif 50 <= qty <= 74:
@@ -118,6 +123,7 @@ else:
                price = 0
      elif pgs == 32:
           set_sku('P_28+Cvr_BKLT_80_Silk_4.4')
+          weight = num(0.285 * qty)
           if qty < 50:
                price = num(437.5)
           elif 50 <= qty <= 74:
@@ -140,6 +146,7 @@ else:
                price = 0
      elif pgs == 36:
           set_sku('P_32+Cvr_BKLT_80_Silk_4.4')
+          weight = num(0.315 * qty)
           if qty < 50:
                price = num(455.0)
           elif 50 <= qty <= 74:
@@ -161,12 +168,13 @@ else:
           else:
                price = 0
 
+cost = price
 env['calc'] = price
 env['price'] = price
 
 book = pgs - 4
 
-detail_txt = str(qty) + ' (' + str(book) + 'pg plus cover)'
+detail_txt = str(qty) + ' (' + str(book) + ' pg plus cover)'
 
 set_item_attr('detail_txt', detail_txt, override=True)
 set_item_form_attr('detail_txt', detail_txt, override=True)

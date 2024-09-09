@@ -519,8 +519,10 @@ $(document).ready(function () {
           
 
           // Give color dropdowns a class to call later.
-          $('.the_actual_qty_select').find('select:first').each(function() {
-               $(this).addClass('colorselect');
+          $('.the_actual_qty_select').each(function() {
+               $(this).find("select[name*='_size']").first().each(function() {
+                    $(this).addClass('colorselect');
+               });
           });
           
           // Apparel- When changing a color from a dropdown make the large image that color by code clicking the corresponding thumbnail.
