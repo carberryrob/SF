@@ -125,6 +125,19 @@ function getQuery(key, queryString) {
      }
 }
 
+function splitAtLast(str, delimiter) {
+     const lastIndex = str.lastIndexOf(delimiter);
+
+     if (lastIndex === -1) {
+          return [str]; // Delimiter not found, return the whole string
+     }
+
+     const firstPart = str.slice(0, lastIndex);
+     const secondPart = str.slice(lastIndex + 1);
+
+     return [firstPart, secondPart];
+}
+
 $(window).load(function () {
 
      $('head').append('<link rel="icon" href="con/favicon.png" sizes="32x32" />')
@@ -392,7 +405,7 @@ $(window).load(function () {
      if( $('.basket-list-item').length >= 1) {$('#basket-list-title').show();}
 
      $('.header-links').attr('style', 'display: revert !important');
-    
+
 });
 
 $(document).ready(function () {
@@ -422,19 +435,25 @@ $(document).ready(function () {
      $('<tr class="pickup-fields misc"><td class="misc" colspan="2"></td></tr>').insertAfter($("tr.pickup-fields"));
      $("table#misc-comment-table").appendTo($("tr.pickup-fields.misc td.misc"));
 
+     $('<div class="req_fld" style="color:red;display: initial;">*</div>').insertBefore($('table#misc-comment-table input[type="text"]'));
+     // $('table#misc-comment-table input[type="text"]').attr("required", true)
+
      if($("input#ship-element").is(':checked')) {
           console.log('input#ship-element.checked');
           $("table#misc-comment-table").hide();
+          $('table#misc-comment-table input[type="text"]').attr("required", false)
      }
      if($("input#pickup-element").is(':checked')) {
           console.log('input#pickup-element.checked');
           $(".ship-address").hide();
+          $('table#misc-comment-table input[type="text"]').attr("required", true)
      }
 
      $("input#pickup-element").on('change', function(){
           if($("input#pickup-element").is(':checked')) {
-               console.log('input#pickup-element.checked');
+               // console.log('input#pickup-element.checked');
                $("table#misc-comment-table").show();
+               $('table#misc-comment-table input[type="text"]').attr("required", true)
                $(".ship-address").hide();
           }
      });
@@ -442,10 +461,42 @@ $(document).ready(function () {
           if($("input#ship-element").is(':checked')) {
                console.log('input#ship-element.checked');
                $(".ship-address").show();
+               $('table#misc-comment-table input[type="text"]').attr("required", false)
                $("table#misc-comment-table").hide();
           }
      });
+     
      $("table#shipping-pricetable div:contains('Up to the value of products above.')").text("You can change the amount of Chesapeake Cash you wish to use on your order.  Up to the value of products above.");
+
+
+     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     // This is the billing screen to hide the Invoice Me area for Apparel only.  The Const arr below will need to be updated as apparel changes.
+     // The same has to happen to the discounts for Chesapeake Cash and CCG Paid discounts.
+     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+     var isApparel = false;
+     const arr = ['Nike_Ladies_drifitpolo_boxlogo', 'UA_Mens_techpolo_boxlogo', 'PM_Mens_quarterzip_boxlogo', 'PM_Mens_polo_boxlogo', 'Nike_Ladies_drifitpolo_ccglogo', 'UA_Mens_techpolo_ccglogo', 'PM_Mens_quarterzip_ccglogo', 'PM_Mens_polo_ccglogo'];
+     $('td.pricecol').each(function() {
+          // console.log('******************' + $(this).attr("data-price-choosetag"));
+          if ($(this).attr("data-price-choosetag")) {
+               var xtag = $(this).attr("data-price-choosetag");
+               var ctag = splitAtLast(xtag, "_");
+               console.log('******************' + ctag[0]);
+               if ($.inArray(ctag[0], arr) > -1){
+                    isApparel = true;
+                    console.log('IN  ******************' + ctag[0]);
+               }
+          }
+     });
+     console.log('******************' + isApparel);
+
+     if (isApparel) {
+          $("#bill\\.billcode5label").closest("tr").hide();
+          $("#bill\\.billcode5info").closest("tr").hide();
+          $("#bill\\.bill_codes_sect_title").closest("tr").hide();
+          $("#bill\\.nocc_sect_title").closest("table").hide();
+     }
+
+
 
      /********* Hide FAQ Holders & Place Holders **********/
      $('div.stretchy_cols').has('div.responsive-longname:contains("FAQ-HOLDER")').wrap( '<div class="hideit" style="display: none !important;">' );

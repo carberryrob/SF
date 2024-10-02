@@ -202,7 +202,9 @@ $(window).load(function () {
                     // console.log( $(this).html() );
                     var cont = $(this).parent('div').find('.responsive-choose-info').html();
                     // if (cont.length > 0) {cont = '<br><br>' + cont;}
-                    $(this).parent('div').find('.responsive-choose-info').html( '<span class="mrf_outofstock">This item is in transit between warehouses and is not readily available for shipping.  If this item is needed immediately, please fill out the ' + mrlink + '.  Thank you.</span>' + cont );
+                    
+                    // $(this).parent('div').find('.responsive-choose-info').html( '<span class="mrf_outofstock">This item is in transit between warehouses and is not readily available for shipping.  If this item is needed immediately, please fill out the ' + mrlink + '.  Thank you.</span>' + cont );
+                    $(this).parent('div').find('.responsive-choose-info').html( '<span class="mrf_outofstock">This item is currently in production and will be available soon. Please check back periodically. Thank you for your patience.</span>' + cont );
                     cont = $(this).html();
                     $(this).html( '<div class="hideit">' + cont + '</div>' );
                     cont = $(this).prev('.note.responsive-onhand').html();
