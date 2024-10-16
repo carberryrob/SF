@@ -126,6 +126,7 @@ env['calc'] = price
 env['price'] = price
 # env['shiptxt'] = shiptxt
 env['detail_txt1'] = detail_txt1
+env['detail_txt'] = detail_txt
 
 
 set_item_attr('detail_txt', detail_txt, override=True)
@@ -142,3 +143,5 @@ set_item_form_attr('detail_txt1', detail_txt1, override=True)
 # set_item_form_attr('detail_name', detail_name, override=True)
 
 set_item_form_attr('item_billcode1', postage, override=True)
+# set_item_form_attr('bill_code7', "Postage = " + shiptxt, override=True)
+set_item_form_attr('bill_code7', detail_txt, override=True)
