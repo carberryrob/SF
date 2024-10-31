@@ -144,4 +144,4 @@ set_item_form_attr('detail_txt1', detail_txt1, override=True)
 
 set_item_form_attr('item_billcode1', postage, override=True)
 # set_item_form_attr('bill_code7', "Postage = " + shiptxt, override=True)
-set_item_form_attr('bill_code7', detail_txt, override=True)
+# set_item_form_attr('bill_code7', detail_txt, override=True)

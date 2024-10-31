@@ -950,8 +950,13 @@ table.items-table.true-table td, table.items-table.true-table th {
      /* @media only screen and (min-width:1025px) { */
 
      .image-container img {
-          max-width: 300px !important;
-          max-height: 300px !important;
+          max-width: 265px !important;
+          max-height: 265px !important;
+     }
+
+     #curr_item_image {
+          /* border: 1px solid #ddd; */
+          height: 300px;
      }
 
      /************* Tabs Nav Menu ******************/

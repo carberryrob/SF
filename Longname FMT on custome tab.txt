@@ -72,3 +72,12 @@ Cecil Cty Sherriff only
 
 
 %(longname)s (%(qty)s %(f.detail_txt1)s %(qty*float(f.item_billcode1))s)
+
+'%(detail_txt)s' % item.form
+
+'%(f.longname)s (%(f.qty)s %(f.detail_txt1)s %(qty*float(f.item_billcode1))s)' % item.form
+
+
+%(longname)s (%(qty)s %(f.detail_txt1)s %(qty*float(f.item_billcode1))s)
+
+'%(f.longname)s %(f.detail_txt)s' % item.form
