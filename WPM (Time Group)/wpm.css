@@ -943,26 +943,45 @@ div#proofButtonsContainer {
      border: unset;
  }
 
- /* button {
-     position: relative;
-     font-size: 14px;
-     color: #FFFFFF;
-     font-family: "Krub", "Maven Pro", "Barlow", "Open Sans", "Lucida Sans", "Trebuchet MS", "Arial";
-     text-align: center;
-     vertical-align: middle;
-     text-decoration: none;
-     font-weight: bold;
-     padding: 4px 15px 4px 15px;
-     border: 1px solid #007080;
-     -moz-border-radius: 1em;
-     -webkit-border-radius: 1em;
-     border-radius: 1em;
-     background: #0095B6; 
-     background: linear-gradient(#0095B6, #0095B6);
-     background: -webkit-gradient(linear, left top, left bottom, from(#0095B6), to(#0095B6));
-     background: -moz-linear-gradient(top,  #0095B6, #0095B6);
-     background: -ms-linear-gradient(#0095B6, #0095B6);
-     position: relative;
-     behavior: url(/hub/css/PIE.htc);
-   } */
+button:disabled,
+button[disabled]{
+     opacity: 0.5;
+     cursor: default;
+     /* color: #FFFFFF !important; */
+     cursor: not-allowed;
+}
+ 
+
+@media only screen and (min-width:1025px) {
+
+	/*************** header css for final approve order ***********************/
+	td.label:has(>span#bill\.billcode10label) {
+		white-space: nowrap;
+	}
+	span.standout {
+		text-shadow: 1px 1px 1px rgb(125 125 125 / 75%) !important;
+	}
+	p.approve_order {
+		font-size:1.25em !important;
+		padding: 15px;
+		/*background-color: #EEE;*/
+		border-radius: 0.35em;
+		-webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 3px 6px rgb(0 0 0 / 7%);
+		-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 3px 6px rgba(0,0,0,0.040);
+		box-shadow: inset 0 1px 0 rgb(255 255 255), 0 3px 6px rgb(0 0 0 / 40%);
+		text-shadow: 0 1px 0 rgb(0 0 0 / 5%);
+	}
+	p.approve_order_text {
+		font-size:1.15em !important;
+		padding: 15px;
+		/*font-weight: normal !important;*/
+		/*background-color: #EEE;*/
+		border-radius: 0.35em;
+		-webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 3px 6px rgb(0 0 0 / 7%);
+		-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 3px 6px rgba(0,0,0,0.040);
+		box-shadow: inset 0 1px 0 rgb(255 255 255), 0 3px 6px rgb(0 0 0 / 40%);
+		text-shadow: 0 1px 0 rgb(0 0 0 / 5%);
+	}
+	/*****************************************************************************/
+}
    
