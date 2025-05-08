@@ -6,7 +6,7 @@
     (443) 548-3500<br>
     <a href="mailto:sfportalorders@strategicfactory.com" style="color:#ffffff;">sfportalorders@strategicfactory.com</a>
 </p>
-</div>
+</div
 <script>
 /********** Enable/Disable "Submit Order" button based on approval *****************************************************/
 $(document).ready(function () {

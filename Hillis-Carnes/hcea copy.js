@@ -50,6 +50,29 @@ function set_preview_image(elem, thumburl, largeurl) {
           $(colorselect).prop('selectedIndex', idx);
      }
 
+     // sessionStorage.setItem("color_index", (idx + 1));
+     // console.log("********************************************  " + (idx + 1));
+     // var ci = sessionStorage.getItem("color_index");
+     // if(ci != null){
+     //     console.log("sessionStorage-color_index: " + ci);
+     //     $('select#service_code option').each(function() {
+     //         if ($(this).val() == sm) {
+     //             $('<span id="shipmeth">' + $(this).text().replaceAll(' - -', ' $0.00') + '</span>').insertBefore($(this).parent());
+     //             var shiptxt = $("#shipmeth").html().replaceAll('UPS - Ground (Invoiced when shipped) $0.00', '<span style="float: left;">UPS - Ground</span><br><span>(Invoiced when shipped) $0.00</span>');
+     //             $("#shipmeth").html(shiptxt);
+     //             $(this).attr('selected', 'selected');
+     //             $(this).prop('selected', true);
+     //             sessionStorage.setItem("ship_method_save", sm);
+     //             $(this).parent().hide();
+     //             // $('select#service_code option').change();
+     //         }
+     //         else{
+     //             $(this).remove();
+     //         }
+     //     });
+     // }
+
+
 }
 
 function WidthAdjuster(){
@@ -108,9 +131,24 @@ function AdjustForIMG(elem){
      }
 }
 
+{/* function numberWithCommas(x) {
+     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+} */}
+
 $(window).load(function () {
 
+     // var val = $('.budget').text().trim().replace('$','');
+     // //Use the code in the answer above to replace the commas.
+     // // val = numberWithCommas(val);
+     // val = val.toLocaleString('en-US', {useGrouping:true})
+     // console.log('*********************' + val + '***');
+     // // $('.budget').text(val);
+
+     // $('head').append('<link rel="icon" href="con/favicon-150x150.png" sizes="32x32" />')
+     // $('head').append('<link rel="icon" href="con/favicon-300x300.png" sizes="192x192" />')
+     // $('head').append('<link rel="apple-touch-icon" href="con/favicon-300x300.png" />')
      $('head').append('<link rel="icon" type="image/x-icon" href="con/favicon.ico">');
+     // $('head').append('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=DM+Serif+Display&display=swap">');
      $('head').append('<link rel="stylesheet" href="https://use.typekit.net/hoa4syg.css">');
      $( "link[href^='css/header.css']" ).removeAttr( "media" );
 

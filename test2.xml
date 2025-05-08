@@ -1,0 +1,435 @@
+-
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+-
+     <System>
+          <Provider Name="EPMS" />
+          <EventID Qualifiers="0">0</EventID>
+          <Level>4</Level>
+          <Task>0</Task>
+          <Keywords>0x80000000000000</Keywords>
+          <TimeCreated SystemTime="2025-04-18T17:21:03.004161200Z" />
+          <EventRecordID>6117056</EventRecordID>
+          <Channel>EPMS</Channel>
+          <Computer>SF-EPMSDB18.mmp.local</Computer>
+          <Security />
+     </System>
+-
+     <EventData>
+          <Data>
+               <?xml version="1.0" encoding="utf-8"?>
+               <inventory org="strategicfactory" secret="pagedna" who="PAGEDNA" sitecode="100036">
+                    <adjust mode="absolute" amount="41">
+                         <item stock_tag="APFM-APP-BEAN-GRY" />
+                    </adjust>
+                    <adjust mode="absolute" amount="30">
+                         <item stock_tag="APFM-APP-BEAN-NVY" />
+                    </adjust>
+                    <adjust mode="absolute" amount="32">
+                         <item stock_tag="APFM-APP-HAT-WHT-ML" />
+                    </adjust>
+                    <adjust mode="absolute" amount="37">
+                         <item stock_tag="APFM-APP-HAT-WHT-SM" />
+                    </adjust>
+                    <adjust mode="absolute" amount="30">
+                         <item stock_tag="APFM-APP-HAT-WHT-XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="6">
+                         <item stock_tag="APFM-APP-HOOD-ASH-2XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="9">
+                         <item stock_tag="APFM-APP-HOOD-ASH-3XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="8">
+                         <item stock_tag="APFM-APP-HOOD-ASH-4XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="20">
+                         <item stock_tag="APFM-APP-HOOD-ASH-LG" />
+                    </adjust>
+                    <adjust mode="absolute" amount="3">
+                         <item stock_tag="APFM-APP-HOOD-ASH-MD" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-HOOD-ASH-SM" />
+                    </adjust>
+                    <adjust mode="absolute" amount="11">
+                         <item stock_tag="APFM-APP-HOOD-ASH-XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="4">
+                         <item stock_tag="APFM-APP-JACKET-BLK-M-2XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="1">
+                         <item stock_tag="APFM-APP-JACKET-BLK-M-3XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="13">
+                         <item stock_tag="APFM-APP-JACKET-BLK-M-L" />
+                    </adjust>
+                    <adjust mode="absolute" amount="17">
+                         <item stock_tag="APFM-APP-JACKET-BLK-M-M" />
+                    </adjust>
+                    <adjust mode="absolute" amount="6">
+                         <item stock_tag="APFM-APP-JACKET-BLK-M-SM" />
+                    </adjust>
+                    <adjust mode="absolute" amount="10">
+                         <item stock_tag="APFM-APP-JACKET-BLK-M-XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="7">
+                         <item stock_tag="APFM-APP-JOG-GRY-2X" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-JOG-GRY-3X" />
+                    </adjust>
+                    <adjust mode="absolute" amount="4">
+                         <item stock_tag="APFM-APP-JOG-GRY-LG" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-JOG-GRY-MD" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-JOG-GRY-SM" />
+                    </adjust>
+                    <adjust mode="absolute" amount="7">
+                         <item stock_tag="APFM-APP-JOG-GRY-XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="9">
+                         <item stock_tag="APFM-APP-POLMNYLG-003" />
+                    </adjust>
+                    <adjust mode="absolute" amount="10">
+                         <item stock_tag="APFM-APP-POLMNYMD-003" />
+                    </adjust>
+                    <adjust mode="absolute" amount="4">
+                         <item stock_tag="APFM-APP-POLMNYSM-003" />
+                    </adjust>
+                    <adjust mode="absolute" amount="4">
+                         <item stock_tag="APFM-APP-POLMNYX2-003" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-POLMNYX3-003" />
+                    </adjust>
+                    <adjust mode="absolute" amount="6">
+                         <item stock_tag="APFM-APP-POLMNYXL-003" />
+                    </adjust>
+                    <adjust mode="absolute" amount="9">
+                         <item stock_tag="APFM-APP-POLMWHLG-003" />
+                    </adjust>
+                    <adjust mode="absolute" amount="9">
+                         <item stock_tag="APFM-APP-POLMWHMD-003" />
+                    </adjust>
+                    <adjust mode="absolute" amount="1">
+                         <item stock_tag="APFM-APP-POLMWHSM-003" />
+                    </adjust>
+                    <adjust mode="absolute" amount="5">
+                         <item stock_tag="APFM-APP-POLMWHX2-003" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-POLMWHX3-003" />
+                    </adjust>
+                    <adjust mode="absolute" amount="6">
+                         <item stock_tag="APFM-APP-POLMWHXL-003" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-POLO-WHI-M-2XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="1">
+                         <item stock_tag="APFM-APP-POLO-WHI-M-LG" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-POLO-WHI-M-MD" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-POLO-WHI-M-SM" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-POLO-WHI-M-XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="1">
+                         <item stock_tag="APFM-APP-POLO-WHI-W-2XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="2">
+                         <item stock_tag="APFM-APP-POLWNYLG-013" />
+                    </adjust>
+                    <adjust mode="absolute" amount="10">
+                         <item stock_tag="APFM-APP-POLWNYMD-013" />
+                    </adjust>
+                    <adjust mode="absolute" amount="14">
+                         <item stock_tag="APFM-APP-POLWNYSM-013" />
+                    </adjust>
+                    <adjust mode="absolute" amount="3">
+                         <item stock_tag="APFM-APP-POLWNYX2-013" />
+                    </adjust>
+                    <adjust mode="absolute" amount="2">
+                         <item stock_tag="APFM-APP-POLWNYX3-013" />
+                    </adjust>
+                    <adjust mode="absolute" amount="2">
+                         <item stock_tag="APFM-APP-POLWNYXL-013" />
+                    </adjust>
+                    <adjust mode="absolute" amount="5">
+                         <item stock_tag="APFM-APP-POLWWHLG-013" />
+                    </adjust>
+                    <adjust mode="absolute" amount="6">
+                         <item stock_tag="APFM-APP-POLWWHMD-013" />
+                    </adjust>
+                    <adjust mode="absolute" amount="4">
+                         <item stock_tag="APFM-APP-POLWWHSM-013" />
+                    </adjust>
+                    <adjust mode="absolute" amount="6">
+                         <item stock_tag="APFM-APP-POLWWHX2-013" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-POLWWHX3-013" />
+                    </adjust>
+                    <adjust mode="absolute" amount="8">
+                         <item stock_tag="APFM-APP-POLWWHXL-013" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-POLWWHXS-013" />
+                    </adjust>
+                    <adjust mode="absolute" amount="2">
+                         <item stock_tag="APFM-APP-SCRUB-B-NVY-M-2X" />
+                    </adjust>
+                    <adjust mode="absolute" amount="3">
+                         <item stock_tag="APFM-APP-SCRUB-B-NVY-M-LG" />
+                    </adjust>
+                    <adjust mode="absolute" amount="3">
+                         <item stock_tag="APFM-APP-SCRUB-B-NVY-M-MD" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-SCRUB-B-NVY-M-SM" />
+                    </adjust>
+                    <adjust mode="absolute" amount="1">
+                         <item stock_tag="APFM-APP-SCRUB-B-NVY-M-XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="8">
+                         <item stock_tag="APFM-APP-SCRUB-B-NVY-W-MD" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-SCRUB-B-NVY-W-SM" />
+                    </adjust>
+                    <adjust mode="absolute" amount="4">
+                         <item stock_tag="APFM-APP-SCRUB-B-NVY-W-XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="2">
+                         <item stock_tag="APFM-APP-SCRUB-T-NVY-M-2X" />
+                    </adjust>
+                    <adjust mode="absolute" amount="4">
+                         <item stock_tag="APFM-APP-SCRUB-T-NVY-M-LG" />
+                    </adjust>
+                    <adjust mode="absolute" amount="3">
+                         <item stock_tag="APFM-APP-SCRUB-T-NVY-M-MD" />
+                    </adjust>
+                    <adjust mode="absolute" amount="2">
+                         <item stock_tag="APFM-APP-SCRUB-T-NVY-M-XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-SCRUB-T-NVY-W-2X" />
+                    </adjust>
+                    <adjust mode="absolute" amount="1">
+                         <item stock_tag="APFM-APP-SCRUB-T-NVY-W-3X" />
+                    </adjust>
+                    <adjust mode="absolute" amount="1">
+                         <item stock_tag="APFM-APP-SCRUB-T-NVY-W-LG" />
+                    </adjust>
+                    <adjust mode="absolute" amount="10">
+                         <item stock_tag="APFM-APP-SCRUB-T-NVY-W-MD" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-SCRUB-T-NVY-W-SM" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-SCRUB-T-NVY-W-XS" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-TEE-NVY-2X" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-TEE-NVY-3X" />
+                    </adjust>
+                    <adjust mode="absolute" amount="2">
+                         <item stock_tag="APFM-APP-TEE-NVY-LG" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-TEE-NVY-MD" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-TEE-NVY-SM" />
+                    </adjust>
+                    <adjust mode="absolute" amount="2">
+                         <item stock_tag="APFM-APP-TEE-NVY-XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-TEE-NVY-XS" />
+                    </adjust>
+                    <adjust mode="absolute" amount="2">
+                         <item stock_tag="APFM-APP-TEE-WHT-2X" />
+                    </adjust>
+                    <adjust mode="absolute" amount="4">
+                         <item stock_tag="APFM-APP-TEE-WHT-3X" />
+                    </adjust>
+                    <adjust mode="absolute" amount="3">
+                         <item stock_tag="APFM-APP-TEE-WHT-LG" />
+                    </adjust>
+                    <adjust mode="absolute" amount="1">
+                         <item stock_tag="APFM-APP-TEE-WHT-MD" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-TEE-WHT-SM" />
+                    </adjust>
+                    <adjust mode="absolute" amount="5">
+                         <item stock_tag="APFM-APP-TEE-WHT-XL" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-APP-TEE-WHT-XS" />
+                    </adjust>
+                    <adjust mode="absolute" amount="215">
+                         <item stock_tag="APFM-BackScratcher" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-BelgianChocolate" />
+                    </adjust>
+                    <adjust mode="absolute" amount="261">
+                         <item stock_tag="APFM-FleeceBlanket" />
+                    </adjust>
+                    <adjust mode="absolute" amount="35">
+                         <item stock_tag="APFM-KIT-CAREPKG-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="18">
+                         <item stock_tag="APFM-KIT-FRM-003" />
+                    </adjust>
+                    <adjust mode="absolute" amount="63">
+                         <item stock_tag="APFM-KIT-HAN-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="350">
+                         <item stock_tag="APFM-KIT-PEN-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-KIT-PEN-002" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-KIT-PEN-003" />
+                    </adjust>
+                    <adjust mode="absolute" amount="23">
+                         <item stock_tag="APFM-KIT-PEN-004" />
+                    </adjust>
+                    <adjust mode="absolute" amount="601">
+                         <item stock_tag="APFM-KIT-PEN-005" />
+                    </adjust>
+                    <adjust mode="absolute" amount="121">
+                         <item stock_tag="APFM-KIT-SLV-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="10">
+                         <item stock_tag="APFM-KIT-STI-004" />
+                    </adjust>
+                    <adjust mode="absolute" amount="250">
+                         <item stock_tag="APFM-KIT-TOTE-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="276">
+                         <item stock_tag="APFM-Lanyard" />
+                    </adjust>
+                    <adjust mode="absolute" amount="112">
+                         <item stock_tag="APFM-Ornament" />
+                    </adjust>
+                    <adjust mode="absolute" amount="240">
+                         <item stock_tag="APFM-Popcorn" />
+                    </adjust>
+                    <adjust mode="absolute" amount="182">
+                         <item stock_tag="APFM-PRM-BAG-BLK-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="56">
+                         <item stock_tag="APFM-PRM-BAG-GRY-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="9">
+                         <item stock_tag="APFM-PRM-BAG-NVY-010" />
+                    </adjust>
+                    <adjust mode="absolute" amount="495">
+                         <item stock_tag="APFM-PRM-BALL-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="18">
+                         <item stock_tag="APFM-PRM-BLKT-NVY-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="38">
+                         <item stock_tag="APFM-PRM-BOT-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="73">
+                         <item stock_tag="APFM-PRM-BOT-002" />
+                    </adjust>
+                    <adjust mode="absolute" amount="29">
+                         <item stock_tag="APFM-PRM-CAL-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="485">
+                         <item stock_tag="APFM-PRM-CLIP-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="243">
+                         <item stock_tag="APFM-PRM-CLP-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="291">
+                         <item stock_tag="APFM-PRM-CNCOOL-010" />
+                    </adjust>
+                    <adjust mode="absolute" amount="6">
+                         <item stock_tag="APFM-PRM-CUS-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="71">
+                         <item stock_tag="APFM-PRM-CUS-002" />
+                    </adjust>
+                    <adjust mode="absolute" amount="10">
+                         <item stock_tag="APFM-PRM-HOL-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="161">
+                         <item stock_tag="APFM-PRM-HOL-003" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-PRM-HOT-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="979">
+                         <item stock_tag="APFM-PRM-JOU-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="107">
+                         <item stock_tag="APFM-PRM-LIPBALMBNDL-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-PRM-MOUSE-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="36">
+                         <item stock_tag="APFM-PRM-MUG-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-PRM-PAD-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-PRM-PWR-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="235">
+                         <item stock_tag="APFM-PRM-TIN-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="63">
+                         <item stock_tag="APFM-PRM-TOTE-WHT-002" />
+                    </adjust>
+                    <adjust mode="absolute" amount="60">
+                         <item stock_tag="APFM-PRM-UMB-NVY-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="0">
+                         <item stock_tag="APFM-PRM-WINE-001" />
+                    </adjust>
+                    <adjust mode="absolute" amount="55">
+                         <item stock_tag="APFM-PRT-BOO-002" />
+                    </adjust>
+                    <adjust mode="absolute" amount="9">
+                         <item stock_tag="APFM-PRT-FLYL-CE-MAY1-Q100" />
+                    </adjust>
+                    <adjust mode="absolute" amount="10">
+                         <item stock_tag="APFM-PRT-FLYL-CE-MAY2-Q100" />
+                    </adjust>
+                    <adjust mode="absolute" amount="31525">
+                         <item stock_tag="APFM-PRT-FOL-CE-Q01" />
+                    </adjust>
+                    <adjust mode="absolute" amount="21">
+                         <item stock_tag="APFM-PRT-HOLCRDENV_Q25" />
+                    </adjust>
+                    <adjust mode="absolute" amount="37650">
+                         <item stock_tag="APFM-PRT-TAG-CE-Q01" />
+                    </adjust>
+                    <adjust mode="absolute" amount="230">
+                         <item stock_tag="APFM-STYL_Pen-010" />
+                    </adjust>
+               </inventory>
+          </Data>
+     </EventData>
+</Event>

@@ -84,3 +84,5 @@ Cecil Cty Sherriff only
 
 
 '%(bill_code1)s - %(bill_code4)s' % order.form
+
+%(longname)s (For NH Kit)

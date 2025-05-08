@@ -1,0 +1,203 @@
+<Order>
+	<JobNumber></JobNumber>
+	<CustAccount>109379</CustAccount>
+	<CustName>Celebration Mailers</CustName>
+	<CustAddress1>64 Beechum Court</CustAddress1>
+	<CustAddress2></CustAddress2>
+	<CustAddress3></CustAddress3>
+	<CustCity>Owings Mills</CustCity>
+	<CustState>MD</CustState>
+	<CustZip>21117</CustZip>
+	<CustCounty></CustCounty>
+	<CustCountry></CustCountry>
+	<CustPhone>410.446.4589</CustPhone>
+	<CustFax></CustFax>
+	<CustContact>Dave Michaelson</CustContact>
+	<CustEmail>dmichaelson@celebrationmarketing.us</CustEmail>
+	<JobDescription>[Job.PrivateData:Key="job_description"]</JobDescription>
+	<JobDetailDescription></JobDetailDescription>
+	<PaymentMethod>SFP</PaymentMethod>
+	<PONumber></PONumber>
+	<ReleaseNumber></ReleaseNumber>
+	<DueTime></DueTime>
+	<DueDate>[Job.PrivateData:Key="due_date"]</DueDate>
+	<OrderDate>[Switch.Date:Format="MM-dd-yyyy",TimeZone="System"]</OrderDate>
+	<ProofDate></ProofDate>
+	<ProofTime></ProofTime>
+	<ProofComments></ProofComments>
+	<NoProofRequired>1</NoProofRequired>
+	<Revision>0</Revision>
+	<FormNumber></FormNumber>
+	<DeliveryDate></DeliveryDate>
+	<ProofDeliveryDate></ProofDeliveryDate>
+	<OutsideOrderID></OutsideOrderID>
+	<BindInstructions></BindInstructions>
+	<UserDefinedField1>New Job</UserDefinedField1>
+	<UserDefinedField2>Mail</UserDefinedField2>
+	<UserDefinedField3>Rush Order</UserDefinedField3>
+	<UserDefinedField4>Unassigned</UserDefinedField4>
+	<UserDefinedField5>Hard Due Date</UserDefinedField5>
+	<UserDefinedField6></UserDefinedField6>
+	<UserDefinedField7></UserDefinedField7>
+	<CustUserDefined1></CustUserDefined1>
+	<CustUserDefined2></CustUserDefined2>
+	<CustUserDefined3></CustUserDefined3>
+	<TaxJurisdiction></TaxJurisdiction>
+	<TaxOverrideAmount>0</TaxOverrideAmount>
+	<PlantID></PlantID>
+	<SalesRepCode>SFB2B</SalesRepCode>
+	<DistPO></DistPO>
+	<PrevDistPO></PrevDistPO>
+	<JobStatus>IN PROCESS</JobStatus>
+	<QuantityOrdered>0</QuantityOrdered>
+	<HeaderTemplateCode></HeaderTemplateCode>
+	<TotalSellPrice>0</TotalSellPrice>
+	<OrderHandlingCharge>0</OrderHandlingCharge>
+	<PrePayment>0</PrePayment>
+	<CheckNumber></CheckNumber>
+	<Estimator>Justin Newcomer</Estimator>
+	<CSR>Justin Newcomer</CSR>
+	<PrePressInstructions></PrePressInstructions>
+	<PressInstructions></PressInstructions>
+	<StockInstructions></StockInstructions>
+	<PostPressInstructions></PostPressInstructions>
+	<OutsideServicesInstructions></OutsideServicesInstructions>
+	<InkInstructions></InkInstructions>
+	<MiscInstructions></MiscInstructions>
+	<PrevJobNumber></PrevJobNumber>
+	<SendToAcceleship>0</SendToAcceleship>
+	<EstimateNumber></EstimateNumber>
+	<PrinterName></PrinterName>
+	<ARPrepayment>
+	</ARPrepayment>
+	<OverrideAvataxAmount>0</OverrideAvataxAmount>
+	<GenerateXMLOutput>1</GenerateXMLOutput>
+	<Components>
+		<Component>
+			<ComponentNumber>1</ComponentNumber>
+			<Description>Postcard for [Job.PrivateData:Key="job_description"]</Description>
+			<DetailDescription></DetailDescription>
+			<QuantityOrdered>[Job.PrivateData:Key="qty"]</QuantityOrdered>
+			<TemplateCode>CM_Weekly_Postcard</TemplateCode>
+			<SellPrice>[Switch.Calculation:Expression="[Job.PrivateData:Key="qty"] * 0.06"]</SellPrice>
+			<UserDefinedField1>Print</UserDefinedField1>
+			<UserDefinedField2></UserDefinedField2>
+			<UserDefinedField3></UserDefinedField3>
+			<UserDefinedField4></UserDefinedField4>
+			<UserDefinedField5></UserDefinedField5>
+			<DueDate>[Job.PrivateData:Key="due_date"]</DueDate>
+			<DeliveryDate></DeliveryDate>
+			<SalesRepCode>SFB2B</SalesRepCode>
+			<DueTime></DueTime>
+		</Component>
+		<Component>
+			<ComponentNumber>2</ComponentNumber>
+			<Description>Mailing for [Job.PrivateData:Key="job_description"]</Description>
+			<DetailDescription></DetailDescription>
+			<QuantityOrdered>[Job.PrivateData:Key="qty"]</QuantityOrdered>
+			<TemplateCode>CM_Weekly_Mailing</TemplateCode>
+			<SellPrice>0</SellPrice>
+			<UserDefinedField1>Print</UserDefinedField1>
+			<UserDefinedField2></UserDefinedField2>
+			<UserDefinedField3></UserDefinedField3>
+			<UserDefinedField4></UserDefinedField4>
+			<UserDefinedField5></UserDefinedField5>
+			<DueDate>[Job.PrivateData:Key="due_date"]</DueDate>
+			<DeliveryDate></DeliveryDate>
+			<SalesRepCode>SFB2B</SalesRepCode>
+			<DueTime></DueTime>
+          </Component>
+	</Components>
+	<Shipments>
+		<Shipment>
+			<JobNumber></JobNumber>
+			<ShipName>USPS - OM - Non-MD Recipients</ShipName>
+			<ShipAddress1>10821 RED RUN BLVD</ShipAddress1>
+			<ShipAddress2></ShipAddress2>
+			<ShipAddress3></ShipAddress3>
+			<ShipCity>OWINGS MILLS</ShipCity>
+			<ShipState>MD</ShipState>
+			<ShipZip>21117-8512</ShipZip>
+			<ShipCounty></ShipCounty>
+			<ShipCountry></ShipCountry>
+			<ShipContact></ShipContact>
+			<ShipPhone>800.275.8777</ShipPhone>
+			<ShipFax></ShipFax>
+			<Email></Email>
+			<ShipInNameOf></ShipInNameOf>
+			<FOB></FOB>
+			<Instructions></Instructions>
+			<Residence>0</Residence>
+			<ShipVia>*USPS</ShipVia>
+			<ShipViaService>POOM</ShipViaService>
+			<ThirdPartyBilling></ThirdPartyBilling>
+			<UserDefinedField1>No</UserDefinedField1>
+			<UserDefinedField2></UserDefinedField2>
+			<UserDefinedField3></UserDefinedField3>
+			<UserDefinedField4></UserDefinedField4>
+			<UserDefinedField5></UserDefinedField5>
+			<UserDefinedField6></UserDefinedField6>
+			<UserDefinedField7></UserDefinedField7>
+			<UserDefinedField8></UserDefinedField8>
+			<TaxJurisdiction>NOTAX</TaxJurisdiction>
+			<TaxOverrideAmount>0</TaxOverrideAmount>
+			<FreightCost>0</FreightCost>
+			<ShipDate>[Job.PrivateData:Key="due_date"]</ShipDate>
+			<ShipTime></ShipTime>
+			<ComponentNumber>1</ComponentNumber>
+			<Quantity>[Job.PrivateData:Key="qty"]</Quantity>
+			<ExternalValue1></ExternalValue1>
+			<ExternalValue2></ExternalValue2>
+			<ExternalValue3></ExternalValue3>
+			<Description></Description>
+			<Shipped>0</Shipped>
+			<Packages xsi:nil="true" />
+		</Shipment>
+		<Shipment>
+			<JobNumber></JobNumber>
+			<ShipName>USPS - OM - MD Recipients</ShipName>
+			<ShipAddress1>10821 RED RUN BLVD</ShipAddress1>
+			<ShipAddress2></ShipAddress2>
+			<ShipAddress3></ShipAddress3>
+			<ShipCity>OWINGS MILLS</ShipCity>
+			<ShipState>MD</ShipState>
+			<ShipZip>21117-8512</ShipZip>
+			<ShipCounty></ShipCounty>
+			<ShipCountry></ShipCountry>
+			<ShipContact></ShipContact>
+			<ShipPhone>800.275.8777</ShipPhone>
+			<ShipFax></ShipFax>
+			<Email></Email>
+			<ShipInNameOf></ShipInNameOf>
+			<FOB></FOB>
+			<Instructions></Instructions>
+			<Residence>0</Residence>
+			<ShipVia>*USPS</ShipVia>
+			<ShipViaService>POOM</ShipViaService>
+			<ThirdPartyBilling></ThirdPartyBilling>
+			<UserDefinedField1>No</UserDefinedField1>
+			<UserDefinedField2></UserDefinedField2>
+			<UserDefinedField3></UserDefinedField3>
+			<UserDefinedField4></UserDefinedField4>
+			<UserDefinedField5></UserDefinedField5>
+			<UserDefinedField6></UserDefinedField6>
+			<UserDefinedField7></UserDefinedField7>
+			<UserDefinedField8></UserDefinedField8>
+			<TaxJurisdiction>NOTAX</TaxJurisdiction>
+			<TaxOverrideAmount>0</TaxOverrideAmount>
+			<FreightCost>0</FreightCost>
+			<ShipDate>[Job.PrivateData:Key="due_date"]</ShipDate>
+			<ShipTime></ShipTime>
+			<ComponentNumber>0</ComponentNumber>
+			<Quantity>[Job.PrivateData:Key="qty"]</Quantity>
+			<ExternalValue1></ExternalValue1>
+			<ExternalValue2></ExternalValue2>
+			<ExternalValue3></ExternalValue3>
+			<Description></Description>
+			<Shipped>0</Shipped>
+			<Packages xsi:nil="true" />
+		</Shipment>
+		</Shipments>
+		<Images>
+		</Images>
+</Order>

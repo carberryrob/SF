@@ -13,3 +13,9 @@ item.corp_filter == 'AAA' and item.tag not in ('AAA-PRM-TENT-001', 'AAA-PRM-TBLC
 
 
 [i for i in order.items if i.is_inventory_item()]
+
+
+[i for i in order.items if i.is_inventory_item() and item.tag in ('CRC-PRT-UMB-001', 'CRC-PRM-WINDISP-001' )]
+
+
+[i for i in order.items if i.corp_filter in ('tevis') and i.is_inventory_item()]
