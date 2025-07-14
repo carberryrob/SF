@@ -43,7 +43,7 @@ var template = [
   "WITT-BC-Multi-001",
   "WITT-BC-Multi2S-001",
   "WITT-BC-Single-001",
-  "WITT-BC-Single2S-001",
+  "WITT-BC-Single2S-001"
 ];
 
 function manualTrim(s) {

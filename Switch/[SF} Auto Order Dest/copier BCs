@@ -1,0 +1,68 @@
+
+// Rob Carberry 5.9.2025
+
+var template = [
+  "ABTF-BC_MEDSPA_2S",
+  "ACME-BC-001",
+  "AMI-BC_001",
+  "BC-2S_16PT_C2S_4.4",
+  "BC-SAFETYBACKS",
+  "BC-STATEIWIF",
+  "BC-STDWHTBCK",
+  "BG-BC_1S",
+  "BG-BC_2S",
+  "BLIFE_BC_2S_UVFT",
+  "BLIFE-PHOTO_BC_2S",
+  "BOCC-BC_2S",
+  "BOCC-BC-001",
+  "CDRRDG-BC-001",
+  "CENT-BC_2S_RC",
+  "CRC-BC_2SIDE",
+  "DD_BC_14ptC1S_4.4",
+  "DD-BC_4.4_UV-1S",
+  "DOPS-BUS_CRD_VTCL",
+  "GALLBCRD",
+  "HAC-BC-2S_ST",
+  "HB-BC-001",
+  "HB-BC-002",
+  "HB-BC-003",
+  "HMCNT-BC_1S",
+  "HOCO-BC_4C_CGR_NAT",
+  "HOCO-BC_FRE_RSCUE_QR-001",
+  "LN-STLR_BUS_CRDS",
+  "LN-STLR_EXEC_BC",
+  "MCC-BC_FRNCH_2S",
+  "NATIVE-BC_1S",
+  "Native-BC-001",
+  "NETC-BC-001",
+  "OCPD-BC_1S",
+  "PRTL_3.5X2_16pt_4.4",
+  "PRTL_BC_12pt_4.4_STLAM",
+  "PRTL_BC100_3MilLamBk_4.0",
+  "PRTL_BC100_3MilLamBk_4.4",
+  "PRTL_TATEBC_STD",
+  "SEA-BC_4C_1S",
+  "SEA-BC_4C_2S",
+  "TECH-USA_BC_WITH_SEAL2s",
+  "WBAL-BC-001",
+  "WIL-BC_4C_1S",
+  "WIL-BC_4C_2S"
+];
+
+function manualTrim(s) {
+    return s.replace(/^\s+/, '').replace(/\s+$/, '');
+}
+
+var templatePD = job.getPrivateData("template_number");
+templatePD = manualTrim((templatePD + "").toUpperCase());
+
+var matchFound = false;
+
+for (var i = 0; i < template.length; i++) {
+    var entry = manualTrim((template[i] + "").toUpperCase());
+    if (entry === templatePD) {
+        matchFound = true;
+        break;
+    }
+}
+matchFound;

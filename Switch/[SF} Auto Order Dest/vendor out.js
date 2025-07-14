@@ -1,5 +1,5 @@
 
-// Rob Carberry 5.8.2025
+// Rob Carberry 5.28.2025
 
 var template = [
   "APFM2100",
@@ -30,6 +30,7 @@ var template = [
   "HMCNT-MAGNETS",
   "HOCO-BC_FRE_RSCUE_THERMO-001",
   "HOCO-BC-COUNCIL_THERMO-001",
+  "HOCO-BC_SHERIFF_OSV",
   "HOCO-BC_THERMO_CGR_NAT-001",
   "HOCO-BC_THERMO_CLS_LAID-001",
   "HOCO-BC_THERMO_CLS_LINEN-001",
@@ -109,6 +110,7 @@ var template = [
   "Promo2270_portal",
   "Promo2275_portal",
   "Promo2300",
+  "PROMO2305",
   "Promo2315",
   "Promo2325",
   "Promo2330",
@@ -128,7 +130,7 @@ var template = [
   "SGN1741",
   "SGN1742",
   "SVL-SALES_REP_BC_1S",
-  "TTG-DOOR_HANGERS",
+  "TTG-DOOR_HANGERS"
 ];
 
 function manualTrim(s) {
