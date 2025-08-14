@@ -1,5 +1,5 @@
 
-// Rob Carberry 6.17.2025
+// Rob Carberry 7.21.2025
 
 var template = [
   "ACMIN_LH_1s",
@@ -58,6 +58,7 @@ var template = [
   "ASSOC-PRT_GetInv",
   "BRKGRV_APP",
   "BGRV-BRO_FAQ_BIFLD",
+  "BGRV-BRO-LT-BIFLD",
   "BGRV_INTFLYER",
   "BGRV_FLRPLN_3or4pg",
   "BGRV_FLRPLN_5PG",
@@ -89,6 +90,7 @@ var template = [
   "CFG-LTRHD_4.0",
   "CFG-NOTE_CRD_4.4",
   "CFG-NT_CRD_4.4",
+  "CFG-PKT_FLDR_9X12",
   "CM_Monthly_Postcard",
   "CM_Sample_Postcard",
   "CM_Weekly_Postcard",
@@ -102,7 +104,6 @@ var template = [
   "CRC-INSRT-1PG",
   "CRC-INSRT-2PG",
   "CRC-LOCK_OUT_PAD",
-  "CRC-MKTG_LABEL",
   "CRC-MOVE_IN_PAD",
   "CRC-PAY_BAL_DUE_PSTCRD",
   "CRC-PRPTY_LTRHD",
@@ -126,6 +127,7 @@ var template = [
   "ENV-CAT_10x13_PRTL_IJET",
   "ENV-CAT_9x12_PRTL_IJET",
   "EVRSTND_0502_SPAN",
+  "EVRSTND_Buck_2",
   "FLYER_100_SLKT_4.0",
   "FLYER_100_SLKT_4.0_KM1",
   "FLYER_14PTC2S_4.4",
@@ -172,6 +174,7 @@ var template = [
   "P_100SLKTXT_8.5x11_4.4",
   "P_80CVR_8.5x11_4.0",
   "P_BIFOLD_100_SLKTXT_4.4",
+  "P_FLYER_80_SLKT_4.0",
   "P_FLYER_100_GL_4.0",
   "P_FLYER_100_GL_4.4",
   "P_FLYER_100_SLK_1.1",

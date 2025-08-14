@@ -1,5 +1,5 @@
 
-// Rob Carberry 5.28.2025
+// Rob Carberry 8.13.2025
 
 var template = [
   "APFM2100",
@@ -10,10 +10,11 @@ var template = [
   "CCSAO-ENGRVD-NAMEPLT-001",
   "CCSAO-NAMEPLTwithBKT-001",
   "CCSA-PRM-BadgeEngrave-002",
+  "CCSA_STATT_Badge_Engrv",
   "CFG-BC_SPT-RSD-UV",
+  "CFG-BC_Spot-Only",
   "CFG-PAD_POSTIT_4.0",
   "CFG-PKT_FLDR_5x9",
-  "CFG-PKT_FLDR_9X12",
   "CLV-BC_ SPT_UV_1S",
   "CRC_BC_COMMERCIAL",
   "CRC_NMBDGE_ORD1",
@@ -114,10 +115,15 @@ var template = [
   "Promo2315",
   "Promo2325",
   "Promo2330",
+  "PROMO2380",
+  "PROMO2385",
+  "PROMO2390",
+  "PROMO2395",
   "RMG-BC_SLK_LAM_RC",
   "ROS-FED-BC_THERMO",
   "SCHBAKBC",
   "SGN1548",
+  "SGN1577",
   "SGN1670",
   "SGN1671",
   "SGN1672",
