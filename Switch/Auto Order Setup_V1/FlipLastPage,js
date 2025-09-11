@@ -1,0 +1,34 @@
+function manualTrim(s) {
+    return s.replace(/^\s+/, '').replace(/\s+$/, '');
+}
+
+var flip = false;
+var page_count = Number(job.getPrivateData("page_count") || 0);
+var height = Number(job.getPrivateData("height") || 0);
+var width = Number(job.getPrivateData("width") || 0);
+var horizontal = (job.getPrivateData("horizontal") || "false").toString().toLowerCase() === "true";
+var SF_Sides = manualTrim((job.getPrivateData("SF_Sides") || "").toUpperCase());
+var bind_method = manualTrim((job.getPrivateData("bind_method") || "").toUpperCase());
+var press_type = manualTrim((job.getPrivateData("press_type") || "").toUpperCase());
+var press_sheet_size = manualTrim((job.getPrivateData("press_sheet_size") || "").toUpperCase());  // e.g., "25X19"
+
+if (press_sheet_size.includes("X")) {
+    var parts = press_sheet_size.split("X");
+    if (parts.length === 2) {
+        press_sheet_size = manualTrim(parts[0] + "") + "X" + manualTrim(parts[1] + "");
+    }
+}
+
+if (page_count > 1) {
+    if (SF_Sides === "2S") {
+        if (horizontal) {
+            if (press_type === "KM1" || press_type === "BNWCOPIER" || press_type === "COLORCOPIER") {
+                if (bind_method === "STEPNREPEAT") {
+                    flip = true;
+                }
+            }
+        }
+    }
+}
+
+flip;

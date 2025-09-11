@@ -56,13 +56,4 @@ allowed;
 var templatePD = job.getPrivateData("template_number");
 templatePD = manualTrim((templatePD + "").toUpperCase());
 
-var matchFound = false;
 
-for (var i = 0; i < template.length; i++) {
-    var entry = manualTrim((template[i] + "").toUpperCase());
-    if (entry === templatePD) {
-        matchFound = true;
-        break;
-    }
-}
-matchFound;
