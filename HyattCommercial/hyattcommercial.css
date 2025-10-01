@@ -8,6 +8,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Rob Carberry 9/30/2025 */
 table#billing-info {
     display: none;
 }
@@ -15,6 +16,32 @@ table#billing-info {
 button#button_addproducts {
     display: none;
 }
+
+table#billing-pricetable tr.form-sublabel + tr {
+  display: none;
+}
+
+table#billing-pricetable > tbody > tr:has(#total_price_text) {
+  display: none !important;
+}
+
+#billing-pricetable th:last-child,
+#billing-pricetable td:last-child {
+  display: none;
+}
+
+#billing-pricetable td:first-child,
+#billing-pricetable th:first-child {
+  width: 100% !important;
+  text-align: left !important;
+}
+
+td.data {
+    overflow-wrap: anywhere;
+}
+
+/* *********************** */
+
 
 html, body {
      height: 100%;
@@ -179,6 +206,11 @@ button#submit_cancel {
      margin-right: 5%;
      min-width: 155px;
 }
+
+table.items-table.true-table, table#shipping-pricetable {
+    display: none;
+}
+
 /************************************/
 .main, .catalog, form {
      /* height: 100vh; */
@@ -677,6 +709,7 @@ button#submit_go_corp {
 
      .review td.data {
           background-color: #eeeeee;
+          overflow-wrap: anywhere;
      }
 
      .review div {

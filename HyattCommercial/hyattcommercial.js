@@ -629,7 +629,41 @@
      <script type="text/javascript" defer>
      {/********** Enable/Disable "Submit Order" button based on approval *****************************************************/}
      $(document).ready(function () {
-          if ($("select[name='bill_code10']").val() == "No") {
+          if($('form[action="accept_confirm.cgi"]').length >= 1) {
+          $("table#bill-sect").insertAfter("table#ship-sect");
+     }
+
+     if($('form[action="bill.cgi"]').length >= 1 || $('form[action="review.cgi"]').length >= 1) {
+          $("table#billing-info").insertBefore("#final-buttonsbar");
+          // $("table#billing-info tr").eq(0).hide();
+     }
+
+     
+     if ($("select[name='bill_code10']").val() == "No") {
+          $("button#submit_send_order").prop('disabled', 'disabled');
+          $("button#submit_review_order").prop('disabled', 'disabled');
+     }
+     //console.log($("select[name='bill_code10']").val());
+     $('form[action="accept_bill.cgi"]').change(function() {
+          if ($("select[name='bill_code10']").val() == "No") {$("button#submit_send_order").prop('disabled', 'disabled');}
+          if ($("select[name='bill_code10']").val() == "Yes") {$("button#submit_send_order").prop('disabled', false);}
+          //console.log($("select[name='bill_code10']").val());
+     });
+     $('form[action="review_bill.cgi"]').change(function() {
+          if ($("select[name='bill_code10']").val() == "No") {$("button#submit_review_order").prop('disabled', 'disabled');}
+          if ($("select[name='bill_code10']").val() == "Yes") {$("button#submit_review_order").prop('disabled', false);}
+          // console.log($("select[name='bill_code10']").val());
+     });
+     $('form[action="review.cgi"]').change(function() {
+          if ($("select[name='bill_code10']").val() == "No") {$("button#submit_review_order").prop('disabled', 'disabled');}
+          if ($("select[name='bill_code10']").val() == "Yes") {$("button#submit_review_order").prop('disabled', false);}
+          console.log($("select[name='bill_code10']").val());
+     });
+
+     //********** Move approval yes/no to just above "Submit Order"*******************
+     $("tr:contains('I have verified and approve this order:')").appendTo($("p.approve_order").parents("tr").parent());
+     //*******************************************************************************
+     if ($("select[name='bill_code10']").val() == "No") {
                $("button#submit_send_order").prop('disabled', 'disabled');
                $("button#submit_review_order").prop('disabled', 'disabled');
           }
@@ -1756,12 +1790,12 @@
     });
 </script>
 
-<script>
-/*Jake Boyd 9-28-25 **HYATT SPECIFIC**
-This section will stop the user from being able to alter the quantities of signage items in their 'cart' on the basket view page*/
+{/* <script>
+Jake Boyd 9-28-25 **HYATT SPECIFIC**
+This section will stop the user from being able to alter the quantities of signage items in their 'cart' on the basket view page
 
-//If element #basket_view.items_header is present on the page and within a table with class items-table there is a table row containing a
-// a td element with text containing (Signage)'set all text inputs within table to have pointer-events: none; and a light gray background color.
+If element #basket_view.items_header is present on the page and within a table with class items-table there is a table row containing a
+a td element with text containing (Signage)'set all text inputs within table to have pointer-events: none; and a light gray background color.
      $(document).ready(function() {
           if (
                $('#basket_view\\.items_header').length &&
@@ -1774,7 +1808,7 @@ This section will stop the user from being able to alter the quantities of signa
           }
      });
 
-</script>
+</script> */}
 
 <script>
 /*Jake Boyd 9-28-25 **HYATT SPECIFIC**
@@ -1850,15 +1884,17 @@ informing them: 'You will be contacted by a Signage Project Manager to discuss i
                $('#billing-pricetable').find('td:contains("(Signage)")').length
           ) {
                $('#billing-pricetable').hide();
-               $('#bill\\.copy1').text('You will be contacted by a Signage Project Manager to discuss installation and shipping.');
+               $('#bill\\.copy1').html('<h2>You will be contacted by a Signage Project Manager to discuss installation and shipping.</h2>');
           }
      });
 </script>
+
 <script>
 // Rob Carberry 9/30/2025
 // Fill bill_code3 with the item longname found on the shipping page:
-     $(window).on('load', function() {
-          var text = $("#shipping-pricetable tbody tr:eq(1) td:first").text().trim();
+     {/* $(window).on('load', function() { */}
+     $(document).ready(function() {
+          var text = $("#shipping-pricetable tbody tr:eq(1) td:first").text().replace("(Signage)", "").trim();
 
           if (text) {  // only run if not empty
                $('input[type="text"][name="bill_code3"]').val(text).change();
@@ -1866,5 +1902,22 @@ informing them: 'You will be contacted by a Signage Project Manager to discuss i
           } else {
                console.log("No text found in 2nd row, 1st column — input not changed.");
           }
+
+          // Qty read only
+          $(function () {
+               // For shipping-pricetable
+               $('#shipping-pricetable tbody td input[type=text]').each(function () {
+                    $(this).hide(); // or .prop('disabled', true) if you don’t want it submitted
+                    $(this).before(document.createTextNode(this.value));
+                    $(this).closest('table').show();
+               });
+
+               // For item_form.cgi form
+               $('form[action="item_form.cgi"] table.items-table.true-table tbody td input[type=text]').each(function () {
+                    $(this).hide(); // or .prop('disabled', true)
+                    $(this).before(document.createTextNode(this.value));
+                    $(this).closest('table').show();
+               });
+          });
      });
 </script>
