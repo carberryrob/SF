@@ -1915,13 +1915,10 @@ then hide the entire #bill-pricetable and replace the text within #bill\.copy1 w
 </script>
 
 <script>
-{/* 
-Rob Carberry 10/03/2025
-Fill bill_code3 with the item longname found on the shipping page.  That happens to come from the item longname.
-This also handles showing and hiding the Ship To fields as well as making them mandatory or not. 
-*/}
+{/* Rob Carberry 10/3/2025
+Fill bill_code3 with the item longname found on the shipping page.  That happens to come from the item longname */}
 
-{/* This handles the ship to fields being mandatory when visible and not when hidden. */}
+{/* This handles the ship to fields being mandatory when visible and no when hidden. */}
 $(function () {
     const $table = $("#shipaddr-info");
     const $submitBtn = $("#submit_review_order");

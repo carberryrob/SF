@@ -1564,12 +1564,10 @@ function createMapIframe(initLats, initLngs, initZoom, initAddresses) {
                         marker.address = data.results[0].formatted_address;
                         }
                     } else {
-                        console.log('Address not found');
-                        marker.address = "Please use the Map Marker to select an Address.";
+                        marker.address = 'Address not found';
                     }
                 } catch (error) {
-                    console.log(\`Geocoding failed \${error}\`);
-                    marker.address = "Please use the Map Marker to select an Address.";
+                    marker.address = \`Geocoding failed \${error}\`;
                 }
             }
 
@@ -1810,8 +1808,9 @@ $(document).on('ready', async function () {
 });
 </script>
 
+<script>
+{/* 
 
-{/* <script>
 Jake Boyd 9-28-25 **HYATT SPECIFIC**
 This section will stop the user from being able to alter the quantities of signage items in their 'cart' on the basket view page
 
@@ -1828,8 +1827,9 @@ a td element with text containing (Signage)'set all text inputs within table to 
                     .css('background-color', '#f0f0f0');
         }
     });
-
-</script> */}
+    
+*/}
+</script> 
 
 <script>
 {/* 
@@ -1915,76 +1915,12 @@ then hide the entire #bill-pricetable and replace the text within #bill\.copy1 w
 </script>
 
 <script>
-{/* 
-Rob Carberry 10/03/2025
-Fill bill_code3 with the item longname found on the shipping page.  That happens to come from the item longname.
-This also handles showing and hiding the Ship To fields as well as making them mandatory or not. 
-*/}
-
-{/* This handles the ship to fields being mandatory when visible and not when hidden. */}
-$(function () {
-    const $table = $("#shipaddr-info");
-    const $submitBtn = $("#submit_review_order");
-
-    function rowHasRedStar($row) {
-        return $row.find("td.label label i").filter(function () {
-        return $(this).text().trim() === "*";
-        }).length > 0;
-    }
-
-    function updateRequired() {
-        const visible = $table.is(":visible");
-
-        $table.find("tr.ship-address").each(function () {
-        const $row = $(this);
-        if (rowHasRedStar($row)) {
-            $row.find('td.input input[type="text"]')
-            .prop("required", visible)
-            .attr("aria-required", visible ? "true" : "false");
-        }
-        });
-
-        checkMandatoryFields(); // refresh button state
-    }
-
-    function checkMandatoryFields() {
-        let allFilled = true;
-
-        $table.find("tr.ship-address").each(function () {
-        const $row = $(this);
-        if (rowHasRedStar($row)) {
-            $row.find('td.input input[type="text"][required]').each(function () {
-            if (!$(this).val().trim()) {
-                allFilled = false;
-            }
-            });
-        }
-        });
-
-        $submitBtn.prop("disabled", !allFilled);
-    }
-
-    // Initial run
-    updateRequired();
-
-    // Watch for table visibility changes
-    const target = $table.get(0);
-    if (target) {
-        const observer = new MutationObserver(updateRequired);
-        observer.observe(target, { attributes: true, attributeFilter: ["style", "class"] });
-    }
-
-    // Check on every keystroke/change
-    $table.on("input change", 'input[type="text"]', checkMandatoryFields);
-
-    // Allow manual trigger after show/hide
-    $table.on("forceUpdateRequired", updateRequired);
-});
-{/* ---------------------------- */}
-
+{/* Rob Carberry 9/30/2025
+Fill bill_code3 with the item longname found on the shipping page.  That happens to come from the item longname */}
+    {/* $(window).on('load', function() { */}
     $(document).ready(function() {
-        // Copies the items longname set in price options to bill_code3 to then be used as the job header name in epms. 
         var text = $("#shipping-pricetable tbody tr:eq(1) td:first").text().replace("(Signage)", "").trim();
+
         if (text) {  // only run if not empty
             $('input[type="text"][name="bill_code3"]').val(text).change();
             console.log("bill_code3 set to:", text);
@@ -1992,32 +1928,21 @@ $(function () {
             console.log("No text found in 2nd row, 1st column — input not changed.");
         }
 
-        // Qty read only.  Hides the input text box and replaces it with plain text in the <TD>
+        // Qty read only
         $(function () {
             // For shipping-pricetable
-            if ($('#shipping-pricetable tbody td input[type=text]').length) {
-                $('#shipping-pricetable tbody td input[type=text]').each(function () {
-                        $(this).hide(); // or .prop('disabled', true) if you don’t want it submitted
-                        $(this).before(document.createTextNode(this.value));
-                        // $(this).closest('table').show();
-                });
-                $('table#shipaddr-info').hide()
-            }else{
-                $('table#shipaddr-info').show()
-
-            }
+            $('#shipping-pricetable tbody td input[type=text]').each(function () {
+                    $(this).hide(); // or .prop('disabled', true) if you don’t want it submitted
+                    $(this).before(document.createTextNode(this.value));
+                    $(this).closest('table').show();
+            });
 
             // For item_form.cgi form
-            if ($('form[action="item_form.cgi"] table.items-table.true-table').length) {
-                $('form[action="item_form.cgi"] table.items-table.true-table tbody td input[type=text]').each(function () {
-                        $(this).hide(); // or .prop('disabled', true)
-                        $(this).before(document.createTextNode(this.value));
-                        // $(this).closest('table').show();
-                });
-            }
+            $('form[action="item_form.cgi"] table.items-table.true-table tbody td input[type=text]').each(function () {
+                    $(this).hide(); // or .prop('disabled', true)
+                    $(this).before(document.createTextNode(this.value));
+                    $(this).closest('table').show();
+            });
         });
-        // css hides the tables for item and qty.  This shows it after replacing the qty input with text so it can't be altered.
-        if ($('table#shipping-pricetable').length) {$('table#shipping-pricetable').show()};
-        if ($('form[action="item_form.cgi"] table.items-table.true-table').length) {$('table.items-table.true-table').show()};
     });
 </script>
