@@ -1069,12 +1069,13 @@
     Add the Search bar to the TabsDiv        
     Add and fade out the overlay
     Initially hide TabsDiv contents and create overlay when document is ready */}
+
     $(document).ready(function() {
         $('#TabsDiv > *').css('display', 'none');
-        createOverlay();
+        // createOverlay();
     });
 
-    function createOverlay() {
+    {/* function createOverlay() {
         if ($('#TabsDiv').length) {
             if (!$('.tabsdiv-overlay').length) {
                 $('<div class="tabsdiv-overlay"></div>').insertBefore('#TabsDiv');
@@ -1097,10 +1098,10 @@
         if (!createOverlay()) {
             setTimeout(checkAndCreateOverlay, 100);
         }
-    }
+    } */}
 
     $(window).on('load', function() {
-        setTimeout(function() {
+
             $("span.cart_num_items.no_mobile").parent("a").wrap('<div class="carticon">');
             if ($('.carticon').length && $('#TabsDiv').length) {
                 $('.carticon').appendTo('#TabsDiv');
@@ -1110,14 +1111,26 @@
 
             $('#Srch').appendTo('#TabsDiv');
 
-            // Show TabsDiv contents
-            $('#TabsDiv > *').fadeIn();
+        // setTimeout(function() {
+        //     $("span.cart_num_items.no_mobile").parent("a").wrap('<div class="carticon">');
+        //     if ($('.carticon').length && $('#TabsDiv').length) {
+        //         $('.carticon').appendTo('#TabsDiv');
+        //     } else {
+        //         console.error('Elements not found: .carticon or #TabsDiv');
+        //     }
 
-            // Fade out and remove the overlay
-            $('.tabsdiv-overlay').fadeOut(500, function() {
-                $(this).remove();
-            });
-        }, 500);
+        //     $('#Srch').appendTo('#TabsDiv');
+
+        //     // Show TabsDiv contents
+        //     $('#TabsDiv > *').fadeIn();
+
+        //     // Fade out and remove the overlay
+        //     $('.tabsdiv-overlay').fadeOut(500, function() {
+        //         $(this).remove();
+        //     });
+        // }, 500);
+    
+        $('#TabsDiv > *').show();
     });
     </script>
     
@@ -1185,27 +1198,27 @@
     // On load add an almost transparent overlay to the whole page
     $(window).on('load', function() {
         // Create overlay div
-        var overlay = $('<div>', {
-            css: {
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                zIndex: 9999
-            }
-        });
+        // var overlay = $('<div>', {
+        //     css: {
+        //         position: 'fixed',
+        //         top: 0,
+        //         left: 0,
+        //         width: '100%',
+        //         height: '100%',
+        //         backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        //         zIndex: 9999
+        //     }
+        // });
 
         // Add overlay to body
-        $('body').append(overlay);
+        // $('body').append(overlay);
 
         // Remove overlay after 1000ms
-        setTimeout(function() {
-            overlay.fadeOut(function() {
-                overlay.remove();
-            });
-        }, 1000);
+        // setTimeout(function() {
+        //     overlay.fadeOut(function() {
+                // overlay.remove();
+        //     });
+        // }, 1000);
     });
     </script>
     <script>
@@ -1550,7 +1563,7 @@ function createMapIframe(initLats, initLngs, initZoom, initAddresses) {
                     
                     if (data.status === 'OK' && data.results && data.results.length > 0) {
                         console.log("results", data.results);
-                        console.log("addressCompoennts", data.results[0].address_components);
+                        console.log("addressComponents", data.results[0].address_components);
                         if (data.results[0].hasOwnProperty("address_components")) {
                             const addressComponents = data.results[0].address_components;
                             const streetNumber = addressComponents.find(c => c.types.includes('street_number'))?.long_name || '';
@@ -1561,7 +1574,7 @@ function createMapIframe(initLats, initLngs, initZoom, initAddresses) {
 
                             marker.address = \`\${streetNumber} \${route}, \${city}, \${state} \${zip}\`.trim();
                         } else {
-                        marker.address = data.results[0].formatted_address;
+                            marker.address = data.results[0].formatted_address;
                         }
                     } else {
                         console.log('Address not found');
@@ -1710,7 +1723,7 @@ $(document).on('ready', async function () {
             waitForElement('input[name="new_zoom"]'),
             waitForElement('input[name="new_address"]'),
             waitForElement("#buttons\\.view_proof"),
-            waitForElement("#buttons\\.request_quote")
+            waitForElement("#buttons\\.request_quote"),
         ]);
 
         const addressTextarea = createDisplayTextarea(addressInput);
@@ -1724,19 +1737,19 @@ $(document).on('ready', async function () {
         $("#blurb-and-image").after(iframe);
 
         // means of filtering for qty input for all pricing options that have it
-        $(".estimate-item-container").find("#qtyspec_label").parent().children().filter("[required]")
-        .on("change", function () {
-            const quantity = parseInt($(this).val()) || 1;
-            const iframe = document.getElementById("map-iframe");
-            if (iframe && iframe.contentWindow) {
-                iframe.contentWindow.postMessage({
-                    type: 'quantityChange',
-                    quantity: quantity
-                }, "*");
-            } else {
-                console.log("Iframe or contentWindow not available");
-            }
-        });
+        $(".estimate-item-container").find("#qtyspec_label")
+            .parent().children().filter("[required]").on("change", function () {
+                const quantity = parseInt($(this).val()) || 1;
+                const iframe = document.getElementById("map-iframe");
+                if (iframe && iframe.contentWindow) {
+                    iframe.contentWindow.postMessage({
+                        type: 'quantityChange',
+                        quantity: quantity
+                    }, "*");
+                } else {
+                    console.log("Iframe or contentWindow not available");
+                }
+            });
 
         window.addEventListener('message', async function (event) {
             console.log('Message received:', event.data);
@@ -1767,7 +1780,7 @@ $(document).on('ready', async function () {
 
                 $('textarea[name="new_address_display"]').val(data.addresses.join('~'));
                 $('input[name*="mapurl"]').val(data.mapUrls.join('~'));
-        }
+            }
         });
 
         $("input[name='new_latitude']")
@@ -1805,13 +1818,34 @@ $(document).on('ready', async function () {
 
     // remove after updating pricing options
 
-    $("#estimate-item-container").find(".qtyspec_label").parent().children().filter("[required]").parent().parent().prop("hidden", true);
+    $("#estimate-item-container").find(".qtyspec_label")
+        .parent().children().filter("[required]").parent().parent().prop("hidden", true);
     $("#total_block").prop("hidden", true);
+
+    if (typeof Estimator !== 'undefined') {
+        Estimator.prototype.toggle_continue = function () {
+            var contBtn = this.get_continue_buttons();
+            var hasErrorBlock = this.has_error_msg();
+            var hasInlineErrors = $('.please-select:visible').length > 0;
+
+            if (hasErrorBlock || hasInlineErrors || !($("#buttons\\.request_quote")
+                    .text() == "Continue")) {
+                contBtn
+                    .prop('disabled', 'disabled')
+                    .css({ 'cursor': 'not-allowed', 'opacity': '0.6' });
+            } else {
+                contBtn
+                    .prop('disabled', false)
+                    .css({ 'cursor': 'pointer', 'opacity': '1.0' });
+            }
+        };
+    }
 });
 </script>
 
 
-{/* <script>
+<script>
+{/* 
 Jake Boyd 9-28-25 **HYATT SPECIFIC**
 This section will stop the user from being able to alter the quantities of signage items in their 'cart' on the basket view page
 
@@ -1827,9 +1861,10 @@ a td element with text containing (Signage)'set all text inputs within table to 
                     .css('pointer-events', 'none')
                     .css('background-color', '#f0f0f0');
         }
-    });
+    }); 
+*/}
 
-</script> */}
+</script>
 
 <script>
 {/* 
@@ -2017,7 +2052,63 @@ $(function () {
             }
         });
         // css hides the tables for item and qty.  This shows it after replacing the qty input with text so it can't be altered.
+        // $('<span class="hiddenDataSpan" data-target-url="upload.cgi" data-target-settings="sharedform.hyatt_attach_files:2" data-field-name="doc_upload" style=""><button type="button" id="ulButton">Attach</button></span>').insertBefore('div#sharedform\\.hyatt_attach_files\\:2'); 
         if ($('table#shipping-pricetable').length) {$('table#shipping-pricetable').show()};
         if ($('form[action="item_form.cgi"] table.items-table.true-table').length) {$('table.items-table.true-table').show()};
+
+
+
+    // $(window).on('load', function() {
+    //     const observer = new MutationObserver(() => {
+    //     const img = document.getElementById("img#alttext-image");
+    //     if (img) {
+    //         console.log("************************************* " + img.src);
+    //         img.style.setProperty("display", "none", "important");
+    //         img.style.setProperty("width", "0", "important");
+    //         img.style.setProperty("height", "0", "important");
+    //         img.style.setProperty("visibility", "hidden", "important");
+    //         observer.disconnect(); // stop watching once it's hidden
+    //     }
+
+    // });
+
+    // $(window).on('load', function() {
+    //     $('img').each(function(i, el) {
+    //         console.log(i, "************************* " + $(el).attr('src'));
+    //     });
+    // });
+
+
+        // Log all existing <img> elements
+        $('img').each(function(i, el) {
+            console.log('****************************** Existing image:', i, $(el).attr('src') || el);
+        });
+
+        // Set up a MutationObserver to watch for new images
+        const observer = new MutationObserver(function(mutationsList) {
+            for (const mutation of mutationsList) {
+                if (mutation.type === 'childList') {
+                    $(mutation.addedNodes).each(function(_, node) {
+                        if (node.nodeType === 1) { // element node
+                            // If the added node itself is an <img>
+                            if (node.tagName === 'IMG') {
+                                console.log('****************************** New image added:', $(node).attr('src') || node);
+                            }
+                            // Or if it contains <img> children
+                            $(node).find('img').each(function(i, el) {
+                                console.log('****************************** New image inside added node:', $(el).attr('src') || el);
+                            });
+                        }
+                    });
+                }
+            }
+        });
+
+        // Start observing the entire document for added nodes
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
     });
+
 </script>

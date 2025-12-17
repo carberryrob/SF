@@ -8,6 +8,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+#alttext-image {
+    display: none !important;
+}
 /* Rob Carberry 10/2/2025 */
 table#billing-info {
     display: none;
@@ -142,11 +145,11 @@ button {
     position: relative !important;
     min-width: max-content !important;
     color: #fff !important;
-    border: 1px solid rgb(98, 182, 49);
+    border: 1px solid rgb(98, 182, 49) !important;
     /* border-radius: 25px; */
     transition: all 0.2s linear;
-    background-color: rgb(110, 194, 61);
-    box-shadow: 0 12px 36px 0 rgba(0, 0, 0, .06);
+    background-color: rgb(110, 194, 61) !important;
+    box-shadow: 0 12px 36px 0 rgba(0, 0, 0, .06) !important;
     font-family: "Noto Sans", sans-serif !important;
     font-size: 18px;
     line-height: 25px;
@@ -155,13 +158,14 @@ button {
     letter-spacing: 1px;
     text-transform: uppercase;
     border-radius: 20px;
+    background-image: none;
 }
 
 button#button_file_upload_remove:hover,
 button:hover,
 button#submit_catalog_search:hover {
     background-color: rgb(66, 181, 0) !important;
-    border: 1px solid rgb(54, 169, 0);
+    border: 1px solid rgb(54, 169, 0) !important;
     color: #ffffff !important;
     transition: all 0.2s linear;
     /* -webkit-transition: background-color 0.3s ease-in-out;

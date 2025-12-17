@@ -1221,6 +1221,8 @@
 {/* David Oguh
 Create map iframe and attach to pricing options page 
 09.03.25 */}
+// Create map iframe and attach to pricing options page 
+// 09.03.25
 function waitForElement(selector) {
     return new Promise((resolve) => {
         const element = $(selector);
@@ -1550,7 +1552,7 @@ function createMapIframe(initLats, initLngs, initZoom, initAddresses) {
                     
                     if (data.status === 'OK' && data.results && data.results.length > 0) {
                         console.log("results", data.results);
-                        console.log("addressCompoennts", data.results[0].address_components);
+                        console.log("addressComponents", data.results[0].address_components);
                         if (data.results[0].hasOwnProperty("address_components")) {
                             const addressComponents = data.results[0].address_components;
                             const streetNumber = addressComponents.find(c => c.types.includes('street_number'))?.long_name || '';
@@ -1561,7 +1563,7 @@ function createMapIframe(initLats, initLngs, initZoom, initAddresses) {
 
                             marker.address = \`\${streetNumber} \${route}, \${city}, \${state} \${zip}\`.trim();
                         } else {
-                        marker.address = data.results[0].formatted_address;
+                            marker.address = data.results[0].formatted_address;
                         }
                     } else {
                         console.log('Address not found');
@@ -1710,7 +1712,7 @@ $(document).on('ready', async function () {
             waitForElement('input[name="new_zoom"]'),
             waitForElement('input[name="new_address"]'),
             waitForElement("#buttons\\.view_proof"),
-            waitForElement("#buttons\\.request_quote")
+            waitForElement("#buttons\\.request_quote"),
         ]);
 
         const addressTextarea = createDisplayTextarea(addressInput);
@@ -1724,19 +1726,19 @@ $(document).on('ready', async function () {
         $("#blurb-and-image").after(iframe);
 
         // means of filtering for qty input for all pricing options that have it
-        $(".estimate-item-container").find("#qtyspec_label").parent().children().filter("[required]")
-        .on("change", function () {
-            const quantity = parseInt($(this).val()) || 1;
-            const iframe = document.getElementById("map-iframe");
-            if (iframe && iframe.contentWindow) {
-                iframe.contentWindow.postMessage({
-                    type: 'quantityChange',
-                    quantity: quantity
-                }, "*");
-            } else {
-                console.log("Iframe or contentWindow not available");
-            }
-        });
+        $(".estimate-item-container").find("#qtyspec_label")
+            .parent().children().filter("[required]").on('change', function () {
+                const quantity = parseInt($(this).val()) || 1;
+                const iframe = document.getElementById('map-iframe');
+                if (iframe && iframe.contentWindow) {
+                    iframe.contentWindow.postMessage({
+                        type: 'quantityChange',
+                        quantity: quantity
+                    }, '*');
+                } else {
+                    console.log("Iframe or contentWindow not available");
+                }
+            });
 
         window.addEventListener('message', async function (event) {
             console.log('Message received:', event.data);
@@ -1767,7 +1769,7 @@ $(document).on('ready', async function () {
 
                 $('textarea[name="new_address_display"]').val(data.addresses.join('~'));
                 $('input[name*="mapurl"]').val(data.mapUrls.join('~'));
-        }
+            }
         });
 
         $("input[name='new_latitude']")
@@ -1805,8 +1807,28 @@ $(document).on('ready', async function () {
 
     // remove after updating pricing options
 
-    $("#estimate-item-container").find(".qtyspec_label").parent().children().filter("[required]").parent().parent().prop("hidden", true);
+    $("#estimate-item-container").find(".qtyspec_label")
+        .parent().children().filter("[required]").parent().parent().prop("hidden", true);
     $("#total_block").prop("hidden", true);
+
+    if (typeof Estimator !== 'undefined') {
+        Estimator.prototype.toggle_continue = function () {
+            var contBtn = this.get_continue_buttons();
+            var hasErrorBlock = this.has_error_msg();
+            var hasInlineErrors = $('.please-select:visible').length > 0;
+
+            if (hasErrorBlock || hasInlineErrors || !($("#buttons\\.request_quote")
+                    .text() == "Continue")) {
+                contBtn
+                    .prop('disabled', 'disabled')
+                    .css({ 'cursor': 'not-allowed', 'opacity': '0.6' });
+            } else {
+                contBtn
+                    .prop('disabled', false)
+                    .css({ 'cursor': 'pointer', 'opacity': '1.0' });
+            }
+        };
+    }
 });
 </script>
 
@@ -1915,10 +1937,13 @@ then hide the entire #bill-pricetable and replace the text within #bill\.copy1 w
 </script>
 
 <script>
-{/* Rob Carberry 10/3/2025
-Fill bill_code3 with the item longname found on the shipping page.  That happens to come from the item longname */}
+{/* 
+Rob Carberry 10/03/2025
+Fill bill_code3 with the item longname found on the shipping page.  That happens to come from the item longname.
+This also handles showing and hiding the Ship To fields as well as making them mandatory or not. 
+*/}
 
-{/* This handles the ship to fields being mandatory when visible and no when hidden. */}
+{/* This handles the ship to fields being mandatory when visible and not when hidden. */}
 $(function () {
     const $table = $("#shipaddr-info");
     const $submitBtn = $("#submit_review_order");
