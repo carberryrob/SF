@@ -5,7 +5,7 @@ DECLARE @Year varchar(10) = '[Switch.Date:Format="yyyy",TimeZone="System"]';
 DECLARE @Month varchar(10) = '[Switch.Date:Format="MM",TimeZone="System"]';
 DECLARE @OrderNumber varchar(20) = '[Job.PrivateData:Key="quote_number"]';
 DECLARE @Folder varchar(256) = LEFT(
-    '\\sf-file18\CurrentYear\QIP_ARCHIVE\' + @Year + '\' + @Month, 256);
+    '\\sf-file18\CurrentYear\QIP_ARCHIVE\' + @Year + '\' + @Month + '\' + @OrderNumber, 256);
 
 -- Remove estimate images (scoped to this job)
 DELETE FROM dbo.EstimateImage
