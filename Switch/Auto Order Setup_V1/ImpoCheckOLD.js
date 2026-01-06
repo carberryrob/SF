@@ -64,3 +64,22 @@ for (var i = 0; i < RULES.length; i++) {
 // RETURN VALUE
 // ===============================
 output;
+
+
+
+[
+  {
+    "impo": "KM1_25x19_SaddleStitched_SHEETWISE_B_NS_2S",
+    "w": 4,
+    "h": 8.5,
+    "minPages": 3,
+    "result": "KM1_25x19_SaddleStitched_SHEETWISE_B_NS_2S (4x8.5)"
+  },
+  {
+    "impo": "KM2_25x19_SaddleStitched_SHEETWISE_B_NS_2S",
+    "w": 4,
+    "h": 8.5,
+    "pages": 4,
+    "result": "KM2_25x19_SaddleStitched_SHEETWISE_B_NS_2S (4x8.5)"
+  }
+]
